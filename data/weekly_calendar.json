@@ -1,5 +1,5 @@
 {
-  "updated": "2026-01-03T11:11:01.787626",
+  "updated": "2026-01-03T22:41:17.778548",
   "events": [
     {
       "date": "2026-01-03",
@@ -11,22 +11,19 @@
       "event": "CPI Release",
       "impact": "High",
       "description": "Consumer Price Index - inflation indicator",
-      "date": "2026-01-12",
-      "ai_insight": "CPI 발표는 인플레이션 추세에 대한 중요한 정보를 제공하여 금리, 주식, 환율 등 다양한 시장에 큰 영향을 미칠 수 있습니다.\n"
+      "date": "2026-01-12"
     },
     {
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-01-24",
-      "ai_insight": "FOMC 회의 결과는 금리 및 통화 정책 방향에 대한 단서를 제공하여 주식, 채권, 환율 등 금융 시장에 큰 영향을 미칠 수 있습니다.\n"
+      "date": "2026-01-24"
     },
     {
       "event": "Jobs Report (NFP)",
       "impact": "High",
       "description": "Non-farm payrolls data - key employment indicator",
-      "date": "2026-02-06",
-      "ai_insight": "고용 보고서(NFP)는 시장에 변동성을 크게 주고, 특히 금리 인상 전망과 관련된 자산 가격에 큰 영향을 미칩니다.\n"
+      "date": "2026-02-06"
     },
     {
       "event": "GDP Report",
