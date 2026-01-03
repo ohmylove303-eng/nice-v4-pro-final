@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-01-03T11:05:54.918990",
+  "etf_count": 24,
+  "summary": {
+    "strong_inflow": [
+      "XLF",
+      "XLB",
+      "SMH",
+      "GLD",
+      "SLV"
+    ],
+    "inflow": [
+      "DIA",
+      "XLK",
+      "XLV",
+      "XLP",
+      "XLU",
+      "XLRE",
+      "XLC",
+      "HYG"
+    ],
+    "outflow": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "XLE",
+      "XLY",
+      "ARKK",
+      "SOXX",
+      "USO",
+      "TLT",
+      "LQD"
+    ],
+    "strong_outflow": []
+  },
+  "top_inflows": [
+    {
+      "ticker": "SLV",
+      "name": "Silver ETF",
+      "flow_score": 90,
+      "price_change_20d": 23.89
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financial Select",
+      "flow_score": 70,
+      "price_change_20d": 2.94
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials Select",
+      "flow_score": 70,
+      "price_change_20d": 4.19
+    },
+    {
+      "ticker": "SMH",
+      "name": "VanEck Semiconductor",
+      "flow_score": 70,
+      "price_change_20d": 2.77
+    },
+    {
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 70,
+      "price_change_20d": 2.95
+    }
+  ],
+  "top_outflows": [
+    {
+      "ticker": "ARKK",
+      "name": "ARK Innovation",
+      "flow_score": 30,
+      "price_change_20d": -3.02
+    },
+    {
+      "ticker": "USO",
+      "name": "Oil ETF",
+      "flow_score": 30,
+      "price_change_20d": -2.41
+    },
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 40,
+      "price_change_20d": 0.19
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Nasdaq 100 ETF",
+      "flow_score": 40,
+      "price_change_20d": -1.54
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
+      "flow_score": 40,
+      "price_change_20d": -0.01
+    }
+  ],
+  "ai_analysis": "## 미국 주식 시장 ETF 자금 흐름 분석 및 투자 인사이트\n\n현재 시장은 안전 자산 선호 심리와 특정 섹터에 대한 집중 투자가 나타나고 있습니다. 은(SLV)과 금(GLD) ETF로의 자금 유입은 인플레이션 및 경기 불확실성에 대한 헤지 심리를 반영하며, 금융(XLF), 소재(XLB), 반도체(SMH) ETF로의 자금 유입은 경기 회복에 대한 기대감을 보여줍니다.\n\n유망 섹터는 귀금속(은, 금) 및 경기 민감 섹터(금융, 소재, 반도체)입니다. 특히 은은 높은 점수와 가격 상승률을 보여주어 단기적으로 투자 매력이 높다고 판단됩니다.\n\n주의해야 할 섹터는 혁신 기술(ARKK), 에너지(USO)이며, SPY, QQQ, IWM 등 주요 지수 ETF에서의 자금 유출은 시장 전반에 대한 투자 심리가 위축될 가능성을 시사합니다.\n\n단기 투자 전략으로는 귀금속 ETF를 중심으로 포트폴리오를 구성하고, 경기 민감 섹터 ETF를 일부 편입하여 시장 상황에 따라 유연하게 대응하는 전략을 추천합니다. 다만, 시장 변동성에 주의하며 분할 매수 및 손절매 전략을 병행하는 것이 중요합니다.\n"
+}

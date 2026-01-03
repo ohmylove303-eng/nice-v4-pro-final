@@ -1,0 +1,12 @@
+{
+  "portfolio_volatility": 16.81,
+  "high_correlations": [],
+  "individual_volatility": {
+    "AAPL": 21.39,
+    "GOOGL": 28.09,
+    "META": 32.01,
+    "MSFT": 17.63,
+    "NVDA": 32.41
+  },
+  "risk_level": "Medium"
+}

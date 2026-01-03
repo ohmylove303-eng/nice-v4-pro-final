@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-01-03T12:20:11.389916",
+  "candidates": [
+    {
+      "ticker": "NVDA",
+      "price": 188.85,
+      "from_52w_high": -8.78,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 315.15,
+      "from_52w_high": -2.5,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "LLY",
+      "price": 1080.36,
+      "from_52w_high": -2.67,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "REGN",
+      "price": 776.31,
+      "from_52w_high": -1.4,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 4
+}

@@ -1,0 +1,677 @@
+{
+  "timestamp": "2026-01-01T23:27:50.283532",
+  "period": "5d",
+  "series": [
+    {
+      "name": "Technology",
+      "data": [
+        {
+          "x": "NVDA",
+          "y": 22329943400.0,
+          "price": 186.5,
+          "change": -0.55,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "MSFT",
+          "y": 7540022620.0,
+          "price": 483.62,
+          "change": -0.79,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "AAPL",
+          "y": 7415932610.0,
+          "price": 271.86,
+          "change": -0.45,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "AVGO",
+          "y": 5302044434.0,
+          "price": 346.1,
+          "change": -1.07,
+          "color": "#F44336"
+        },
+        {
+          "x": "AMD",
+          "y": 3759407536.0,
+          "price": 214.16,
+          "change": -0.55,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "ORCL",
+          "y": 2005799357.0,
+          "price": 194.91,
+          "change": -1.17,
+          "color": "#F44336"
+        },
+        {
+          "x": "CRM",
+          "y": 891740054.0,
+          "price": 264.91,
+          "change": -0.38,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "ADBE",
+          "y": 740193830.0,
+          "price": 349.99,
+          "change": -0.71,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Consumer Disc.",
+      "data": [
+        {
+          "x": "TSLA",
+          "y": 21991218116.0,
+          "price": 449.72,
+          "change": -1.04,
+          "color": "#F44336"
+        },
+        {
+          "x": "AMZN",
+          "y": 5622475312.0,
+          "price": 230.82,
+          "change": -0.74,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "NKE",
+          "y": 2255926471.0,
+          "price": 63.71,
+          "change": 4.12,
+          "color": "#00C853"
+        },
+        {
+          "x": "HD",
+          "y": 797451764.0,
+          "price": 344.1,
+          "change": -0.65,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "MCD",
+          "y": 581797277.0,
+          "price": 305.63,
+          "change": -0.78,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "TJX",
+          "y": 467035846.0,
+          "price": 153.61,
+          "change": -1.12,
+          "color": "#F44336"
+        },
+        {
+          "x": "SBUX",
+          "y": 445411948.0,
+          "price": 84.21,
+          "change": -1.22,
+          "color": "#F44336"
+        },
+        {
+          "x": "LOW",
+          "y": 389521638.0,
+          "price": 241.16,
+          "change": -0.83,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Comm. Services",
+      "data": [
+        {
+          "x": "META",
+          "y": 5225140635.0,
+          "price": 660.09,
+          "change": -0.88,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "GOOGL",
+          "y": 5122714500.0,
+          "price": 313.0,
+          "change": -0.27,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "NFLX",
+          "y": 2198381394.0,
+          "price": 93.76,
+          "change": -0.02,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "DIS",
+          "y": 751666991.0,
+          "price": 113.77,
+          "change": -0.89,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "VZ",
+          "y": 710628521.0,
+          "price": 40.73,
+          "change": 0.07,
+          "color": "#81C784"
+        },
+        {
+          "x": "T",
+          "y": 568952751.0,
+          "price": 24.84,
+          "change": 0.12,
+          "color": "#81C784"
+        },
+        {
+          "x": "CMCSA",
+          "y": 515043546.0,
+          "price": 29.89,
+          "change": -0.27,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "CHTR",
+          "y": 196350250.0,
+          "price": 208.75,
+          "change": -0.41,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Financials",
+      "data": [
+        {
+          "x": "JPM",
+          "y": 1626469900.0,
+          "price": 322.22,
+          "change": -0.37,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "BRK-B",
+          "y": 1560326111.0,
+          "price": 502.65,
+          "change": -0.21,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "V",
+          "y": 1228011035.0,
+          "price": 350.71,
+          "change": -0.82,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "GS",
+          "y": 1073698500.0,
+          "price": 879.0,
+          "change": -0.61,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "MA",
+          "y": 991333128.0,
+          "price": 570.88,
+          "change": -1.13,
+          "color": "#F44336"
+        },
+        {
+          "x": "BAC",
+          "y": 895394500.0,
+          "price": 55.0,
+          "change": -0.51,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "WFC",
+          "y": 738078736.0,
+          "price": 93.2,
+          "change": -1.18,
+          "color": "#F44336"
+        },
+        {
+          "x": "MS",
+          "y": 549792653.0,
+          "price": 177.53,
+          "change": -0.87,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Healthcare",
+      "data": [
+        {
+          "x": "LLY",
+          "y": 1768600964.0,
+          "price": 1074.68,
+          "change": -0.47,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "UNH",
+          "y": 1412903748.0,
+          "price": 330.11,
+          "change": -0.62,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "JNJ",
+          "y": 845142398.0,
+          "price": 206.95,
+          "change": 0.02,
+          "color": "#81C784"
+        },
+        {
+          "x": "MRK",
+          "y": 795407732.0,
+          "price": 105.26,
+          "change": -0.75,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "PFE",
+          "y": 731402629.0,
+          "price": 24.9,
+          "change": -0.36,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "ABBV",
+          "y": 730459699.0,
+          "price": 228.49,
+          "change": -0.54,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "TMO",
+          "y": 428387394.0,
+          "price": 579.45,
+          "change": -0.69,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "ABT",
+          "y": 395553062.0,
+          "price": 125.29,
+          "change": -0.39,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Consumer Staples",
+      "data": [
+        {
+          "x": "COST",
+          "y": 1283593130.0,
+          "price": 862.34,
+          "change": -0.38,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "WMT",
+          "y": 1279198521.0,
+          "price": 111.41,
+          "change": -0.46,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "PG",
+          "y": 758296190.0,
+          "price": 143.31,
+          "change": -0.51,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "PEP",
+          "y": 628474099.0,
+          "price": 143.52,
+          "change": -0.44,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "KO",
+          "y": 567927897.0,
+          "price": 69.91,
+          "change": -0.23,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "PM",
+          "y": 415516184.0,
+          "price": 160.4,
+          "change": -0.96,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "MO",
+          "y": 301498373.0,
+          "price": 57.66,
+          "change": -0.19,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "CL",
+          "y": 208241397.0,
+          "price": 79.02,
+          "change": -0.62,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Industrials",
+      "data": [
+        {
+          "x": "BA",
+          "y": 1206926629.0,
+          "price": 217.12,
+          "change": -0.63,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "GE",
+          "y": 786831829.0,
+          "price": 308.03,
+          "change": -1.21,
+          "color": "#F44336"
+        },
+        {
+          "x": "CAT",
+          "y": 666763387.0,
+          "price": 572.87,
+          "change": -0.78,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "RTX",
+          "y": 485019624.0,
+          "price": 183.4,
+          "change": -0.33,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "UNP",
+          "y": 409112565.0,
+          "price": 231.32,
+          "change": -0.75,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "HON",
+          "y": 395369387.0,
+          "price": 195.09,
+          "change": -0.65,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "DE",
+          "y": 378089403.0,
+          "price": 465.57,
+          "change": -0.59,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "MMM",
+          "y": 192392177.0,
+          "price": 160.1,
+          "change": -0.66,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Energy",
+      "data": [
+        {
+          "x": "XOM",
+          "y": 1270682055.0,
+          "price": 120.34,
+          "change": -0.54,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "CVX",
+          "y": 754764820.0,
+          "price": 152.41,
+          "change": 0.07,
+          "color": "#81C784"
+        },
+        {
+          "x": "VLO",
+          "y": 377835574.0,
+          "price": 162.79,
+          "change": -1.26,
+          "color": "#F44336"
+        },
+        {
+          "x": "COP",
+          "y": 332474639.0,
+          "price": 93.61,
+          "change": -0.52,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "EOG",
+          "y": 249650779.0,
+          "price": 105.01,
+          "change": -0.62,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "SLB",
+          "y": 236309505.0,
+          "price": 38.38,
+          "change": -0.44,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "MPC",
+          "y": 215289600.0,
+          "price": 162.63,
+          "change": -0.73,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "PSX",
+          "y": 172784551.0,
+          "price": 129.04,
+          "change": -0.4,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Materials",
+      "data": [
+        {
+          "x": "LIN",
+          "y": 669091211.0,
+          "price": 426.39,
+          "change": -0.46,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "NEM",
+          "y": 540218447.0,
+          "price": 99.85,
+          "change": -1.97,
+          "color": "#F44336"
+        },
+        {
+          "x": "FCX",
+          "y": 445722890.0,
+          "price": 50.79,
+          "change": -1.21,
+          "color": "#F44336"
+        },
+        {
+          "x": "SHW",
+          "y": 269009705.0,
+          "price": 324.03,
+          "change": -0.65,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "APD",
+          "y": 216587140.0,
+          "price": 247.02,
+          "change": -0.72,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "DOW",
+          "y": 208965756.0,
+          "price": 23.38,
+          "change": -0.55,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "NUE",
+          "y": 184819942.0,
+          "price": 163.11,
+          "change": -0.69,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "DD",
+          "y": 122035142.0,
+          "price": 40.2,
+          "change": -1.18,
+          "color": "#F44336"
+        }
+      ]
+    },
+    {
+      "name": "Real Estate",
+      "data": [
+        {
+          "x": "WELL",
+          "y": 440359726.0,
+          "price": 185.61,
+          "change": -1.27,
+          "color": "#F44336"
+        },
+        {
+          "x": "PLD",
+          "y": 352494802.0,
+          "price": 127.66,
+          "change": -1.05,
+          "color": "#F44336"
+        },
+        {
+          "x": "AMT",
+          "y": 294975169.0,
+          "price": 175.57,
+          "change": -0.65,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "O",
+          "y": 268997635.0,
+          "price": 56.37,
+          "change": -0.69,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "EQIX",
+          "y": 261030703.0,
+          "price": 766.16,
+          "change": -0.46,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "PSA",
+          "y": 211544400.0,
+          "price": 259.5,
+          "change": -0.62,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "SPG",
+          "y": 202973116.0,
+          "price": 185.11,
+          "change": -0.92,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "CCI",
+          "y": 180637168.0,
+          "price": 88.87,
+          "change": -0.26,
+          "color": "#EF9A9A"
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "data": [
+        {
+          "x": "NEE",
+          "y": 404161626.0,
+          "price": 80.28,
+          "change": -0.31,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "SO",
+          "y": 282030950.0,
+          "price": 87.2,
+          "change": -0.42,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "DUK",
+          "y": 231208444.0,
+          "price": 117.21,
+          "change": -0.4,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "D",
+          "y": 197495173.0,
+          "price": 58.59,
+          "change": -0.8,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "XEL",
+          "y": 185610182.0,
+          "price": 73.86,
+          "change": -0.44,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "AEP",
+          "y": 181878459.0,
+          "price": 115.31,
+          "change": -0.59,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "SRE",
+          "y": 180102773.0,
+          "price": 88.29,
+          "change": -0.9,
+          "color": "#EF9A9A"
+        },
+        {
+          "x": "EXC",
+          "y": 147081379.0,
+          "price": 43.59,
+          "change": -0.75,
+          "color": "#EF9A9A"
+        }
+      ]
+    }
+  ]
+}

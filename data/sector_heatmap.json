@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-01-03T11:10:01.734833",
+  "period": "5d",
+  "sectors": [
+    {
+      "ticker": "XLE",
+      "name": "Energy",
+      "color": "#FF6347",
+      "price": 45.65,
+      "change_1d": 2.1,
+      "change_period": 3.28
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrials",
+      "color": "#DDA0DD",
+      "price": 157.98,
+      "change_1d": 1.84,
+      "change_period": 0.49
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials",
+      "color": "#F0E68C",
+      "price": 46.12,
+      "change_1d": 1.7,
+      "change_period": 0.02
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities",
+      "color": "#87CEEB",
+      "price": 43.18,
+      "change_1d": 1.15,
+      "change_period": 0.94
+    },
+    {
+      "ticker": "XLV",
+      "name": "Healthcare",
+      "color": "#FF69B4",
+      "price": 155.51,
+      "change_1d": 0.46,
+      "change_period": -0.35
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "color": "#6B8E23",
+      "price": 54.93,
+      "change_1d": 0.29,
+      "change_period": -1.24
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technology",
+      "color": "#4A90A4",
+      "price": 144.3,
+      "change_1d": 0.23,
+      "change_period": -1.52
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "color": "#CD853F",
+      "price": 40.38,
+      "change_1d": 0.07,
+      "change_period": -0.35
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "color": "#98D8C8",
+      "price": 77.69,
+      "change_1d": 0.01,
+      "change_period": -0.69
+    },
+    {
+      "ticker": "XLC",
+      "name": "Comm. Services",
+      "color": "#9370DB",
+      "price": 116.9,
+      "change_1d": -0.7,
+      "change_period": -0.91
+    },
+    {
+      "ticker": "XLY",
+      "name": "Consumer Disc.",
+      "color": "#FFD700",
+      "price": 118.35,
+      "change_1d": -0.89,
+      "change_period": -3.03
+    }
+  ]
+}

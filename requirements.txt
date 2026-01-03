@@ -1,0 +1,17 @@
+# US Stock Dashboard - Dependencies
+
+pandas>=2.0.0
+numpy>=1.24.0
+yfinance>=0.2.31
+tqdm>=4.65.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+google-generativeai>=0.3.0
+openai>=1.0.0
+ta>=0.10.2
+Flask>=3.0.0
+seaborn>=0.12.0
+matplotlib>=3.7.0
+gunicorn
+statsmodels>=0.14.0
+scipy>=1.10.0

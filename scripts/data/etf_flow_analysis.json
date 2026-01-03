@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-01-01T23:23:58.582540",
+  "etf_count": 24,
+  "summary": {
+    "strong_inflow": [
+      "XLF",
+      "XLB",
+      "XLC",
+      "GLD",
+      "SLV"
+    ],
+    "inflow": [
+      "XLK",
+      "XLV",
+      "XLY",
+      "XLP",
+      "HYG"
+    ],
+    "outflow": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA",
+      "XLE",
+      "XLI",
+      "XLU",
+      "XLRE",
+      "ARKK",
+      "SOXX",
+      "SMH",
+      "USO",
+      "TLT",
+      "LQD"
+    ],
+    "strong_outflow": []
+  },
+  "top_inflows": [
+    {
+      "ticker": "SLV",
+      "name": "Silver ETF",
+      "flow_score": 90,
+      "price_change_20d": 21.25
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financial Select",
+      "flow_score": 70,
+      "price_change_20d": 4.01
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials Select",
+      "flow_score": 70,
+      "price_change_20d": 3.17
+    },
+    {
+      "ticker": "XLC",
+      "name": "Communication Services",
+      "flow_score": 70,
+      "price_change_20d": 2.49
+    },
+    {
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 70,
+      "price_change_20d": 2.34
+    }
+  ],
+  "top_outflows": [
+    {
+      "ticker": "XLU",
+      "name": "Utilities Select",
+      "flow_score": 30,
+      "price_change_20d": -2.12
+    },
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 40,
+      "price_change_20d": 0.35
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Nasdaq 100 ETF",
+      "flow_score": 40,
+      "price_change_20d": -1.11
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
+      "flow_score": 40,
+      "price_change_20d": 0.74
+    },
+    {
+      "ticker": "DIA",
+      "name": "Dow Jones ETF",
+      "flow_score": 40,
+      "price_change_20d": 1.34
+    }
+  ],
+  "ai_analysis": "API Error: 429"
+}

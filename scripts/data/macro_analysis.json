@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-01-01T23:28:05.598498",
+  "indicators": {
+    "VIX": {
+      "value": 14.95,
+      "change_1d": 4.33
+    },
+    "DXY": {
+      "value": 98.28,
+      "change_1d": 0.04
+    },
+    "10Y_Yield": {
+      "value": 4.16,
+      "change_1d": 0.8
+    },
+    "GOLD": {
+      "value": 4325.6,
+      "change_1d": -1.02
+    },
+    "OIL": {
+      "value": 57.42,
+      "change_1d": -0.91
+    },
+    "BTC": {
+      "value": 87798.12,
+      "change_1d": 0.33
+    },
+    "SPY": {
+      "value": 681.92,
+      "change_1d": -0.74
+    },
+    "QQQ": {
+      "value": 614.31,
+      "change_1d": -0.83
+    }
+  },
+  "analysis_ko": "Analysis failed",
+  "analysis_en": "Analysis failed"
+}
