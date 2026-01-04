@@ -777,15 +777,23 @@ def get_us_ai_summary(ticker):
                 summaries = json.load(f)
             if ticker in summaries:
                 summary_data = summaries[ticker]
-                if lang == 'en':
-                    summary = summary_data.get('summary_en', summary_data.get('summary', ''))
-                else:
-                    summary = summary_data.get('summary_ko', summary_data.get('summary', ''))
-                return jsonify({
-                    'ticker': ticker, 'summary': summary, 'lang': lang,
-                    'news_count': summary_data.get('news_count', 0),
-                    'updated': summary_data.get('updated', '')
-                })
+                # Handle both string and dict formats
+                if isinstance(summary_data, str):
+                    summary = summary_data
+                    return jsonify({
+                        'ticker': ticker, 'summary': summary, 'lang': lang,
+                        'news_count': 0, 'updated': ''
+                    })
+                elif isinstance(summary_data, dict):
+                    if lang == 'en':
+                        summary = summary_data.get('summary_en', summary_data.get('summary', ''))
+                    else:
+                        summary = summary_data.get('summary_ko', summary_data.get('summary', ''))
+                    return jsonify({
+                        'ticker': ticker, 'summary': summary, 'lang': lang,
+                        'news_count': summary_data.get('news_count', 0),
+                        'updated': summary_data.get('updated', '')
+                    })
         # Stock data for AI analysis
         stock = yf.Ticker(ticker)
         info = stock.info
