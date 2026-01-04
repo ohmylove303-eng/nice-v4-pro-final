@@ -277,7 +277,7 @@ def health_check():
     return jsonify({
         'status': 'ok',
         'service': 'US Market Dashboard',
-        'version': '2.0.1',
+        'version': '2.0.2',
         'is_updating': is_updating,
         'timestamp': datetime.now().isoformat()
     })
