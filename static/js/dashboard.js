@@ -169,6 +169,39 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateDashboard();
 
     setInterval(() => { console.log('🔄 Auto-refresh...'); reloadMacroAnalysis(); }, 600000);
+
+    // === Stock Search Functionality ===
+    const searchInput = document.querySelector('header input[type="text"]');
+    if (searchInput) {
+        // Focus on search with "/" key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        // Search as you type
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toUpperCase().trim();
+            filterSmartMoneyTable(query);
+        });
+
+        // Search on Enter
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.toUpperCase().trim();
+                if (query) {
+                    searchAndLoadStock(query);
+                }
+            }
+            if (e.key === 'Escape') {
+                searchInput.value = '';
+                filterSmartMoneyTable('');
+                searchInput.blur();
+            }
+        });
+    }
 });
 
 function resetDate() {
@@ -1021,4 +1054,92 @@ function loadHoldingsMatrix() {
             }
         })
         .catch(e => console.error('Holdings error:', e));
+}
+
+// === Stock Search Functions ===
+function filterSmartMoneyTable(query) {
+    const rows = document.querySelectorAll('#us-smart-money-table tr');
+    rows.forEach(row => {
+        const ticker = row.getAttribute('data-ticker') || '';
+        const name = row.textContent || '';
+        if (!query || ticker.includes(query) || name.toUpperCase().includes(query)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+async function searchAndLoadStock(ticker) {
+    // First check if ticker exists in Smart Money list
+    const picks = window.usSmartMoneyPicks || [];
+    const foundPick = picks.find(p => p.ticker.toUpperCase() === ticker);
+
+    if (foundPick) {
+        // Found in Smart Money list - load it
+        const idx = picks.indexOf(foundPick);
+        loadUSStockChart(foundPick, idx);
+        return;
+    }
+
+    // Not in list - try to load chart directly
+    try {
+        const chartContainer = document.getElementById('us-stock-chart');
+        const tickerEl = document.getElementById('us-chart-ticker');
+        const infoEl = document.getElementById('us-chart-info');
+
+        if (tickerEl) tickerEl.textContent = ticker;
+        if (infoEl) infoEl.textContent = `Loading ${ticker}...`;
+
+        // Create a mock pick object for the chart loader
+        const mockPick = {
+            ticker: ticker,
+            name: ticker,
+            final_score: 0,
+            ai_recommendation: '검색 결과'
+        };
+
+        currentChartPick = mockPick;
+
+        // Fetch chart data
+        const response = await fetch(`/api/us/stock-chart/${ticker}?period=${currentChartPeriod}`);
+        const data = await response.json();
+
+        if (data.error) {
+            if (infoEl) infoEl.textContent = `${ticker} - ${data.error}`;
+            return;
+        }
+
+        // Update chart info
+        if (infoEl) infoEl.textContent = `${ticker} | Direct Search`;
+
+        // Render chart
+        if (chartContainer) {
+            chartContainer.innerHTML = '';
+            if (usStockChart) usStockChart.remove();
+            usStockChart = LightweightCharts.createChart(chartContainer, {
+                width: chartContainer.clientWidth,
+                height: 300,
+                layout: { background: { color: '#1a1a1a' }, textColor: '#999' },
+                grid: { vertLines: { color: '#2a2a2a' }, horzLines: { color: '#2a2a2a' } },
+                timeScale: { borderColor: '#2a2a2a', timeVisible: true, rightOffset: 5 },
+                rightPriceScale: { borderColor: '#2a2a2a' }
+            });
+            const candleSeries = usStockChart.addCandlestickSeries({
+                upColor: '#22c55e', downColor: '#ef4444',
+                borderUpColor: '#22c55e', borderDownColor: '#ef4444',
+                wickUpColor: '#22c55e', wickDownColor: '#ef4444'
+            });
+            candleSeries.setData(data.candles);
+            usStockChart.timeScale().fitContent();
+        }
+
+        // Load AI summary
+        loadUSAISummary(ticker);
+
+    } catch (e) {
+        console.error('Search error:', e);
+        const infoEl = document.getElementById('us-chart-info');
+        if (infoEl) infoEl.textContent = `${ticker} - 검색 실패`;
+    }
 }

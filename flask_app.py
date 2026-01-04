@@ -255,6 +255,33 @@ def trigger_check():
     if request.path.startswith('/api/us/smart-money'):
         check_data_freshness()
 
+@app.route('/api/refresh-data', methods=['POST'])
+def manual_refresh_data():
+    """수동 데이터 갱신 API (관리자용)"""
+    try:
+        if is_updating:
+            return jsonify({'status': 'already_running', 'message': '이미 업데이트 중입니다.'})
+        
+        run_update_background()
+        return jsonify({
+            'status': 'started',
+            'message': '백그라운드 데이터 갱신이 시작되었습니다.',
+            'timestamp': datetime.now().isoformat()
+        })
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/health')
+def health_check():
+    """서버 상태 확인 API"""
+    return jsonify({
+        'status': 'ok',
+        'service': 'US Market Dashboard',
+        'version': '2.0.1',
+        'is_updating': is_updating,
+        'timestamp': datetime.now().isoformat()
+    })
+
 @app.route('/')
 def index():
     check_data_freshness() # Also check on homepage load
@@ -395,9 +422,20 @@ def get_us_smart_money():
                     'change_since_rec': round(change_pct, 2)
                 })
             
+            # Use file modification time as fallback for missing timestamps
+            analysis_date = snapshot.get('analysis_date', '')
+            analysis_timestamp = snapshot.get('analysis_timestamp', '')
+            
+            if not analysis_date or not analysis_timestamp:
+                file_mtime = datetime.fromtimestamp(os.path.getmtime(current_file))
+                if not analysis_date:
+                    analysis_date = file_mtime.strftime('%Y-%m-%d')
+                if not analysis_timestamp:
+                    analysis_timestamp = file_mtime.isoformat()
+            
             return jsonify({
-                'analysis_date': snapshot.get('analysis_date', ''),
-                'analysis_timestamp': snapshot.get('analysis_timestamp', ''),
+                'analysis_date': analysis_date,
+                'analysis_timestamp': analysis_timestamp,
                 'top_picks': picks_with_perf,
                 'summary': {
                     'total_analyzed': len(picks_with_perf),
