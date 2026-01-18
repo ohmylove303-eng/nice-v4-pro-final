@@ -1,59 +1,13 @@
 {
-  "timestamp": "2026-01-03T10:59:04.710380",
-  "earnings": [
-    {
-      "ticker": "MSFT",
-      "date": "2026-01-29",
-      "days_left": 26
-    },
-    {
-      "ticker": "TSLA",
-      "date": "2026-01-29",
-      "days_left": 26
-    },
-    {
-      "ticker": "META",
-      "date": "2026-01-29",
-      "days_left": 26
-    },
-    {
-      "ticker": "AAPL",
-      "date": "2026-01-30",
-      "days_left": 27
-    },
-    {
-      "ticker": "PLTR",
-      "date": "2026-02-03",
-      "days_left": 31
-    },
-    {
-      "ticker": "GOOGL",
-      "date": "2026-02-04",
-      "days_left": 32
-    },
-    {
-      "ticker": "AMD",
-      "date": "2026-02-04",
-      "days_left": 32
-    },
-    {
-      "ticker": "AMZN",
-      "date": "2026-02-06",
-      "days_left": 34
-    },
-    {
-      "ticker": "NVDA",
-      "date": "2026-02-26",
-      "days_left": 54
-    }
-  ],
+  "timestamp": "2026-01-18T13:02:47.571786",
+  "earnings": [],
   "news": [
     {
       "ticker": "NVDA",
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
@@ -61,23 +15,7 @@
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
@@ -85,7 +23,7 @@
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
@@ -93,39 +31,23 @@
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
-      "ticker": "GOOGL",
+      "ticker": "MSFT",
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
-      "ticker": "GOOGL",
+      "ticker": "MSFT",
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AMZN",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AMZN",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
@@ -133,7 +55,7 @@
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     },
     {
@@ -141,55 +63,7 @@
       "title": null,
       "publisher": null,
       "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AMD",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AMD",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "META",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "META",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "PLTR",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "PLTR",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 09:00",
+      "time": "1970-01-01 00:00",
       "timestamp": 0
     }
   ]
