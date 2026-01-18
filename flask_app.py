@@ -56,6 +56,15 @@ try:
 except ImportError as e:
     print(f"⚠️ Closing Bell Blueprint not loaded: {e}")
 
+# Register Performance Blueprint
+try:
+    from app.routes.performance import performance_bp
+    app.register_blueprint(performance_bp)
+    print("✅ Performance Blueprint registered")
+except ImportError as e:
+    print(f"⚠️ Performance Blueprint not loaded: {e}")
+
+
 # Sector mapping for major US stocks (S&P 500 + popular stocks)
 SECTOR_MAP = {
     # Technology

@@ -42,6 +42,14 @@ jobs:
           cd scripts
           python update_all.py --quick
       
+      - name: Track recommendation performance
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: |
+          cd scripts
+          python performance_tracker.py
+
+      
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
