@@ -48,6 +48,14 @@ except ImportError:
 
 app = Flask(__name__)
 
+# Register Closing Bell Blueprint
+try:
+    from app.routes.us_stocks import us_stocks_bp
+    app.register_blueprint(us_stocks_bp)
+    print("✅ Closing Bell Blueprint registered")
+except ImportError as e:
+    print(f"⚠️ Closing Bell Blueprint not loaded: {e}")
+
 # Sector mapping for major US stocks (S&P 500 + popular stocks)
 SECTOR_MAP = {
     # Technology
