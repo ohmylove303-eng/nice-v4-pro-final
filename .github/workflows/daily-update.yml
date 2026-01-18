@@ -6,9 +6,14 @@ on:
     - cron: '0 9 * * *'
   workflow_dispatch:  # 수동 실행 가능
 
+# GitHub Actions 권한 설정
+permissions:
+  contents: write
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
+
     
     steps:
       - name: Checkout repository
