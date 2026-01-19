@@ -37,11 +37,13 @@ class MacroDataCollector:
 
 class MacroAIAnalyzer:
     def __init__(self):
-        self.api_key = os.getenv('GOOGLE_API_KEY')
-        self.url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+        self.google_api_key = os.getenv('GOOGLE_API_KEY')
+        self.openai_api_key = os.getenv('OPENAI_API_KEY')
+        self.gemini_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
     
     def analyze(self, data, lang='ko'):
-        if not self.api_key: return "API Key Missing"
+        if not self.google_api_key and not self.openai_api_key: 
+            return "API Key Missing"
         
         metrics = "\n".join([f"- {k}: {v['value']} ({v['change_1d']:+.1f}%)" for k,v in data.items()])
         current_date = datetime.now().strftime("%Y-%m-%d")
@@ -97,15 +99,43 @@ class MacroAIAnalyzer:
             Format: Markdown, strict evidence-based reasoning.
             """
         
-        try:
-            resp = requests.post(f"{self.url}?key={self.api_key}", 
-                json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=30)
-            if resp.status_code == 200:
-                return resp.json()['candidates'][0]['content']['parts'][0]['text']
-        except Exception as e:
-            logger.error(f"AI Req Error: {e}")
-            pass
-        return "AI Analysis failed."
+        # Try Gemini first
+        if self.google_api_key:
+            try:
+                resp = requests.post(f"{self.gemini_url}?key={self.google_api_key}", 
+                    json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=60)
+                if resp.status_code == 200:
+                    return resp.json()['candidates'][0]['content']['parts'][0]['text']
+                else:
+                    logger.warning(f"Gemini API failed with status {resp.status_code}, trying OpenAI...")
+            except Exception as e:
+                logger.warning(f"Gemini API Error: {e}, trying OpenAI fallback...")
+        
+        # Fallback to OpenAI
+        if self.openai_api_key:
+            try:
+                openai_resp = requests.post(
+                    "https://api.openai.com/v1/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {self.openai_api_key}",
+                        "Content-Type": "application/json"
+                    },
+                    json={
+                        "model": "gpt-4o-mini",
+                        "messages": [{"role": "user", "content": prompt}],
+                        "max_tokens": 2000
+                    },
+                    timeout=60
+                )
+                if openai_resp.status_code == 200:
+                    return openai_resp.json()['choices'][0]['message']['content']
+                else:
+                    logger.error(f"OpenAI API failed: {openai_resp.text[:200]}")
+            except Exception as e:
+                logger.error(f"OpenAI API Error: {e}")
+        
+        return "AI Analysis failed - Both Gemini and OpenAI APIs unavailable."
+
 
 class MultiModelAnalyzer:
     def __init__(self, data_dir=None):
