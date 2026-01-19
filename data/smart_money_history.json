@@ -1,0 +1,97 @@
+{
+  "2026-01-19": {
+    "recommendations": [
+      {
+        "ticker": "CCL",
+        "name": "Carnival Corporation & plc",
+        "recommended_price": 30.92,
+        "target_price": 36.825720000000004,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "NEM",
+        "name": "Newmont Corporation",
+        "recommended_price": 101.22,
+        "target_price": 109.52004000000001,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "HAL",
+        "name": "Halliburton Company",
+        "recommended_price": 29.6,
+        "target_price": 31.198400000000003,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "MRK",
+        "name": "Merck & Co., Inc.",
+        "recommended_price": 106.45,
+        "target_price": 110.06930000000001,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "NDAQ",
+        "name": "Nasdaq, Inc.",
+        "recommended_price": 96.66,
+        "target_price": 104.00616000000001,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "SCHW",
+        "name": "The Charles Schwab Corporation",
+        "recommended_price": 101.57,
+        "target_price": 112.7427,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "DG",
+        "name": "Dollar General Corporation",
+        "recommended_price": 136.82,
+        "target_price": 132.7154,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "DECK",
+        "name": "Deckers Outdoor Corporation",
+        "recommended_price": 106.79,
+        "target_price": 111.38197,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "C",
+        "name": "Citigroup Inc.",
+        "recommended_price": 118.7,
+        "target_price": 118.5813,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      },
+      {
+        "ticker": "STT",
+        "name": "State Street Corporation",
+        "recommended_price": 129.07,
+        "target_price": 131.6514,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-01-19"
+      }
+    ],
+    "saved_at": "2026-01-19T09:46:12.463417"
+  }
+}
