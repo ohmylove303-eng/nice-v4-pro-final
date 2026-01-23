@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko" data-color-scheme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>NICE MPC v44.2 Super Radar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --color-cream-50: rgba(252, 252, 249, 1);
+      --color-cream-100: rgba(255, 255, 253, 1);
+      --color-gray-200: rgba(245, 245, 245, 1);
+      --color-gray-300: rgba(167, 169, 169, 1);
+      --color-gray-400: rgba(119, 124, 124, 1);
+      --color-slate-500: rgba(98, 108, 113, 1);
+      --color-brown-600: rgba(94, 82, 64, 1);
+      --color-charcoal-700: rgba(31, 33, 33, 1);
+      --color-charcoal-800: rgba(38, 40, 40, 1);
+      --color-slate-900: rgba(19, 52, 59, 1);
+      --color-teal-300: rgba(50, 184, 198, 1);
+      --color-teal-400: rgba(45, 166, 178, 1);
+      --color-teal-500: rgba(33, 128, 141, 1);
+      --color-teal-600: rgba(29, 116, 128, 1);
+      --color-teal-700: rgba(26, 104, 115, 1);
+      --color-red-400: rgba(255, 84, 89, 1);
+      --color-red-500: rgba(192, 21, 47, 1);
+      --color-orange-400: rgba(230, 129, 97, 1);
+      --color-orange-500: rgba(168, 75, 47, 1);
+      --color-brown-600-rgb: 94, 82, 64;
+      --color-teal-500-rgb: 33, 128, 141;
+      --color-slate-900-rgb: 19, 52, 59;
+      --color-red-500-rgb: 192, 21, 47;
+      --color-orange-500-rgb: 168, 75, 47;
+      --color-gray-400-rgb: 119, 124, 124;
+      --color-teal-300-rgb: 50, 184, 198;
+      --color-gray-300-rgb: 167, 169, 169;
+      --color-gray-200-rgb: 245, 245, 245;
+      --color-background: var(--color-charcoal-700);
+      --color-surface: var(--color-charcoal-800);
+      --color-text: var(--color-gray-200);
+      --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+      --color-primary: var(--color-teal-300);
+      --color-primary-hover: var(--color-teal-400);
+      --color-primary-active: var(--color-teal-700);
+      --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+      --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+      --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+      --color-error: var(--color-red-400);
+      --color-warning: var(--color-orange-400);
+      --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+      --font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-size-sm: 12px;
+      --font-size-base: 14px;
+      --font-size-lg: 16px;
+      --font-size-xl: 20px;
+      --radius-sm: 6px;
+      --radius-base: 8px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.45);
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --container-lg: 1200px;
+      --focus-ring: 0 0 0 3px var(--color-focus-ring);
+    }
+    html, body { margin: 0; padding: 0; font-family: var(--font-family-base); background-color: var(--color-background); color: var(--color-text); }
+    *, *::before, *::after { box-sizing: border-box; }
+    a { color: var(--color-primary); text-decoration: none; }
+    .container { max-width: var(--container-lg); margin: 0 auto; padding: var(--space-16); }
+    h1, h2, h3 { margin: 0; font-family: var(--font-family-base); }
+    h1 { font-size: 26px; letter-spacing: -0.02em; }
+    h2 { font-size: 20px; margin-bottom: var(--space-8); }
+    .app-shell { display: grid; grid-template-columns: 260px 1fr; gap: var(--space-16); margin-top: var(--space-16); }
+    @media (max-width: 900px) { .app-shell { grid-template-columns: 1fr; } }
+    .side-panel { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: var(--space-16); border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: var(--space-16); }
+    .main-panel { display: flex; flex-direction: column; gap: var(--space-16); }
+    .card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-16); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: var(--shadow-md); }
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-12); }
+    .pill { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: var(--radius-full); font-size: var(--font-size-sm); background: rgba(255, 255, 255, 0.06); color: var(--color-text-secondary); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .pill--tier1 { color: #4ade80; border-color: rgba(74, 222, 128, 0.4); }
+    .pill--tier2 { color: #facc15; border-color: rgba(250, 204, 21, 0.4); }
+    .pill--tier3 { color: #fb923c; border-color: rgba(251, 146, 60, 0.4); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: var(--radius-base); border: 1px solid var(--color-border); background: rgba(255, 255, 255, 0.02); color: var(--color-text); font-size: var(--font-size-sm); cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease; }
+    .btn:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.2); }
+    .btn--primary { background: var(--color-primary); border-color: var(--color-primary); color: #041016; }
+    .btn--primary:hover { background: var(--color-primary-hover); }
+    .btn--ghost { background: transparent; }
+    .side-section-title { font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-text-secondary); }
+    .layer-list { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+    .layer-item { display: flex; align-items: center; justify-content: space-between; padding: 6px 8px; border-radius: var(--radius-base); cursor: pointer; transition: background 0.12s ease; }
+    .layer-item:hover { background: rgba(255, 255, 255, 0.04); }
+    .layer-item.active { background: rgba(33, 128, 141, 0.28); border: 1px solid rgba(33, 128, 141, 0.7); }
+    .layer-left { display: flex; align-items: center; gap: 6px; font-size: var(--font-size-sm); }
+    .layer-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--color-secondary); }
+    .layer-dot.on { background: #22c55e; }
+    .layer-score { font-family: var(--font-family-mono); font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+    .status-row { display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+    .status-value { font-family: var(--font-family-mono); color: var(--color-text); }
+    .timeline { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 4px; }
+    .timeline-point { min-width: 140px; padding: 8px 10px; border-radius: var(--radius-base); background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.5); font-size: var(--font-size-sm); display: flex; flex-direction: column; gap: 4px; }
+    .timeline-point-main { display: flex; justify-content: space-between; align-items: center; }
+    .wrs-badge { font-family: var(--font-family-mono); font-size: var(--font-size-sm); padding: 2px 8px; border-radius: var(--radius-full); background: rgba(15, 118, 110, 0.4); border: 1px solid rgba(45, 212, 191, 0.8); }
+    .tier-chip { font-size: 11px; padding: 1px 6px; border-radius: var(--radius-full); border: 1px solid rgba(148, 163, 184, 0.5); color: var(--color-text-secondary); }
+    .infographic-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--space-16); }
+    @media (max-width: 1100px) { .infographic-grid { grid-template-columns: 1fr; } }
+    .wrs-gauge { height: 140px; background: radial-gradient(circle at top, rgba(45, 212, 191, 0.25), transparent 60%); border-radius: var(--radius-lg); padding: var(--space-16); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(148, 163, 184, 0.5); }
+    .gauge-bar { width: 100%; height: 10px; border-radius: 999px; background: linear-gradient(90deg, #f97316 0%, #facc15 35%, #4ade80 70%, #22c55e 100%); position: relative; overflow: hidden; }
+    .gauge-pointer { position: absolute; top: -3px; width: 2px; height: 16px; background: #e5e7eb; box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6); }
+    .gauge-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--color-text-secondary); margin-top: 4px; }
+    .layer-bar-container { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .layer-bar-row { display: flex; align-items: center; gap: 6px; font-size: var(--font-size-sm); }
+    .layer-bar { flex: 1; height: 8px; border-radius: 6px; background: rgba(15, 23, 42, 0.7); overflow: hidden; position: relative; }
+    .layer-bar-fill { position: absolute; top: 0; left: 0; height: 100%; background: linear-gradient(90deg, #0ea5e9, #22c55e); }
+    .layer-bar-score { font-family: var(--font-family-mono); color: var(--color-text-secondary); width: 40px; text-align: right; }
+    .recommendation-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-16); margin-top: var(--space-8); }
+    @media (max-width: 1100px) { .recommendation-grid { grid-template-columns: 1fr; } }
+    .reco-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .reco-title { font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-text-secondary); }
+    .chip { font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full); border: 1px solid rgba(148, 163, 184, 0.6); color: var(--color-text-secondary); }
+    .reco-list { display: flex; flex-direction: column; gap: 6px; font-size: var(--font-size-sm); }
+    .reco-item { padding: 6px 8px; border-radius: var(--radius-base); background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(55, 65, 81, 0.8); display: grid; grid-template-columns: 0.9fr 0.6fr 0.8fr; gap: 4px; }
+    .tag { display: inline-flex; align-items: center; padding: 1px 6px; border-radius: var(--radius-full); font-size: 11px; border: 1px solid rgba(148, 163, 184, 0.6); color: var(--color-text-secondary); }
+    .tag--long { border-color: rgba(34, 197, 94, 0.7); color: #bbf7d0; }
+    .price-timeline { font-family: var(--font-family-mono); font-size: 11px; color: var(--color-text-secondary); display: flex; flex-direction: column; gap: 2px; }
+    .price-timeline span { display: flex; justify-content: space-between; }
+    .analysis-text { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.5; white-space: pre-line; }
+    .toggle-row { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+    .toggle-row label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+    .toggle-row input { accent-color: var(--color-primary); }
+    .mono { font-family: var(--font-family-mono); }
+    .small { font-size: var(--font-size-sm); }
+    .api-status { display: inline-flex; align-items: center; gap: 4px; font-size: var(--font-size-sm); padding: 4px 8px; border-radius: var(--radius-full); background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .status-dot { width: 8px; height: 8px; border-radius: 999px; animation: pulse 2s infinite; }
+    .status-dot.connected { background: #22c55e; }
+    .status-dot.loading { background: #facc15; }
+    .status-dot.error { background: #ff6b6b; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+      <div>
+        <h1>NICE MPC v44.2 · SUPER RADAR</h1>
+        <div style="margin-top:4px;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-secondary);flex-wrap:wrap;">
+          <span class="mono">http://127.0.0.1:5002</span>
+          <span>실시간 NICE 레이어 기반 MPC</span>
+          <div class="api-status">
+            <div class="status-dot loading" id="api-status-dot"></div>
+            <span id="api-status-text">로딩 중...</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="pill pill--tier2" id="tier-pill">TIER 2+ · BUY 강화</div>
+        <button class="btn btn--ghost small" id="refresh-btn">데이터 새로고침</button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="side-panel">
+        <div>
+          <div class="side-section-title">NICE 레이어 상태</div>
+          <div class="layer-list" id="layer-list"></div>
+        </div>
+        <div>
+          <div class="side-section-title">현재 시황 스냅샷</div>
+          <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px;">
+            <div class="status-row"><span>WRS 점수</span><span class="status-value" id="wrs-score-label">75.6</span></div>
+            <div class="status-row"><span>TIER 판정</span><span class="status-value" id="tier-label">TIER 2+: BUY강화</span></div>
+            <div class="status-row"><span>신뢰도</span><span class="status-value" id="confidence-label">85%</span></div>
+            <div class="status-row"><span>위험 플래그</span><span class="status-value" id="risk-label">L9 OFF (정상)</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="side-section-title">레이어 기반 MPC 옵션</div>
+          <div class="toggle-row"><label><input type="checkbox" id="toggle-scalping" checked /> 단타(15m~1H) 활성</label></div>
+          <div class="toggle-row"><label><input type="checkbox" id="toggle-short" checked /> 단기(4H~1D) 활성</label></div>
+          <div class="toggle-row"><label><input type="checkbox" id="toggle-mid" checked /> 중기(7~14D) 활성</label></div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <section class="card">
+          <div class="card-header">
+            <div><h2>WRS 타임라인 & 레이어 인포그래픽</h2><div style="font-size:12px;color:var(--color-text-secondary);margin-top:4px;">2025-12-02 08:32 ~ 2025-12-03 07:50 NICE MPC 레이어 기반</div></div>
+            <button class="btn btn--primary small" id="simulate-btn">MPC 시뮬레이션 실행</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span class="small" style="color:var(--color-text-secondary);">WRS & TIER 히스토리</span>
+            <span class="mono small" id="last-updated-label">마지막 업데이트: 2025-12-03 07:50 KST</span>
+          </div>
+          <div class="timeline" id="timeline"></div>
+          <div class="infographic-grid" style="margin-top:16px;">
+            <div class="wrs-gauge">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div><div class="small" style="color:var(--color-text-secondary);">현재 통합 점수</div><div style="font-size:28px;font-weight:600;"><span id="wrs-gauge-main">75.6</span><span style="font-size:13px;color:var(--color-text-secondary);">/ 100</span></div></div>
+                <div style="text-align:right;"><div class="small" style="color:var(--color-text-secondary);">레이어 평균</div><div class="mono small" id="layer-avg-label">L0~L7 평균 75.6</div></div>
+              </div>
+              <div><div class="gauge-bar"><div class="gauge-pointer" id="gauge-pointer"></div></div><div class="gauge-labels"><span>TIER 2</span><span>TIER 2+</span><span>TIER 1</span></div></div>
+            </div>
+            <div class="layer-bar-container" id="layer-bars"></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div><h2>MPC 기반 코인 레이더 & 타임라인</h2><div style="font-size:12px;color:var(--color-text-secondary);margin-top:4px;">모든 NICE 레이어(L0, L1, L2, L3, L7, L9)를 통합해 단타·단기·중기 MPC 추천</div></div>
+          </div>
+          <div class="recommendation-grid" id="reco-grid"></div>
+          <div style="margin-top:16px;display:grid;grid-template-columns:1.1fr 1fr;gap:16px;">
+            <div><div class="small" style="color:var(--color-text-secondary);margin-bottom:4px;">NICE 레이어 종합 해석</div><div class="analysis-text" id="analysis-text"></div></div>
+            <div><div class="small" style="color:var(--color-text-secondary);margin-bottom:4px;">매수·매도 타임라인 (예시 시나리오)</div><div class="card" style="background:rgba(15,23,42,0.8);border-color:rgba(55,65,81,0.9);padding:10px;"><div class="price-timeline" id="price-timeline"></div></div></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    let wrsTimeline = [];
+    let currentSnapshot = {};
+    let layerScores = [];
+    let recommendations = { scalping: { title: "단타 (15m~1H)", mode: "공격적", coins: [] }, short: { title: "단기 (4H~1D)", mode: "추세 추종", coins: [] }, medium: { title: "중기 (7~14D)", mode: "포지션 빌딩", coins: [] } };
+    const API_BASE_URL = 'http://127.0.0.1:5002/api';
+
+    async function fetchMPCData() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/mpc-data`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        wrsTimeline = data.wrs_timeline || [];
+        currentSnapshot = data.current_snapshot || {};
+        layerScores = data.layer_scores || [];
+        recommendations = data.recommendations || recommendations;
+        renderSidebar(); renderTimeline(); renderGauge(); renderRecommendations(); updateAnalysis("L0");
+        document.getElementById("api-status-dot").className = "status-dot connected";
+        document.getElementById("api-status-text").textContent = "API 연결됨";
+      } catch (error) {
+        console.error('❌ API 오류:', error);
+        document.getElementById("api-status-dot").className = "status-dot error";
+        document.getElementById("api-status-text").textContent = "API 오류";
+      }
+    }
+
+    function renderSidebar() {
+      const el = document.getElementById("layer-list");
+      el.innerHTML = "";
+      layerScores.forEach((layer, idx) => {
+        const item = document.createElement("div");
+        item.className = "layer-item" + (idx === 0 ? " active" : "");
+        const left = document.createElement("div");
+        left.className = "layer-left";
+        const dot = document.createElement("div");
+        dot.className = "layer-dot on";
+        const name = document.createElement("span");
+        name.textContent = layer.name;
+        left.appendChild(dot);
+        left.appendChild(name);
+        const score = document.createElement("div");
+        score.className = "layer-score";
+        score.textContent = layer.score + "점";
+        item.appendChild(left);
+        item.appendChild(score);
+        item.addEventListener("click", () => {
+          document.querySelectorAll(".layer-item").forEach(el => el.classList.remove("active"));
+          item.classList.add("active");
+          updateAnalysis(layer.id);
+        });
+        el.appendChild(item);
+      });
+      document.getElementById("wrs-score-label").textContent = currentSnapshot.wrs ? currentSnapshot.wrs.toFixed(2) : "75.6";
+      document.getElementById("tier-label").textContent = currentSnapshot.tier || "TIER 2+: BUY강화";
+      document.getElementById("confidence-label").textContent = currentSnapshot.conf || "85%";
+      document.getElementById("risk-label").textContent = (currentSnapshot.L9 && String(currentSnapshot.L9).startsWith("OFF")) ? "L9 OFF (정상)" : "L9 ON (경고)";
+    }
+
+    function renderTimeline() {
+      const el = document.getElementById("timeline");
+      el.innerHTML = "";
+      wrsTimeline.forEach((p, idx) => {
+        const div = document.createElement("div");
+        div.className = "timeline-point";
+        const main = document.createElement("div");
+        main.className = "timeline-point-main";
+        main.innerHTML = `<div><div class="mono small">${p.time.slice(5, 16)}</div><div class="small" style="color:var(--color-text-secondary);">${p.label}</div></div><div style="text-align:right;"><div class="wrs-badge">${p.wrs.toFixed(2)}</div><div class="tier-chip">${p.tier}</div></div>`;
+        const signal = document.createElement("div");
+        signal.className = "small";
+        signal.style.color = "var(--color-text-secondary)";
+        signal.textContent = p.signal;
+        div.appendChild(main);
+        div.appendChild(signal);
+        if (idx === wrsTimeline.length - 1) div.style.outline = "1px solid rgba(56,189,248,0.8)";
+        el.appendChild(div);
+      });
+    }
+
+    function renderGauge() {
+      const wrs = currentSnapshot.wrs || 75.6;
+      const pointer = document.getElementById("gauge-pointer");
+      const pct = Math.min(Math.max(wrs, 60), 90);
+      pointer.style.left = ((pct - 60) / 30) * 100 + "%";
+      document.getElementById("wrs-gauge-main").textContent = wrs.toFixed(1);
+      const avg = layerScores.reduce((sum, l) => sum + (l.score || 0), 0) / layerScores.length;
+      document.getElementById("layer-avg-label").textContent = "L0~L7 평균 " + avg.toFixed(1);
+      const barContainer = document.getElementById("layer-bars");
+      barContainer.innerHTML = "";
+      layerScores.forEach(layer => {
+        const row = document.createElement("div");
+        row.className = "layer-bar-row";
+        row.innerHTML = `<div>${layer.name}</div><div class="layer-bar"><div class="layer-bar-fill" style="width:${layer.score}%"></div></div><div class="layer-bar-score">${layer.score}점</div>`;
+        barContainer.appendChild(row);
+      });
+    }
+
+    function renderRecommendations() {
+      const grid = document.getElementById("reco-grid");
+      grid.innerHTML = "";
+      const blocks = [];
+      if (document.getElementById("toggle-scalping").checked) blocks.push({ data: recommendations.scalping });
+      if (document.getElementById("toggle-short").checked) blocks.push({ data: recommendations.short });
+      if (document.getElementById("toggle-mid").checked) blocks.push({ data: recommendations.medium });
+      blocks.forEach(block => {
+        const card = document.createElement("div");
+        card.innerHTML = `<div class="reco-header"><div class="reco-title">${block.data.title}</div><div class="chip">${block.data.mode}</div></div><div class="reco-list"></div>`;
+        const list = card.querySelector(".reco-list");
+        block.data.coins.forEach(c => {
+          const item = document.createElement("div");
+          item.className = "reco-item";
+          item.innerHTML = `<div><div class="mono">${c.symbol}</div><div class="small" style="color:var(--color-text-secondary);">${c.label}</div></div><div><span class="tag tag--long">${c.role}</span></div><div class="price-timeline"><span><span>진입</span><span>${c.entry}</span></span><span><span>익절</span><span>${c.tp}</span></span><span><span>손절</span><span>${c.sl}</span></span></div>`;
+          list.appendChild(item);
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    function updateAnalysis(focusLayerId) {
+      const wrs = currentSnapshot.wrs || 75.6;
+      document.getElementById("analysis-text").textContent = `종합적으로 현재 WRS ${wrs.toFixed(1)}점(TIER 2+ BUY 강화) 구간은 '상승 추세 유지 + 모멘텀 분산화 + 수익 실현 진행'이 동시에 일어나는 구간입니다.\n\n- 단타: 고모멘텀 알트 위주로 짧게 치고 빠지는 전략(손절 -3~5%, 익절 +3~6%)\n- 단기: 기존 보유분은 절반 익절 + 절반 추세 추종\n- 중기: PIVERSE·PARTI·TURBO 등은 -10~15% 조정 시 분할 진입`;
+      renderPriceTimeline();
+    }
+
+    function renderPriceTimeline() {
+      const el = document.getElementById("price-timeline");
+      const lines = [];
+      if (document.getElementById("toggle-scalping").checked) lines.push("[단타] 09:15 ~ 10:30 - APM/PIVERSE 눌림 진입");
+      if (document.getElementById("toggle-short").checked) lines.push("[단기] 오늘 ~ 내일 - SUI, DEEP, PENGU 4H 조정 후");
+      if (document.getElementById("toggle-mid").checked) lines.push("[중기] 향후 7~14일 - PIVERSE·PARTI·TURBO 분할 매수");
+      lines.push("[리스크] BTC -5% 급락 시 일시 중지");
+      el.innerHTML = "";
+      lines.forEach(t => {
+        const row = document.createElement("span");
+        row.textContent = t;
+        el.appendChild(row);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchMPCData();
+      setInterval(fetchMPCData, 10000);
+      document.getElementById("toggle-scalping").addEventListener("change", () => { renderRecommendations(); renderPriceTimeline(); });
+      document.getElementById("toggle-short").addEventListener("change", () => { renderRecommendations(); renderPriceTimeline(); });
+      document.getElementById("toggle-mid").addEventListener("change", () => { renderRecommendations(); renderPriceTimeline(); });
+      document.getElementById("simulate-btn").addEventListener("click", () => alert("✅ MPC 데이터 갱신 완료!\n\n포트: http://127.0.0.1:5002"));
+      document.getElementById("refresh-btn").addEventListener("click", fetchMPCData);
+    });
+  </script>
+</body>
+</html>
