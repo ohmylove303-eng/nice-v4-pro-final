@@ -6,53 +6,54 @@
   <title>NICE PROTOCOL | TERMINAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;900&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 
   <style>
     :root {
-      --bg-void: #050505;
-      --signal-green: #00ff9d;
-      --signal-red: #ff0055;
-      --signal-blue: #00f0ff;
-      --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+      --bg-void: #111116;
+      /* Darker, blueprint feel */
+      --bg-card: #18181f;
+      --accent-purple: #9d00ff;
+      --accent-yellow: #ffcc00;
+      --accent-blue: #00f0ff;
+      --accent-green: #00ff9d;
+      --accent-red: #ff0055;
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
+      --glass: 1px solid rgba(255, 255, 255, 0.08);
+      --font-mono: 'JetBrains Mono', monospace;
     }
 
     body {
       margin: 0;
       background: var(--bg-void);
-      color: #fff;
+      color: #eee;
       font-family: 'Inter', sans-serif;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
+    /* HEADER */
     header {
       height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
-      border-bottom: var(--glass-border);
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 100;
+      border-bottom: var(--glass);
+      background: #0b0b0e;
     }
 
     .brand {
-      font-family: 'JetBrains Mono';
+      font-family: var(--font-mono);
       font-weight: 800;
-      color: var(--signal-blue);
+      color: var(--accent-blue);
+      letter-spacing: -0.5px;
     }
 
+    /* SPIT VIEW */
     #app-container {
       flex: 1;
       position: relative;
@@ -63,18 +64,18 @@
       position: absolute;
       inset: 0;
       background: var(--bg-void);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1);
       display: flex;
       flex-direction: column;
     }
 
     #view-analyst {
       transform: translateX(100%);
-      z-index: 20;
+      z-index: 10;
     }
 
     body.mode-analyst #view-scanner {
-      transform: translateX(-20%);
+      transform: translateX(-20%) scale(0.95);
       opacity: 0.5;
     }
 
@@ -82,34 +83,29 @@
       transform: translateX(0);
     }
 
-    /* TABS */
+    /* SCANNER */
     .tabs {
       display: flex;
       gap: 8px;
       padding: 12px;
-      overflow-x: auto;
-      border-bottom: var(--glass-border);
+      border-bottom: var(--glass);
     }
 
     .tab {
       background: rgba(255, 255, 255, 0.05);
       padding: 8px 16px;
-      border-radius: 100px;
+      border-radius: 8px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
+      color: #888;
       cursor: pointer;
-      min-width: 80px;
-      text-align: center;
-      border: 1px solid transparent;
     }
 
     .tab.active {
-      background: var(--signal-blue);
+      background: var(--accent-blue);
       color: #000;
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
     }
 
-    /* LIST */
     .list {
       flex: 1;
       overflow-y: auto;
@@ -119,9 +115,9 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
-    .card {
-      background: rgba(20, 20, 30, 0.6);
-      border: var(--glass-border);
+    .coin-item {
+      background: var(--bg-card);
+      border: var(--glass);
       padding: 16px;
       border-radius: 12px;
       display: flex;
@@ -130,288 +126,418 @@
       cursor: pointer;
     }
 
-    .card:active {
-      transform: scale(0.98);
+    .coin-item:hover {
+      border-color: var(--accent-blue);
     }
 
-    /* ANALYST */
-    .nav {
-      padding: 12px;
-      border-bottom: var(--glass-border);
+    /* ANALYST (BLUEPRINT UI) */
+    .top-nav {
+      padding: 10px 16px;
+      border-bottom: var(--glass);
       display: flex;
+      align-items: center;
       gap: 10px;
-      font-size: 14px;
       cursor: pointer;
       color: #888;
+      font-size: 13px;
     }
 
     #chart {
-      height: 40%;
-      border-bottom: var(--glass-border);
+      height: 45%;
+      border-bottom: var(--glass);
     }
 
-    #panel {
+    #analysis-panel {
       flex: 1;
       overflow-y: auto;
       padding: 20px;
-      background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.03), transparent);
     }
 
-    /* GUARD BADGE */
-    .guard-badge {
-      font-family: 'JetBrains Mono';
-      font-size: 10px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      background: #222;
-      border: 1px solid #444;
+    /* VISUAL CARDS (MATCHING SCREENSHOT) */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .v-card {
+      background: var(--bg-card);
+      border: var(--glass);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .v-card h3 {
+      font-size: 12px;
       color: #888;
+      margin: 0 0 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .v-card h3 i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
       display: inline-block;
+    }
+
+    /* 1. ELLIOTT WAVE (PURPLE) */
+    .card-elliott {
+      border-left: 3px solid var(--accent-purple);
+    }
+
+    .card-elliott h3 i {
+      background: var(--accent-purple);
+    }
+
+    .wave-status {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .wave-desc {
+      font-size: 12px;
+      color: #aaa;
       margin-bottom: 12px;
     }
 
-    .guard-safe {
-      border-color: var(--signal-green);
-      color: var(--signal-green);
-      background: rgba(0, 255, 157, 0.1);
+    .wave-steps {
+      display: flex;
+      gap: 4px;
     }
 
-    .guard-warn {
-      border-color: var(--signal-red);
-      color: var(--signal-red);
-      background: rgba(255, 0, 85, 0.1);
-    }
-
-    .hud-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .hud-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: var(--glass-border);
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    .hud-val {
-      font-family: 'JetBrains Mono';
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--signal-blue);
-    }
-
-    .ai-box {
-      border: 1px solid var(--signal-blue);
-      background: rgba(0, 10, 20, 0.8);
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    /* Loader */
-    .loader {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(5px);
+    .w-step {
+      width: 24px;
+      height: 24px;
+      background: #222;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 50;
-      display: none;
+      font-size: 12px;
+      color: #555;
+      font-weight: 700;
+      font-family: var(--font-mono);
     }
 
-    .loader.on {
+    .w-step.active {
+      background: var(--accent-purple);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(157, 0, 255, 0.4);
+    }
+
+    /* 2. FIBONACCI (YELLOW) */
+    .card-fib {
+      border-left: 3px solid var(--accent-yellow);
+    }
+
+    .card-fib h3 i {
+      background: var(--accent-yellow);
+    }
+
+    .fib-main {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-yellow);
+      margin-bottom: 12px;
+    }
+
+    .fib-list {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #888;
+    }
+
+    .fib-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .fib-row.highlight {
+      color: #fff;
+      background: rgba(255, 204, 0, 0.1);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    /* 3. TREND (BLUE) */
+    .card-trend {
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .card-trend h3 i {
+      background: var(--accent-blue);
+    }
+
+    .trend-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .trend-bar-bg {
+      height: 6px;
+      background: #333;
+      border-radius: 100px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .trend-bar-fill {
+      height: 100%;
+      background: var(--accent-blue);
+      width: 0%;
+      transition: width 1s ease;
+    }
+
+    .trend-val {
+      text-align: right;
+      font-size: 12px;
+      color: var(--accent-blue);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
+
+    /* LOADER */
+    .loader {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .loader.active {
       display: flex;
     }
 
-    .scan {
-      width: 100%;
-      height: 2px;
-      background: var(--signal-blue);
-      position: absolute;
-      animation: scan 1.5s infinite;
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--accent-blue);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    @keyframes scan {
-      0% {
-        top: 0;
-        opacity: 0
-      }
-
-      50% {
-        opacity: 1
-      }
-
-      100% {
-        top: 100%;
-        opacity: 0
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
       }
     }
   </style>
 </head>
 
 <body>
+
   <header>
-    <div class="brand">NICE<span>PRO</span> <span style="opacity:0.5; font-size:10px">v5.5</span></div>
-    <div style="font-size:10px; color:var(--signal-green)">● SYSTEM ACTIVE</div>
+    <div class="brand">NICE<span style="color:#fff">PRO</span> <span style="font-size:10px; color:#666">v6.0</span>
+    </div>
+    <div style="font-size:11px; font-family:var(--font-mono); color:var(--accent-green)">● SYSTEM READY</div>
   </header>
 
   <div id="app-container">
-    <!-- SCANNER -->
+    <!-- SCANNER VIEW -->
     <div id="view-scanner" class="view">
       <div class="tabs">
-        <div class="tab active" onclick="loadCat('surge', this)">⚡ SURGE</div>
-        <div class="tab" onclick="loadCat('scalping', this)">🎯 SCALP</div>
-        <div class="tab" onclick="loadCat('majors', this)">💎 MAJOR</div>
+        <div class="tab active" onclick="filter('surge', this)">⚡ SURGE</div>
+        <div class="tab" onclick="filter('scalping', this)">🎯 SCALP</div>
+        <div class="tab" onclick="filter('majors', this)">💎 MAJOR</div>
       </div>
-      <div id="list" class="list"></div>
+      <div id="coin-list" class="list"></div>
     </div>
 
-    <!-- ANALYST -->
+    <!-- ANALYST VIEW -->
     <div id="view-analyst" class="view">
-      <div class="nav" onclick="closeAnalyst()">← BACK TO SCANNER</div>
-      <div id="chart"></div>
-      <div id="panel">
-        <div id="ai-ui" style="display:none">
-          <div id="guard-status" class="guard-badge">CHECKING SECURITY...</div>
-
-          <div class="hud-grid">
-            <div class="hud-box">
-              <div style="font-size:10px; color:#666">TREND STRUCTURE</div>
-              <div id="hud-trend" class="hud-val">--</div>
-            </div>
-            <div class="hud-box">
-              <div style="font-size:10px; color:#666">MOMENTUM (RSI)</div>
-              <div id="hud-rsi" class="hud-val">--</div>
-            </div>
-          </div>
-
-          <div class="ai-box">
-            <div style="color:var(--signal-blue); font-weight:700; font-size:12px; margin-bottom:10px;">TACTICAL REPORT
-            </div>
-            <div id="ai-msg" style="font-size:14px; line-height:1.5; color:#ddd; margin-bottom:15px;"></div>
-            <div style="display:flex; justify-content:space-between; border-top:1px solid #333; padding-top:10px;">
-              <div style="text-align:center">
-                <div style="font-size:10px; color:#666">ENTRY</div>
-                <div id="tx-entry" style="font-family:'JetBrains Mono'">--</div>
-              </div>
-              <div style="text-align:center">
-                <div style="font-size:10px; color:#666">TARGET</div>
-                <div id="tx-tp" style="color:var(--signal-green); font-family:'JetBrains Mono'">--</div>
-              </div>
-              <div style="text-align:center">
-                <div style="font-size:10px; color:#666">STOP</div>
-                <div id="tx-sl" style="color:var(--signal-red); font-family:'JetBrains Mono'">--</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="top-nav" onclick="closeAnalyst()">
+        <span>← RETURN TO SCANNER</span>
+        <span id="target-sym" style="margin-left:auto; color:#fff; font-weight:700">--</span>
       </div>
-      <div id="loader" class="loader">
-        <div class="scan"></div>
-        <div style="color:var(--signal-blue); font-family:'JetBrains Mono'">ANALYZING...</div>
+
+      <div id="chart"></div>
+
+      <div id="analysis-panel">
+        <div class="card-grid">
+
+          <!-- 1. ELLIOTT CARD -->
+          <div class="v-card card-elliott">
+            <h3><i></i> Elliott Wave</h3>
+            <div class="wave-status" id="ew-status">Analyzing...</div>
+            <div class="wave-desc" id="ew-desc">Identifying market cycle positions</div>
+            <div class="wave-steps">
+              <div class="w-step" id="w1">1</div>
+              <div class="w-step" id="w2">2</div>
+              <div class="w-step active" id="w3">3</div>
+              <div class="w-step" id="w4">4</div>
+              <div class="w-step" id="w5">5</div>
+            </div>
+          </div>
+
+          <!-- 2. FIBONACCI CARD -->
+          <div class="v-card card-fib">
+            <h3><i></i> Fibonacci Retracement</h3>
+            <div class="fib-main" id="fib-main">Testing Support</div>
+            <div class="fib-list">
+              <div class="fib-row"><span>0.236 (Resist)</span> <span id="fib-236">--</span></div>
+              <div class="fib-row highlight"><span>0.382 (Pivot)</span> <span id="fib-382">--</span></div>
+              <div class="fib-row"><span>0.500 (Mid)</span> <span id="fib-500">--</span></div>
+              <div class="fib-row"><span>0.618 (Support)</span> <span id="fib-618">--</span></div>
+            </div>
+          </div>
+
+          <!-- 3. TREND CARD -->
+          <div class="v-card card-trend">
+            <h3><i></i> Trend Strength</h3>
+            <div class="trend-title" id="trend-status">Uptrend</div>
+            <div style="font-size:12px; color:#888; display:flex; justify-content:space-between;">
+              <span>Resistance</span> <span style="color:var(--accent-red)" id="trend-res">--</span>
+            </div>
+            <div style="font-size:12px; color:#888; display:flex; justify-content:space-between; margin-top:4px;">
+              <span>Support</span> <span style="color:var(--accent-green)" id="trend-sup">--</span>
+            </div>
+
+            <div class="trend-bar-bg">
+              <div class="trend-bar-fill" id="trend-bar" style="width:0%"></div>
+            </div>
+            <div class="trend-val" id="trend-pct">0%</div>
+          </div>
+
+        </div>
+
+        <!-- AI RECOMMENDATION -->
+        <div
+          style="margin-top:16px; padding:16px; background:#1a1a24; border:1px solid var(--accent-blue); border-radius:12px;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-blue); margin-bottom:8px;">TACTICAL STRATEGY
+          </div>
+          <div id="ai-reason" style="font-size:14px; line-height:1.5; color:#ddd;">Waiting for AI synthesis...</div>
+        </div>
+
+      </div>
+
+      <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <div style="margin-top:16px; color:#666; font-size:12px;">RUNNING NICE PROTOCOL...</div>
       </div>
     </div>
   </div>
 
   <script>
-        let chart; 
+    let chart;
+    window.onload = () => filter('surge', document.querySelector('.tab'));
+
+    async function filter(cat, el) {
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+        el.classList.add('active');
+        const list = document.getElementById('coin-list');
+        list.innerHTML = '<div style="padding:20px; text-align:center; color:#444">Scanning Market...</div>';
         
-        window.onload = () => loadCat('surge', document.querySelector('.tab'));
+        try {
+            const res = await fetch(`/api/screener/${cat}`);
+            const data = await res.json();
+            list.innerHTML = '';
+            data.list.forEach(c => {
+                list.innerHTML += `
+                <div class="coin-item" onclick="analyze('${c.symbol}')">
+                    <div>
+                        <div style="font-weight:700">${c.symbol}</div>
+                        <div style="font-size:11px; color:#666">Vol ${(c.volume/100000000).toFixed(0)}억</div>
+                    </div>
+                    <div style="text-align:right">
+                        <div>${c.price.toLocaleString()}</div>
+                        <div style="font-size:11px; color:${c.change>=0?'var(--accent-green)':'var(--accent-red)'}">${c.change}%</div>
+                    </div>
+                </div>`;
+            });
+        } catch(e) { list.innerHTML = "Error"; }
+    }
+
+    async function analyze(ticker) {
+        document.body.classList.add('mode-analyst');
+        document.getElementById('loader').classList.add('active');
+        document.getElementById('target-sym').innerText = ticker;
         
-        async function loadCat(cat, el) {
-            document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-            el.classList.add('active');
-            
-            const list = document.getElementById('list');
-            list.innerHTML = '<div style="text-align:center; padding:20px; color:#666">SCANNING...</div>';
-            
-            try {
-                const res = await fetch(`/api/screener/${cat}`);
-                const data = await res.json();
-                list.innerHTML = '';
-                
-                data.list.forEach((c, i) => {
-                    const isUp = c.change >= 0;
-                    list.innerHTML += `
-                    <div class="card" onclick="openAnalyst('${c.symbol}')">
-                        <div style="display:flex; align-items:center; gap:10px">
-                            <span style="font-family:'JetBrains Mono'; color:#444; width:20px;">${i+1}</span>
-                            <div>
-                                <div style="font-weight:700">${c.symbol}</div>
-                                <div style="font-size:11px; color:#666">Vol ${(c.volume/100000000).toFixed(0)}억</div>
-                            </div>
-                        </div>
-                        <div style="text-align:right">
-                            <div style="font-family:'JetBrains Mono'">${c.price.toLocaleString()}</div>
-                            <div style="font-size:12px; color:${isUp ? 'var(--signal-green)' : 'var(--signal-red)'}">${c.change}%</div>
-                        </div>
-                    </div>`;
-                });
-            } catch(e) { list.innerHTML = 'ERROR'; }
+        if(!chart) {
+            chart = LightweightCharts.createChart(document.getElementById('chart'), {
+                layout: { background: { color: '#111116' }, textColor: '#666' },
+                grid: { vertLines: { color: '#222' }, horzLines: { color: '#222' } },
+            });
+            chart.addCandlestickSeries();
         }
         
-        async function openAnalyst(ticker) {
-            document.body.classList.add('mode-analyst');
-            document.getElementById('ai-ui').style.display = 'none';
-            document.getElementById('loader').classList.add('on');
+        try {
+            const res = await fetch(`/api/analyze/${ticker}`);
+            const data = await res.json();
             
-            if(!chart) {
-                const box = document.getElementById('chart');
-                chart = LightweightCharts.createChart(box, {
-                    layout: { background: { color: '#050505' }, textColor: '#888' },
-                    grid: { vertLines: { color: '#111' }, horzLines: { color: '#111' } },
-                    width: box.clientWidth, height: box.clientHeight
-                });
-                chart.addCandlestickSeries();
-            }
-            
-            try {
-                const res = await fetch(`/api/analyze/${ticker}`);
-                const data = await res.json();
-                
-                // GUARD STATUS
-                const g = document.getElementById('guard-status');
-                if(data.guard_report.passed) {
-                    g.className = 'guard-badge guard-safe';
-                    g.innerText = `GUARD: ${data.guard_report.level} (SECURE)`;
-                } else {
-                    g.className = 'guard-badge guard-warn';
-                    g.innerText = `GUARD: ${data.guard_report.level} - ${data.guard_report.reason}`;
-                    
-                    // IF FAILED, STOP HERE
-                    document.getElementById('loader').classList.remove('on');
-                    document.getElementById('ai-ui').style.display = 'block';
-                    document.getElementById('ai-msg').innerText = "Strategy generation blocked by Security Guard.";
-                    return;
-                }
-                
-                // DATA RENDER
-                document.getElementById('hud-trend').innerText = data.tech.trend.replace('_',' ');
-                document.getElementById('hud-rsi').innerText = data.tech.rsi.toFixed(1);
-                
-                document.getElementById('ai-msg').innerText = data.ai.reasoning || "Analyzing...";
-                document.getElementById('tx-entry').innerText = data.ai.entry_price || "-";
-                document.getElementById('tx-tp').innerText = data.ai.target_price || "-";
-                document.getElementById('tx-sl').innerText = data.ai.stop_loss || "-";
-                
-                document.getElementById('loader').classList.remove('on');
-                document.getElementById('ai-ui').style.display = 'block';
-                
-            } catch(e) {
-                alert('Connection Failed');
+            // 1. GUARD
+            if(!data.guard.passed) {
+                alert(`GUARD BLOCKED: ${data.guard.reason}`);
                 closeAnalyst();
+                return;
             }
+            
+            // 2. FIBONACCI
+            document.getElementById('fib-236').innerText = data.tech.fib['0.236'].toLocaleString();
+            document.getElementById('fib-382').innerText = data.tech.fib['0.382'].toLocaleString();
+            document.getElementById('fib-500').innerText = data.tech.fib['0.5'].toLocaleString();
+            document.getElementById('fib-618').innerText = data.tech.fib['0.618'].toLocaleString();
+            
+            // 3. TREND
+            const trend = data.tech.trend;
+            document.getElementById('trend-status').innerText = trend;
+            document.getElementById('trend-res').innerText = (data.tech.price * 1.05).toFixed(0); // Simple est
+            document.getElementById('trend-sup').innerText = data.tech.fib['0.618'].toLocaleString();
+            
+            const rsi = data.tech.rsi;
+            document.getElementById('trend-bar').style.width = `${rsi}%`;
+            document.getElementById('trend-pct').innerText = `${rsi.toFixed(0)}% Strength`;
+            
+            // 4. ELLIOTT (Simulated based on Trend)
+            const ewTitle = document.getElementById('ew-status');
+            const ewDesc = document.getElementById('ew-desc');
+            document.querySelectorAll('.w-step').forEach(w => w.classList.remove('active'));
+            
+            if(trend.includes('UP')) {
+                ewTitle.innerText = "Wave 3 Impulse";
+                ewDesc.innerText = "Strong upward momentum detected.";
+                document.getElementById('w3').classList.add('active');
+            } else if(trend.includes('DOWN')) {
+                ewTitle.innerText = "Correction C";
+                ewDesc.innerText = "Corrective phase active.";
+                document.getElementById('w4').classList.add('active');
+            } else {
+                ewTitle.innerText = "Wave 1 Formation";
+                ewDesc.innerText = "Base building phase.";
+                document.getElementById('w1').classList.add('active');
+            }
+            
+            // 5. AI
+            document.getElementById('ai-reason').innerText = data.ai.reasoning || "AI Analysis Complete.";
+            
+            document.getElementById('loader').classList.remove('active');
+            
+        } catch(e) {
+            console.error(e);
+            alert("Analysis Failed");
+            closeAnalyst();
         }
-        
-        function closeAnalyst() {
-            document.body.classList.remove('mode-analyst');
-            document.getElementById('loader').classList.remove('on');
-        }
+    }
+
+    function closeAnalyst() {
+        document.body.classList.remove('mode-analyst');
+        document.getElementById('loader').classList.remove('active');
+    }
   </script>
+
 </body>
 
 </html>
