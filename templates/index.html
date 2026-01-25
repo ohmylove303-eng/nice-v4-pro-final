@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>NICE v8.3 PRO | REAL-TIME SCREENER</title>
+  <title>NICE v8.4 PRO | TIME-CONTEXT ENGINE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap"
@@ -169,6 +169,7 @@
     .tab.active {
       color: #fff;
       background: rgba(255, 255, 255, 0.05);
+      border-bottom: 2px solid var(--accent-cyan);
     }
 
     .rank-list {
@@ -301,17 +302,17 @@
 
 <body>
   <header>
-    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#444; margin-left:4px">v8.3
-        REAL-TIME</span></div>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#444; margin-left:4px">v8.4 CONTEXT</span>
+    </div>
     <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
 
     <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
 
     <div style="flex:1"></div>
+    <div class="top-stat"><span class="stat-label">Mode</span><span class="stat-val" id="mode-val"
+        style="color:var(--accent-purple)">SWING (24H)</span></div>
     <div class="top-stat"><span class="stat-label">Kelly</span><span class="stat-val" id="kelly-val">--%</span></div>
-    <div class="top-stat"><span class="stat-label">Vol Power</span><span class="stat-val"
-        style="color:var(--accent-cyan)">LIVE</span></div>
   </header>
 
   <div id="main">
@@ -321,9 +322,9 @@
 
     <div id="sidebar">
       <div class="tab-row">
-        <div class="tab active" onclick="loadList('surge', this)">🔥 SURGE</div>
-        <div class="tab" onclick="loadList('volume', this)">💰 VOLUME</div>
-        <div class="tab" onclick="loadList('scalping', this)">⚡ SCALP</div>
+        <div class="tab" onclick="changeMode('scalp', this)">⚡ SCALP (30m)</div>
+        <div class="tab active" onclick="changeMode('surge', this)">🔥 SWING (24H)</div>
+        <div class="tab" onclick="changeMode('volume', this)">💰 LIQUIDITY</div>
       </div>
       <div class="rank-list" id="rank-list"></div>
     </div>
@@ -340,7 +341,7 @@
       </div>
 
       <div class="card">
-        <h3>Backtest (200D)</h3>
+        <h3>Backtest</h3>
         <div style="text-align:center; margin-top:10px;">
           <div style="font-size:24px; font-weight:800; color:#fff" id="bt-win">--%</div>
           <div style="font-size:11px; color:#666; margin-top:4px">WIN RATE</div>
@@ -356,100 +357,119 @@
   </div>
 
   <script>
-        const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), {
-            layout: { background: { color: '#111116' }, textColor: '#666' },
-            grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } },
-        });
-        const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
-        
-        window.onload = () => loadList('surge', document.querySelector('.tab'));
-        
-        document.getElementById('search-input').addEventListener('keydown', (e) => {
-            if(e.key === 'Enter') runAnalysis(e.target.value);
-        });
+    // GLOBAL STATE
+    let CURRENT_MODE = 'day'; // 'scalp' or 'day'
 
-        async function loadList(cat, tabEl) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            if(tabEl) tabEl.classList.add('active');
-            
-            const list = document.getElementById('rank-list');
-            list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Loading...</div>';
-            
-            try {
-                const res = await fetch(`/api/screener/${cat}`);
-                const data = await res.json();
-                list.innerHTML = '';
-                data.list.forEach(c => {
-                    const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)';
-                    const el = document.createElement('div');
-                    el.className = 'rank-item';
-                    el.innerHTML = `
+    const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), {
+      layout: { background: { color: '#111116' }, textColor: '#666' },
+      grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } },
+    });
+    const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
+
+    window.onload = () => changeMode('surge', document.querySelector('.tab.active'));
+
+    document.getElementById('search-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') runAnalysis(e.target.value);
+    });
+
+    async function changeMode(cat, tabEl) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      if (tabEl) tabEl.classList.add('active');
+
+      // Context Switching
+      if (cat === 'scalp') {
+        CURRENT_MODE = 'scalp';
+        document.getElementById('mode-val').innerText = "SCALPING (30m)";
+        document.getElementById('mode-val').style.color = "var(--accent-cyan)";
+      } else {
+        CURRENT_MODE = 'day';
+        document.getElementById('mode-val').innerText = "SWING (24H)";
+        document.getElementById('mode-val').style.color = "var(--accent-purple)";
+      }
+
+      loadList(cat);
+    }
+
+    async function loadList(cat) {
+      const list = document.getElementById('rank-list');
+      list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Deep Scanning...</div>';
+
+      try {
+        const res = await fetch(`/api/screener/${cat}`);
+        const data = await res.json();
+        list.innerHTML = '';
+
+        data.list.forEach(c => {
+          const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+          const el = document.createElement('div');
+          el.className = 'rank-item';
+
+          // Display Context: Scalp shows Momentum, Swing shows 24H Chg
+          const label = (cat === 'scalp') ? '30m Mom' : '24H Chg';
+
+          el.innerHTML = `
                         <span class="rank-sym">${c.symbol}</span>
                         <div style="text-align:right">
                             <div class="rank-chg" style="color:${color}">${c.change > 0 ? '+' : ''}${c.change}%</div>
-                            <div style="font-size:10px; color:#666">${(c.volume/1000000).toFixed(0)}M</div>
+                            <div style="font-size:10px; color:#666">${label}</div>
                         </div>
                     `;
-                    el.onclick = () => runAnalysis(c.symbol);
-                    list.appendChild(el);
-                });
-            } catch(e) { list.innerHTML = "Error"; }
-        }
+          el.onclick = () => runAnalysis(c.symbol);
+          list.appendChild(el);
+        });
+      } catch (e) { list.innerHTML = "Error"; }
+    }
 
-        async function runAnalysis(ticker) {
-            document.getElementById('app-score').innerText = "--";
-            document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`;
-            
-            try {
-                // 1. ANALYZE
-                const res = await fetch(`/api/analyze/${ticker}`);
-                const data = await res.json();
-                
-                document.getElementById('app-score').innerText = data.score;
-                document.getElementById('app-badge').innerText = data.type;
-                document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff';
-                document.getElementById('kelly-val').innerText = `${data.kelly}%`;
-                
-                // Agents
-                let agentHTML = "";
-                for(const [name, score] of Object.entries(data.agents)) {
-                    const color = score > 60 ? 'var(--accent-green)' : '#666';
-                    agentHTML += `<div class="agent-row"><span class="agent-name">${name.substr(0,4)}</span><div style="display:flex; gap:6px"><div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div><span>${score}</span></div></div>`;
-                }
-                document.getElementById('agents-list').innerHTML = agentHTML;
-                
-                // Guard
-                let guardHTML = "";
-                data.guards.forEach(g => {
-                    guardHTML += `<div class="guard-phase"><div class="guard-dot ${g.passed?'pass':'fail'}"></div> Ph ${g.phase}: ${g.name}</div>`;
-                });
-                document.getElementById('guard-list').innerHTML = guardHTML;
-                
-                // AI
-                document.getElementById('ai-text').innerText = data.ai_reasoning;
-                
-                // 2. BACKTEST
-                const btRes = await fetch(`/api/backtest/${ticker}`);
-                const btData = await btRes.json();
-                document.getElementById('bt-win').innerText = `${btData.win_rate}%`;
-                document.getElementById('bt-ret').innerText = `${btData.return_pct}% Return`;
-                
-                // Mock Chart
-                updateChartMock(data.score > 60);
+    async function runAnalysis(ticker) {
+      document.getElementById('app-score').innerText = "--";
+      document.getElementById('ai-text').innerText = `Analyzing ${ticker} in ${CURRENT_MODE} mode...`;
 
-            } catch(e) { alert("Error: " + e.message); }
-        }
+      try {
+        // Pass Context (Timeframe)
+        const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`);
+        const data = await res.json();
 
-        function updateChartMock(isBull) {
-            let d = [];
-            let p = 1000;
-            let now = Math.floor(Date.now()/1000);
-            for(let i=100; i>0; i--) {
-                p = p + (Math.random()-0.5)*20 + (isBull?5:-5);
-                d.push({time:now-i*3600, open:p, high:p+10, low:p-10, close:p});
-            }
-            candles.setData(d);
+        document.getElementById('app-score').innerText = data.score;
+        document.getElementById('app-badge').innerText = data.type;
+        document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff';
+        document.getElementById('kelly-val').innerText = `${data.kelly}%`;
+
+        let agentHTML = "";
+        for (const [name, score] of Object.entries(data.agents)) {
+          const color = score > 60 ? 'var(--accent-green)' : '#666';
+          agentHTML += `<div class="agent-row"><span class="agent-name">${name.substr(0, 4)}</span><div style="display:flex; gap:6px"><div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div><span>${score}</span></div></div>`;
         }
+        document.getElementById('agents-list').innerHTML = agentHTML;
+
+        let guardHTML = "";
+        data.guards.forEach(g => {
+          guardHTML += `<div class="guard-phase"><div class="guard-dot ${g.passed ? 'pass' : 'fail'}"></div> Ph ${g.phase}: ${g.name}</div>`;
+        });
+        document.getElementById('guard-list').innerHTML = guardHTML;
+
+        document.getElementById('ai-text').innerText = data.ai_reasoning;
+
+        // Backtest (Standard)
+        const btRes = await fetch(`/api/backtest/${ticker}`);
+        const btData = await btRes.json();
+        document.getElementById('bt-win').innerText = `${btData.win_rate}%`;
+        document.getElementById('bt-ret').innerText = `${btData.return_pct}% Return`;
+
+        updateChartMock(data.score > 60);
+
+      } catch (e) { alert("Error: " + e.message); }
+    }
+
+    function updateChartMock(isBull) {
+      let d = [];
+      let p = 1000;
+      let now = Math.floor(Date.now() / 1000);
+      for (let i = 100; i > 0; i--) {
+        p = p + (Math.random() - 0.5) * 20 + (isBull ? 5 : -5);
+        d.push({ time: now - i * 3600, open: p, high: p + 10, low: p - 10, close: p });
+      }
+      candles.setData(d);
+    }
   </script>
 </body>
 

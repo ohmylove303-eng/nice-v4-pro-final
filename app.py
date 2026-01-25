@@ -1,8 +1,8 @@
 # ============================================================
-# NICE PRO v8.3 Backend - [REAL-TIME SCREENER]
+# NICE PRO v8.4 Backend - [TIME-CONTEXT ENGINE]
 # ============================================================
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import logging
 import requests
@@ -31,13 +31,30 @@ llm_master = LLMOrchestrator()
 pos_sizer = PositionSizer()
 backtester = Backtester()
 
+# Global Async Loop Helper
+def run_async(coro):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    res = loop.run_until_complete(coro)
+    loop.close()
+    return res
+
 class MarketData:
     @staticmethod
-    def fetch(ticker, count=200):
+    def fetch(ticker, timeframe="24h", count=100):
+        # Timeframe Mapping to Bithumb API
+        # scalp -> 10m or 30m
+        # day -> 24h
+        
+        api_tf = "24h"
+        if timeframe == "scalp": api_tf = "30m"
+        elif timeframe == "short": api_tf = "1h"
+        
         try:
             sym = ticker.replace("KRW-","")
-            # 1. Candles
-            url = f"{config.BITHUMB_API_URL}/candlestick/{sym}_KRW/24h"
+            
+            # 1. Candles (Context Applied)
+            url = f"{config.BITHUMB_API_URL}/candlestick/{sym}_KRW/{api_tf}"
             res = requests.get(url, timeout=1).json()
             if res['status'] != '0000': return None, None
             
@@ -52,35 +69,40 @@ class MarketData:
             return df.tail(count), ob['data']
         except: return None, None
 
-def asyncio_run(future):
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    res = loop.run_until_complete(future)
-    loop.close()
-    return res
-
 @app.route('/api/analyze/<ticker>')
 def analyze(ticker):
+    # Get Context from Frontend
+    tf_mode = request.args.get('timeframe', 'day') # default day
+    
     t_code = ticker.replace("KRW-","").upper()
-    df, ob = MarketData.fetch(t_code, count=100)
+    
+    # 1. Fetch Data Matching Context
+    df, ob = MarketData.fetch(t_code, timeframe=tf_mode)
     
     if df is None: return jsonify({"error": "Data Unavailable"}), 500
-        
-    # 1. 5-AGENTS
+    
+    # 2. 5-AGENTS (Analyze specific timeframe DF)
     signals = signal_agg.get_all_signals(df)
     
-    # 2. GUARD
+    # 3. GUARD
     bid = float(ob['bids'][0]['price'])
-    guard_res = asyncio_run(guard_chain.execute_all(t_code, "BUY", 1.0, bid))
+    guard_res = run_async(guard_chain.execute_all(t_code, "BUY", 1.0, bid))
     
-    # 3. LLM
-    llm_res = llm_master.synthesize(t_code, signals['agent_scores'], signals['weighted_score'])
+    # 4. LLM (Context Aware Prompt)
+    # We append the timeframe to the prompt so Agent knows context
+    # Update prompt logic in synthesizer if needed, or just pass as meta
+    llm_res = llm_master.synthesize(
+        f"{t_code} ({tf_mode.upper()})", 
+        signals['agent_scores'], 
+        signals['weighted_score']
+    )
     
-    # 4. KELLY
+    # 5. KELLY
     kelly_res = pos_sizer.calculate(t_code, "BUY", 10000000)
     
     return jsonify({
         "ticker": t_code,
+        "mode": tf_mode,
         "score": signals['weighted_score'],
         "type": llm_res.get('signal', 'TYPE C'),
         "kelly": kelly_res['kelly_pct'],
@@ -96,15 +118,57 @@ def analyze(ticker):
 @app.route('/api/backtest/<ticker>')
 def backtest(ticker):
     t_code = ticker.replace("KRW-","").upper()
-    df, _ = MarketData.fetch(t_code, count=200)
+    # Backtest always uses Daily for reliability, or allow param if needed.
+    # User's request implies consistency. If scalp analysis, backtest scalp?
+    # Usually backtest needs more data. We'll stick to daily for robustness unless requested.
+    df, _ = MarketData.fetch(t_code, timeframe="24h", count=200)
     if df is None: return jsonify({"error": "Data Unavailable"}), 500
     return jsonify(backtester.run(t_code, df))
 
 @app.route('/api/screener/<category>')
 def get_screener(category):
-    # Retrieve Real-time Rankings from Bithumb
-    data = BithumbScreener.get_rankings(category)
-    return jsonify({"category": category, "list": data})
+    if category == "scalp":
+        # Deep Scan (Async)
+        try:
+            list_data = run_async(BithumbScreener.get_realtime_momentum())
+            # Format for frontend
+            formatted = []
+            for c in list_data:
+                formatted.append({
+                    "symbol": c['symbol'],
+                    "change": round(c['momentum'], 2), # Using 30m momentum
+                    "volume": c['vol'],
+                    "price": c['price']
+                })
+            return jsonify({"category": "scalp", "list": formatted})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+            
+    # Default 24H Logic
+    try:
+        url = f"{config.BITHUMB_API_URL}/ticker/ALL_KRW"
+        res = requests.get(url, timeout=1).json()
+        data = []
+        for k, v in res['data'].items():
+            if k == 'date': continue
+            data.append({
+                "symbol": k,
+                "price": float(v['closing_price']),
+                "change": float(v['fluctate_rate_24H']),
+                "volume": float(v['acc_trade_value_24H'])
+            })
+            
+        if category == "volume":
+            data.sort(key=lambda x: x['volume'], reverse=True)
+            data = data[:20]
+        else: # surge/default
+            data.sort(key=lambda x: x['change'], reverse=True)
+            # Filter low vol
+            data = [d for d in data if d['volume'] > 1000000000][:20]
+            
+        return jsonify({"category": category, "list": data})
+            
+    except: return jsonify({"list": []})
 
 @app.route('/')
 @app.route('/app')
