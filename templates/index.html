@@ -510,7 +510,16 @@
                 const res = await fetch(`/api/analyze/${ticker}`);
                 const data = await res.json();
                 
-                // 1. UPDATE UI
+                // 1. UPDATE HEADER METRICS
+                const score = data.score || 0;
+                document.querySelector('.score').innerText = `${score}점`;
+                document.querySelector('.badge').innerText = data.type || "Wait";
+                document.querySelector('.badge').style.background = score >= 80 ? '#00ff9d' : (score >= 60 ? '#ffcc00' : '#888');
+                
+                // Kelly
+                document.querySelectorAll('.stat-val')[0].innerText = `${data.kelly}%`;
+                
+                // Update Card Titles
                 document.getElementById('chart-title').innerText = `${ticker} / KRW`;
                 
                 // 2. TECH CARDS
