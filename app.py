@@ -1,12 +1,11 @@
 # ============================================================
-# NICE PRO v9.1 Backend - [PURE SYNC STABLE]
+# NICE PRO v9.4 LITE (NO PANDAS)
 # ============================================================
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import logging
 import requests
-import pandas as pd
 import config
 
 # Services (Package Import)
@@ -14,7 +13,6 @@ from services.signal_agents import SignalAggregator
 from services.guard_chain import GuardChain
 from services.llm_orchestrator import LLMOrchestrator
 from services.position_sizer import PositionSizer
-from services.backtester import Backtester
 from services.screener import BithumbScreener
 from services.portfolio_manager import PortfolioManager
 
@@ -29,44 +27,52 @@ signal_agg = SignalAggregator()
 guard_chain = GuardChain()
 llm_master = LLMOrchestrator()
 pos_sizer = PositionSizer()
-backtester = Backtester()
 portfolio_mgr = PortfolioManager()
 
 class MarketData:
     @staticmethod
     def fetch(ticker, timeframe="24h", count=100):
-        api_tf = "24h"
-        if timeframe == "scalp": api_tf = "30m"
-        elif timeframe == "short": api_tf = "1h"
-        
         try:
+            api_tf = "24h"
+            if timeframe == "scalp": api_tf = "30m"
+            
             sym = ticker.replace("KRW-","")
             url = f"{config.BITHUMB_API_URL}/candlestick/{sym}_KRW/{api_tf}"
-            res = requests.get(url, timeout=1).json()
+            res = requests.get(url, timeout=2).json()
             if res['status'] != '0000': return None, None
             
-            df = pd.DataFrame(res['data'], columns=['time','open','close','high','low','vol'])
-            df[['open','close','high','low','vol']] = df[['open','close','high','low','vol']].astype(float)
-            df.rename(columns={'vol':'volume'}, inplace=True)
+            # Pure Python List of Dicts
+            # Bithumb: [time, open, close, high, low, vol]
+            candles = []
+            raw_data = res['data'][-count:]
+            for d in raw_data:
+                candles.append({
+                    "time": d[0],
+                    "open": float(d[1]),
+                    "close": float(d[2]),
+                    "high": float(d[3]),
+                    "low": float(d[4]),
+                    "volume": float(d[5])
+                })
             
             url_ob = f"{config.BITHUMB_API_URL}/orderbook/{sym}_KRW"
-            ob = requests.get(url_ob, timeout=1).json()
+            ob = requests.get(url_ob, timeout=2).json()
             
-            return df.tail(count), ob['data']
+            return candles, ob['data']
         except: return None, None
 
 @app.route('/api/analyze/<ticker>')
 def analyze(ticker):
     tf_mode = request.args.get('timeframe', 'day')
     t_code = ticker.replace("KRW-","").upper()
-    df, ob = MarketData.fetch(t_code, timeframe=tf_mode)
+    candles, ob = MarketData.fetch(t_code, timeframe=tf_mode)
     
-    if df is None: return jsonify({"error": "Data Unavailable"}), 500
+    if candles is None: return jsonify({"error": "Data Unavailable"}), 500
     
-    # 1. Signals
-    signals = signal_agg.get_all_signals(df)
+    # 1. Signals (Now accepts List[Dict])
+    signals = signal_agg.get_all_signals(candles)
     
-    # 2. Guard (Now Sync)
+    # 2. Guard
     bid = float(ob['bids'][0]['price']) if ob else 0
     guard_res = guard_chain.execute_all(t_code, "BUY", 1.0, bid)
     
@@ -92,12 +98,10 @@ def analyze(ticker):
         }
     })
 
+# Backtest disabled in Lite Mode to save memory
 @app.route('/api/backtest/<ticker>')
 def backtest(ticker):
-    t_code = ticker.replace("KRW-","").upper()
-    df, _ = MarketData.fetch(t_code, timeframe="24h", count=200)
-    if df is None: return jsonify({"error": "Data Unavailable"}), 500
-    return jsonify(backtester.run(t_code, df))
+    return jsonify({"trades": 0, "return_pct": 0, "win_rate": 0, "note": "Backtest Disabled in Lite Mode"})
 
 @app.route('/api/screener/<category>')
 def get_screener(category):
@@ -115,7 +119,6 @@ def get_screener(category):
             return jsonify({"category": "scalp", "list": formatted})
         except: return jsonify({"list": []})
     
-    # Standard
     try:
         url = f"{config.BITHUMB_API_URL}/ticker/ALL_KRW"
         res = requests.get(url, timeout=1).json()
