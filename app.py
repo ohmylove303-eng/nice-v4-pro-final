@@ -1,5 +1,5 @@
 # ============================================================
-# NICE PRO v9.4 LITE (NO PANDAS)
+# NICE PRO v9.5 NUCLEAR SINGLE-FILE (NO TEMPLATES)
 # ============================================================
 
 from flask import Flask, jsonify, request
@@ -29,6 +29,102 @@ llm_master = LLMOrchestrator()
 pos_sizer = PositionSizer()
 portfolio_mgr = PortfolioManager()
 
+# EMBEDDED HTML (Bypasses Template System)
+HTML_CONTENT = """
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>NICE v9.5 NUCLEAR (SINGLE FILE)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <style>
+    :root { --bg-body: #050508; --bg-panel: #111116; --bg-header: #000; --accent-purple: #bb66ff; --accent-cyan: #00f0ff; --accent-green: #00ff9d; --accent-red: #ff0055; --border: 1px solid rgba(255, 255, 255, 0.1); --font-kr: 'Noto Sans KR', sans-serif; --font-mono: 'JetBrains Mono', monospace; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg-body); color: #eee; font-family: var(--font-kr); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+    header { flex-shrink: 0; padding: 12px 20px; background: var(--bg-header); border-bottom: var(--border); display: flex; align-items: center; gap: 24px; }
+    .logo { font-family: var(--font-mono); font-weight: 900; font-size: 20px; color: #fff; letter-spacing: -1px; }
+    .logo span { color: var(--accent-purple); }
+    .badge { background: #222; color: #888; padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 12px; border: 1px solid #333; }
+    .score { color: #fff; font-weight: 800; font-family: var(--font-mono); font-size: 24px; text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+    .search-bar { flex: 1; max-width: 400px; background: #111; border: 1px solid #333; padding: 10px 16px; border-radius: 8px; color: #eee; font-family: var(--font-kr); outline: none; transition: 0.3s; }
+    .search-bar:focus { border-color: var(--accent-purple); box-shadow: 0 0 15px rgba(187, 102, 255, 0.2); }
+    .top-stat { display: flex; flex-direction: column; align-items: flex-end; min-width: 80px; }
+    .stat-label { font-size: 10px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-val { font-size: 14px; font-weight: 700; color: #fff; font-family: var(--font-mono); }
+    #main { flex: 1; display: grid; grid-template-columns: 3fr 1fr; grid-template-rows: 2fr 1.2fr; gap: 16px; padding: 20px; overflow: hidden; }
+    #chart-container { grid-column: 1 / 2; grid-row: 1 / 2; background: var(--bg-panel); border-radius: 16px; border: var(--border); position: relative; overflow: hidden; }
+    #sidebar { grid-column: 2 / 3; grid-row: 1 / 3; background: var(--bg-panel); border-radius: 16px; border: var(--border); display: flex; flex-direction: column; overflow: hidden; }
+    .tab-row { display: flex; border-bottom: var(--border); }
+    .tab { flex: 1; text-align: center; padding: 14px; font-size: 11px; font-weight: 800; color: #666; cursor: pointer; transition: 0.2s; }
+    .tab:hover, .tab.active { color: #fff; background: rgba(255, 255, 255, 0.05); border-bottom: 2px solid var(--accent-cyan); }
+    .rank-list { flex: 1; overflow-y: auto; padding: 0; }
+    .rank-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); cursor: pointer; font-size: 13px; }
+    .rank-item:hover { background: rgba(255, 255, 255, 0.05); }
+    .rank-sym { font-weight: 700; color: #ddd; font-family: var(--font-mono); }
+    .rank-chg { font-family: var(--font-mono); font-size: 12px; }
+    #deck { grid-column: 1 / 2; grid-row: 2 / 3; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card { background: var(--bg-panel); border-radius: 12px; border: var(--border); padding: 16px; position: relative; display: flex; flex-direction: column; overflow: hidden; }
+    .card h3 { margin: 0 0 16px 0; font-size: 11px; color: #aaa; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #222; padding-bottom: 8px; }
+    .agent-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; }
+    .agent-name { color: #888; font-weight: 600; }
+    .agent-bar-bg { width: 60px; height: 4px; background: #222; border-radius: 2px; overflow: hidden; }
+    .agent-bar-fill { height: 100%; background: #444; }
+    .guard-phase { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 11px; color: #666; }
+    .guard-dot { width: 6px; height: 6px; border-radius: 50%; background: #333; }
+    .guard-dot.pass { background: var(--accent-green); box-shadow: 0 0 5px var(--accent-green); }
+    .guard-dot.fail { background: var(--accent-red); }
+    .metric-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 12px; color: #888; }
+    .metric-val { color: #fff; font-family: var(--font-mono); font-weight: 700; }
+    .ai-reasoning { font-size: 13px; line-height: 1.6; color: #ccc; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.5 NUCLEAR</span></div>
+    <div class="badge" id="app-badge">SYSTEM READY</div>
+    <div class="score" id="app-score">--</div>
+    <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
+    <div style="flex:1"></div>
+    <div class="top-stat"><span class="stat-label">Mode</span><span class="stat-val" id="mode-val" style="color:var(--accent-purple)">SWING (24H)</span></div>
+    <div class="top-stat"><span class="stat-label">Kelly</span><span class="stat-val" id="kelly-val">--%</span></div>
+    <div class="top-stat"><span class="stat-label">Win Rate</span><span class="stat-val" id="pf-win">--%</span></div>
+  </header>
+  <div id="main">
+    <div id="chart-container"><div id="chart-canvas" style="width:100%; height:100%"></div></div>
+    <div id="sidebar">
+      <div class="tab-row">
+        <div class="tab" onclick="changeMode('scalp', this)">⚡ SCALP</div>
+        <div class="tab active" onclick="changeMode('surge', this)">🔥 SWING</div>
+        <div class="tab" onclick="changeMode('volume', this)">💰 VOL</div>
+      </div>
+      <div class="rank-list" id="rank-list"></div>
+    </div>
+    <div id="deck">
+      <div class="card"><h3 style="color:var(--accent-cyan)">Signal Agents</h3><div id="agents-list"></div></div>
+      <div class="card"><h3 style="color:var(--accent-purple)">Guard Chain</h3><div id="guard-list"></div></div>
+      <div class="card"><h3>Risk Landscape</h3><div class="metric-row"><span>Sharpe Ratio</span><span class="metric-val" id="risk-sharpe">--</span></div><div class="metric-row"><span>Max Drawdown</span><span class="metric-val" id="risk-mdd" style="color:var(--accent-red)">--%</span></div><div class="metric-row"><span>Daily PnL</span><span class="metric-val" id="risk-pnl">--</span></div><div style="margin-top:10px; font-size:10px; color:#555">System Volatility: Low</div></div>
+      <div class="card" style="border:1px solid #333; background:#0a0a0e"><h3 style="color:#fff">CIO Decision</h3><div class="ai-reasoning" id="ai-text">Waiting for input...</div></div>
+    </div>
+  </div>
+  <script>
+    let CURRENT_MODE = 'day';
+    const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), { layout: { background: { color: '#111116' }, textColor: '#666' }, grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } }, });
+    const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
+    window.onload = () => { changeMode('surge', document.querySelector('.tab.active')); updatePortfolio(); };
+    setInterval(updatePortfolio, 5000);
+    document.getElementById('search-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') runAnalysis(e.target.value); });
+    async function updatePortfolio() { try { const res = await fetch('/api/portfolio/metrics'); const data = await res.json(); document.getElementById('pf-win').innerText = `${data.win_rate}%`; document.getElementById('risk-sharpe').innerText = data.sharpe_ratio; document.getElementById('risk-mdd').innerText = `${data.max_drawdown}%`; document.getElementById('risk-pnl').innerText = `₩${(data.realized_pnl_24h / 10000).toFixed(0)}만`; } catch (e) { } }
+    async function changeMode(cat, tabEl) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); if (tabEl) tabEl.classList.add('active'); CURRENT_MODE = (cat === 'scalp') ? 'scalp' : 'day'; document.getElementById('mode-val').innerText = CURRENT_MODE === 'scalp' ? "SCALPING (30m)" : "SWING (24H)"; document.getElementById('mode-val').style.color = CURRENT_MODE === 'scalp' ? "var(--accent-cyan)" : "var(--accent-purple)"; loadList(cat); }
+    async function loadList(cat) { const list = document.getElementById('rank-list'); list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Deep Scanning...</div>'; try { const res = await fetch(`/api/screener/${cat}`); const data = await res.json(); list.innerHTML = ''; data.list.forEach(c => { const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)'; const el = document.createElement('div'); el.className = 'rank-item'; const contextL = (cat === 'scalp') ? '30m' : '24h'; el.innerHTML = `<span class="rank-sym">${c.symbol}</span><div style="text-align:right"><div class="rank-chg" style="color:${color}">${c.change > 0 ? '+' : ''}${c.change}%</div><div style="font-size:10px; color:#666">${contextL}</div></div>`; el.onclick = () => runAnalysis(c.symbol); list.appendChild(el); }); } catch (e) { list.innerHTML = "Err"; } }
+    async function runAnalysis(ticker) { document.getElementById('app-score').innerText = "--"; document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`; try { const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`); const data = await res.json(); document.getElementById('app-score').innerText = data.score; document.getElementById('app-badge').innerText = data.type; document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff'; document.getElementById('kelly-val').innerText = `${data.kelly}%`; let agentHTML = ""; for (const [name, score] of Object.entries(data.agents)) { const color = score > 60 ? 'var(--accent-green)' : '#666'; agentHTML += `<div class="agent-row"><span class="agent-name">${name.substr(0, 4).toUpperCase()}</span><div style="display:flex; gap:6px"><div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div><span>${score}</span></div></div>`; } document.getElementById('agents-list').innerHTML = agentHTML; let guardHTML = ""; data.guards.forEach(g => { guardHTML += `<div class="guard-phase"><div class="guard-dot ${g.passed ? 'pass' : 'fail'}"></div> Ph ${g.phase}</div>`; }); document.getElementById('guard-list').innerHTML = guardHTML; document.getElementById('ai-text').innerText = data.ai_reasoning; updateChartMock(data.score > 60); } catch (e) { alert("Analysis Failed"); } }
+    function updateChartMock(isBull) { let d = []; let p = 1000; let now = Math.floor(Date.now() / 1000); for (let i = 100; i > 0; i--) { p = p + (Math.random() - 0.5) * 20 + (isBull ? 5 : -5); d.push({ time: now - i * 3600, open: p, high: p + 10, low: p - 10, close: p }); } candles.setData(d); }
+  </script>
+</body>
+</html>
+"""
+
 class MarketData:
     @staticmethod
     def fetch(ticker, timeframe="24h", count=100):
@@ -42,7 +138,6 @@ class MarketData:
             if res['status'] != '0000': return None, None
             
             # Pure Python List of Dicts
-            # Bithumb: [time, open, close, high, low, vol]
             candles = []
             raw_data = res['data'][-count:]
             for d in raw_data:
@@ -66,20 +161,12 @@ def analyze(ticker):
     tf_mode = request.args.get('timeframe', 'day')
     t_code = ticker.replace("KRW-","").upper()
     candles, ob = MarketData.fetch(t_code, timeframe=tf_mode)
-    
     if candles is None: return jsonify({"error": "Data Unavailable"}), 500
     
-    # 1. Signals (Now accepts List[Dict])
     signals = signal_agg.get_all_signals(candles)
-    
-    # 2. Guard
     bid = float(ob['bids'][0]['price']) if ob else 0
     guard_res = guard_chain.execute_all(t_code, "BUY", 1.0, bid)
-    
-    # 3. LLM
     llm_res = llm_master.synthesize(f"{t_code} ({tf_mode.upper()})", signals['agent_scores'], signals['weighted_score'])
-    
-    # 4. Kelly
     kelly_res = pos_sizer.calculate(t_code, "BUY", portfolio_mgr.balance)
     
     return jsonify({
@@ -91,17 +178,8 @@ def analyze(ticker):
         "agents": signals['agent_scores'],
         "guards": guard_res['phase_results'],
         "ai_reasoning": llm_res.get('reasoning', "Analysis Complete"),
-        # Tech Viz
-        "tech": {
-            "trend": "UP" if signals['weighted_score'] > 55 else "DOWN",
-            "rsi": signals['agent_scores']['technical']
-        }
+        "tech": { "trend": "UP" if signals['weighted_score'] > 55 else "DOWN", "rsi": signals['agent_scores']['technical'] }
     })
-
-# Backtest disabled in Lite Mode to save memory
-@app.route('/api/backtest/<ticker>')
-def backtest(ticker):
-    return jsonify({"trades": 0, "return_pct": 0, "win_rate": 0, "note": "Backtest Disabled in Lite Mode"})
 
 @app.route('/api/screener/<category>')
 def get_screener(category):
@@ -110,34 +188,18 @@ def get_screener(category):
             list_data = BithumbScreener.get_realtime_momentum()
             formatted = []
             for c in list_data:
-                formatted.append({
-                    "symbol": c['symbol'],
-                    "change": round(c['momentum'], 2),
-                    "volume": c['vol'],
-                    "price": c['price']
-                })
+                formatted.append({ "symbol": c['symbol'], "change": round(c['momentum'], 2), "volume": c['vol'], "price": c['price'] })
             return jsonify({"category": "scalp", "list": formatted})
         except: return jsonify({"list": []})
-    
     try:
         url = f"{config.BITHUMB_API_URL}/ticker/ALL_KRW"
         res = requests.get(url, timeout=1).json()
         data = []
         for k, v in res['data'].items():
             if k == 'date': continue
-            data.append({
-                "symbol": k,
-                "price": float(v['closing_price']),
-                "change": float(v['fluctate_rate_24H']),
-                "volume": float(v['acc_trade_value_24H'])
-            })
-        if category == "volume":
-            data.sort(key=lambda x: x['volume'], reverse=True)
-            data = data[:20]
-        else:
-            data.sort(key=lambda x: x['change'], reverse=True)
-            data = [d for d in data if d['volume'] > 1000000000][:20]
-        return jsonify({"category": category, "list": data})
+            data.append({ "symbol": k, "price": float(v['closing_price']), "change": float(v['fluctate_rate_24H']), "volume": float(v['acc_trade_value_24H']) })
+        data.sort(key=lambda x: x['change'], reverse=True)
+        return jsonify({"category": category, "list": data[:20]})
     except: return jsonify({"list": []})
 
 @app.route('/api/portfolio/metrics')
@@ -151,8 +213,8 @@ def get_positions():
 @app.route('/')
 @app.route('/app')
 def index():
-    from flask import render_template
-    return render_template('index.html')
+    # DIRECT RETURN HTML STRING
+    return HTML_CONTENT
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5002)
