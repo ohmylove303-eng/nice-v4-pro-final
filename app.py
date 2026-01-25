@@ -1,5 +1,5 @@
 # ============================================================
-# NICE PRO v9.0 Backend - [STABLE SYNC MODE]
+# NICE PRO v9.1 Backend - [PURE SYNC STABLE]
 # ============================================================
 
 from flask import Flask, jsonify, request
@@ -9,7 +9,7 @@ import requests
 import pandas as pd
 import config
 
-# Services
+# Services (Package Import)
 from services.signal_agents import SignalAggregator
 from services.guard_chain import GuardChain
 from services.llm_orchestrator import LLMOrchestrator
@@ -55,11 +55,6 @@ class MarketData:
             return df.tail(count), ob['data']
         except: return None, None
 
-# Helper for Sync Async
-def run_sync_task(coro):
-    # Just a placeholder if we need it, but now everything is sync
-    pass
-
 @app.route('/api/analyze/<ticker>')
 def analyze(ticker):
     tf_mode = request.args.get('timeframe', 'day')
@@ -68,22 +63,17 @@ def analyze(ticker):
     
     if df is None: return jsonify({"error": "Data Unavailable"}), 500
     
+    # 1. Signals
     signals = signal_agg.get_all_signals(df)
     
-    # Sync Call for Guard (Refactored to Sync in memory if needed, or just await in new implementation)
-    # Note: GuardChain was async. We wrapper it here or assume it was refactored.
-    # We will simple call it and if it's async, we use a simple loop.
-    # BUT to be safe, we assume GuardChain logic is pure python and fast enough.
-    import asyncio
-    try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        guard_res = loop.run_until_complete(guard_chain.execute_all(t_code, "BUY", 1.0, float(ob['bids'][0]['price'])))
-        loop.close()
-    except:
-        guard_res = {"phase_results": []}
-
+    # 2. Guard (Now Sync)
+    bid = float(ob['bids'][0]['price']) if ob else 0
+    guard_res = guard_chain.execute_all(t_code, "BUY", 1.0, bid)
+    
+    # 3. LLM
     llm_res = llm_master.synthesize(f"{t_code} ({tf_mode.upper()})", signals['agent_scores'], signals['weighted_score'])
+    
+    # 4. Kelly
     kelly_res = pos_sizer.calculate(t_code, "BUY", portfolio_mgr.balance)
     
     return jsonify({
@@ -95,7 +85,7 @@ def analyze(ticker):
         "agents": signals['agent_scores'],
         "guards": guard_res['phase_results'],
         "ai_reasoning": llm_res.get('reasoning', "Analysis Complete"),
-        # Legacy
+        # Tech Viz
         "tech": {
             "trend": "UP" if signals['weighted_score'] > 55 else "DOWN",
             "rsi": signals['agent_scores']['technical']
@@ -113,7 +103,6 @@ def backtest(ticker):
 def get_screener(category):
     if category == "scalp":
         try:
-            # SYNC CALL NOW
             list_data = BithumbScreener.get_realtime_momentum()
             formatted = []
             for c in list_data:
@@ -124,9 +113,9 @@ def get_screener(category):
                     "price": c['price']
                 })
             return jsonify({"category": "scalp", "list": formatted})
-        except Exception as e: return jsonify({"error": str(e)}), 500
+        except: return jsonify({"list": []})
     
-    # Standard logic logic
+    # Standard
     try:
         url = f"{config.BITHUMB_API_URL}/ticker/ALL_KRW"
         res = requests.get(url, timeout=1).json()
