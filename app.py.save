@@ -1,2 +1,0 @@
-rm templates/index.html && nano templates/index.html
-

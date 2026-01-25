@@ -5,42 +5,22 @@
   <meta charset="UTF-8">
   <title>NICE PROTOCOL | TERMINAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;900&display=swap"
     rel="stylesheet">
-
-  <!-- TradingView Lightweight Charts -->
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 
   <style>
     :root {
-      /* DEEP SPACE THEME */
-      --bg-void: #030304;
-      --bg-panel: rgba(20, 20, 25, 0.6);
-      --bg-panel-active: rgba(30, 30, 40, 0.8);
-
-      /* NEON SIGNALS */
+      --bg-void: #050505;
       --signal-green: #00ff9d;
       --signal-red: #ff0055;
       --signal-blue: #00f0ff;
-      --signal-warn: #ffcc00;
-
-      /* GLASS */
-      --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-      --glass-blur: blur(20px);
-
-      /* TYPO */
-      --font-hud: 'JetBrains Mono', monospace;
-      --font-ui: 'Inter', sans-serif;
+      --glass-border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* RESET & BASE */
     * {
       box-sizing: border-box;
-      outline: none;
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -48,50 +28,31 @@
       margin: 0;
       background: var(--bg-void);
       color: #fff;
-      font-family: var(--font-ui);
-      overflow: hidden;
-      /* App feel */
+      font-family: 'Inter', sans-serif;
       height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
-    /* HEADER (STATUS BAR) */
     header {
       height: 50px;
-      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
       border-bottom: var(--glass-border);
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: var(--glass-blur);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
       z-index: 100;
     }
 
     .brand {
-      font-family: var(--font-hud);
+      font-family: 'JetBrains Mono';
       font-weight: 800;
-      letter-spacing: -1px;
-      font-size: 16px;
       color: var(--signal-blue);
     }
 
-    .brand span {
-      color: #fff;
-    }
-
-    .live-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--signal-green);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--signal-green);
-      animation: pulse 2s infinite;
-    }
-
-    /* APP CONTAINER (VIEWS) */
     #app-container {
       flex: 1;
       position: relative;
@@ -100,20 +61,11 @@
 
     .view {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: var(--bg-void);
-      transition: transform 0.3s cubic-bezier(0.2, 0.0, 0.0, 1.0);
+      transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
-    }
-
-    /* STATE MANAGEMENT FOR VIEWS */
-    #view-scanner {
-      transform: translateX(0);
-      z-index: 10;
     }
 
     #view-analyst {
@@ -122,7 +74,7 @@
     }
 
     body.mode-analyst #view-scanner {
-      transform: translateX(-30%);
+      transform: translateX(-20%);
       opacity: 0.5;
     }
 
@@ -130,515 +82,334 @@
       transform: translateX(0);
     }
 
-    /* --- VIEW 1: SCANNER --- */
-    .category-tabs {
+    /* TABS */
+    .tabs {
       display: flex;
       gap: 8px;
-      padding: 12px 16px;
+      padding: 12px;
       overflow-x: auto;
       border-bottom: var(--glass-border);
     }
 
-    .tab-btn {
-      background: var(--bg-panel);
-      border: var(--glass-border);
-      color: #888;
+    .tab {
+      background: rgba(255, 255, 255, 0.05);
       padding: 8px 16px;
       border-radius: 100px;
       font-size: 12px;
       font-weight: 600;
-      white-space: nowrap;
       cursor: pointer;
-      transition: all 0.2s;
+      min-width: 80px;
+      text-align: center;
+      border: 1px solid transparent;
     }
 
-    .tab-btn.active {
+    .tab.active {
       background: var(--signal-blue);
       color: #000;
-      border-color: var(--signal-blue);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
     }
 
-    .coin-list {
+    /* LIST */
+    .list {
       flex: 1;
       overflow-y: auto;
-      padding: 12px;
+      padding: 10px;
       display: grid;
       gap: 8px;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
-    .coin-card {
-      background: var(--bg-panel);
+    .card {
+      background: rgba(20, 20, 30, 0.6);
       border: var(--glass-border);
       padding: 16px;
       border-radius: 12px;
-      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background 0.2s;
+      cursor: pointer;
     }
 
-    .coin-card:active {
+    .card:active {
       transform: scale(0.98);
     }
 
-    .coin-rank {
-      font-family: var(--font-hud);
-      color: #444;
-      font-size: 12px;
-      width: 20px;
-    }
-
-    .coin-sym {
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .coin-price {
-      font-family: var(--font-hud);
+    /* ANALYST */
+    .nav {
+      padding: 12px;
+      border-bottom: var(--glass-border);
+      display: flex;
+      gap: 10px;
       font-size: 14px;
-      color: #ddd;
+      cursor: pointer;
+      color: #888;
     }
 
-    .coin-chg {
-      font-family: var(--font-hud);
-      font-size: 12px;
+    #chart {
+      height: 40%;
+      border-bottom: var(--glass-border);
+    }
+
+    #panel {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.03), transparent);
+    }
+
+    /* GUARD BADGE */
+    .guard-badge {
+      font-family: 'JetBrains Mono';
+      font-size: 10px;
       padding: 4px 8px;
       border-radius: 4px;
-      font-weight: 700;
+      background: #222;
+      border: 1px solid #444;
+      color: #888;
+      display: inline-block;
+      margin-bottom: 12px;
     }
 
-    .chg-up {
+    .guard-safe {
+      border-color: var(--signal-green);
       color: var(--signal-green);
       background: rgba(0, 255, 157, 0.1);
     }
 
-    .chg-down {
+    .guard-warn {
+      border-color: var(--signal-red);
       color: var(--signal-red);
       background: rgba(255, 0, 85, 0.1);
     }
 
-    /* --- VIEW 2: ANALYST --- */
-    .nav-back {
-      padding: 12px 16px;
-      border-bottom: var(--glass-border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: pointer;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .nav-back:hover {
-      color: #fff;
-    }
-
-    #chart-area {
-      height: 45%;
-      border-bottom: var(--glass-border);
-      position: relative;
-    }
-
-    #analysis-panel {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px;
-      background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.05), transparent 50%);
-    }
-
-    /* HUD ELEMENTS */
     .hud-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
-    .hud-cell {
+    .hud-box {
       background: rgba(255, 255, 255, 0.03);
       border: var(--glass-border);
       padding: 12px;
       border-radius: 8px;
     }
 
-    .hud-label {
-      font-size: 10px;
-      color: #666;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .hud-value {
-      font-family: var(--font-hud);
+    .hud-val {
+      font-family: 'JetBrains Mono';
       font-size: 16px;
       font-weight: 700;
       color: var(--signal-blue);
     }
 
-    .ai-card {
+    .ai-box {
       border: 1px solid var(--signal-blue);
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
-      background: rgba(0, 20, 30, 0.6);
-      border-radius: 12px;
+      background: rgba(0, 10, 20, 0.8);
       padding: 20px;
-      position: relative;
-      overflow: hidden;
+      border-radius: 12px;
     }
 
-    .ai-card::before {
-      content: '';
+    /* Loader */
+    .loader {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--signal-blue);
-    }
-
-    .strategy-row {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 16px;
-    }
-
-    .strat-item {
-      text-align: center;
-    }
-
-    .strat-val {
-      font-family: var(--font-hud);
-      font-size: 14px;
-      display: block;
-      margin-top: 4px;
-    }
-
-    .loading-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(5px);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       z-index: 50;
       display: none;
     }
 
-    .loading-overlay.active {
+    .loader.on {
       display: flex;
     }
 
-    .scan-line {
+    .scan {
       width: 100%;
       height: 2px;
       background: var(--signal-blue);
       position: absolute;
-      animation: scan 1.5s infinite linear;
-      box-shadow: 0 0 10px var(--signal-blue);
+      animation: scan 1.5s infinite;
     }
 
     @keyframes scan {
       0% {
         top: 0;
-        opacity: 0;
+        opacity: 0
       }
 
       50% {
-        opacity: 1;
+        opacity: 1
       }
 
       100% {
         top: 100%;
-        opacity: 0;
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        opacity: 0.5;
-      }
-
-      50% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0.5;
+        opacity: 0
       }
     }
   </style>
 </head>
 
 <body>
-
   <header>
-    <div class="brand">NICE<span>PRO</span> <span style="font-size:10px; opacity:0.5; margin-left:4px;">TERMINAL</span>
-    </div>
-    <div style="display:flex; align-items:center; gap:8px;">
-      <span style="font-size:10px; color:#666;">SERVER CONNECTED</span>
-      <div class="live-dot"></div>
-    </div>
+    <div class="brand">NICE<span>PRO</span> <span style="opacity:0.5; font-size:10px">v5.5</span></div>
+    <div style="font-size:10px; color:var(--signal-green)">● SYSTEM ACTIVE</div>
   </header>
 
   <div id="app-container">
-
-    <!-- VIEW 1: SCANNER -->
+    <!-- SCANNER -->
     <div id="view-scanner" class="view">
-      <div class="category-tabs">
-        <button class="tab-btn active" onclick="loadCategory('surge')">⚡️ SURGE</button>
-        <button class="tab-btn" onclick="loadCategory('scalping')">🎯 SCALPING</button>
-        <button class="tab-btn" onclick="loadCategory('majors')">💎 MAJORS</button>
+      <div class="tabs">
+        <div class="tab active" onclick="loadCat('surge', this)">⚡ SURGE</div>
+        <div class="tab" onclick="loadCat('scalping', this)">🎯 SCALP</div>
+        <div class="tab" onclick="loadCat('majors', this)">💎 MAJOR</div>
       </div>
-
-      <div class="coin-list" id="coin-list">
-        <!-- Dynamic Items -->
-        <div style="padding:20px; text-align:center; color:#444;">INITIALIZING SCANNER...</div>
-      </div>
+      <div id="list" class="list"></div>
     </div>
 
-    <!-- VIEW 2: ANALYST -->
+    <!-- ANALYST -->
     <div id="view-analyst" class="view">
-      <div class="nav-back" onclick="closeAnalyst()">
-        <span>← BACK TO SCANNER</span> <span id="target-title"
-          style="color:#fff; font-weight:bold; margin-left:auto;">BTC/KRW</span>
-      </div>
+      <div class="nav" onclick="closeAnalyst()">← BACK TO SCANNER</div>
+      <div id="chart"></div>
+      <div id="panel">
+        <div id="ai-ui" style="display:none">
+          <div id="guard-status" class="guard-badge">CHECKING SECURITY...</div>
 
-      <div id="chart-area">
-        <!-- TradingView Chart Mount -->
-      </div>
-
-      <div id="analysis-panel">
-        <div class="loading-overlay" id="ai-loader">
-          <div class="scan-line"></div>
-          <div style="margin-top:20px; font-family:var(--font-hud); color:var(--signal-blue);">NEURAL ANALYSIS...</div>
-        </div>
-
-        <div id="ai-content" style="display:none;">
           <div class="hud-grid">
-            <div class="hud-cell">
-              <div class="hud-label">Technical Trend</div>
-              <div class="hud-value" id="hud-trend">--</div>
+            <div class="hud-box">
+              <div style="font-size:10px; color:#666">TREND STRUCTURE</div>
+              <div id="hud-trend" class="hud-val">--</div>
             </div>
-            <div class="hud-cell">
-              <div class="hud-label">RSI Momentum</div>
-              <div class="hud-value" id="hud-rsi">--</div>
+            <div class="hud-box">
+              <div style="font-size:10px; color:#666">MOMENTUM (RSI)</div>
+              <div id="hud-rsi" class="hud-val">--</div>
             </div>
           </div>
 
-          <div class="ai-card">
-            <div style="font-size:12px; color:var(--signal-blue); font-weight:700; margin-bottom:8px;">STRATEGIC
-              DIRECTIVE</div>
-            <div id="ai-reason" style="font-size:14px; line-height:1.5; color:#ddd; margin-bottom:16px;">
-              Analysis loaded.
+          <div class="ai-box">
+            <div style="color:var(--signal-blue); font-weight:700; font-size:12px; margin-bottom:10px;">TACTICAL REPORT
             </div>
-
-            <div style="background:rgba(255,255,255,0.1); height:1px; width:100%;"></div>
-
-            <div class="strategy-row">
-              <div class="strat-item">
-                <span style="font-size:10px; color:#888;">ENTRY</span>
-                <span class="strat-val" style="color:#fff;" id="strat-entry">--</span>
+            <div id="ai-msg" style="font-size:14px; line-height:1.5; color:#ddd; margin-bottom:15px;"></div>
+            <div style="display:flex; justify-content:space-between; border-top:1px solid #333; padding-top:10px;">
+              <div style="text-align:center">
+                <div style="font-size:10px; color:#666">ENTRY</div>
+                <div id="tx-entry" style="font-family:'JetBrains Mono'">--</div>
               </div>
-              <div class="strat-item">
-                <span style="font-size:10px; color:#888;">TARGET</span>
-                <span class="strat-val" style="color:var(--signal-green);" id="strat-tp">--</span>
+              <div style="text-align:center">
+                <div style="font-size:10px; color:#666">TARGET</div>
+                <div id="tx-tp" style="color:var(--signal-green); font-family:'JetBrains Mono'">--</div>
               </div>
-              <div class="strat-item">
-                <span style="font-size:10px; color:#888;">STOP</span>
-                <span class="strat-val" style="color:var(--signal-red);" id="strat-sl">--</span>
+              <div style="text-align:center">
+                <div style="font-size:10px; color:#666">STOP</div>
+                <div id="tx-sl" style="color:var(--signal-red); font-family:'JetBrains Mono'">--</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div id="loader" class="loader">
+        <div class="scan"></div>
+        <div style="color:var(--signal-blue); font-family:'JetBrains Mono'">ANALYZING...</div>
       </div>
     </div>
-
   </div>
 
   <script>
-        // --- GLOBAL STATE ---
-        let currentChart = null;
-        let candleSeries = null;
-
-        // --- INIT ---
-        window.addEventListener('DOMContentLoaded', () => {
-            loadCategory('surge'); // Default Load
-        });
-
-        // --- SCANNER LOGIC ---
-        async function loadCategory(cat) {
-            // UI Toggle
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
+        let chart; 
+        
+        window.onload = () => loadCat('surge', document.querySelector('.tab'));
+        
+        async function loadCat(cat, el) {
+            document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+            el.classList.add('active');
             
-            const listEl = document.getElementById('coin-list');
-            listEl.innerHTML = '<div style="padding:20px; text-align:center; color:#666;">SCANNING BITHUMB NETWORK...</div>';
-
+            const list = document.getElementById('list');
+            list.innerHTML = '<div style="text-align:center; padding:20px; color:#666">SCANNING...</div>';
+            
             try {
                 const res = await fetch(`/api/screener/${cat}`);
-                const json = await res.json();
+                const data = await res.json();
+                list.innerHTML = '';
                 
-                listEl.innerHTML = '';
-                
-                if(json.list.length === 0) {
-                    listEl.innerHTML = '<div style="padding:20px; text-align:center; color:#666;">NO SIGNALS FOUND</div>';
-                    return;
-                }
-
-                json.list.forEach((coin, idx) => {
-                    const isUp = coin.change >= 0;
-                    const cleanSym = coin.symbol.replace('KRW', '');
-                    
-                    const div = document.createElement('div');
-                    div.className = 'coin-card fade-in';
-                    div.onclick = () => openAnalyst(coin.symbol);
-                    div.innerHTML = `
-                        <div style="display:flex; align-items:center; gap:12px;">
-                            <span class="coin-rank">${idx+1}</span>
+                data.list.forEach((c, i) => {
+                    const isUp = c.change >= 0;
+                    list.innerHTML += `
+                    <div class="card" onclick="openAnalyst('${c.symbol}')">
+                        <div style="display:flex; align-items:center; gap:10px">
+                            <span style="font-family:'JetBrains Mono'; color:#444; width:20px;">${i+1}</span>
                             <div>
-                                <div class="coin-sym">${coin.symbol}</div>
-                                <div style="font-size:11px; color:#666;">Vol: ${(coin.volume/100000000).toFixed(0)}억</div>
+                                <div style="font-weight:700">${c.symbol}</div>
+                                <div style="font-size:11px; color:#666">Vol ${(c.volume/100000000).toFixed(0)}억</div>
                             </div>
                         </div>
-                        <div style="text-align:right;">
-                            <div class="coin-price">${Number(coin.price).toLocaleString()}</div>
-                            <div class="coin-chg ${isUp ? 'chg-up' : 'chg-down'}">${coin.change > 0 ? '+' : ''}${coin.change}%</div>
+                        <div style="text-align:right">
+                            <div style="font-family:'JetBrains Mono'">${c.price.toLocaleString()}</div>
+                            <div style="font-size:12px; color:${isUp ? 'var(--signal-green)' : 'var(--signal-red)'}">${c.change}%</div>
                         </div>
-                    `;
-                    listEl.appendChild(div);
+                    </div>`;
                 });
-
-            } catch(e) {
-                listEl.innerHTML = '<div style="padding:20px; text-align:center; color:var(--signal-red);">CONNECTION FAILURE</div>';
-            }
+            } catch(e) { list.innerHTML = 'ERROR'; }
         }
-
-        // --- ANALYST LOGIC ---
+        
         async function openAnalyst(ticker) {
             document.body.classList.add('mode-analyst');
-            document.getElementById('target-title').innerText = ticker;
-            document.getElementById('ai-content').style.display = 'none';
-            document.getElementById('ai-loader').classList.add('active');
+            document.getElementById('ai-ui').style.display = 'none';
+            document.getElementById('loader').classList.add('on');
             
-            // 1. Chart Init (First time or Resize)
-            initChart();
+            if(!chart) {
+                const box = document.getElementById('chart');
+                chart = LightweightCharts.createChart(box, {
+                    layout: { background: { color: '#050505' }, textColor: '#888' },
+                    grid: { vertLines: { color: '#111' }, horzLines: { color: '#111' } },
+                    width: box.clientWidth, height: box.clientHeight
+                });
+                chart.addCandlestickSeries();
+            }
             
             try {
-                // 2. Fetch Deep Analysis
                 const res = await fetch(`/api/analyze/${ticker}`);
                 const data = await res.json();
                 
-                // 3. Update AI Panel
-                updateAI(data);
+                // GUARD STATUS
+                const g = document.getElementById('guard-status');
+                if(data.guard_report.passed) {
+                    g.className = 'guard-badge guard-safe';
+                    g.innerText = `GUARD: ${data.guard_report.level} (SECURE)`;
+                } else {
+                    g.className = 'guard-badge guard-warn';
+                    g.innerText = `GUARD: ${data.guard_report.level} - ${data.guard_report.reason}`;
+                    
+                    // IF FAILED, STOP HERE
+                    document.getElementById('loader').classList.remove('on');
+                    document.getElementById('ai-ui').style.display = 'block';
+                    document.getElementById('ai-msg').innerText = "Strategy generation blocked by Security Guard.";
+                    return;
+                }
                 
-                // 4. Mock Chart Data (Since we don't have full Candle API in this demo scope, 
-                // in real-prod we use data.chart_data passed from backend)
-                // For Visual Demo logic:
-                renderChartMock(data.tech.price, data.tech.trend);
-
+                // DATA RENDER
+                document.getElementById('hud-trend').innerText = data.tech.trend.replace('_',' ');
+                document.getElementById('hud-rsi').innerText = data.tech.rsi.toFixed(1);
+                
+                document.getElementById('ai-msg').innerText = data.ai.reasoning || "Analyzing...";
+                document.getElementById('tx-entry').innerText = data.ai.entry_price || "-";
+                document.getElementById('tx-tp').innerText = data.ai.target_price || "-";
+                document.getElementById('tx-sl').innerText = data.ai.stop_loss || "-";
+                
+                document.getElementById('loader').classList.remove('on');
+                document.getElementById('ai-ui').style.display = 'block';
+                
             } catch(e) {
-                console.error(e);
-                alert("Analysis failed");
+                alert('Connection Failed');
                 closeAnalyst();
             }
         }
-
+        
         function closeAnalyst() {
             document.body.classList.remove('mode-analyst');
-            // Clean AI state
-            document.getElementById('ai-loader').classList.remove('active');
-        }
-
-        function updateAI(data) {
-            document.getElementById('ai-loader').classList.remove('active');
-            document.getElementById('ai-content').style.display = 'block';
-            
-            // HUD
-            document.getElementById('hud-trend').innerText = data.tech.trend.replace('_', ' ');
-            document.getElementById('hud-rsi').innerText = data.tech.rsi.toFixed(1);
-            
-            // Strategy
-            document.getElementById('ai-reason').innerText = data.ai.reasoning || "AI did not return a strategy.";
-            document.getElementById('strat-entry').innerText = data.ai.entry_price || "--";
-            document.getElementById('strat-tp').innerText = data.ai.target_price || "--";
-            document.getElementById('strat-sl').innerText = data.ai.stop_loss || "--";
-            
-            // Color Logic
-            const action = data.ai.action || "WAIT";
-            const card = document.querySelector('.ai-card');
-            if(action === 'BUY') card.style.borderColor = 'var(--signal-green)';
-            if(action === 'SELL') card.style.borderColor = 'var(--signal-red)';
-        }
-
-        // --- CHART ENGINE ---
-        function initChart() {
-            const container = document.getElementById('chart-area');
-            if(currentChart) {
-                 // Clear previous data? No, simpler to just ensure it exists
-                 return; 
-            }
-            container.innerHTML = '';
-            
-            const chart = LightweightCharts.createChart(container, {
-                width: container.clientWidth,
-                height: container.clientHeight,
-                layout: { background: { color: '#030304' }, textColor: '#888' },
-                grid: { vertLines: { color: '#111' }, horzLines: { color: '#111' } },
-                timeScale: { borderColor: '#222' },
-                rightPriceScale: { borderColor: '#222' },
-            });
-            
-            candleSeries = chart.addCandlestickSeries({
-                upColor: '#00ff9d', downColor: '#ff0055',
-                borderUpColor: '#00ff9d', borderDownColor: '#ff0055',
-                wickUpColor: '#00ff9d', wickDownColor: '#ff0055',
-            });
-            
-            currentChart = chart;
-            
-            // Resize Observer
-            new ResizeObserver(entries => {
-                if (currentChart) {
-                    currentChart.resize(entries[0].contentRect.width, entries[0].contentRect.height);
-                }
-            }).observe(container);
-        }
-
-        function renderChartMock(currentPrice, trend) {
-            // Generates a mock candle pattern that matches the "Trend" for visual fidelity
-            // In production, this would be: candleSeries.setData(data.candles)
-            
-            let data = [];
-            let price = currentPrice * 0.9;
-            const now = Math.floor(Date.now() / 1000);
-            
-            for(let i=0; i<50; i++) {
-                const time = now - (50-i)*3600;
-                let change = (Math.random() - 0.5) * (price * 0.02);
-                if(trend.includes("UP")) change += price * 0.005;
-                if(trend.includes("DOWN")) change -= price * 0.005;
-                
-                let open = price;
-                let close = price + change;
-                let high = Math.max(open, close) + Math.random()*(price*0.01);
-                let low = Math.min(open, close) - Math.random()*(price*0.01);
-                
-                data.push({time, open, high, low, close});
-                price = close;
-            }
-            // Ensure last candle matches current price
-            data[data.length-1].close = currentPrice;
-            
-            candleSeries.setData(data);
+            document.getElementById('loader').classList.remove('on');
         }
   </script>
 </body>

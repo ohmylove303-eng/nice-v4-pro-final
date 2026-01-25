@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko" data-color-scheme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>NICE MPC v44.3 Mobile Radar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    /* 트레이더님이 만족하신 그 디자인 그대로 유지 */
+    :root {
+      --color-background: #121418;
+      --color-surface: #1a1d21;
+      --color-primary: #00e5ff;
+      --color-text: #e0e0e0;
+      --color-text-muted: #8b949e;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --radius-md: 12px;
+      --font-mono: 'SF Mono', Menlo, monospace;
+    }
+    body {
+      margin: 0; padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--color-background); color: var(--color-text);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 16px; }
+    
+    /* PC: 좌측 사이드바, 우측 메인 / 모바일: 세로 배치 */
+    .app-shell { display: grid; grid-template-columns: 280px 1fr; gap: 20px; margin-top: 20px; }
+    @media (max-width: 900px) { .app-shell { grid-template-columns: 1fr; } }
+
+    .card { background: var(--color-surface); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color); }
+    .mono { font-family: var(--font-mono); }
+    .muted { color: var(--color-text-muted); }
+    .flex-between { display: flex; justify-content: space-between; align-items: center; }
+    
+    /* 헤더 */
+    header { display: flex; justify-content: space-between; align-items: center; }
+    h1 { margin: 0; font-size: 24px; background: linear-gradient(90deg, var(--color-primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .status-badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; border: 1px solid var(--color-primary); color: var(--color-primary); background: rgba(0, 229, 255, 0.1); }
+
+    /* NICE 레이어 리스트 (디자인 유지 + 설명 추가) */
+    .layer-item { padding: 12px; border-radius: 8px; margin-bottom: 8px; background: rgba(255,255,255,0.03); display: flex; justify-content: space-between; align-items: center; }
+    .layer-left { display: flex; flex-direction: column; }
+    .layer-name { font-weight: bold; font-size: 14px; margin-bottom: 2px; display: flex; align-items: center; }
+    .layer-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 8px; }
+    .layer-desc { font-size: 11px; color: var(--color-primary); } /* 가격 정보가 뜰 곳 */
+    .layer-score { font-size: 16px; font-weight: bold; }
+
+    /* 게이지 */
+    .infographic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    @media (max-width: 768px) { .infographic-grid { grid-template-columns: 1fr; } }
+    .wrs-score-big { font-size: 48px; font-weight: 800; color: var(--color-primary); }
+    .gauge-bar-bg { height: 12px; background: #333; border-radius: 6px; margin: 16px 0; position: relative; overflow: hidden; }
+    .gauge-marker { position: absolute; top: 0; width: 4px; height: 100%; background: #fff; box-shadow: 0 0 10px #fff; transition: left 0.5s; }
+
+    /* 추천 그리드 */
+    .recommendation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    @media (max-width: 1024px) { .recommendation-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .recommendation-grid { grid-template-columns: 1fr; } }
+
+    .reco-item { background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 8px; }
+    .coin-header { display: flex; justify-content: space-between; align-items: center; }
+    .role-tag { font-size: 10px; padding: 2px 6px; background: rgba(34, 197, 94, 0.2); color: #4ade80; border-radius: 4px; }
+    .price-info { display: flex; justify-content: space-between; font-size: 13px; margin-top: 4px; border-top: 1px solid var(--border-color); padding-top: 8px; }
+    .price-val { color: var(--color-primary); font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>NICE MPC v44.3 🚀</h1>
+        <div class="muted" style="font-size:12px;">모바일 최적화 실시간 레이더</div>
+      </div>
+      <div class="status-badge">● LIVE SYSTEM</div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="card">
+        <div class="flex-between" style="margin-bottom:16px;">
+            <span class="muted" style="font-size:13px;">NICE 레이어 점수</span>
+            <span class="mono" style="font-size:12px;" id="last-update">--:--</span>
+        </div>
+        <div id="layer-list"></div> <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border-color);">
+             <div class="flex-between"><span class="muted">WRS 종합</span><span class="mono font-bold" style="font-size:20px;" id="side-wrs">--.--</span></div>
+             <div class="flex-between" style="margin-top:8px;"><span class="muted">TIER 판정</span><span class="status-badge" id="side-tier">분석중</span></div>
+        </div>
+      </aside>
+
+      <main>
+        <section class="card">
+           <div class="flex-between">
+               <h2 style="margin:0; font-size:18px;">실시간 시장 강도 (WRS)</h2>
+               <button onclick="fetchData()" style="background:transparent; border:1px solid var(--color-primary); color:var(--color-primary); padding:4px 12px; border-radius:4px; cursor:pointer;">새로고침</button>
+           </div>
+           <div class="infographic-grid">
+               <div style="text-align:center;">
+                   <div class="muted" style="font-size:12px;">현재 통합 점수</div>
+                   <div class="wrs-score-big mono"><span id="main-wrs">--.--</span><span style="font-size:20px;color:var(--color-text-muted)">/100</span></div>
+                   <div class="gauge-bar-bg">
+                       <div style="height:100%; width:100%; background: linear-gradient(90deg, #ef4444, #eab308, #22c55e);"></div>
+                       <div class="gauge-marker" id="gauge-marker" style="left: 0%;"></div>
+                   </div>
+               </div>
+               <div>
+                   <div class="muted" style="font-size:12px; margin-bottom:8px;">최근 흐름</div>
+                   <div id="timeline-box" style="display:flex; gap:8px; overflow-x:auto;">
+                       </div>
+               </div>
+           </div>
+        </section>
+
+        <section class="card" style="margin-top:20px;">
+            <div class="flex-between" style="margin-bottom:12px;">
+                <h2 style="margin:0; font-size:18px;">NICE 추천 포트폴리오</h2>
+            </div>
+            <div class="recommendation-grid" id="reco-grid">
+                </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    async function fetchData() {
+        try {
+            const res = await fetch('/api/mpc-data');
+            const data = await res.json();
+            updateDashboard(data);
+        } catch (e) {
+            console.error("연결 실패", e);
+        }
+    }
+
+    function updateDashboard(data) {
+        const current = data.current_snapshot;
+        
+        // 1. 기본 정보
+        document.getElementById('last-update').textContent = current.time.slice(11); // 시간만 표시
+        document.getElementById('side-wrs').textContent = current.wrs;
+        document.getElementById('side-tier').textContent = current.tier;
+        document.getElementById('main-wrs').textContent = current.wrs;
+        
+        // 게이지 위치 (0~100%)
+        document.getElementById('gauge-marker').style.left = `${Math.min(data.current_snapshot.wrs, 100)}%`;
+
+        // 2. NICE 레이어 (디자인 유지 + 가격 정보 l.desc 추가)
+        const layerList = document.getElementById('layer-list');
+        layerList.innerHTML = '';
+        data.layer_scores.forEach(l => {
+            layerList.innerHTML += `
+            <div class="layer-item">
+                <div class="layer-left">
+                    <div class="layer-name"><span class="layer-dot"></span>${l.name}</div>
+                    <div class="layer-desc">${l.desc}</div> </div>
+                <div class="layer-score mono">${l.score}점</div>
+            </div>`;
+        });
+
+        // 3. 추천 카드 (여기에 가격 정보 c.entry 넣음)
+        const grid = document.getElementById('reco-grid');
+        grid.innerHTML = '';
+        
+        ['scalping', 'short', 'medium'].forEach(cat => {
+            const group = data.recommendations[cat];
+            if(!group || !group.coins) return;
+
+            group.coins.forEach(c => {
+                grid.innerHTML += `
+                <div class="reco-item">
+                    <div class="coin-header">
+                        <span style="font-weight:bold;">${c.symbol}</span>
+                        <span class="role-tag">${group.mode}</span>
+                    </div>
+                    <div style="font-size:12px; color:#8b949e;">${c.label}</div>
+                    <div class="price-info mono">
+                        <span>진입 <span class="price-val">${c.entry}</span></span> <span>목표 <span style="color:#eab308;">${c.tp}</span></span>
+                    </div>
+                </div>`;
+            });
+        });
+    }
+
+    // 초기 실행 및 3초 반복
+    fetchData();
+    setInterval(fetchData, 3000);
+  </script>
+</body>
+</html>
