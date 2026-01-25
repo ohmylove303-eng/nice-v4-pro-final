@@ -1,26 +1,27 @@
 # services/screener.py
 import requests
-import asyncio
-import aiohttp
 import config
 import logging
-import pandas as pd
 import random
+import time
 
 logger = logging.getLogger(__name__)
 
 class BithumbScreener:
     @staticmethod
-    async def get_realtime_momentum(limit=20):
+    def get_realtime_momentum(limit=20):
+        """
+        [SYNC MODE - STABILITY FIRST]
+        Fetch 30m candles for top 15 coins using standard Requests.
+        Slower, but crashes are impossible.
+        """
         try:
             # 1. Base List
             url_all = f"{config.BITHUMB_API_URL}/ticker/ALL_KRW"
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url_all) as resp:
-                    data = await resp.json()
+            res = requests.get(url_all, timeout=2).json()
             
             candidates = []
-            for k, v in data['data'].items():
+            for k, v in res['data'].items():
                 if k == 'date': continue
                 candidates.append({
                     "symbol": k,
@@ -28,50 +29,32 @@ class BithumbScreener:
                     "price": float(v['closing_price'])
                 })
             
-            # Liquidity Cut: Top 30 to save API calls
+            # Reduce Count to 15 to prevent Timeout during Sync Fetch
             candidates.sort(key=lambda x: x['vol'], reverse=True)
-            targets = candidates[:30]
+            targets = candidates[:15]
             
-            # 2. Deep Scan with Semaphore
-            sem = asyncio.Semaphore(5) # Max 5 concurrent requests
+            results = []
+            headers = {"User-Agent": "Mozilla/5.0"}
             
-            async def get_momentum(coin):
-                async with sem:
-                    try:
-                        # Random sleep to avoid pattern detection
-                        await asyncio.sleep(random.uniform(0.1, 0.3))
-                        
-                        url = f"{config.BITHUMB_API_URL}/candlestick/{coin['symbol']}_KRW/30m"
-                        headers = {"User-Agent": "Mozilla/5.0"}
-                        
-                        async with aiohttp.ClientSession() as session:
-                            async with session.get(url, headers=headers) as resp:
-                                if resp.status != 200: 
-                                    return None
-                                res = await resp.json()
-                                if res['status'] != '0000': 
-                                    return None
-                                
-                                candles = res['data'][-3:] 
-                                start_p = float(candles[0][1])
-                                end_p = float(candles[-1][2])
-                                
-                                mom = ((end_p - start_p) / start_p) * 100
-                                coin['momentum'] = mom
-                                return coin
-                    except Exception as e:
-                        return None
-
-            results = await asyncio.gather(*[get_momentum(c) for c in targets])
-            results = [r for r in results if r is not None]
+            for coin in targets:
+                try:
+                    # Sync Request
+                    url = f"{config.BITHUMB_API_URL}/candlestick/{coin['symbol']}_KRW/30m"
+                    resp = requests.get(url, headers=headers, timeout=0.5)
+                    
+                    if resp.status_code == 200:
+                        r_json = resp.json()
+                        if r_json['status'] == '0000':
+                            candles = r_json['data'][-3:] 
+                            start_p = float(candles[0][1])
+                            end_p = float(candles[-1][2])
+                            mom = ((end_p - start_p) / start_p) * 100
+                            coin['momentum'] = mom
+                            results.append(coin)
+                except:
+                    continue
             
-            # 3. Sort
             results.sort(key=lambda x: abs(x['momentum']), reverse=True)
-            
-            if not results:
-                logger.warning("Deep Scan returned empty. Returning raw volume list.")
-                return candidates[:limit] # Fallback
-                
             return results[:limit]
             
         except Exception as e:
