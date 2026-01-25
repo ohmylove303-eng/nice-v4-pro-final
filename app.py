@@ -241,6 +241,83 @@ def analyze(ticker):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
+# ============================================================
+# 3. BACKTEST ENGINE (Restored)
+# ============================================================
+class Backtester:
+    @staticmethod
+    def run(ticker):
+        try:
+            # Re-use BithumbScreener to get 200 days data
+            # Requires BithumbScreener.get_market_data to support limit or new method
+            # We'll use get_market_data but normally it fetches 100.
+            # Let's add a specific fetcher or just use pyupbit here for history
+            try:
+                df = pyupbit.get_ohlcv(ticker, interval="day", count=200)
+            except: df = None
+            
+            if df is None or len(df) < 60: return {"error": "Insufficient Data for Backtest"}
+            
+            # Logic: Trend Follow (MA20 > MA60) + RSI Dip
+            df['ma20'] = df['close'].rolling(20).mean()
+            df['ma60'] = df['close'].rolling(60).mean()
+            
+            delta = df['close'].diff()
+            gain = (delta.where(delta > 0, 0)).rolling(14).mean()
+            loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+            df['rsi'] = 100 - (100 / (1 + (gain/loss)))
+            
+            balance = 100000000
+            position = 0
+            wins = 0
+            total = 0
+            
+            log = []
+            
+            for i in range(60, len(df)):
+                row = df.iloc[i]
+                price = row['close']
+                date = str(row.name)
+                
+                # Signal
+                trend_up = row['ma20'] > row['ma60']
+                rsi_buy = row['rsi'] < 40
+                rsi_sell = row['rsi'] > 70
+                
+                if position == 0 and trend_up and rsi_buy:
+                    position = balance / price
+                    balance = 0
+                    log.append({"date": date, "type": "BUY", "price": price})
+                elif position > 0 and (rsi_sell or not trend_up):
+                    sell_val = position * price
+                    profit = sell_val - (log[-1]['price'] * position)
+                    if profit > 0: wins += 1
+                    total += 1
+                    balance = sell_val
+                    position = 0
+                    log.append({"date": date, "type": "SELL", "price": price, "pnl": int(profit)})
+                    
+            final = balance + (position * df.iloc[-1]['close'])
+            ret = (final - 100000000) / 100000000 * 100
+            win_rate = (wins/total*100) if total > 0 else 0
+            
+            return {
+                "ticker": ticker,
+                "return_pct": round(ret, 2),
+                "win_rate": round(win_rate, 1),
+                "trades": total,
+                "log": log[-5:]
+            }
+        except Exception as e:
+            return {"error": str(e)}
+
+@app.route('/api/backtest/<ticker>')
+def backtest(ticker):
+    t_code = ticker.replace("KRW-","")
+    return jsonify(Backtester.run(f"KRW-{t_code}"))
+
+
 @app.route('/api/screener/<category>')
 def get_screener(category):
     return jsonify({"category": category, "list": BithumbScreener.get_rankings(category)})
