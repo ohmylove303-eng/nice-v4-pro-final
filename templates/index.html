@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>NICE v4 PRO | DASHBOARD</title>
+  <title>NICE v8.0 PRO | ULTRATHINK DASHBOARD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap"
@@ -11,15 +11,14 @@
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <style>
     :root {
-      --bg-body: #111116;
-      --bg-panel: #18181f;
-      --bg-header: #0b0b0e;
-      --accent-purple: #9d00ff;
-      --accent-yellow: #ffcc00;
-      --accent-blue: #00f0ff;
+      --bg-body: #050508;
+      --bg-panel: #111116;
+      --bg-header: #000;
+      --accent-purple: #bb66ff;
+      --accent-cyan: #00f0ff;
       --accent-green: #00ff9d;
       --accent-red: #ff0055;
-      --border: 1px solid rgba(255, 255, 255, 0.08);
+      --border: 1px solid rgba(255, 255, 255, 0.1);
       --font-kr: 'Noto Sans KR', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -41,7 +40,7 @@
 
     header {
       flex-shrink: 0;
-      padding: 10px 16px;
+      padding: 10px 20px;
       background: var(--bg-header);
       border-bottom: var(--border);
       display: flex;
@@ -52,52 +51,69 @@
     .logo {
       font-family: var(--font-mono);
       font-weight: 800;
-      font-size: 18px;
+      font-size: 20px;
       color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent-purple);
     }
 
     .badge {
       background: #222;
       color: #888;
-      padding: 2px 8px;
+      padding: 4px 10px;
       border-radius: 4px;
       font-weight: 700;
-      font-size: 11px;
+      font-size: 12px;
+      border: 1px solid #333;
     }
 
     .score {
-      color: #888;
-      font-weight: 700;
+      color: #fff;
+      font-weight: 800;
       font-family: var(--font-mono);
+      font-size: 24px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
 
     .search-bar {
       flex: 1;
       max-width: 400px;
-      background: #222;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
+      background: #111;
+      border: 1px solid #333;
+      padding: 10px 16px;
+      border-radius: 8px;
       color: #eee;
       font-family: var(--font-kr);
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-bar:focus {
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 15px rgba(187, 102, 255, 0.2);
     }
 
     .top-stat {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-end;
       min-width: 80px;
     }
 
     .stat-label {
       font-size: 10px;
-      color: #888;
+      color: #666;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
     .stat-val {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 700;
-      color: #888;
+      color: #fff;
       font-family: var(--font-mono);
     }
 
@@ -106,88 +122,39 @@
       display: grid;
       grid-template-columns: 3fr 1fr;
       grid-template-rows: 1fr 280px;
-      gap: 12px;
-      padding: 12px;
+      gap: 16px;
+      padding: 20px;
       overflow: hidden;
     }
 
+    /* CHART & SIDEBAR */
     #chart-container {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
       background: var(--bg-panel);
-      border-radius: 12px;
+      border-radius: 16px;
       border: var(--border);
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .chart-ctrl {
-      padding: 8px 16px;
-      border-bottom: var(--border);
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    #chart-canvas {
-      flex: 1;
     }
 
     #sidebar {
       grid-column: 2 / 3;
       grid-row: 1 / 3;
       background: var(--bg-panel);
-      border-radius: 12px;
+      border-radius: 16px;
       border: var(--border);
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
-    .side-head {
-      padding: 12px;
-      border-bottom: var(--border);
-      font-weight: 700;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .side-head:hover {
-      color: var(--accent-blue);
-    }
-
-    .rank-list {
-      flex: 1;
-      overflow-y: auto;
-      padding: 8px;
-    }
-
-    .rank-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .rank-item:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 6px;
-    }
-
+    /* BOTTOM DECK */
     #deck {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
       display: grid;
-      grid-template-columns: repeat(3, 1fr) 2fr;
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr) 1.5fr;
+      gap: 16px;
     }
 
     .card {
@@ -198,324 +165,250 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     .card h3 {
-      margin: 0 0 10px 0;
-      font-size: 12px;
-      color: #aaa;
+      margin: 0 0 12px 0;
+      font-size: 11px;
+      color: #666;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .card h3 i {
+    .card h3::before {
+      content: '';
+      display: block;
       width: 6px;
       height: 6px;
       border-radius: 50%;
+      background: #444;
     }
 
-    .theme-purple {
-      border-left: 3px solid var(--accent-purple);
-    }
-
-    .theme-purple i {
-      background: var(--accent-purple);
-    }
-
-    .theme-yellow {
-      border-left: 3px solid var(--accent-yellow);
-    }
-
-    .theme-yellow i {
-      background: var(--accent-yellow);
-    }
-
-    .theme-blue {
-      border-left: 3px solid var(--accent-blue);
-    }
-
-    .theme-blue i {
-      background: var(--accent-blue);
-    }
-
-    .theme-dark {
-      border: 1px solid var(--accent-blue);
-      background: #111;
-    }
-
-    .big-txt {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .sub-txt {
-      font-size: 11px;
-      color: #888;
-      line-height: 1.4;
-    }
-
-    .step-row {
+    /* AGENT CARD */
+    .agent-row {
       display: flex;
-      gap: 4px;
-      margin-top: auto;
-    }
-
-    .step {
-      width: 20px;
-      height: 20px;
-      background: #222;
-      border-radius: 3px;
-      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: #555;
+      margin-bottom: 6px;
+      font-size: 12px;
     }
 
-    .step.active {
-      background: var(--accent-purple);
-      color: #fff;
+    .agent-name {
+      color: #aaa;
     }
 
-    .progress-bg {
-      height: 6px;
-      background: #333;
-      border-radius: 10px;
-      margin-top: auto;
+    .agent-bar-bg {
+      width: 60px;
+      height: 4px;
+      background: #222;
+      border-radius: 2px;
       overflow: hidden;
     }
 
-    .progress-fill {
+    .agent-bar-fill {
       height: 100%;
-      width: 0%;
-      transition: width 1s;
+      background: #444;
     }
 
-    #loader {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 99;
+    /* GUARD CARD */
+    .guard-phase {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      display: none;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 11px;
+      color: #555;
     }
 
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--accent-blue);
-      border-top-color: transparent;
+    .guard-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
+      background: #333;
     }
 
-    @keyframes spin {
-      to {
-        transform: rotate(360deg)
+    .guard-dot.pass {
+      background: var(--accent-green);
+      box-shadow: 0 0 5px var(--accent-green);
+    }
+
+    .guard-dot.fail {
+      background: var(--accent-red);
+    }
+
+    /* AI CARD */
+    .ai-reasoning {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        opacity: 0.5
       }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .loading {
+      animation: pulse 1s infinite alternate;
     }
   </style>
 </head>
 
 <body>
-
   <header>
-    <div class="logo">NICE<span style="color:#888">PRO</span></div>
-    <div class="badge" id="app-badge">--</div>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#444; margin-left:4px">v8.0
+        ULTRATHINK</span></div>
+    <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
-    <input type="text" class="search-bar" id="search-input" placeholder="코인 검색 (예: BTC, SOL...)" />
+
+    <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
+
     <div style="flex:1"></div>
-    <div class="top-stat"><span class="stat-label">추천 Kelly</span><span class="stat-val" id="app-kelly">--</span></div>
-    <div class="top-stat"><span class="stat-label">Fear/Greed</span><span class="stat-val"
-        style="color:var(--accent-red)">25 공포</span></div>
-    <div class="top-stat"><span class="stat-label">Net Flow</span><span class="stat-val">+$2.4B</span></div>
-    <div style="font-size:10px; color:var(--accent-green)">● LIVE</div>
+    <div class="top-stat"><span class="stat-label">Kelly Criterion</span><span class="stat-val"
+        id="kelly-val">--%</span></div>
+    <div class="top-stat"><span class="stat-label">Status</span><span class="stat-val"
+        style="color:var(--accent-green)">ONLINE</span></div>
   </header>
 
   <div id="main">
+    <!-- CHART AREA -->
     <div id="chart-container">
-      <div class="chart-ctrl">
-        <span id="chart-title">MARKET READY</span>
-        <div style="display:flex; gap:10px; opacity:0.6;"><span>5M</span> <span>15M</span> <span>1H</span>
-          <span>4H</span> <span>1D</span></div>
-      </div>
-      <div id="chart-canvas"></div>
-      <div id="loader">
-        <div class="spinner"></div>
-        <div style="margin-top:10px; font-size:12px; color:#666">ANALYZING...</div>
-      </div>
+      <div id="chart-canvas" style="width:100%; height:100%"></div>
     </div>
 
+    <!-- SIDEBAR -->
     <div id="sidebar">
-      <div class="side-head" onclick="loadList('surge')">⚡ 급등 (Surge)</div>
-      <div class="side-head" onclick="loadList('majors')">💎 메이저 (Major)</div>
-      <div class="side-head" onclick="loadList('scalping')">🎯 스캘핑 (Scalp)</div>
-      <div class="rank-list" id="rank-list"></div>
+      <div style="padding:15px; font-weight:800; font-size:12px; color:#666; border-bottom:var(--border)">DETECTED
+        SIGNALS</div>
+      <div id="rank-list" style="padding:10px; color:#444; font-size:12px;">Waiting for analysis...</div>
     </div>
 
+    <!-- DECK -->
     <div id="deck">
-      <!-- ELLIOTT -->
-      <div class="card theme-purple">
-        <h3><i></i> Elliott Wave</h3>
-        <div class="big-txt" id="ew-title">--</div>
-        <div class="sub-txt" id="ew-desc">대기 중...</div>
-        <div class="step-row">
-          <div class="step" id="ew-1">1</div>
-          <div class="step" id="ew-2">2</div>
-          <div class="step" id="ew-3">3</div>
-          <div class="step" id="ew-4">4</div>
-          <div class="step" id="ew-5">5</div>
+      <!-- CARD 1: 5 AGENTS -->
+      <div class="card" style="border-top:2px solid var(--accent-cyan)">
+        <h3 style="color:var(--accent-cyan)">5-Agent Consensus</h3>
+        <div id="agents-list">
+          <!-- JS Injected -->
         </div>
       </div>
-      <!-- FIBONACCI -->
-      <div class="card theme-yellow">
-        <h3><i></i> Fibonacci</h3>
-        <div class="big-txt" id="fib-title">--</div>
-        <div class="sub-txt" style="margin-top:8px;">
-          <div style="display:flex; justify-content:space-between"><span>Pivot</span><span id="fib-piv">--</span></div>
-          <div style="display:flex; justify-content:space-between; color:var(--accent-yellow)"><span>Support</span><span
-              id="fib-sup">--</span></div>
-        </div>
-        <div class="progress-bg">
-          <div class="progress-fill" style="width:50%; background:var(--accent-yellow)"></div>
+
+      <!-- CARD 2: GUARD CHAIN -->
+      <div class="card" style="border-top:2px solid var(--accent-purple)">
+        <h3 style="color:var(--accent-purple)">7-Phase Guard Chain</h3>
+        <div id="guard-list">
+          <!-- JS Injected -->
         </div>
       </div>
-      <!-- TREND -->
-      <div class="card theme-blue">
-        <h3><i></i> 추세선 분석</h3>
-        <div class="big-txt" id="trend-title">--</div>
-        <div class="sub-txt">
-          <span style="color:var(--accent-green)">▲ 저항</span> <span style="float:right" id="trend-res">--</span><br>
-          <span style="color:var(--accent-red)">▼ 지지</span> <span style="float:right" id="trend-sup">--</span>
+
+      <!-- CARD 3: MARKET -->
+      <div class="card">
+        <h3>Trend Context</h3>
+        <div style="text-align:center; margin-top:10px;">
+          <div style="font-size:24px; font-weight:800; color:#fff" id="trend-main">--</div>
+          <div style="font-size:11px; color:#666; margin-top:4px">PRIMARY TREND</div>
         </div>
-        <div class="progress-bg">
-          <div class="progress-fill" id="trend-strength" style="width:0%; background:var(--accent-blue)"></div>
-        </div>
-        <div style="text-align:right; font-size:10px; color:var(--accent-blue); margin-top:4px;" id="trend-val">0%</div>
       </div>
-      <!-- AI -->
-      <div class="card theme-dark">
-        <div class="ai-title" style="color:var(--accent-blue); font-weight:700; font-size:12px; margin-bottom:8px;">🤖
-          AI 투자 분석</div>
-        <div class="ai-content" id="ai-content" style="font-size:13px; color:#ddd; line-height:1.6;">리스트에서 코인을 선택하거나
-          검색하세요.</div>
+
+      <!-- CARD 4: AI CIO -->
+      <div class="card" style="border:1px solid #333; background:#0a0a0e">
+        <h3 style="color:#fff">🤖 Chief Investment Officer</h3>
+        <div class="ai-reasoning" id="ai-text">
+          Waiting for input...
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-        let chart, candleSeries;
+        // INIT
+        const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), {
+            layout: { background: { color: '#111116' }, textColor: '#666' },
+            grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } },
+        });
+        const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
         
-        window.onload = async () => {
-            initChart();
-            await loadList('majors'); // Default to Majors
-            loadCoin('BTC'); // Default Coin
-            
-            // Search Input Binding
-            document.getElementById('search-input').addEventListener('keydown', (e) => {
-                if(e.key === 'Enter') {
-                    loadCoin(e.target.value.toUpperCase());
-                }
-            });
-        };
+        document.getElementById('search-input').addEventListener('keydown', (e) => {
+            if(e.key === 'Enter') runAnalysis(e.target.value);
+        });
 
-        function initChart() {
-            const container = document.getElementById('chart-canvas');
-            chart = LightweightCharts.createChart(container, {
-                layout: { background: { color: '#18181f' }, textColor: '#888' },
-                grid: { vertLines: { color: '#222' }, horzLines: { color: '#222' } },
-            });
-            candleSeries = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
-            new ResizeObserver(e => chart.resize(e[0].contentRect.width, e[0].contentRect.height)).observe(container);
-        }
-
-        async function loadList(cat) {
-            const list = document.getElementById('rank-list');
-            list.innerHTML = '<div style="padding:10px; font-size:12px; color:#666">Loading...</div>';
-            try {
-                const res = await fetch(`/api/screener/${cat}`);
-                const data = await res.json();
-                list.innerHTML = '';
-                data.list.forEach(c => {
-                    const el = document.createElement('div');
-                    el.className = 'rank-item';
-                    el.innerHTML = `<span style="font-weight:700">${c.symbol}</span><span style="font-family:'JetBrains Mono'; color:${c.change>=0?'var(--accent-green)':'var(--accent-red)'}">${c.change}%</span>`;
-                    el.onclick = () => loadCoin(c.symbol);
-                    list.appendChild(el);
-                });
-            } catch(e) { list.innerHTML = "Error"; }
-        }
-
-        async function loadCoin(ticker) {
-            document.getElementById('loader').style.display = 'flex';
-            document.getElementById('chart-title').innerText = `${ticker} Loading...`;
+        async function runAnalysis(ticker) {
+            // UI RESET
+            document.getElementById('app-score').innerText = "--";
+            document.getElementById('app-badge').innerText = "CALCULATING...";
+            document.getElementById('ai-text').innerText = "Consulting 5 Agents...";
             
             try {
                 const res = await fetch(`/api/analyze/${ticker}`);
                 const data = await res.json();
+                
                 if(data.error) throw new Error(data.error);
                 
-                // HEADER
-                document.getElementById('app-score').innerText = `${data.score}점`;
+                // 1. UPDATE HEADER
+                document.getElementById('app-score').innerText = data.score;
                 document.getElementById('app-badge').innerText = data.type;
-                const score = data.score;
-                document.getElementById('app-badge').style.background = score >= 80 ? '#00ff9d' : (score >= 60 ? '#ffcc00' : '#444');
-                document.getElementById('app-badge').style.color = score >= 80 ? '#000' : (score >= 60 ? '#000' : '#fff');
-                document.getElementById('app-kelly').innerText = `${data.kelly}%`;
+                document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff';
+                document.getElementById('kelly-val').innerText = `${data.kelly}%`;
                 
-                // CARDS
-                // 1. Elliott
-                document.getElementById('ew-title').innerText = data.tech.trend;
-                document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
-                if(data.tech.trend.includes("Wave 3")) document.getElementById('ew-3').classList.add('active');
-                else if(data.tech.trend.includes("Correction")) document.getElementById('ew-4').classList.add('active');
-                else document.getElementById('ew-1').classList.add('active');
+                // 2. RENDER AGENTS
+                const agents = data.agents;
+                let agentHTML = "";
+                for(const [name, score] of Object.entries(agents)) {
+                    const color = score > 60 ? 'var(--accent-green)' : (score < 40 ? 'var(--accent-red)' : '#888');
+                    agentHTML += `
+                        <div class="agent-row">
+                            <span class="agent-name" style="color:${color}">${name.toUpperCase()}</span>
+                            <div style="display:flex; align-items:center; gap:8px">
+                                <div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div>
+                                <span>${score}</span>
+                            </div>
+                        </div>`;
+                }
+                document.getElementById('agents-list').innerHTML = agentHTML;
                 
-                // 2. Fib
-                const p = data.tech.price;
-                const fib = data.tech.fib;
-                document.getElementById('fib-title').innerText = p > fib['0.618'] ? "지지 테스트 (0.618)" : "저항 돌파 시도";
-                document.getElementById('fib-piv').innerText = fib['0.5'].toLocaleString();
-                document.getElementById('fib-sup').innerText = fib['0.618'].toLocaleString();
+                // 3. RENDER GUARDS (7 Phases)
+                const guards = data.guards;
+                let guardHTML = "";
+                guards.forEach(g => {
+                    const status = g.passed ? 'pass' : 'fail';
+                    guardHTML += `<div class="guard-phase"><div class="guard-dot ${status}"></div> Phase ${g.phase}: ${g.name}</div>`;
+                });
+                document.getElementById('guard-list').innerHTML = guardHTML;
                 
-                // 3. Trend
-                document.getElementById('trend-title').innerText = score > 50 ? "상승 우위" : "하락 우위";
-                document.getElementById('trend-res').innerText = (p*1.05).toLocaleString();
-                document.getElementById('trend-sup').innerText = (p*0.95).toLocaleString();
-                document.getElementById('trend-strength').style.width = `${data.tech.rsi}%`;
-                document.getElementById('trend-val').innerText = `${data.tech.rsi.toFixed(1)}%`;
+                // 4. TREND & AI
+                document.getElementById('trend-main').innerText = data.tech.trend;
+                document.getElementById('ai-text').innerText = data.ai_reasoning;
                 
-                // 4. AI
-                document.getElementById('ai-content').innerText = data.ai.reasoning;
-                document.getElementById('chart-title').innerText = `${ticker} / KRW`;
-                
-                // MOCK CHART DATA FOR VISUAL (In real app, fetch candles)
-                renderMockChart(p, score > 50);
-                
-                document.getElementById('loader').style.display = 'none';
+                // MOCK CHART UPDATE (For Demo)
+                updateChartMock(data.score > 60);
+
             } catch(e) {
-                alert(e.message);
-                document.getElementById('loader').style.display = 'none';
+                alert("Analysis Failed: " + e.message);
             }
         }
-        
-        function renderMockChart(price, isUp) {
+
+        function updateChartMock(isBull) {
             let d = [];
-            let c = price;
+            let price = 1000;
             let now = Math.floor(Date.now()/1000);
             for(let i=100; i>0; i--) {
-                const time = now - i*3600;
-                const chg = (Math.random()-0.5)*(price*0.02) + (isUp ? price*0.001 : -price*0.001);
-                const close = c + chg;
-                d.push({time, open:c, high:Math.max(c,close)+price*0.01, low:Math.min(c,close)-price*0.01, close});
-                c = close;
+                const change = (Math.random()-0.5)*20 + (isBull?5:-5);
+                const close = price + change;
+                d.push({time:now-i*3600, open:price, high:Math.max(price,close)+10, low:Math.min(price,close)-10, close:close});
+                price = close;
             }
-            candleSeries.setData(d);
+            candles.setData(d);
         }
   </script>
 </body>
