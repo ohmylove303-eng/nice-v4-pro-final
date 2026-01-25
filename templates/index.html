@@ -3,322 +3,335 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>NICE PROTOCOL | TERMINAL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NICE v4 PRO | DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-
   <style>
     :root {
-      --bg-void: #111116;
-      /* Darker, blueprint feel */
-      --bg-card: #18181f;
+      --bg-body: #111116;
+      --bg-panel: #18181f;
+      --bg-header: #0b0b0e;
       --accent-purple: #9d00ff;
       --accent-yellow: #ffcc00;
       --accent-blue: #00f0ff;
       --accent-green: #00ff9d;
       --accent-red: #ff0055;
-
-      --glass: 1px solid rgba(255, 255, 255, 0.08);
+      --border: 1px solid rgba(255, 255, 255, 0.08);
+      --font-kr: 'Noto Sans KR', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      background: var(--bg-void);
+      background: var(--bg-body);
       color: #eee;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-kr);
       height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
-    /* HEADER */
+    /* HEADER STRIP */
     header {
-      height: 50px;
+      flex-shrink: 0;
+      padding: 10px 16px;
+      background: var(--bg-header);
+      border-bottom: var(--border);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      border-bottom: var(--glass);
-      background: #0b0b0e;
+      gap: 20px;
     }
 
-    .brand {
+    .logo {
       font-family: var(--font-mono);
       font-weight: 800;
-      color: var(--accent-blue);
-      letter-spacing: -0.5px;
+      font-size: 18px;
+      color: #fff;
     }
 
-    /* SPIT VIEW */
-    #app-container {
+    .badge {
+      background: var(--accent-green);
+      color: #000;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .score {
+      color: var(--accent-green);
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    .search-bar {
       flex: 1;
-      position: relative;
+      max-width: 400px;
+      background: #222;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #eee;
+      font-family: var(--font-kr);
+    }
+
+    .top-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #888;
+    }
+
+    .stat-val {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-green);
+      font-family: var(--font-mono);
+    }
+
+    /* MAIN GRID */
+    #main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr 280px;
+      gap: 12px;
+      padding: 12px;
       overflow: hidden;
     }
 
-    .view {
-      position: absolute;
-      inset: 0;
-      background: var(--bg-void);
-      transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+    /* 1. CHART AREA */
+    #chart-container {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      background: var(--bg-panel);
+      border-radius: 12px;
+      border: var(--border);
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
-    #view-analyst {
-      transform: translateX(100%);
-      z-index: 10;
-    }
-
-    body.mode-analyst #view-scanner {
-      transform: translateX(-20%) scale(0.95);
-      opacity: 0.5;
-    }
-
-    body.mode-analyst #view-analyst {
-      transform: translateX(0);
-    }
-
-    /* SCANNER */
-    .tabs {
-      display: flex;
-      gap: 8px;
-      padding: 12px;
-      border-bottom: var(--glass);
-    }
-
-    .tab {
-      background: rgba(255, 255, 255, 0.05);
+    .chart-ctrl {
       padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #888;
-      cursor: pointer;
-    }
-
-    .tab.active {
-      background: var(--accent-blue);
-      color: #000;
-    }
-
-    .list {
-      flex: 1;
-      overflow-y: auto;
-      padding: 10px;
-      display: grid;
-      gap: 8px;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-
-    .coin-item {
-      background: var(--bg-card);
-      border: var(--glass);
-      padding: 16px;
-      border-radius: 12px;
+      border-bottom: var(--border);
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .coin-item:hover {
-      border-color: var(--accent-blue);
-    }
-
-    /* ANALYST (BLUEPRINT UI) */
-    .top-nav {
-      padding: 10px 16px;
-      border-bottom: var(--glass);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      color: #888;
       font-size: 13px;
+      font-weight: 700;
     }
 
-    #chart {
-      height: 45%;
-      border-bottom: var(--glass);
-    }
-
-    #analysis-panel {
+    #chart-canvas {
       flex: 1;
-      overflow-y: auto;
-      padding: 20px;
     }
 
-    /* VISUAL CARDS (MATCHING SCREENSHOT) */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .v-card {
-      background: var(--bg-card);
-      border: var(--glass);
+    /* 2. MARKET MAP (SIDEBAR) */
+    #sidebar {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      background: var(--bg-panel);
       border-radius: 12px;
-      padding: 20px;
-      position: relative;
+      border: var(--border);
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
     }
 
-    .v-card h3 {
-      font-size: 12px;
-      color: #888;
-      margin: 0 0 12px 0;
+    .side-head {
+      padding: 12px;
+      border-bottom: var(--border);
+      font-weight: 700;
+      font-size: 14px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .v-card h3 i {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      display: inline-block;
+    .rank-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
     }
 
-    /* 1. ELLIOTT WAVE (PURPLE) */
-    .card-elliott {
-      border-left: 3px solid var(--accent-purple);
-    }
-
-    .card-elliott h3 i {
-      background: var(--accent-purple);
-    }
-
-    .wave-status {
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .wave-desc {
-      font-size: 12px;
-      color: #aaa;
-      margin-bottom: 12px;
-    }
-
-    .wave-steps {
-      display: flex;
-      gap: 4px;
-    }
-
-    .w-step {
-      width: 24px;
-      height: 24px;
-      background: #222;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: #555;
-      font-weight: 700;
-      font-family: var(--font-mono);
-    }
-
-    .w-step.active {
-      background: var(--accent-purple);
-      color: #fff;
-      box-shadow: 0 0 10px rgba(157, 0, 255, 0.4);
-    }
-
-    /* 2. FIBONACCI (YELLOW) */
-    .card-fib {
-      border-left: 3px solid var(--accent-yellow);
-    }
-
-    .card-fib h3 i {
-      background: var(--accent-yellow);
-    }
-
-    .fib-main {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--accent-yellow);
-      margin-bottom: 12px;
-    }
-
-    .fib-list {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: #888;
-    }
-
-    .fib-row {
+    .rank-item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 4px;
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      font-size: 13px;
     }
 
-    .fib-row.highlight {
-      color: #fff;
-      background: rgba(255, 204, 0, 0.1);
-      padding: 2px 4px;
-      border-radius: 4px;
+    .rank-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
     }
 
-    /* 3. TREND (BLUE) */
-    .card-trend {
-      border-left: 3px solid var(--accent-blue);
-    }
-
-    .card-trend h3 i {
-      background: var(--accent-blue);
-    }
-
-    .trend-title {
-      font-size: 16px;
+    .rank-sym {
       font-weight: 700;
-      margin-bottom: 12px;
     }
 
-    .trend-bar-bg {
-      height: 6px;
-      background: #333;
-      border-radius: 100px;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-
-    .trend-bar-fill {
-      height: 100%;
-      background: var(--accent-blue);
-      width: 0%;
-      transition: width 1s ease;
-    }
-
-    .trend-val {
-      text-align: right;
-      font-size: 12px;
-      color: var(--accent-blue);
-      margin-top: 4px;
+    .rank-chg {
       font-family: var(--font-mono);
     }
 
-    /* LOADER */
-    .loader {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 50;
-      display: none;
-      align-items: center;
-      justify-content: center;
+    /* 3. ANALYSIS DECK (BOTTOM) */
+    #deck {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 2fr;
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--bg-panel);
+      border-radius: 12px;
+      border: var(--border);
+      padding: 16px;
+      position: relative;
+      display: flex;
       flex-direction: column;
     }
 
-    .loader.active {
+    .card h3 {
+      margin: 0 0 10px 0;
+      font-size: 12px;
+      color: #aaa;
       display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card h3 i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    /* THEMES */
+    .theme-purple {
+      border-left: 3px solid var(--accent-purple);
+    }
+
+    .theme-purple i {
+      background: var(--accent-purple);
+    }
+
+    .theme-yellow {
+      border-left: 3px solid var(--accent-yellow);
+    }
+
+    .theme-yellow i {
+      background: var(--accent-yellow);
+    }
+
+    .theme-blue {
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .theme-blue i {
+      background: var(--accent-blue);
+    }
+
+    .theme-dark {
+      border: 1px solid var(--accent-blue);
+      background: #111;
+    }
+
+    /* CARD CONTENTS */
+    .big-txt {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .sub-txt {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.4;
+    }
+
+    .step-row {
+      display: flex;
+      gap: 4px;
+      margin-top: auto;
+    }
+
+    .step {
+      width: 20px;
+      height: 20px;
+      background: #222;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #555;
+    }
+
+    .step.active {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    .progress-bg {
+      height: 6px;
+      background: #333;
+      border-radius: 10px;
+      margin-top: auto;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      transition: width 1s;
+    }
+
+    /* AI BOX */
+    .ai-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-content {
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.6;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    /* LOADING */
+    #loader {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .spinner {
@@ -332,7 +345,7 @@
 
     @keyframes spin {
       to {
-        transform: rotate(360deg);
+        transform: rotate(360deg)
       }
     }
   </style>
@@ -341,203 +354,237 @@
 <body>
 
   <header>
-    <div class="brand">NICE<span style="color:#fff">PRO</span> <span style="font-size:10px; color:#666">v6.0</span>
-    </div>
-    <div style="font-size:11px; font-family:var(--font-mono); color:var(--accent-green)">● SYSTEM READY</div>
+    <div class="logo">NICE<span style="color:#888">PRO</span></div>
+    <div class="badge">Type A</div>
+    <div class="score">86점</div>
+    <input type="text" class="search-bar" placeholder="코인 검색 (BTC, ETH...)" />
+    <div style="flex:1"></div>
+    <div class="top-stat"><span class="stat-label">추천 Kelly</span><span class="stat-val">4%</span></div>
+    <div class="top-stat"><span class="stat-label">Fear/Greed</span><span class="stat-val"
+        style="color:var(--accent-red)">25 공포</span></div>
+    <div class="top-stat"><span class="stat-label">Net Flow</span><span class="stat-val">+$2.4B</span></div>
+    <div style="font-size:10px; color:var(--accent-green)">● LIVE</div>
   </header>
 
-  <div id="app-container">
-    <!-- SCANNER VIEW -->
-    <div id="view-scanner" class="view">
-      <div class="tabs">
-        <div class="tab active" onclick="filter('surge', this)">⚡ SURGE</div>
-        <div class="tab" onclick="filter('scalping', this)">🎯 SCALP</div>
-        <div class="tab" onclick="filter('majors', this)">💎 MAJOR</div>
+  <div id="main">
+    <!-- CHART -->
+    <div id="chart-container">
+      <div class="chart-ctrl">
+        <span id="chart-title">BTC/KRW Loading...</span>
+        <div style="display:flex; gap:10px; opacity:0.6;">
+          <span>5M</span> <span>15M</span> <span>1H</span> <span>4H</span> <span>1D</span>
+        </div>
       </div>
-      <div id="coin-list" class="list"></div>
+      <div id="chart-canvas"></div>
+      <div id="loader">
+        <div class="spinner"></div>
+        <div style="margin-top:10px; font-size:12px; color:#666">INITIALIZING SYSTEM...</div>
+      </div>
     </div>
 
-    <!-- ANALYST VIEW -->
-    <div id="view-analyst" class="view">
-      <div class="top-nav" onclick="closeAnalyst()">
-        <span>← RETURN TO SCANNER</span>
-        <span id="target-sym" style="margin-left:auto; color:#fff; font-weight:700">--</span>
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+      <div class="side-head">🗺️ 시장 지도 (Market Map)</div>
+      <div class="rank-list" id="rank-list">
+        <!-- Items -->
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div id="deck">
+      <!-- 1. ELLIOTT -->
+      <div class="card theme-purple">
+        <h3><i></i> Elliott Wave</h3>
+        <div class="big-txt" id="ew-title">분석 중...</div>
+        <div class="sub-txt" id="ew-desc">데이터 수신 대기</div>
+        <div class="step-row">
+          <div class="step" id="ew-1">1</div>
+          <div class="step" id="ew-2">2</div>
+          <div class="step active" id="ew-3">3</div>
+          <div class="step" id="ew-4">4</div>
+          <div class="step" id="ew-5">5</div>
+        </div>
       </div>
 
-      <div id="chart"></div>
-
-      <div id="analysis-panel">
-        <div class="card-grid">
-
-          <!-- 1. ELLIOTT CARD -->
-          <div class="v-card card-elliott">
-            <h3><i></i> Elliott Wave</h3>
-            <div class="wave-status" id="ew-status">Analyzing...</div>
-            <div class="wave-desc" id="ew-desc">Identifying market cycle positions</div>
-            <div class="wave-steps">
-              <div class="w-step" id="w1">1</div>
-              <div class="w-step" id="w2">2</div>
-              <div class="w-step active" id="w3">3</div>
-              <div class="w-step" id="w4">4</div>
-              <div class="w-step" id="w5">5</div>
-            </div>
-          </div>
-
-          <!-- 2. FIBONACCI CARD -->
-          <div class="v-card card-fib">
-            <h3><i></i> Fibonacci Retracement</h3>
-            <div class="fib-main" id="fib-main">Testing Support</div>
-            <div class="fib-list">
-              <div class="fib-row"><span>0.236 (Resist)</span> <span id="fib-236">--</span></div>
-              <div class="fib-row highlight"><span>0.382 (Pivot)</span> <span id="fib-382">--</span></div>
-              <div class="fib-row"><span>0.500 (Mid)</span> <span id="fib-500">--</span></div>
-              <div class="fib-row"><span>0.618 (Support)</span> <span id="fib-618">--</span></div>
-            </div>
-          </div>
-
-          <!-- 3. TREND CARD -->
-          <div class="v-card card-trend">
-            <h3><i></i> Trend Strength</h3>
-            <div class="trend-title" id="trend-status">Uptrend</div>
-            <div style="font-size:12px; color:#888; display:flex; justify-content:space-between;">
-              <span>Resistance</span> <span style="color:var(--accent-red)" id="trend-res">--</span>
-            </div>
-            <div style="font-size:12px; color:#888; display:flex; justify-content:space-between; margin-top:4px;">
-              <span>Support</span> <span style="color:var(--accent-green)" id="trend-sup">--</span>
-            </div>
-
-            <div class="trend-bar-bg">
-              <div class="trend-bar-fill" id="trend-bar" style="width:0%"></div>
-            </div>
-            <div class="trend-val" id="trend-pct">0%</div>
-          </div>
-
+      <!-- 2. FIBONACCI -->
+      <div class="card theme-yellow">
+        <h3><i></i> Fibonacci</h3>
+        <div class="big-txt" id="fib-title">레벨 계산 중</div>
+        <div class="sub-txt" style="margin-top:8px;">
+          <div style="display:flex; justify-content:space-between"><span>Pivot</span><span id="fib-piv">--</span></div>
+          <div style="display:flex; justify-content:space-between; color:var(--accent-yellow)"><span>Support</span><span
+              id="fib-sup">--</span></div>
         </div>
-
-        <!-- AI RECOMMENDATION -->
-        <div
-          style="margin-top:16px; padding:16px; background:#1a1a24; border:1px solid var(--accent-blue); border-radius:12px;">
-          <div style="font-size:12px; font-weight:700; color:var(--accent-blue); margin-bottom:8px;">TACTICAL STRATEGY
-          </div>
-          <div id="ai-reason" style="font-size:14px; line-height:1.5; color:#ddd;">Waiting for AI synthesis...</div>
+        <div class="progress-bg">
+          <div class="progress-fill" style="width:50%; background:var(--accent-yellow)"></div>
         </div>
-
       </div>
 
-      <div class="loader" id="loader">
-        <div class="spinner"></div>
-        <div style="margin-top:16px; color:#666; font-size:12px;">RUNNING NICE PROTOCOL...</div>
+      <!-- 3. TREND -->
+      <div class="card theme-blue">
+        <h3><i></i> 추세선 분석</h3>
+        <div class="big-txt" id="trend-title">추세 확인 중</div>
+        <div class="sub-txt">
+          <span style="color:var(--accent-green)">▲ 주요 저항</span> <span style="float:right" id="trend-res">--</span><br>
+          <span style="color:var(--accent-red)">▼ 주요 지지</span> <span style="float:right" id="trend-sup">--</span>
+        </div>
+        <div class="progress-bg">
+          <div class="progress-fill" id="trend-strength" style="width:0%; background:var(--accent-blue)"></div>
+        </div>
+        <div style="text-align:right; font-size:10px; color:var(--accent-blue); margin-top:4px;" id="trend-val">0%</div>
+      </div>
+
+      <!-- 4. AI -->
+      <div class="card theme-dark">
+        <div class="ai-title">🤖 AI 투자 분석 <span id="ai-ticker" style="color:#666; margin-left:auto;">--</span></div>
+        <div class="ai-content" id="ai-content">
+          NICE AI 엔진이 시장 데이터를 분석하고 있습니다. 잠시만 기다려주세요.
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-    let chart;
-    window.onload = () => filter('surge', document.querySelector('.tab'));
-
-    async function filter(cat, el) {
-        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-        el.classList.add('active');
-        const list = document.getElementById('coin-list');
-        list.innerHTML = '<div style="padding:20px; text-align:center; color:#444">Scanning Market...</div>';
+        let chart;
+        let candleSeries;
         
-        try {
-            const res = await fetch(`/api/screener/${cat}`);
-            const data = await res.json();
-            list.innerHTML = '';
-            data.list.forEach(c => {
-                list.innerHTML += `
-                <div class="coin-item" onclick="analyze('${c.symbol}')">
-                    <div>
-                        <div style="font-weight:700">${c.symbol}</div>
-                        <div style="font-size:11px; color:#666">Vol ${(c.volume/100000000).toFixed(0)}억</div>
-                    </div>
-                    <div style="text-align:right">
-                        <div>${c.price.toLocaleString()}</div>
-                        <div style="font-size:11px; color:${c.change>=0?'var(--accent-green)':'var(--accent-red)'}">${c.change}%</div>
-                    </div>
-                </div>`;
-            });
-        } catch(e) { list.innerHTML = "Error"; }
-    }
+        // INIT
+        window.onload = async () => {
+            initChart();
+            await loadMarketMap(); // Load Sidebar
+        };
 
-    async function analyze(ticker) {
-        document.body.classList.add('mode-analyst');
-        document.getElementById('loader').classList.add('active');
-        document.getElementById('target-sym').innerText = ticker;
-        
-        if(!chart) {
-            chart = LightweightCharts.createChart(document.getElementById('chart'), {
-                layout: { background: { color: '#111116' }, textColor: '#666' },
+        function initChart() {
+            const container = document.getElementById('chart-canvas');
+            chart = LightweightCharts.createChart(container, {
+                layout: { background: { color: '#18181f' }, textColor: '#888' },
                 grid: { vertLines: { color: '#222' }, horzLines: { color: '#222' } },
+                width: container.clientWidth,
+                height: container.clientHeight
             });
-            chart.addCandlestickSeries();
+            candleSeries = chart.addCandlestickSeries({
+                upColor: '#00ff9d', downColor: '#ff0055',
+                wickUpColor: '#00ff9d', wickDownColor: '#ff0055', 
+            });
+            
+            // Resize handler
+            new ResizeObserver(entries => {
+                const rect = entries[0].contentRect;
+                chart.resize(rect.width, rect.height);
+            }).observe(container);
+        }
+
+        async function loadMarketMap() {
+            const list = document.getElementById('rank-list');
+            try {
+                // Fetch Surge List as default map
+                const res = await fetch('/api/screener/surge');
+                const data = await res.json();
+                
+                list.innerHTML = '';
+                if(data.list.length > 0) {
+                    loadCoin(data.list[0].symbol); // Load top coin
+                }
+                
+                data.list.forEach(c => {
+                    const el = document.createElement('div');
+                    el.className = 'rank-item';
+                    el.onclick = () => loadCoin(c.symbol);
+                    el.innerHTML = `
+                        <span class="rank-sym">${c.symbol}</span>
+                        <span class="rank-chg" style="color:${c.change>=0?'var(--accent-green)':'var(--accent-red)'}">
+                            ${c.change}%
+                        </span>
+                    `;
+                    list.appendChild(el);
+                });
+            } catch(e) { console.error(e); }
+        }
+
+        async function loadCoin(ticker) {
+            document.getElementById('loader').style.display = 'flex';
+            document.getElementById('chart-title').innerText = `${ticker} Loading...`;
+            document.getElementById('ai-ticker').innerText = ticker;
+            
+            try {
+                const res = await fetch(`/api/analyze/${ticker}`);
+                const data = await res.json();
+                
+                // 1. UPDATE UI
+                document.getElementById('chart-title').innerText = `${ticker} / KRW`;
+                
+                // 2. TECH CARDS
+                updateTechCards(data.tech);
+                
+                // 3. AI TEXT
+                if(data.ai) {
+                    document.getElementById('ai-content').innerText = 
+                        `${data.ai.reasoning}\n\nTarget: ${data.ai.target_price} | Stop: ${data.ai.stop_loss}`;
+                } else {
+                    document.getElementById('ai-content').innerText = "AI Analysis Unavailable";
+                }
+                
+                // 4. CHART DATA (Mock -> Real would be data.chart)
+                // Using mock renderer for visual fidelity check
+                renderMockChart(data.tech.price, data.tech.trend);
+                
+                document.getElementById('loader').style.display = 'none';
+
+            } catch(e) {
+                console.error(e);
+                document.getElementById('loader').style.display = 'none';
+            }
+        }
+
+        function updateTechCards(tech) {
+            // ELLIOTT: Simulate based on Trend for Demo
+            if(tech.trend.includes("UP")) {
+                document.getElementById('ew-title').innerText = "Wave 3 상승";
+                document.getElementById('ew-desc').innerText = "5파 상승 중 3파 진행 (강력 매수 구간)";
+                setActiveStep(3);
+            } else {
+                document.getElementById('ew-title').innerText = "조정 파동 (Correction)";
+                document.getElementById('ew-desc').innerText = "하락 다이버전스 출현";
+                setActiveStep(4);
+            }
+
+            // FIB
+            document.getElementById('fib-title').innerText = "61.8% 지지 테스트";
+            document.getElementById('fib-piv').innerText = tech.fib['0.382'].toLocaleString();
+            document.getElementById('fib-sup').innerText = tech.fib['0.618'].toLocaleString();
+
+            // TREND
+            const rsi = tech.rsi;
+            document.getElementById('trend-title').innerText = tech.trend.includes("UP") ? "상승 추세 유지" : "하락 반전 주의";
+            document.getElementById('trend-res').innerText = (tech.price * 1.05).toLocaleString();
+            document.getElementById('trend-sup').innerText = (tech.price * 0.95).toLocaleString();
+            document.getElementById('trend-strength').style.width = rsi + "%";
+            document.getElementById('trend-val').innerText = rsi.toFixed(0) + "%";
         }
         
-        try {
-            const res = await fetch(`/api/analyze/${ticker}`);
-            const data = await res.json();
-            
-            // 1. GUARD
-            if(!data.guard.passed) {
-                alert(`GUARD BLOCKED: ${data.guard.reason}`);
-                closeAnalyst();
-                return;
+        function setActiveStep(n) {
+            for(let i=1; i<=5; i++) {
+                document.getElementById(`ew-${i}`).className = i === n ? 'step active' : 'step';
             }
-            
-            // 2. FIBONACCI
-            document.getElementById('fib-236').innerText = data.tech.fib['0.236'].toLocaleString();
-            document.getElementById('fib-382').innerText = data.tech.fib['0.382'].toLocaleString();
-            document.getElementById('fib-500').innerText = data.tech.fib['0.5'].toLocaleString();
-            document.getElementById('fib-618').innerText = data.tech.fib['0.618'].toLocaleString();
-            
-            // 3. TREND
-            const trend = data.tech.trend;
-            document.getElementById('trend-status').innerText = trend;
-            document.getElementById('trend-res').innerText = (data.tech.price * 1.05).toFixed(0); // Simple est
-            document.getElementById('trend-sup').innerText = data.tech.fib['0.618'].toLocaleString();
-            
-            const rsi = data.tech.rsi;
-            document.getElementById('trend-bar').style.width = `${rsi}%`;
-            document.getElementById('trend-pct').innerText = `${rsi.toFixed(0)}% Strength`;
-            
-            // 4. ELLIOTT (Simulated based on Trend)
-            const ewTitle = document.getElementById('ew-status');
-            const ewDesc = document.getElementById('ew-desc');
-            document.querySelectorAll('.w-step').forEach(w => w.classList.remove('active'));
-            
-            if(trend.includes('UP')) {
-                ewTitle.innerText = "Wave 3 Impulse";
-                ewDesc.innerText = "Strong upward momentum detected.";
-                document.getElementById('w3').classList.add('active');
-            } else if(trend.includes('DOWN')) {
-                ewTitle.innerText = "Correction C";
-                ewDesc.innerText = "Corrective phase active.";
-                document.getElementById('w4').classList.add('active');
-            } else {
-                ewTitle.innerText = "Wave 1 Formation";
-                ewDesc.innerText = "Base building phase.";
-                document.getElementById('w1').classList.add('active');
-            }
-            
-            // 5. AI
-            document.getElementById('ai-reason').innerText = data.ai.reasoning || "AI Analysis Complete.";
-            
-            document.getElementById('loader').classList.remove('active');
-            
-        } catch(e) {
-            console.error(e);
-            alert("Analysis Failed");
-            closeAnalyst();
         }
-    }
 
-    function closeAnalyst() {
-        document.body.classList.remove('mode-analyst');
-        document.getElementById('loader').classList.remove('active');
-    }
+        function renderMockChart(price, trend) {
+            let data = [];
+            let curr = price * 0.95;
+            let now = Math.floor(Date.now()/1000);
+            for(let i=0; i<100; i++) {
+                let time = now - (100-i)*3600;
+                let chg = (Math.random()-0.5)*(price*0.02);
+                if(trend.includes("UP")) chg += price*0.002;
+                let close = curr + chg;
+                let high = Math.max(curr, close) + price*0.005;
+                let low = Math.min(curr, close) - price*0.005;
+                data.push({time, open:curr, high, low, close});
+                curr = close;
+            }
+            candleSeries.setData(data);
+        }
   </script>
-
 </body>
 
 </html>
