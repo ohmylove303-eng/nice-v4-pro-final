@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>NICE v8.0 PRO | ULTRATHINK DASHBOARD</title>
+  <title>NICE v8.3 PRO | REAL-TIME SCREENER</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap"
@@ -127,7 +127,6 @@
       overflow: hidden;
     }
 
-    /* CHART & SIDEBAR */
     #chart-container {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
@@ -138,6 +137,7 @@
       overflow: hidden;
     }
 
+    /* SIDEBAR */
     #sidebar {
       grid-column: 2 / 3;
       grid-row: 1 / 3;
@@ -146,9 +146,61 @@
       border: var(--border);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
-    /* BOTTOM DECK */
+    .tab-row {
+      display: flex;
+      border-bottom: var(--border);
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #666;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab:hover,
+    .tab.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .rank-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0;
+    }
+
+    .rank-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .rank-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .rank-sym {
+      font-weight: 700;
+      color: #ddd;
+    }
+
+    .rank-chg {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
     #deck {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
@@ -189,7 +241,6 @@
       background: #444;
     }
 
-    /* AGENT CARD */
     .agent-row {
       display: flex;
       justify-content: space-between;
@@ -215,7 +266,6 @@
       background: #444;
     }
 
-    /* GUARD CARD */
     .guard-phase {
       display: flex;
       align-items: center;
@@ -241,172 +291,162 @@
       background: var(--accent-red);
     }
 
-    /* AI CARD */
     .ai-reasoning {
       font-size: 13px;
       line-height: 1.6;
       color: #ddd;
-    }
-
-    /* Animations */
-    @keyframes pulse {
-      0% {
-        opacity: 0.5
-      }
-
-      100% {
-        opacity: 1
-      }
-    }
-
-    .loading {
-      animation: pulse 1s infinite alternate;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#444; margin-left:4px">v8.0
-        ULTRATHINK</span></div>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#444; margin-left:4px">v8.3
+        REAL-TIME</span></div>
     <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
 
     <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
 
     <div style="flex:1"></div>
-    <div class="top-stat"><span class="stat-label">Kelly Criterion</span><span class="stat-val"
-        id="kelly-val">--%</span></div>
-    <div class="top-stat"><span class="stat-label">Status</span><span class="stat-val"
-        style="color:var(--accent-green)">ONLINE</span></div>
+    <div class="top-stat"><span class="stat-label">Kelly</span><span class="stat-val" id="kelly-val">--%</span></div>
+    <div class="top-stat"><span class="stat-label">Vol Power</span><span class="stat-val"
+        style="color:var(--accent-cyan)">LIVE</span></div>
   </header>
 
   <div id="main">
-    <!-- CHART AREA -->
     <div id="chart-container">
       <div id="chart-canvas" style="width:100%; height:100%"></div>
     </div>
 
-    <!-- SIDEBAR -->
     <div id="sidebar">
-      <div style="padding:15px; font-weight:800; font-size:12px; color:#666; border-bottom:var(--border)">DETECTED
-        SIGNALS</div>
-      <div id="rank-list" style="padding:10px; color:#444; font-size:12px;">Waiting for analysis...</div>
+      <div class="tab-row">
+        <div class="tab active" onclick="loadList('surge', this)">🔥 SURGE</div>
+        <div class="tab" onclick="loadList('volume', this)">💰 VOLUME</div>
+        <div class="tab" onclick="loadList('scalping', this)">⚡ SCALP</div>
+      </div>
+      <div class="rank-list" id="rank-list"></div>
     </div>
 
-    <!-- DECK -->
     <div id="deck">
-      <!-- CARD 1: 5 AGENTS -->
       <div class="card" style="border-top:2px solid var(--accent-cyan)">
         <h3 style="color:var(--accent-cyan)">5-Agent Consensus</h3>
-        <div id="agents-list">
-          <!-- JS Injected -->
-        </div>
+        <div id="agents-list"></div>
       </div>
 
-      <!-- CARD 2: GUARD CHAIN -->
       <div class="card" style="border-top:2px solid var(--accent-purple)">
         <h3 style="color:var(--accent-purple)">7-Phase Guard Chain</h3>
-        <div id="guard-list">
-          <!-- JS Injected -->
-        </div>
+        <div id="guard-list"></div>
       </div>
 
-      <!-- CARD 3: MARKET -->
       <div class="card">
-        <h3>Trend Context</h3>
+        <h3>Backtest (200D)</h3>
         <div style="text-align:center; margin-top:10px;">
-          <div style="font-size:24px; font-weight:800; color:#fff" id="trend-main">--</div>
-          <div style="font-size:11px; color:#666; margin-top:4px">PRIMARY TREND</div>
+          <div style="font-size:24px; font-weight:800; color:#fff" id="bt-win">--%</div>
+          <div style="font-size:11px; color:#666; margin-top:4px">WIN RATE</div>
+          <div style="font-size:12px; color:var(--accent-green); margin-top:4px" id="bt-ret">--% Return</div>
         </div>
       </div>
 
-      <!-- CARD 4: AI CIO -->
       <div class="card" style="border:1px solid #333; background:#0a0a0e">
         <h3 style="color:#fff">🤖 Chief Investment Officer</h3>
-        <div class="ai-reasoning" id="ai-text">
-          Waiting for input...
-        </div>
+        <div class="ai-reasoning" id="ai-text">Waiting for input...</div>
       </div>
     </div>
   </div>
 
   <script>
-        // INIT
         const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), {
             layout: { background: { color: '#111116' }, textColor: '#666' },
             grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } },
         });
         const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
         
+        window.onload = () => loadList('surge', document.querySelector('.tab'));
+        
         document.getElementById('search-input').addEventListener('keydown', (e) => {
             if(e.key === 'Enter') runAnalysis(e.target.value);
         });
 
-        async function runAnalysis(ticker) {
-            // UI RESET
-            document.getElementById('app-score').innerText = "--";
-            document.getElementById('app-badge').innerText = "CALCULATING...";
-            document.getElementById('ai-text').innerText = "Consulting 5 Agents...";
+        async function loadList(cat, tabEl) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            if(tabEl) tabEl.classList.add('active');
+            
+            const list = document.getElementById('rank-list');
+            list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Loading...</div>';
             
             try {
+                const res = await fetch(`/api/screener/${cat}`);
+                const data = await res.json();
+                list.innerHTML = '';
+                data.list.forEach(c => {
+                    const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+                    const el = document.createElement('div');
+                    el.className = 'rank-item';
+                    el.innerHTML = `
+                        <span class="rank-sym">${c.symbol}</span>
+                        <div style="text-align:right">
+                            <div class="rank-chg" style="color:${color}">${c.change > 0 ? '+' : ''}${c.change}%</div>
+                            <div style="font-size:10px; color:#666">${(c.volume/1000000).toFixed(0)}M</div>
+                        </div>
+                    `;
+                    el.onclick = () => runAnalysis(c.symbol);
+                    list.appendChild(el);
+                });
+            } catch(e) { list.innerHTML = "Error"; }
+        }
+
+        async function runAnalysis(ticker) {
+            document.getElementById('app-score').innerText = "--";
+            document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`;
+            
+            try {
+                // 1. ANALYZE
                 const res = await fetch(`/api/analyze/${ticker}`);
                 const data = await res.json();
                 
-                if(data.error) throw new Error(data.error);
-                
-                // 1. UPDATE HEADER
                 document.getElementById('app-score').innerText = data.score;
                 document.getElementById('app-badge').innerText = data.type;
                 document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff';
                 document.getElementById('kelly-val').innerText = `${data.kelly}%`;
                 
-                // 2. RENDER AGENTS
-                const agents = data.agents;
+                // Agents
                 let agentHTML = "";
-                for(const [name, score] of Object.entries(agents)) {
-                    const color = score > 60 ? 'var(--accent-green)' : (score < 40 ? 'var(--accent-red)' : '#888');
-                    agentHTML += `
-                        <div class="agent-row">
-                            <span class="agent-name" style="color:${color}">${name.toUpperCase()}</span>
-                            <div style="display:flex; align-items:center; gap:8px">
-                                <div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div>
-                                <span>${score}</span>
-                            </div>
-                        </div>`;
+                for(const [name, score] of Object.entries(data.agents)) {
+                    const color = score > 60 ? 'var(--accent-green)' : '#666';
+                    agentHTML += `<div class="agent-row"><span class="agent-name">${name.substr(0,4)}</span><div style="display:flex; gap:6px"><div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div><span>${score}</span></div></div>`;
                 }
                 document.getElementById('agents-list').innerHTML = agentHTML;
                 
-                // 3. RENDER GUARDS (7 Phases)
-                const guards = data.guards;
+                // Guard
                 let guardHTML = "";
-                guards.forEach(g => {
-                    const status = g.passed ? 'pass' : 'fail';
-                    guardHTML += `<div class="guard-phase"><div class="guard-dot ${status}"></div> Phase ${g.phase}: ${g.name}</div>`;
+                data.guards.forEach(g => {
+                    guardHTML += `<div class="guard-phase"><div class="guard-dot ${g.passed?'pass':'fail'}"></div> Ph ${g.phase}: ${g.name}</div>`;
                 });
                 document.getElementById('guard-list').innerHTML = guardHTML;
                 
-                // 4. TREND & AI
-                document.getElementById('trend-main').innerText = data.tech.trend;
+                // AI
                 document.getElementById('ai-text').innerText = data.ai_reasoning;
                 
-                // MOCK CHART UPDATE (For Demo)
+                // 2. BACKTEST
+                const btRes = await fetch(`/api/backtest/${ticker}`);
+                const btData = await btRes.json();
+                document.getElementById('bt-win').innerText = `${btData.win_rate}%`;
+                document.getElementById('bt-ret').innerText = `${btData.return_pct}% Return`;
+                
+                // Mock Chart
                 updateChartMock(data.score > 60);
 
-            } catch(e) {
-                alert("Analysis Failed: " + e.message);
-            }
+            } catch(e) { alert("Error: " + e.message); }
         }
 
         function updateChartMock(isBull) {
             let d = [];
-            let price = 1000;
+            let p = 1000;
             let now = Math.floor(Date.now()/1000);
             for(let i=100; i>0; i--) {
-                const change = (Math.random()-0.5)*20 + (isBull?5:-5);
-                const close = price + change;
-                d.push({time:now-i*3600, open:price, high:Math.max(price,close)+10, low:Math.min(price,close)-10, close:close});
-                price = close;
+                p = p + (Math.random()-0.5)*20 + (isBull?5:-5);
+                d.push({time:now-i*3600, open:p, high:p+10, low:p-10, close:p});
             }
             candles.setData(d);
         }
