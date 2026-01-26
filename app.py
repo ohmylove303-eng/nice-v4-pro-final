@@ -193,22 +193,31 @@ class MarketData:
                 })
             
             url_ob = f"{config.BITHUMB_API_URL}/orderbook/{sym}_KRW"
-            ob = requests.get(url_ob, headers=headers, timeout=5).json()
+            ob_res = requests.get(url_ob, headers=headers, timeout=5).json()
+            if ob_res['status'] != '0000': return candles, None, f"Orderbook Error: {ob_res.get('status')}"
             
-            return candles, ob['data'], None
+            return candles, ob_res['data'], None
         except Exception as e:
             logger.error(f"MarketData Fetch Error: {e}")
             return None, None, str(e)
 
 @app.route('/api/analyze/<ticker>')
 def analyze(ticker):
+  try:
     tf_mode = request.args.get('timeframe', 'day')
     t_code = ticker.replace("KRW-","").upper()
     candles, ob, err_msg = MarketData.fetch(t_code, timeframe=tf_mode)
-    if candles is None: return jsonify({"error": f"Data Unavailable: {err_msg}"}), 500
+    
+    if candles is None: return jsonify({"error": f"Candle Data Unavailable: {err_msg}"}), 500
+    if ob is None and err_msg: return jsonify({"error": f"Orderbook Data Unavailable: {err_msg}"}), 500
     
     signals = signal_agg.get_all_signals(candles)
-    bid = float(ob['bids'][0]['price']) if ob else 0
+    
+    # Safe Bids Access
+    bid = 0
+    if ob and 'bids' in ob and len(ob['bids']) > 0:
+        bid = float(ob['bids'][0]['price'])
+    
     guard_res = guard_chain.execute_all(t_code, "BUY", 1.0, bid)
     llm_res = llm_master.synthesize(f"{t_code} ({tf_mode.upper()})", signals['agent_scores'], signals['weighted_score'])
     kelly_res = pos_sizer.calculate(t_code, "BUY", portfolio_mgr.balance)
@@ -220,6 +229,13 @@ def analyze(ticker):
         "type": llm_res.get('signal', 'TYPE C'),
         "kelly": kelly_res['kelly_pct'],
         "agents": signals['agent_scores'],
+        "guards": guard_res['phase_results'],
+        "ai_reasoning": llm_res.get('reasoning', "Analysis Complete"),
+        "tech": { "trend": "UP" if signals['weighted_score'] > 55 else "DOWN", "rsi": signals['agent_scores']['technical'] }
+    })
+  except Exception as e:
+      logger.exception("Analyze Route Crash")
+      return jsonify({"error": f"Internal Crash: {str(e)}"}), 500
         "guards": guard_res['phase_results'],
         "ai_reasoning": llm_res.get('reasoning', "Analysis Complete"),
         "tech": { "trend": "UP" if signals['weighted_score'] > 55 else "DOWN", "rsi": signals['agent_scores']['technical'] }
