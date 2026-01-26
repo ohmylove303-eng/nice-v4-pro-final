@@ -134,7 +134,9 @@ class MarketData:
             
             sym = ticker.replace("KRW-","")
             url = f"{config.BITHUMB_API_URL}/candlestick/{sym}_KRW/{api_tf}"
-            res = requests.get(url, timeout=2).json()
+            headers = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
+            
+            res = requests.get(url, headers=headers, timeout=5).json()
             if res['status'] != '0000': return None, None
             
             # Pure Python List of Dicts
@@ -151,10 +153,12 @@ class MarketData:
                 })
             
             url_ob = f"{config.BITHUMB_API_URL}/orderbook/{sym}_KRW"
-            ob = requests.get(url_ob, timeout=2).json()
+            ob = requests.get(url_ob, headers=headers, timeout=5).json()
             
             return candles, ob['data']
-        except: return None, None
+        except Exception as e:
+            logger.error(f"MarketData Fetch Error: {e}")
+            return None, None
 
 @app.route('/api/analyze/<ticker>')
 def analyze(ticker):
@@ -193,7 +197,8 @@ def get_screener(category):
         except: return jsonify({"list": []})
     try:
         url = f"{config.BITHUMB_API_URL}/ticker/ALL_KRW"
-        res = requests.get(url, timeout=1).json()
+        headers = {"User-Agent": "Mozilla/5.0"}
+        res = requests.get(url, headers=headers, timeout=3).json()
         data = []
         for k, v in res['data'].items():
             if k == 'date': continue
