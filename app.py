@@ -118,7 +118,47 @@ HTML_CONTENT = """
     async function updatePortfolio() { try { const res = await fetch('/api/portfolio/metrics'); const data = await res.json(); document.getElementById('pf-win').innerText = `${data.win_rate}%`; document.getElementById('risk-sharpe').innerText = data.sharpe_ratio; document.getElementById('risk-mdd').innerText = `${data.max_drawdown}%`; document.getElementById('risk-pnl').innerText = `₩${(data.realized_pnl_24h / 10000).toFixed(0)}만`; } catch (e) { } }
     async function changeMode(cat, tabEl) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); if (tabEl) tabEl.classList.add('active'); CURRENT_MODE = (cat === 'scalp') ? 'scalp' : 'day'; document.getElementById('mode-val').innerText = CURRENT_MODE === 'scalp' ? "SCALPING (30m)" : "SWING (24H)"; document.getElementById('mode-val').style.color = CURRENT_MODE === 'scalp' ? "var(--accent-cyan)" : "var(--accent-purple)"; loadList(cat); }
     async function loadList(cat) { const list = document.getElementById('rank-list'); list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Deep Scanning...</div>'; try { const res = await fetch(`/api/screener/${cat}`); const data = await res.json(); list.innerHTML = ''; data.list.forEach(c => { const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)'; const el = document.createElement('div'); el.className = 'rank-item'; const contextL = (cat === 'scalp') ? '30m' : '24h'; el.innerHTML = `<span class="rank-sym">${c.symbol}</span><div style="text-align:right"><div class="rank-chg" style="color:${color}">${c.change > 0 ? '+' : ''}${c.change}%</div><div style="font-size:10px; color:#666">${contextL}</div></div>`; el.onclick = () => runAnalysis(c.symbol); list.appendChild(el); }); } catch (e) { list.innerHTML = "Err"; } }
-    async function runAnalysis(ticker) { document.getElementById('app-score').innerText = "--"; document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`; try { const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`); const data = await res.json(); document.getElementById('app-score').innerText = data.score; document.getElementById('app-badge').innerText = data.type; document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff'; document.getElementById('kelly-val').innerText = `${data.kelly}%`; let agentHTML = ""; for (const [name, score] of Object.entries(data.agents)) { const color = score > 60 ? 'var(--accent-green)' : '#666'; agentHTML += `<div class="agent-row"><span class="agent-name">${name.substr(0, 4).toUpperCase()}</span><div style="display:flex; gap:6px"><div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div><span>${score}</span></div></div>`; } document.getElementById('agents-list').innerHTML = agentHTML; let guardHTML = ""; data.guards.forEach(g => { guardHTML += `<div class="guard-phase"><div class="guard-dot ${g.passed ? 'pass' : 'fail'}"></div> Ph ${g.phase}</div>`; }); document.getElementById('guard-list').innerHTML = guardHTML; document.getElementById('ai-text').innerText = data.ai_reasoning; updateChartMock(data.score > 60); } catch (e) { alert("Analysis Failed"); } }
+    async function runAnalysis(ticker) { 
+        document.getElementById('app-score').innerText = "--"; 
+        document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`; 
+        try { 
+            const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`); 
+            const data = await res.json(); 
+            
+            if (!res.ok || data.error) {
+                alert(`Error: ${data.error || "Unknown Server Error"}`);
+                document.getElementById('ai-text').innerText = "Analysis Failed";
+                return;
+            }
+
+            document.getElementById('app-score').innerText = data.score; 
+            document.getElementById('app-badge').innerText = data.type; 
+            document.getElementById('app-badge').style.color = data.score >= 80 ? '#00ff9d' : '#fff'; 
+            document.getElementById('kelly-val').innerText = `${data.kelly}%`; 
+            
+            let agentHTML = ""; 
+            if (data.agents) {
+                for (const [name, score] of Object.entries(data.agents)) { 
+                    const color = score > 60 ? 'var(--accent-green)' : '#666'; 
+                    agentHTML += `<div class="agent-row"><span class="agent-name">${name.substr(0, 4).toUpperCase()}</span><div style="display:flex; gap:6px"><div class="agent-bar-bg"><div class="agent-bar-fill" style="width:${score}%; background:${color}"></div></div><span>${score}</span></div></div>`; 
+                } 
+            }
+            document.getElementById('agents-list').innerHTML = agentHTML; 
+            
+            let guardHTML = ""; 
+            if (data.guards) {
+                data.guards.forEach(g => { 
+                    guardHTML += `<div class="guard-phase"><div class="guard-dot ${g.passed ? 'pass' : 'fail'}"></div> Ph ${g.phase}</div>`; 
+                }); 
+            }
+            document.getElementById('guard-list').innerHTML = guardHTML; 
+            
+            document.getElementById('ai-text').innerText = data.ai_reasoning; 
+            updateChartMock(data.score > 60); 
+        } catch (e) { 
+            alert(`Client Error: ${e.message}`); 
+        } 
+    }
     function updateChartMock(isBull) { let d = []; let p = 1000; let now = Math.floor(Date.now() / 1000); for (let i = 100; i > 0; i--) { p = p + (Math.random() - 0.5) * 20 + (isBull ? 5 : -5); d.push({ time: now - i * 3600, open: p, high: p + 10, low: p - 10, close: p }); } candles.setData(d); }
   </script>
 </body>
