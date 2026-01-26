@@ -137,7 +137,7 @@ class MarketData:
             headers = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
             
             res = requests.get(url, headers=headers, timeout=5).json()
-            if res['status'] != '0000': return None, None
+            if res['status'] != '0000': return None, None, f"API Status Error: {res.get('status')}"
             
             # Pure Python List of Dicts
             candles = []
@@ -155,17 +155,17 @@ class MarketData:
             url_ob = f"{config.BITHUMB_API_URL}/orderbook/{sym}_KRW"
             ob = requests.get(url_ob, headers=headers, timeout=5).json()
             
-            return candles, ob['data']
+            return candles, ob['data'], None
         except Exception as e:
             logger.error(f"MarketData Fetch Error: {e}")
-            return None, None
+            return None, None, str(e)
 
 @app.route('/api/analyze/<ticker>')
 def analyze(ticker):
     tf_mode = request.args.get('timeframe', 'day')
     t_code = ticker.replace("KRW-","").upper()
-    candles, ob = MarketData.fetch(t_code, timeframe=tf_mode)
-    if candles is None: return jsonify({"error": "Data Unavailable"}), 500
+    candles, ob, err_msg = MarketData.fetch(t_code, timeframe=tf_mode)
+    if candles is None: return jsonify({"error": f"Data Unavailable: {err_msg}"}), 500
     
     signals = signal_agg.get_all_signals(candles)
     bid = float(ob['bids'][0]['price']) if ob else 0
