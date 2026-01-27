@@ -94,7 +94,7 @@ HTML_CONTENT = """
     <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
     <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
-    <div style="flex:1"></div>
+    <div class="top-stat" style="cursor:pointer" onclick="setApiKey()"><span class="stat-label">AI KEY</span><span class="stat-val" id="key-status" style="color:#666">OFF</span></div>
     <div class="top-stat"><span class="stat-label">Mode</span><span class="stat-val" id="mode-val" style="color:var(--accent-purple)">SWING (24H)</span></div>
     <div class="top-stat"><span class="stat-label">Kelly</span><span class="stat-val" id="kelly-val">--%</span></div>
     <div class="top-stat"><span class="stat-label">Win Rate</span><span class="stat-val" id="pf-win">--%</span></div>
@@ -120,9 +120,26 @@ HTML_CONTENT = """
     let CURRENT_MODE = 'day';
     const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), { layout: { background: { color: '#111116' }, textColor: '#666' }, grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } }, });
     const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
-    window.onload = () => { changeMode('surge', document.querySelector('.tab.active')); updatePortfolio(); };
+    window.onload = () => { checkKey(); changeMode('surge', document.querySelector('.tab.active')); updatePortfolio(); };
     setInterval(updatePortfolio, 5000);
     document.getElementById('search-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') runAnalysis(e.target.value); });
+    
+    function checkKey() {
+        const k = localStorage.getItem('gemini_key');
+        const el = document.getElementById('key-status');
+        if(k && k.startsWith('AIza')) { el.innerText = "ON"; el.style.color = "var(--accent-green)"; }
+        else { el.innerText = "OFF"; el.style.color = "#444"; }
+    }
+    function setApiKey() {
+        const cur = localStorage.getItem('gemini_key') || '';
+        const input = prompt("Enter Gemini API Key (Stored Locally):", cur);
+        if(input !== null) {
+            localStorage.setItem('gemini_key', input.trim());
+            checkKey();
+            alert("API Key Saved to Browser!");
+        }
+    }
+    
     async function updatePortfolio() { try { const res = await fetch('/api/portfolio/metrics'); const data = await res.json(); document.getElementById('pf-win').innerText = `${data.win_rate}%`; document.getElementById('risk-sharpe').innerText = data.sharpe_ratio; document.getElementById('risk-mdd').innerText = `${data.max_drawdown}%`; document.getElementById('risk-pnl').innerText = `₩${(data.realized_pnl_24h / 10000).toFixed(0)}만`; } catch (e) { } }
     async function changeMode(cat, tabEl) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); if (tabEl) tabEl.classList.add('active'); CURRENT_MODE = (cat === 'scalp') ? 'scalp' : 'day'; document.getElementById('mode-val').innerText = CURRENT_MODE === 'scalp' ? "SCALPING (30m)" : "SWING (24H)"; document.getElementById('mode-val').style.color = CURRENT_MODE === 'scalp' ? "var(--accent-cyan)" : "var(--accent-purple)"; loadList(cat); }
     async function loadList(cat) { const list = document.getElementById('rank-list'); list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Deep Scanning...</div>'; try { const res = await fetch(`/api/screener/${cat}`); const data = await res.json(); list.innerHTML = ''; data.list.forEach(c => { const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)'; const el = document.createElement('div'); el.className = 'rank-item'; const contextL = (cat === 'scalp') ? '30m' : '24h'; el.innerHTML = `<span class="rank-sym">${c.symbol}</span><div style="text-align:right"><div class="rank-chg" style="color:${color}">${c.change > 0 ? '+' : ''}${c.change}%</div><div style="font-size:10px; color:#666">${contextL}</div></div>`; el.onclick = () => runAnalysis(c.symbol); list.appendChild(el); }); } catch (e) { list.innerHTML = "Err"; } }
@@ -130,7 +147,11 @@ HTML_CONTENT = """
         document.getElementById('app-score').innerText = "--"; 
         document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`; 
         try { 
-            const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`); 
+            const headers = {};
+            const localKey = localStorage.getItem('gemini_key');
+            if(localKey) headers['X-Gemini-API-Key'] = localKey;
+            
+            const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`, { headers }); 
             const data = await res.json(); 
             
             if (!res.ok || data.error) {
@@ -253,7 +274,15 @@ def analyze(ticker):
         
         # LLM Might Fail (API Key)
         try:
-            llm_res = llm_master.synthesize(f"{t_code} ({tf_mode.upper()})", signals['agent_scores'], signals['weighted_score'])
+            # BYOK Support: Check Header first
+            client_key = request.headers.get('X-Gemini-API-Key')
+            
+            llm_res = llm_master.synthesize(
+                f"{t_code} ({tf_mode.upper()})", 
+                signals['agent_scores'], 
+                signals['weighted_score'],
+                override_key=client_key 
+            )
             ai_reasoning = llm_res.get('reasoning', "Analysis Complete")
             ai_type = llm_res.get('signal', 'TYPE C')
         except Exception as llm_e:

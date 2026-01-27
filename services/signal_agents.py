@@ -38,7 +38,7 @@ class MathLib:
         return 100 - (100 / (1 + rs))
 
 class TechnicalAgent:
-    def __init__(self): self.name = "Technical"
+    def __init__(self): self.name = "technical"
     def analyze(self, candles):
         # candles: list of {close, open, high, low, volume}
         closes = [c['close'] for c in candles]
@@ -68,7 +68,7 @@ class TechnicalAgent:
         return {"score": int(max(0, min(100, score))), "details": f"RSI:{current_rsi:.1f}"}
 
 class OnChainAgent:
-    def __init__(self): self.name = "OnChain"
+    def __init__(self): self.name = "onchain"
     def analyze(self, candles):
         vols = [c['volume'] for c in candles]
         closes = [c['close'] for c in candles]
@@ -82,7 +82,7 @@ class OnChainAgent:
         return {"score": score, "details": f"Vol Ratio: {vol_ratio:.1f}x"}
 
 class SentimentAgent:
-    def __init__(self): self.name = "Sentiment"
+    def __init__(self): self.name = "sentiment"
     def analyze(self, candles):
         closes = [c['close'] for c in candles]
         if len(closes) < 5: return {"score": 50, "details": "No Data"}
@@ -90,10 +90,12 @@ class SentimentAgent:
         return {"score": int(50 + ret), "details": f"Mom(5D): {ret:.1f}%"}
 
 class MacroAgent:
+    def __init__(self): self.name = "macro"
     def analyze(self, candles):
         return {"score": 60, "details": "Stable"}
 
 class InstitutionalAgent:
+    def __init__(self): self.name = "institutional"
     def analyze(self, candles):
         closes = [c['close'] for c in candles]
         ma50 = MathLib.sma(closes, 50)

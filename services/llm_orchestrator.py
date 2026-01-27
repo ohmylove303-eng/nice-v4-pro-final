@@ -4,13 +4,27 @@ import google.generativeai as genai
 
 class LLMOrchestrator:
     def __init__(self):
-        self.key = os.getenv('GOOGLE_API_KEY')
-        if self.key:
-            genai.configure(api_key=self.key)
+        # Support both naming conventions
+        self.server_key = os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')
+        if self.server_key:
+            genai.configure(api_key=self.server_key)
             self.model = genai.GenerativeModel("gemini-1.5-flash")
+        else:
+            self.model = None
 
-    def synthesize(self, symbol, scores, weighted_score):
-        if not self.key: return {"signal": "TYPE C", "reasoning": "No AI Key"}
+    def synthesize(self, symbol, scores, weighted_score, override_key=None):
+        # Determine which key to use
+        active_key = override_key or self.server_key
+        
+        if not active_key: 
+            return {"signal": "TYPE C", "reasoning": "No API Key Provided (Server or Client)"}
+            
+        # Re-configure for this request if needed (or just ensure it's set)
+        try:
+            genai.configure(api_key=active_key)
+            if not self.model: self.model = genai.GenerativeModel("gemini-1.5-flash")
+        except Exception as e:
+            return {"signal": "TYPE C", "reasoning": f"Key Config Error: {str(e)}"}
         
         # Token Efficient Prompt
         prompt = f"""
@@ -31,6 +45,7 @@ class LLMOrchestrator:
             e = txt.rfind('}')
             if s!=-1 and e!=-1:
                 return json.loads(txt[s:e+1])
-        except: pass
+        except Exception as e:
+            return {"signal": "TYPE C", "reasoning": f"ERR: {str(e)}"}
         
-        return {"signal": "TYPE C", "reasoning": "AI Parsing Error"}
+        return {"signal": "TYPE C", "reasoning": "AI Parsing Error (No JSON)"}
