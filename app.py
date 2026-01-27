@@ -136,7 +136,9 @@ HTML_CONTENT = """
   <script>
     let CURRENT_MODE = 'day';
     const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), { layout: { background: { color: '#111116' }, textColor: '#666' }, grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } }, });
-    const candles = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
+    // RENAMED TO candleSeries to prevent ReferenceError
+    const candleSeries = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
+    
     window.onload = () => { checkKey(); changeMode('surge', document.querySelector('.tab.active')); updatePortfolio(); };
     setInterval(updatePortfolio, 5000);
     document.getElementById('search-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') runAnalysis(e.target.value); });
@@ -171,6 +173,7 @@ HTML_CONTENT = """
     async function updatePortfolio() { try { const res = await fetch('/api/portfolio/metrics'); const data = await res.json(); document.getElementById('pf-win').innerText = `${data.win_rate}%`; document.getElementById('risk-sharpe').innerText = data.sharpe_ratio; document.getElementById('risk-mdd').innerText = `${data.max_drawdown}%`; document.getElementById('risk-pnl').innerText = `₩${(data.realized_pnl_24h / 10000).toFixed(0)}만`; } catch (e) { } }
     async function changeMode(cat, tabEl) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); if (tabEl) tabEl.classList.add('active'); CURRENT_MODE = (cat === 'scalp') ? 'scalp' : 'day'; document.getElementById('mode-val').innerText = CURRENT_MODE === 'scalp' ? "SCALPING (30m)" : "SWING (24H)"; document.getElementById('mode-val').style.color = CURRENT_MODE === 'scalp' ? "var(--accent-cyan)" : "var(--accent-purple)"; loadList(cat); }
     async function loadList(cat) { const list = document.getElementById('rank-list'); list.innerHTML = '<div style="padding:20px; text-align:center; color:#666">Deep Scanning...</div>'; try { const res = await fetch(`/api/screener/${cat}`); const data = await res.json(); list.innerHTML = ''; data.list.forEach(c => { const color = c.change > 0 ? 'var(--accent-green)' : 'var(--accent-red)'; const el = document.createElement('div'); el.className = 'rank-item'; const contextL = (cat === 'scalp') ? '30m' : '24h'; el.innerHTML = `<span class="rank-sym">${c.symbol}</span><div style="text-align:right"><div class="rank-chg" style="color:${color}">${c.change > 0 ? '+' : ''}${c.change}%</div><div style="font-size:10px; color:#666">${contextL}</div></div>`; el.onclick = () => runAnalysis(c.symbol); list.appendChild(el); }); } catch (e) { list.innerHTML = "Err"; } }
+    
     async function runAnalysis(ticker) { 
         document.getElementById('app-score').innerText = "--"; 
         document.getElementById('ai-text').innerText = `Analyzing ${ticker}...`; 
@@ -182,24 +185,24 @@ HTML_CONTENT = """
             const res = await fetch(`/api/analyze/${ticker}?timeframe=${CURRENT_MODE}`, { headers }); 
             const data = await res.json(); 
             
+            // 1. CHART DATA
+            if (data.candles && data.candles.length > 0) {
+                candleSeries.setData(data.candles);
+                chart.timeScale().fitContent();
+            }
+
             if (!res.ok || data.error) {
-                // Show error in UI directly for debugging
                 const errMsg = data.error || "Unknown Server Error";
                 document.getElementById('ai-text').innerText = `ERR: ${errMsg}`;
                 document.getElementById('ai-text').style.color = '#ff0055';
                 return;
             }
 
-            if (data.candles) {
-                candles.setData(data.candles);
-                chart.timeScale().fitContent();
-            }
-            
             if (data.error || data.ai_status === "AI_OFFLINE") {
                 const msg = data.details || data.ai_reasoning || "System Partial Failure";
                 document.getElementById('ai-text').innerText = `⚠️ ${msg}`;
                 document.getElementById('ai-text').style.color = '#ff9900';
-                if (!data.score) return; // If critical failure, stop
+                if (!data.score) return; 
             }
 
             document.getElementById('app-score').innerText = data.score; 
