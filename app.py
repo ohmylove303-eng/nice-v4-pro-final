@@ -116,6 +116,23 @@ HTML_CONTENT = """
       <div class="card" style="border:1px solid #333; background:#0a0a0e"><h3 style="color:#fff">CIO Decision</h3><div class="ai-reasoning" id="ai-text">Waiting for input...</div></div>
     </div>
   </div>
+  
+  <!-- KEY MODAL -->
+  <div id="key-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; backdrop-filter:blur(5px)">
+      <div style="background:#1a1a1e; padding:24px; border-radius:12px; border:1px solid #333; width:320px; box-shadow:0 0 30px rgba(0,0,0,0.7)">
+          <h3 style="color:#fff; margin:0 0 8px 0; font-size:14px; font-weight:800; display:flex; align-items:center; gap:8px">🔐 SECURITY SETTINGS</h3>
+          <div style="font-size:11px; color:#888; margin-bottom:16px; line-height:1.4">Your API Key is stored <b>locally in your browser</b>.<br>It is never saved on our servers.</div>
+          
+          <div style="font-size:10px; color:#666; font-weight:700; margin-bottom:4px">GEMINI API KEY</div>
+          <input type="password" id="key-input" style="width:100%; padding:10px; background:#000; border:1px solid #333; color:#00ff9d; border-radius:6px; margin-bottom:20px; font-family:monospace; font-size:12px" placeholder="AIza..." />
+          
+          <div style="display:flex; justify-content:flex-end; gap:8px">
+              <button onclick="closeModal()" style="padding:8px 16px; background:transparent; border:1px solid #333; color:#888; border-radius:6px; cursor:pointer; font-size:11px; font-weight:700">CANCEL</button>
+              <button onclick="saveKey()" style="padding:8px 16px; background:var(--accent-purple); border:none; color:#fff; border-radius:6px; cursor:pointer; font-size:11px; font-weight:800">SAVE KEY</button>
+          </div>
+      </div>
+  </div>
+
   <script>
     let CURRENT_MODE = 'day';
     const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), { layout: { background: { color: '#111116' }, textColor: '#666' }, grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } }, });
@@ -130,14 +147,25 @@ HTML_CONTENT = """
         if(k && k.startsWith('AIza')) { el.innerText = "ON"; el.style.color = "var(--accent-green)"; }
         else { el.innerText = "OFF"; el.style.color = "#444"; }
     }
+    
     function setApiKey() {
         const cur = localStorage.getItem('gemini_key') || '';
-        const input = prompt("Enter Gemini API Key (Stored Locally):", cur);
-        if(input !== null) {
-            localStorage.setItem('gemini_key', input.trim());
+        document.getElementById('key-input').value = cur;
+        document.getElementById('key-modal').style.display = 'flex';
+        document.getElementById('key-input').focus();
+    }
+    
+    function closeModal() {
+        document.getElementById('key-modal').style.display = 'none';
+    }
+    
+    function saveKey() {
+        const val = document.getElementById('key-input').value;
+        if(val) {
+            localStorage.setItem('gemini_key', val.trim());
             checkKey();
-            alert("API Key Saved to Browser!");
         }
+        closeModal();
     }
     
     async function updatePortfolio() { try { const res = await fetch('/api/portfolio/metrics'); const data = await res.json(); document.getElementById('pf-win').innerText = `${data.win_rate}%`; document.getElementById('risk-sharpe').innerText = data.sharpe_ratio; document.getElementById('risk-mdd').innerText = `${data.max_drawdown}%`; document.getElementById('risk-pnl').innerText = `₩${(data.realized_pnl_24h / 10000).toFixed(0)}만`; } catch (e) { } }
