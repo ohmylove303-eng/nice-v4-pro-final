@@ -8,26 +8,34 @@ import logging
 import requests
 import config
 
-# Services (Package Import)
-from services.signal_agents import SignalAggregator
-from services.guard_chain import GuardChain
-from services.llm_orchestrator import LLMOrchestrator
-from services.position_sizer import PositionSizer
-from services.screener import BithumbScreener
-from services.portfolio_manager import PortfolioManager
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 CORS(app)
 
-# Initialize Services
-signal_agg = SignalAggregator()
-guard_chain = GuardChain()
-llm_master = LLMOrchestrator()
-pos_sizer = PositionSizer()
-portfolio_mgr = PortfolioManager()
+INIT_ERROR = None
+
+try:
+    # Services (Package Import)
+    from services.signal_agents import SignalAggregator
+    from services.guard_chain import GuardChain
+    from services.llm_orchestrator import LLMOrchestrator
+    from services.position_sizer import PositionSizer
+    from services.screener import BithumbScreener
+    from services.portfolio_manager import PortfolioManager
+
+    # Initialize Services
+    signal_agg = SignalAggregator()
+    guard_chain = GuardChain()
+    llm_master = LLMOrchestrator()
+    pos_sizer = PositionSizer()
+    portfolio_mgr = PortfolioManager()
+except Exception as e:
+    import traceback
+    INIT_ERROR = traceback.format_exc()
+    logger.error(f"Startup Logic Failed: {INIT_ERROR}")
+
 
 # EMBEDDED HTML (Bypasses Template System)
 HTML_CONTENT = """
@@ -126,9 +134,23 @@ HTML_CONTENT = """
             const data = await res.json(); 
             
             if (!res.ok || data.error) {
-                alert(`Error: ${data.error || "Unknown Server Error"}`);
-                document.getElementById('ai-text').innerText = "Analysis Failed";
+                // Show error in UI directly for debugging
+                const errMsg = data.error || "Unknown Server Error";
+                document.getElementById('ai-text').innerText = `ERR: ${errMsg}`;
+                document.getElementById('ai-text').style.color = '#ff0055';
                 return;
+            }
+
+            if (data.candles) {
+                candles.setData(data.candles);
+                chart.timeScale().fitContent();
+            }
+            
+            if (data.error || data.ai_status === "AI_OFFLINE") {
+                const msg = data.details || data.ai_reasoning || "System Partial Failure";
+                document.getElementById('ai-text').innerText = `⚠️ ${msg}`;
+                document.getElementById('ai-text').style.color = '#ff9900';
+                if (!data.score) return; // If critical failure, stop
             }
 
             document.getElementById('app-score').innerText = data.score; 
@@ -153,13 +175,15 @@ HTML_CONTENT = """
             }
             document.getElementById('guard-list').innerHTML = guardHTML; 
             
-            document.getElementById('ai-text').innerText = data.ai_reasoning; 
-            updateChartMock(data.score > 60); 
+            if (data.ai_status !== "AI_OFFLINE") {
+                document.getElementById('ai-text').innerText = data.ai_reasoning; 
+                document.getElementById('ai-text').style.color = '#ccc';
+            }
         } catch (e) { 
+            console.error(e);
             alert(`Client Error: ${e.message}`); 
         } 
     }
-    function updateChartMock(isBull) { let d = []; let p = 1000; let now = Math.floor(Date.now() / 1000); for (let i = 100; i > 0; i--) { p = p + (Math.random() - 0.5) * 20 + (isBull ? 5 : -5); d.push({ time: now - i * 3600, open: p, high: p + 10, low: p - 10, close: p }); } candles.setData(d); }
   </script>
 </body>
 </html>
@@ -214,32 +238,58 @@ def analyze(ticker):
     signals = signal_agg.get_all_signals(candles)
     
     # Safe Bids Access
-    bid = 0
-    if ob and 'bids' in ob and len(ob['bids']) > 0:
-        bid = float(ob['bids'][0]['price'])
+    # Return Partial Data if AI Fails
+    ai_status = "OK"
+    ai_reasoning = "Analysis Complete"
+    ai_type = "TYPE C"
     
-    guard_res = guard_chain.execute_all(t_code, "BUY", 1.0, bid)
-    llm_res = llm_master.synthesize(f"{t_code} ({tf_mode.upper()})", signals['agent_scores'], signals['weighted_score'])
-    kelly_res = pos_sizer.calculate(t_code, "BUY", portfolio_mgr.balance)
-    
-    return jsonify({
-        "ticker": t_code,
-        "mode": tf_mode,
-        "score": signals['weighted_score'],
-        "type": llm_res.get('signal', 'TYPE C'),
-        "kelly": kelly_res['kelly_pct'],
-        "agents": signals['agent_scores'],
-        "guards": guard_res['phase_results'],
-        "ai_reasoning": llm_res.get('reasoning', "Analysis Complete"),
-        "tech": { "trend": "UP" if signals['weighted_score'] > 55 else "DOWN", "rsi": signals['agent_scores']['technical'] }
-    })
+    try:
+        if ob and 'bids' in ob:
+           bid = float(ob['bids'][0]['price'])
+        else:
+           bid = candles[-1]['close'] # Fallback
+           
+        guard_res = guard_chain.execute_all(t_code, "BUY", 1.0, bid)
+        
+        # LLM Might Fail (API Key)
+        try:
+            llm_res = llm_master.synthesize(f"{t_code} ({tf_mode.upper()})", signals['agent_scores'], signals['weighted_score'])
+            ai_reasoning = llm_res.get('reasoning', "Analysis Complete")
+            ai_type = llm_res.get('signal', 'TYPE C')
+        except Exception as llm_e:
+            logger.error(f"LLM Error: {llm_e}")
+            ai_status = "AI_OFFLINE"
+            ai_reasoning = "AI Server Busy or Key Expired. Technical Analysis Only."
+            
+        kelly_res = pos_sizer.calculate(t_code, "BUY", portfolio_mgr.balance)
+        
+        return jsonify({
+            "ticker": t_code,
+            "mode": tf_mode,
+            "candles": candles, # REAL DATA
+            "score": signals['weighted_score'],
+            "type": ai_type,
+            "kelly": kelly_res['kelly_pct'],
+            "agents": signals['agent_scores'],
+            "guards": guard_res['phase_results'],
+            "ai_reasoning": ai_reasoning,
+            "ai_status": ai_status,
+            "tech": { "trend": "UP" if signals['weighted_score'] > 55 else "DOWN", "rsi": signals['agent_scores']['technical'] }
+        })
+        
+    except Exception as logic_e:
+        # If logic fails, at least return candles so chart works
+        return jsonify({
+            "ticker": t_code, 
+            "candles": candles, 
+            "error": "Partial System Failure", 
+            "details": str(logic_e)
+        })
+
   except Exception as e:
       logger.exception("Analyze Route Crash")
       return jsonify({"error": f"Internal Crash: {str(e)}"}), 500
-        "guards": guard_res['phase_results'],
-        "ai_reasoning": llm_res.get('reasoning', "Analysis Complete"),
-        "tech": { "trend": "UP" if signals['weighted_score'] > 55 else "DOWN", "rsi": signals['agent_scores']['technical'] }
-    })
+
 
 @app.route('/api/screener/<category>')
 def get_screener(category):
@@ -274,6 +324,8 @@ def get_positions():
 @app.route('/')
 @app.route('/app')
 def index():
+    if INIT_ERROR:
+        return f"<h1>Startup Error</h1><pre>{INIT_ERROR}</pre>", 500
     # DIRECT RETURN HTML STRING
     return HTML_CONTENT
 
