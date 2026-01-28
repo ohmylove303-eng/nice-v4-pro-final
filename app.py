@@ -90,7 +90,7 @@ HTML_CONTENT = """
 </head>
 <body>
   <header>
-    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.10 NUCLEAR (AI FIX)</span></div>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.11 NUCLEAR (API FIX)</span></div>
     <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
     <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
