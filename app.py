@@ -90,7 +90,7 @@ HTML_CONTENT = """
 </head>
 <body>
   <header>
-    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.7 NUCLEAR (FINAL)</span></div>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.8 NUCLEAR (FINAL FIX)</span></div>
     <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
     <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
@@ -135,11 +135,25 @@ HTML_CONTENT = """
 
   <script>
     let CURRENT_MODE = 'day';
-    const chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), { layout: { background: { color: '#111116' }, textColor: '#666' }, grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } }, });
-    // RENAMED TO candleSeries to prevent ReferenceError
-    const candleSeries = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
+    let chart;
+    let candleSeries;
+
+    window.onload = () => { 
+        try {
+            chart = LightweightCharts.createChart(document.getElementById('chart-canvas'), { layout: { background: { color: '#111116' }, textColor: '#666' }, grid: { vertLines: { color: '#1a1a1a' }, horzLines: { color: '#1a1a1a' } }, });
+            candleSeries = chart.addCandlestickSeries({ upColor: '#00ff9d', downColor: '#ff0055' });
+            
+            checkKey(); 
+            changeMode('surge', document.querySelector('.tab.active')); 
+            updatePortfolio();
+        } catch(e) { console.error("Init Error", e); }
+    };
     
-    window.onload = () => { checkKey(); changeMode('surge', document.querySelector('.tab.active')); updatePortfolio(); };
+    // Resize Observer for Chart
+    window.addEventListener('resize', () => {
+        if(chart) chart.resize(document.getElementById('chart-container').clientWidth, document.getElementById('chart-container').clientHeight);
+    });
+
     setInterval(updatePortfolio, 5000);
     document.getElementById('search-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') runAnalysis(e.target.value); });
     
