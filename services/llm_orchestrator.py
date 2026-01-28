@@ -7,14 +7,14 @@ import logging
 class LLMOrchestrator:
     def __init__(self):
         self.server_key = os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')
-        self.api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+        # Base URL pattern
+        self.base_url = "https://generativelanguage.googleapis.com/v1/models/{}:generateContent"
 
     def synthesize(self, symbol, scores, weighted_score, override_key=None):
-        # Determine which key to use
         active_key = override_key or self.server_key
         
         if not active_key: 
-            return {"signal": "TYPE C", "reasoning": "API 키가 없습니다."}
+            return {"signal": "TYPE C", "reasoning": "API 키가 등록되지 않았습니다."}
             
         # Simple Korean Prompt
         prompt_text = f"""
@@ -29,41 +29,37 @@ class LLMOrchestrator:
         
         headers = {'Content-Type': 'application/json'}
         params = {'key': active_key}
-        payload = {
-            "contents": [{
-                "parts": [{"text": prompt_text}]
-            }]
-        }
+        payload = { "contents": [{ "parts": [{"text": prompt_text}] }] }
         
-        try:
-            # Fallback to older model if Flash fails? Actually REST is safer.
-            # But just in case, we can try gemini-pro url if first fails? 
-            # Let's stick to 1.5-flash first as it's standard now.
-            
-            response = requests.post(self.api_url, headers=headers, params=params, json=payload, timeout=10)
-            
-            if response.status_code != 200:
-                # Fallback to Gemini Pro REST URL
-                fallback_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
-                response = requests.post(fallback_url, headers=headers, params=params, json=payload, timeout=10)
-                
-                if response.status_code != 200:
-                    return {"signal": "TYPE C", "reasoning": f"API 오류 ({response.status_code}): {response.text[:50]}..."}
-
-            data = response.json()
-            
-            # Parse Candidate
+        # Priority Chain: Flash (Fast) -> Pro (Stable) -> 1.0 Pro (Legacy)
+        models_to_try = ["gemini-1.5-flash", "gemini-pro", "gemini-1.0-pro"]
+        
+        last_error = ""
+        
+        for model in models_to_try:
             try:
-                raw_text = data['candidates'][0]['content']['parts'][0]['text']
-                # Clean JSON
-                s = raw_text.find('{')
-                e = raw_text.rfind('}')
-                if s!=-1 and e!=-1:
-                    return json.loads(raw_text[s:e+1])
-                return {"signal": "TYPE C", "reasoning": raw_text[:100]}
-            except:
-                 return {"signal": "TYPE C", "reasoning": "응답 파싱 실패 (JSON 형식 아님)"}
+                # Try v1beta for Flash (it might require beta), v1 for Pro
+                version = "v1beta" if "flash" in model else "v1"
+                url = f"https://generativelanguage.googleapis.com/{version}/models/{model}:generateContent"
+                
+                response = requests.post(url, headers=headers, params=params, json=payload, timeout=8)
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    raw_text = data['candidates'][0]['content']['parts'][0]['text']
+                    # Clean JSON
+                    s = raw_text.find('{')
+                    e = raw_text.rfind('}')
+                    if s!=-1 and e!=-1:
+                        return json.loads(raw_text[s:e+1])
+                    return {"signal": "TYPE C", "reasoning": raw_text[:100]}
+                else:
+                    last_error = f"{model} ({response.status_code}): {response.text[:100]}"
+                    continue # Try next model
+                    
+            except Exception as e:
+                last_error = f"{model} Exception: {str(e)}"
+                continue
 
-        except Exception as e:
-            return {"signal": "TYPE C", "reasoning": f"연결 오류: {str(e)}"}
+        return {"signal": "TYPE C", "reasoning": f"모든 모델 연결 실패: {last_error}"}
 
