@@ -46,7 +46,7 @@ HTML_CONTENT = """
   <title>NICE v9.5 NUCLEAR (SINGLE FILE)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
   <style>
     :root { --bg-body: #050508; --bg-panel: #111116; --bg-header: #000; --accent-purple: #bb66ff; --accent-cyan: #00f0ff; --accent-green: #00ff9d; --accent-red: #ff0055; --border: 1px solid rgba(255, 255, 255, 0.1); --font-kr: 'Noto Sans KR', sans-serif; --font-mono: 'JetBrains Mono', monospace; }
     * { box-sizing: border-box; }
@@ -90,7 +90,7 @@ HTML_CONTENT = """
 </head>
 <body>
   <header>
-    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.8 NUCLEAR (FINAL FIX)</span></div>
+    <div class="logo">NICE<span>PRO</span> <span style="font-size:10px; color:#fff; background:#ff0000; padding:2px 4px; border-radius:2px; margin-left:4px">v9.9 NUCLEAR (STABLE)</span></div>
     <div class="badge" id="app-badge">SYSTEM READY</div>
     <div class="score" id="app-score">--</div>
     <input type="text" class="search-bar" id="search-input" placeholder="SEARCH TICKER (ENTER)" />
