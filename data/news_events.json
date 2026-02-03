@@ -1,70 +1,104 @@
 {
-  "timestamp": "2026-01-19T09:46:02.535261",
-  "earnings": [],
+  "timestamp": "2026-01-19T22:55:00.000000",
+  "earnings": [
+    {
+      "ticker": "NFLX",
+      "title": "Netflix Q4 2025 실적발표",
+      "date": "2026-01-21",
+      "type": "earnings",
+      "impact": "high"
+    },
+    {
+      "ticker": "JNJ",
+      "title": "Johnson & Johnson Q4 실적발표",
+      "date": "2026-01-22",
+      "type": "earnings",
+      "impact": "medium"
+    },
+    {
+      "ticker": "PG",
+      "title": "Procter & Gamble Q2 실적발표",
+      "date": "2026-01-22",
+      "type": "earnings",
+      "impact": "medium"
+    },
+    {
+      "ticker": "INTC",
+      "title": "Intel Q4 실적발표",
+      "date": "2026-01-23",
+      "type": "earnings",
+      "impact": "high"
+    },
+    {
+      "ticker": "TSLA",
+      "title": "Tesla Q4 2025 실적발표",
+      "date": "2026-01-29",
+      "type": "earnings",
+      "impact": "high"
+    }
+  ],
+  "events": [
+    {
+      "title": "🇺🇸 Martin Luther King Jr. Day - 미국 증시 휴장",
+      "date": "2026-01-19 (월)",
+      "type": "economic",
+      "impact": "high",
+      "description": "미국 마틴 루터 킹 주니어의 날로 NYSE, NASDAQ 휴장"
+    },
+    {
+      "title": "🇩🇰 그린란드 합병 긴장 고조 - NATO vs 미국 갈등",
+      "date": "2026-01-19",
+      "type": "economic",
+      "impact": "high",
+      "description": "트럼프 대통령의 그린란드 합병 발언으로 NATO 동맹국과 갈등 심화. 덴마크는 NATO 조약 5조 발동 검토 중."
+    },
+    {
+      "title": "🇺🇸 트럼프 대통령 취임식",
+      "date": "2026-01-20 (화)",
+      "type": "economic",
+      "impact": "high",
+      "description": "제47대 미국 대통령 취임식. 시장 변동성 예상"
+    },
+    {
+      "title": "📊 미국 기존주택판매",
+      "date": "2026-01-24 (금)",
+      "type": "economic",
+      "impact": "medium"
+    },
+    {
+      "title": "🏛️ FOMC 회의록 공개",
+      "date": "2026-01-08",
+      "type": "fed",
+      "impact": "high",
+      "description": "12월 FOMC 회의록 - 금리 동결 결정 배경 공개"
+    }
+  ],
   "news": [
     {
-      "ticker": "NVDA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
+      "ticker": "MARKET",
+      "title": "그린란드 합병 긴장으로 유럽 증시 하락, 미국 선물 약세",
+      "publisher": "Reuters",
+      "time": "2026-01-19 20:30",
+      "description": "NATO 동맹국과의 갈등 우려로 글로벌 증시 약세"
+    },
+    {
+      "ticker": "MARKET",
+      "title": "트럼프 취임 앞두고 관세 정책 불확실성 고조",
+      "publisher": "Bloomberg",
+      "time": "2026-01-19 18:00",
+      "description": "중국, 멕시코 관세 부과 가능성에 기술주 약세"
     },
     {
       "ticker": "NVDA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
+      "title": "AI 반도체 수요 지속 - NVIDIA CES 발표 호평",
+      "publisher": "CNBC",
+      "time": "2026-01-17 09:00"
     },
     {
       "ticker": "TSLA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "TSLA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
+      "title": "테슬라, 중국 Model Y 가격 인하 발표",
+      "publisher": "Reuters",
+      "time": "2026-01-18 14:00"
     }
   ]
 }
