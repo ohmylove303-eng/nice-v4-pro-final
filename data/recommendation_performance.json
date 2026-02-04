@@ -1,142 +1,21 @@
 {
-  "last_updated": "2026-01-19T09:46:13.450019",
+  "last_updated": "2026-02-04T09:48:12.942308",
   "smart_money": {
-    "total_recommendations": 10,
-    "active": 7,
-    "successful": 3,
+    "total_recommendations": 0,
+    "active": 0,
+    "successful": 0,
     "failed": 0,
-    "hit_rate": 100.0,
-    "avg_return": 2.69,
+    "hit_rate": 0.0,
+    "avg_return": 0.0,
     "best_pick": {
-      "ticker": "NEM",
-      "return_pct": 12.74
+      "ticker": "",
+      "return_pct": 0.0
     },
     "worst_pick": {
-      "ticker": "CCL",
-      "return_pct": -6.47
+      "ticker": "",
+      "return_pct": 0.0
     },
-    "history": [
-      {
-        "ticker": "CCL",
-        "name": "Carnival Corporation & plc",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 30.92,
-        "target_price": 36.83,
-        "current_price": 28.92,
-        "days_held": 0,
-        "return_pct": -6.47,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "NEM",
-        "name": "Newmont Corporation",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 101.22,
-        "target_price": 109.52,
-        "current_price": 114.12,
-        "days_held": 0,
-        "return_pct": 12.74,
-        "target_hit": true,
-        "status": "success"
-      },
-      {
-        "ticker": "HAL",
-        "name": "Halliburton Company",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 29.6,
-        "target_price": 31.2,
-        "current_price": 32.57,
-        "days_held": 0,
-        "return_pct": 10.03,
-        "target_hit": true,
-        "status": "success"
-      },
-      {
-        "ticker": "MRK",
-        "name": "Merck & Co., Inc.",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 106.45,
-        "target_price": 110.07,
-        "current_price": 108.83,
-        "days_held": 0,
-        "return_pct": 2.24,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "NDAQ",
-        "name": "Nasdaq, Inc.",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 96.66,
-        "target_price": 104.01,
-        "current_price": 100.98,
-        "days_held": 0,
-        "return_pct": 4.47,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "SCHW",
-        "name": "The Charles Schwab Corporation",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 101.57,
-        "target_price": 112.74,
-        "current_price": 103.82,
-        "days_held": 0,
-        "return_pct": 2.22,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "DG",
-        "name": "Dollar General Corporation",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 136.82,
-        "target_price": 132.72,
-        "current_price": 148.74,
-        "days_held": 0,
-        "return_pct": 8.71,
-        "target_hit": true,
-        "status": "success"
-      },
-      {
-        "ticker": "DECK",
-        "name": "Deckers Outdoor Corporation",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 106.79,
-        "target_price": 111.38,
-        "current_price": 100.69,
-        "days_held": 0,
-        "return_pct": -5.71,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "C",
-        "name": "Citigroup Inc.",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 118.7,
-        "target_price": 118.58,
-        "current_price": 118.04,
-        "days_held": 0,
-        "return_pct": -0.56,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "STT",
-        "name": "State Street Corporation",
-        "recommended_date": "2026-01-19",
-        "recommended_price": 129.07,
-        "target_price": 131.65,
-        "current_price": 128.02,
-        "days_held": 0,
-        "return_pct": -0.81,
-        "target_hit": false,
-        "status": "active"
-      }
-    ]
+    "history": []
   },
   "closing_bell": {
     "total_recommendations": 0,
