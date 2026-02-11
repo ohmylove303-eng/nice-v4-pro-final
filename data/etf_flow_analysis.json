@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-10T22:36:34.943416",
+  "timestamp": "2026-02-11T22:27:36.146903",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -10,91 +10,91 @@
       "XLU",
       "XLRE",
       "SOXX",
+      "SMH",
       "GLD",
       "USO"
     ],
     "inflow": [
       "IWM",
-      "DIA",
-      "SMH",
-      "TLT",
-      "LQD"
+      "DIA"
     ],
     "outflow": [
       "SPY",
       "QQQ",
       "XLF",
       "XLV",
-      "XLY",
-      "HYG"
+      "XLC",
+      "TLT",
+      "HYG",
+      "LQD"
     ],
     "strong_outflow": [
-      "XLK",
+      "XLY",
       "ARKK"
     ]
   },
   "top_inflows": [
     {
-      "ticker": "XLP",
-      "name": "Consumer Staples",
-      "flow_score": 85,
-      "price_change_20d": 8.69
-    },
-    {
-      "ticker": "SOXX",
-      "name": "Semiconductor ETF",
-      "flow_score": 85,
-      "price_change_20d": 6.38
-    },
-    {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 15.62
+      "price_change_20d": 16.98
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "flow_score": 75,
+      "price_change_20d": 8.99
     },
     {
       "ticker": "XLI",
       "name": "Industrial Select",
       "flow_score": 75,
-      "price_change_20d": 6.58
+      "price_change_20d": 6.6
     },
     {
       "ticker": "XLB",
       "name": "Materials Select",
       "flow_score": 75,
-      "price_change_20d": 9.05
+      "price_change_20d": 10.03
+    },
+    {
+      "ticker": "SOXX",
+      "name": "Semiconductor ETF",
+      "flow_score": 75,
+      "price_change_20d": 8.07
     }
   ],
   "top_outflows": [
     {
-      "ticker": "ARKK",
-      "name": "ARK Innovation",
-      "flow_score": 10,
-      "price_change_20d": -12.45
+      "ticker": "XLY",
+      "name": "Consumer Discretionary",
+      "flow_score": 25,
+      "price_change_20d": -5.19
     },
     {
-      "ticker": "XLK",
-      "name": "Technology Select",
-      "flow_score": 15,
-      "price_change_20d": -2.89
+      "ticker": "ARKK",
+      "name": "ARK Innovation",
+      "flow_score": 25,
+      "price_change_20d": -14.83
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 30,
-      "price_change_20d": -2.5
+      "price_change_20d": -2.1
     },
     {
       "ticker": "XLF",
       "name": "Financial Select",
       "flow_score": 30,
-      "price_change_20d": -3.15
+      "price_change_20d": -2.75
     },
     {
-      "ticker": "XLY",
-      "name": "Consumer Discretionary",
-      "flow_score": 30,
-      "price_change_20d": -4.97
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 40,
+      "price_change_20d": -0.26
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
