@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-02-23T10:01:23.197350",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-02-23T22:38:18.111953",
+  "candidates": [
+    {
+      "ticker": "REGN",
+      "price": 787.04,
+      "from_52w_high": -2.99,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
