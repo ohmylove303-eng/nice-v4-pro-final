@@ -1,13 +1,5 @@
 {
-  "timestamp": "2026-02-27T09:45:47.464517",
-  "candidates": [
-    {
-      "ticker": "AAPL",
-      "price": 272.95,
-      "from_52w_high": -4.54,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 1
+  "timestamp": "2026-02-27T22:22:38.755809",
+  "candidates": [],
+  "count": 0
 }
