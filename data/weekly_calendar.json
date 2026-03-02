@@ -1,8 +1,8 @@
 {
-  "updated": "2026-03-01T22:26:15.638800",
+  "updated": "2026-03-02T22:26:04.814340",
   "events": [
     {
-      "date": "2026-03-01",
+      "date": "2026-03-02",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
@@ -17,7 +17,7 @@
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-03-22"
+      "date": "2026-03-23"
     },
     {
       "event": "Jobs Report (NFP)",
