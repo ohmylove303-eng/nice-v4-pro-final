@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-06T22:32:22.369587",
+  "timestamp": "2026-03-15T22:30:20.050673",
   "heatmap_series": [
     {
       "name": "2026",
@@ -14,7 +14,7 @@
         },
         {
           "x": "Mar",
-          "y": -0.6
+          "y": -2.73
         },
         {
           "x": "Apr",
@@ -132,7 +132,7 @@
         },
         {
           "x": "Jun",
-          "y": 7.67
+          "y": 7.68
         },
         {
           "x": "Jul",
@@ -322,7 +322,7 @@
   ],
   "yearly_stats": {
     "2026": {
-      "total_return": -8.82,
+      "total_return": -10.78,
       "best_month": 1.17,
       "worst_month": -8.27,
       "positive_months": 1
