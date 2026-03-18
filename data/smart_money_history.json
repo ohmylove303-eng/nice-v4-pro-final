@@ -4083,5 +4083,100 @@
       }
     ],
     "saved_at": "2026-03-17T10:01:48.423442"
+  },
+  "2026-03-18": {
+    "recommendations": [
+      {
+        "ticker": "CF",
+        "name": "CF Industries Holdings, Inc.",
+        "recommended_price": 129.57,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 133.6,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "NFLX",
+        "name": "Netflix, Inc.",
+        "recommended_price": 95.31,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "EQT",
+        "name": "EQT Corporation",
+        "recommended_price": 64.37,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 206.28,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 46.25,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "COP",
+        "name": "ConocoPhillips",
+        "recommended_price": 121.89,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "UBER",
+        "name": "Uber Technologies, Inc.",
+        "recommended_price": 73.33,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "LIN",
+        "name": "Linde plc",
+        "recommended_price": 493.92,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      },
+      {
+        "ticker": "APD",
+        "name": "Air Products and Chemicals, Inc.",
+        "recommended_price": 287.98,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-18"
+      }
+    ],
+    "saved_at": "2026-03-18T10:03:00.555333"
   }
 }
