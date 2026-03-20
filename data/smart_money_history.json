@@ -4273,5 +4273,100 @@
       }
     ],
     "saved_at": "2026-03-19T09:48:24.556224"
+  },
+  "2026-03-20": {
+    "recommendations": [
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 48.79,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "CTRA",
+        "name": "Coterra Energy Inc.",
+        "recommended_price": 33.9,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "HAL",
+        "name": "Halliburton Company",
+        "recommended_price": 36.93,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "MU",
+        "name": "Micron Technology, Inc.",
+        "recommended_price": 444.27,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "JBL",
+        "name": "Jabil Inc.",
+        "recommended_price": 265.31,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 138.82,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "CRM",
+        "name": "Salesforce, Inc.",
+        "recommended_price": 194.99,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "DOC",
+        "name": "Healthpeak Properties, Inc.",
+        "recommended_price": 17.73,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 178.34,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 210.66,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-20"
+      }
+    ],
+    "saved_at": "2026-03-20T09:46:12.344504"
   }
 }
