@@ -1,3 +1,94 @@
 {
-  "error": "No data"
+  "timestamp": "2026-03-21T22:25:13.286681",
+  "period": "5d",
+  "sectors": [
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "color": "#6B8E23",
+      "price": 49.08,
+      "change_1d": 0.18,
+      "change_period": -0.45
+    },
+    {
+      "ticker": "XLE",
+      "name": "Energy",
+      "color": "#FF6347",
+      "price": 59.31,
+      "change_1d": -0.08,
+      "change_period": 2.44
+    },
+    {
+      "ticker": "XLC",
+      "name": "Comm. Services",
+      "color": "#9370DB",
+      "price": 112.23,
+      "change_1d": -0.8,
+      "change_period": -2.69
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "color": "#98D8C8",
+      "price": 81.29,
+      "change_1d": -0.83,
+      "change_period": -4.34
+    },
+    {
+      "ticker": "XLV",
+      "name": "Healthcare",
+      "color": "#FF69B4",
+      "price": 145.33,
+      "change_1d": -0.87,
+      "change_period": -3.76
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrials",
+      "color": "#DDA0DD",
+      "price": 161.67,
+      "change_1d": -1.46,
+      "change_period": -2.64
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials",
+      "color": "#F0E68C",
+      "price": 46.98,
+      "change_1d": -1.59,
+      "change_period": -4.9
+    },
+    {
+      "ticker": "XLY",
+      "name": "Consumer Disc.",
+      "color": "#FFD700",
+      "price": 107.74,
+      "change_1d": -1.79,
+      "change_period": -3.98
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technology",
+      "color": "#4A90A4",
+      "price": 135.29,
+      "change_1d": -2.27,
+      "change_period": -2.51
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "color": "#CD853F",
+      "price": 40.59,
+      "change_1d": -3.17,
+      "change_period": -4.67
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities",
+      "color": "#87CEEB",
+      "price": 44.65,
+      "change_1d": -4.06,
+      "change_period": -5.52
+    }
+  ]
 }

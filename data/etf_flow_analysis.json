@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-20T22:24:45.967623",
+  "timestamp": "2026-03-21T22:22:29.606604",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -70,7 +70,7 @@
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 25,
-      "price_change_20d": -5.93
+      "price_change_20d": -5.67
     },
     {
       "ticker": "IWM",
@@ -82,7 +82,7 @@
       "ticker": "DIA",
       "name": "Dow Jones ETF",
       "flow_score": 25,
-      "price_change_20d": -8.1
+      "price_change_20d": -7.9
     },
     {
       "ticker": "XLF",
