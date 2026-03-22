@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T22:25:28.363899",
+  "timestamp": "2026-03-22T22:27:03.346695",
   "summary": {
     "portfolio_volatility": 29.89,
     "sharpe_ratio": 0.91,
@@ -311,7 +311,7 @@
   "individual_risks": [
     {
       "ticker": "NVDA",
-      "volatility": 41.5,
+      "volatility": 41.49,
       "max_drawdown": -22.32,
       "beta": 1.09
     },

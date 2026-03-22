@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T22:25:27.246918",
+  "timestamp": "2026-03-22T22:27:02.089980",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -78,13 +78,13 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "94",
+          "date": "93",
           "insider": "BAGLINO ANDREW D",
           "type": "Sell",
           "value": 1850100.0
         },
         {
-          "date": "92",
+          "date": "91",
           "insider": "DENHOLM ROBYN M",
           "type": "Sell",
           "value": 17322282.0
@@ -96,7 +96,7 @@
           "value": 113151.0
         },
         {
-          "date": "87",
+          "date": "86",
           "insider": "DENHOLM ROBYN M",
           "type": "Sell",
           "value": 14597629.0
@@ -132,7 +132,7 @@
           "value": 6009898.0
         },
         {
-          "date": "81",
+          "date": "82",
           "insider": "NADELLA SATYA",
           "type": "Sell",
           "value": 32017224.0
@@ -163,9 +163,9 @@
         },
         {
           "date": "147",
-          "insider": "BEZOS JEFFREY P",
+          "insider": "HERRINGTON DOUGLAS J",
           "type": "Sell",
-          "value": 213760597.0
+          "value": 696360.0
         },
         {
           "date": "146",
@@ -175,9 +175,9 @@
         },
         {
           "date": "145",
-          "insider": "HERRINGTON DOUGLAS J",
+          "insider": "BEZOS JEFFREY P",
           "type": "Sell",
-          "value": 696360.0
+          "value": 213760597.0
         }
       ]
     },
@@ -204,16 +204,16 @@
           "value": 373607.0
         },
         {
-          "date": "146",
+          "date": "145",
           "insider": "ZUCKERBERG MARK",
           "type": "Sell",
           "value": 12318736.0
         },
         {
-          "date": "144",
-          "insider": "ALFORD PEGGY",
+          "date": "143",
+          "insider": "ZUCKERBERG MARK",
           "type": "Sell",
-          "value": 394094.0
+          "value": 11939643.0
         }
       ]
     },
@@ -265,9 +265,9 @@
         },
         {
           "date": "119",
-          "insider": "LAKE MARIANNE",
+          "insider": "ERDOES MARY E.",
           "type": "Sell",
-          "value": 1075203.0
+          "value": 1340216.0
         },
         {
           "date": "118",
@@ -277,9 +277,9 @@
         },
         {
           "date": "117",
-          "insider": "ERDOES MARY E.",
+          "insider": "LAKE MARIANNE",
           "type": "Sell",
-          "value": 1340216.0
+          "value": 1075203.0
         },
         {
           "date": "116",
@@ -312,16 +312,16 @@
           "value": 6897657.0
         },
         {
-          "date": "58",
-          "insider": "MONTAG THOMAS K",
-          "type": "Sell",
-          "value": 5050436.0
-        },
-        {
-          "date": "57",
+          "date": "59",
           "insider": "VINIAR DAVID A",
           "type": "Sell",
           "value": 2512125.0
+        },
+        {
+          "date": "57",
+          "insider": "MONTAG THOMAS K",
+          "type": "Sell",
+          "value": 5050436.0
         }
       ]
     },
@@ -336,7 +336,7 @@
           "value": 1476398604.0
         },
         {
-          "date": "140",
+          "date": "137",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 802486391.0
