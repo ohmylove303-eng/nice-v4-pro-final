@@ -4748,5 +4748,100 @@
       }
     ],
     "saved_at": "2026-03-24T10:01:02.418099"
+  },
+  "2026-03-25": {
+    "recommendations": [
+      {
+        "ticker": "T",
+        "name": "AT&T Inc.",
+        "recommended_price": 28.87,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 50.27,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "CTRA",
+        "name": "Coterra Energy Inc.",
+        "recommended_price": 35.02,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 215.8,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 142.53,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "COP",
+        "name": "ConocoPhillips",
+        "recommended_price": 129.35,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 184.12,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "CDW",
+        "name": "CDW Corporation",
+        "recommended_price": 121.9,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "HAL",
+        "name": "Halliburton Company",
+        "recommended_price": 38.11,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      },
+      {
+        "ticker": "VRSN",
+        "name": "VeriSign, Inc.",
+        "recommended_price": 241.14,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-25"
+      }
+    ],
+    "saved_at": "2026-03-25T10:02:11.297469"
   }
 }
