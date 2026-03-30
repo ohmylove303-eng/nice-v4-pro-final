@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T22:30:43.150050",
+  "timestamp": "2026-03-30T22:34:20.382529",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -7,15 +7,15 @@
       "transactions": [
         {
           "date": "70",
-          "insider": "ADAMS KATHERINE L",
-          "type": "Sell",
-          "value": 9244235.0
-        },
-        {
-          "date": "69",
           "insider": "COOK TIMOTHY D",
           "type": "Sell",
           "value": 33258614.0
+        },
+        {
+          "date": "69",
+          "insider": "ADAMS KATHERINE L",
+          "type": "Sell",
+          "value": 9244235.0
         },
         {
           "date": "68",
@@ -78,7 +78,7 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "93",
+          "date": "94",
           "insider": "BAGLINO ANDREW D",
           "type": "Sell",
           "value": 1850100.0
@@ -96,7 +96,7 @@
           "value": 113151.0
         },
         {
-          "date": "86",
+          "date": "87",
           "insider": "DENHOLM ROBYN M",
           "type": "Sell",
           "value": 14597629.0
@@ -163,15 +163,15 @@
         },
         {
           "date": "147",
-          "insider": "BEZOS JEFFREY P",
-          "type": "Sell",
-          "value": 213760597.0
-        },
-        {
-          "date": "146",
           "insider": "RUBINSTEIN JONATHAN J",
           "type": "Sell",
           "value": 1000049.0
+        },
+        {
+          "date": "146",
+          "insider": "BEZOS JEFFREY P",
+          "type": "Sell",
+          "value": 213760597.0
         },
         {
           "date": "145",
@@ -205,15 +205,15 @@
         },
         {
           "date": "145",
-          "insider": "ALFORD PEGGY",
-          "type": "Sell",
-          "value": 394094.0
-        },
-        {
-          "date": "144",
           "insider": "ZUCKERBERG MARK",
           "type": "Sell",
           "value": 11939643.0
+        },
+        {
+          "date": "144",
+          "insider": "ALFORD PEGGY",
+          "type": "Sell",
+          "value": 394094.0
         }
       ]
     },
@@ -258,31 +258,31 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "121",
+          "date": "132",
           "insider": "PETNO DOUGLAS B",
           "type": "Sell",
           "value": 886565.0
         },
         {
-          "date": "120",
+          "date": "131",
           "insider": "ERDOES MARY E.",
           "type": "Sell",
           "value": 1340216.0
         },
         {
-          "date": "119",
+          "date": "130",
           "insider": "LAKE MARIANNE",
           "type": "Sell",
           "value": 1075203.0
         },
         {
-          "date": "118",
+          "date": "129",
           "insider": "BACON ASHLEY",
           "type": "Sell",
           "value": 1808591.0
         },
         {
-          "date": "117",
+          "date": "128",
           "insider": "FRIEDMAN STACEY R.",
           "type": "Sell",
           "value": 838778.0

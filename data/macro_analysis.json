@@ -1,37 +1,37 @@
 {
-  "timestamp": "2026-03-29T22:30:47.209923",
+  "timestamp": "2026-03-30T22:34:24.608962",
   "indicators": {
     "VIX": {
-      "value": 31.05,
-      "change_1d": 13.16
+      "value": 30.61,
+      "change_1d": -1.42
     },
     "DXY": {
-      "value": 100.26,
-      "change_1d": 0.11
+      "value": 100.49,
+      "change_1d": 0.34
     },
     "10Y_Yield": {
-      "value": 4.44,
-      "change_1d": 0.54
+      "value": 4.34,
+      "change_1d": -2.21
     },
     "GOLD": {
-      "value": 4533.1,
-      "change_1d": 0.91
+      "value": 4535.1,
+      "change_1d": 0.96
     },
     "OIL": {
-      "value": 102.52,
-      "change_1d": 2.89
+      "value": 104.68,
+      "change_1d": 5.06
     },
     "BTC": {
-      "value": 66306.86,
-      "change_1d": -0.02
+      "value": 66727.64,
+      "change_1d": 1.17
     },
     "SPY": {
-      "value": 634.09,
-      "change_1d": -1.71
+      "value": 631.97,
+      "change_1d": -0.33
     },
     "QQQ": {
-      "value": 562.58,
-      "change_1d": -1.95
+      "value": 558.28,
+      "change_1d": -0.76
     }
   },
   "analysis_ko": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable.",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T22:29:17.286421",
+  "timestamp": "2026-03-30T22:33:03.032128",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -8,7 +8,7 @@
     ],
     "inflow": [],
     "outflow": [
-      "XLU",
+      "TLT",
       "HYG",
       "LQD"
     ],
@@ -29,8 +29,7 @@
       "ARKK",
       "SMH",
       "GLD",
-      "SLV",
-      "TLT"
+      "SLV"
     ]
   },
   "top_inflows": [
@@ -38,31 +37,31 @@
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 12.61
+      "price_change_20d": 9.34
     },
     {
       "ticker": "USO",
       "name": "Oil ETF",
       "flow_score": 75,
-      "price_change_20d": 51.56
+      "price_change_20d": 48.9
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities Select",
+      "flow_score": 50,
+      "price_change_20d": -2.38
     },
     {
       "ticker": "SOXX",
       "name": "Semiconductor ETF",
       "flow_score": 45,
-      "price_change_20d": -8.12
+      "price_change_20d": -11.95
     },
     {
       "ticker": "HYG",
       "name": "High Yield Corporate",
       "flow_score": 40,
-      "price_change_20d": -2.0
-    },
-    {
-      "ticker": "XLU",
-      "name": "Utilities Select",
-      "flow_score": 30,
-      "price_change_20d": -3.82
+      "price_change_20d": -1.83
     }
   ],
   "top_outflows": [
@@ -70,31 +69,31 @@
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 25,
-      "price_change_20d": -7.31
+      "price_change_20d": -7.68
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 25,
-      "price_change_20d": -7.25
+      "price_change_20d": -8.08
     },
     {
       "ticker": "IWM",
       "name": "Russell 2000 ETF",
       "flow_score": 25,
-      "price_change_20d": -6.84
+      "price_change_20d": -9.01
     },
     {
       "ticker": "DIA",
       "name": "Dow Jones ETF",
       "flow_score": 25,
-      "price_change_20d": -7.62
+      "price_change_20d": -7.39
     },
     {
       "ticker": "XLK",
       "name": "Technology Select",
       "flow_score": 25,
-      "price_change_20d": -6.25
+      "price_change_20d": -8.51
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
