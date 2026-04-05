@@ -5793,5 +5793,100 @@
       }
     ],
     "saved_at": "2026-04-04T09:42:55.248438"
+  },
+  "2026-04-05": {
+    "recommendations": [
+      {
+        "ticker": "T",
+        "name": "AT&T Inc.",
+        "recommended_price": 28.78,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "PFE",
+        "name": "Pfizer Inc.",
+        "recommended_price": 27.77,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "CTRA",
+        "name": "Coterra Energy Inc.",
+        "recommended_price": 35.91,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "SLB",
+        "name": "SLB N.V.",
+        "recommended_price": 51.53,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "HAL",
+        "name": "Halliburton Company",
+        "recommended_price": 39.26,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "XOM",
+        "name": "Exxon Mobil Corporation",
+        "recommended_price": 171.47,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 51.52,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "COP",
+        "name": "ConocoPhillips",
+        "recommended_price": 132.89,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "AKAM",
+        "name": "Akamai Technologies, Inc.",
+        "recommended_price": 110.22,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 208.79,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-05"
+      }
+    ],
+    "saved_at": "2026-04-05T09:46:17.304040"
   }
 }
