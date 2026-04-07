@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-04-06T22:39:11.205246",
+  "timestamp": "2026-04-07T22:39:42.293497",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
         {
-          "date": "67",
-          "insider": "WILLIAMS JEFFREY E",
-          "type": "Sell",
-          "value": 10188880.0
-        },
-        {
-          "date": "66",
+          "date": "72",
           "insider": "MAESTRI LUCA",
           "type": "Sell",
           "value": 9261933.0
         },
         {
-          "date": "63",
+          "date": "71",
+          "insider": "WILLIAMS JEFFREY E",
+          "type": "Sell",
+          "value": 10188880.0
+        },
+        {
+          "date": "68",
           "insider": "KONDO CHRISTOPHER",
           "type": "Sell",
           "value": 951785.0
         },
         {
-          "date": "62",
+          "date": "67",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 14368500.0
         },
         {
-          "date": "61",
+          "date": "66",
           "insider": "ADAMS KATHERINE L",
           "type": "Sell",
           "value": 20643512.0
@@ -132,7 +132,7 @@
           "value": 6009898.0
         },
         {
-          "date": "81",
+          "date": "82",
           "insider": "NADELLA SATYA",
           "type": "Sell",
           "value": 32017224.0
@@ -151,33 +151,33 @@
       "transactions": [
         {
           "date": "149",
-          "insider": "ZAPOLSKY DAVID A.",
-          "type": "Sell",
-          "value": 427050.0
-        },
-        {
-          "date": "148",
           "insider": "HERRINGTON DOUGLAS J",
           "type": "Sell",
           "value": 646800.0
         },
         {
-          "date": "147",
-          "insider": "RUBINSTEIN JONATHAN J",
+          "date": "148",
+          "insider": "HERRINGTON DOUGLAS J",
           "type": "Sell",
-          "value": 1000049.0
+          "value": 696360.0
         },
         {
-          "date": "146",
+          "date": "147",
           "insider": "BEZOS JEFFREY P",
           "type": "Sell",
           "value": 213760597.0
         },
         {
-          "date": "145",
-          "insider": "HERRINGTON DOUGLAS J",
+          "date": "146",
+          "insider": "RUBINSTEIN JONATHAN J",
           "type": "Sell",
-          "value": 696360.0
+          "value": 1000049.0
+        },
+        {
+          "date": "145",
+          "insider": "ALEXANDER KEITH BRIAN",
+          "type": "Sell",
+          "value": 176733.0
         }
       ]
     },
@@ -198,19 +198,19 @@
           "value": 373607.0
         },
         {
-          "date": "147",
+          "date": "146",
           "insider": "ZUCKERBERG MARK",
           "type": "Sell",
           "value": 12318736.0
         },
         {
-          "date": "145",
+          "date": "144",
           "insider": "ZUCKERBERG MARK",
           "type": "Sell",
           "value": 11939643.0
         },
         {
-          "date": "144",
+          "date": "142",
           "insider": "ALFORD PEGGY",
           "type": "Sell",
           "value": 394094.0
@@ -259,33 +259,33 @@
       "transactions": [
         {
           "date": "136",
-          "insider": "ERDOES MARY E.",
-          "type": "Sell",
-          "value": 1340216.0
-        },
-        {
-          "date": "135",
           "insider": "PETNO DOUGLAS B",
           "type": "Sell",
           "value": 886565.0
         },
         {
+          "date": "135",
+          "insider": "ERDOES MARY E.",
+          "type": "Sell",
+          "value": 1340216.0
+        },
+        {
           "date": "134",
+          "insider": "BACON ASHLEY",
+          "type": "Sell",
+          "value": 1808591.0
+        },
+        {
+          "date": "133",
           "insider": "LAKE MARIANNE",
           "type": "Sell",
           "value": 1075203.0
         },
         {
-          "date": "133",
+          "date": "132",
           "insider": "FRIEDMAN STACEY R.",
           "type": "Sell",
           "value": 838778.0
-        },
-        {
-          "date": "132",
-          "insider": "BACON ASHLEY",
-          "type": "Sell",
-          "value": 1808591.0
         }
       ]
     },
@@ -312,16 +312,16 @@
           "value": 6897657.0
         },
         {
+          "date": "59",
+          "insider": "LEE BRIAN J.",
+          "type": "Sell",
+          "value": 2530070.0
+        },
+        {
           "date": "58",
           "insider": "MONTAG THOMAS K",
           "type": "Sell",
           "value": 5050436.0
-        },
-        {
-          "date": "57",
-          "insider": "VINIAR DAVID A",
-          "type": "Sell",
-          "value": 2512125.0
         }
       ]
     },
@@ -336,7 +336,7 @@
           "value": 1476398604.0
         },
         {
-          "date": "140",
+          "date": "138",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 802486391.0
