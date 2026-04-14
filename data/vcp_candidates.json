@@ -1,13 +1,5 @@
 {
-  "timestamp": "2026-04-14T10:21:04.696054",
-  "candidates": [
-    {
-      "ticker": "GOOGL",
-      "price": 321.31,
-      "from_52w_high": -6.45,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 1
+  "timestamp": "2026-04-14T22:44:10.032688",
+  "candidates": [],
+  "count": 0
 }
