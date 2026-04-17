@@ -6933,5 +6933,100 @@
       }
     ],
     "saved_at": "2026-04-16T10:20:03.205194"
+  },
+  "2026-04-17": {
+    "recommendations": [
+      {
+        "ticker": "BKR",
+        "name": "Baker Hughes Company",
+        "recommended_price": 62.83,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "SBAC",
+        "name": "SBA Communications Corporation",
+        "recommended_price": 223.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 221.16,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "WDC",
+        "name": "Western Digital Corporation",
+        "recommended_price": 343.43,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "NFLX",
+        "name": "Netflix, Inc.",
+        "recommended_price": 103.01,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "GEV",
+        "name": "GE Vernova Inc.",
+        "recommended_price": 991.32,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "SLB",
+        "name": "SLB N.V.",
+        "recommended_price": 51.92,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "TER",
+        "name": "Teradyne, Inc.",
+        "recommended_price": 367.99,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "ETN",
+        "name": "Eaton Corporation plc",
+        "recommended_price": 403.0,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      },
+      {
+        "ticker": "KLAC",
+        "name": "KLA Corporation",
+        "recommended_price": 1737.28,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-04-17"
+      }
+    ],
+    "saved_at": "2026-04-17T10:18:19.295940"
   }
 }
