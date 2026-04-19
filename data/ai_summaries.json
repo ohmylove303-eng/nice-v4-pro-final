@@ -1,6 +1,6 @@
 {
-  "NVDA": "Analysis failed.",
+  "NVDA": "AI Analysis unavailable.",
   "AAPL": "Analysis failed.",
-  "MSFT": "Analysis failed.",
-  "TSLA": "Analysis failed."
+  "MSFT": "AI Analysis unavailable.",
+  "TSLA": "AI Analysis unavailable."
 }
