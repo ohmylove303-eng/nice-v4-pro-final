@@ -11,13 +11,13 @@
     "[QQQ] MA50 > MA200 (Golden Cross Alignment)",
     "[QQQ] Price > MA50 (Mid-term Uptrend)",
     "[QQQ] Price > MA20 (Short-term Momentum)",
-    "[VIX] VIX is Low (19.15 < 20)",
+    "[VIX] VIX is Low (18.92 < 20)",
     "[VIX] VIX is falling (Below MA20)"
   ],
-  "timestamp": "2026-04-22T10:23:49.281688",
+  "timestamp": "2026-04-22T22:50:25.511196",
   "indices": {
-    "SPY": 704.08,
-    "QQQ": 644.33,
-    "VIX": 19.15
+    "SPY": 711.21,
+    "QQQ": 655.11,
+    "VIX": 18.92
   }
 }

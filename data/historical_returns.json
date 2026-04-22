@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-04-19T22:36:11.805177",
+  "timestamp": "2026-04-22T22:50:04.322242",
   "heatmap_series": [
     {
       "name": "2026",
       "data": [
         {
           "x": "Jan",
-          "y": 0.0
+          "y": 1.17
         },
         {
           "x": "Feb",
-          "y": 0.0
+          "y": -8.27
         },
         {
           "x": "Mar",
-          "y": 0.0
+          "y": -6.3
         },
         {
           "x": "Apr",
-          "y": 0.0
+          "y": 17.54
         },
         {
           "x": "May",
@@ -59,15 +59,15 @@
       "data": [
         {
           "x": "Jan",
-          "y": 0.0
+          "y": 4.23
         },
         {
           "x": "Feb",
-          "y": 0.0
+          "y": -8.9
         },
         {
           "x": "Mar",
-          "y": 0.0
+          "y": -9.85
         },
         {
           "x": "Apr",
@@ -75,35 +75,35 @@
         },
         {
           "x": "May",
-          "y": 0.0
+          "y": 14.56
         },
         {
           "x": "Jun",
-          "y": 0.0
+          "y": 7.78
         },
         {
           "x": "Jul",
-          "y": 0.0
+          "y": 6.11
         },
         {
           "x": "Aug",
-          "y": 0.0
+          "y": -0.49
         },
         {
           "x": "Sep",
-          "y": 0.0
+          "y": 6.72
         },
         {
           "x": "Oct",
-          "y": 0.0
+          "y": 4.18
         },
         {
           "x": "Nov",
-          "y": 0.0
+          "y": -2.79
         },
         {
           "x": "Dec",
-          "y": 0.0
+          "y": 0.5
         }
       ]
     },
@@ -112,51 +112,51 @@
       "data": [
         {
           "x": "Jan",
-          "y": 0.0
+          "y": 1.44
         },
         {
           "x": "Feb",
-          "y": 0.0
+          "y": 11.27
         },
         {
           "x": "Mar",
-          "y": 0.0
+          "y": -0.87
         },
         {
           "x": "Apr",
-          "y": 0.0
+          "y": -5.39
         },
         {
           "x": "May",
-          "y": 0.0
+          "y": 6.95
         },
         {
           "x": "Jun",
-          "y": 0.0
+          "y": 7.67
         },
         {
           "x": "Jul",
-          "y": 0.0
+          "y": -2.6
         },
         {
           "x": "Aug",
-          "y": 0.0
+          "y": 1.22
         },
         {
           "x": "Sep",
-          "y": 0.0
+          "y": 7.28
         },
         {
           "x": "Oct",
-          "y": 0.0
+          "y": -2.35
         },
         {
           "x": "Nov",
-          "y": 0.0
+          "y": 7.15
         },
         {
           "x": "Dec",
-          "y": 0.0
+          "y": 4.2
         }
       ]
     },
@@ -165,51 +165,51 @@
       "data": [
         {
           "x": "Jan",
-          "y": 0.0
+          "y": 17.0
         },
         {
           "x": "Feb",
-          "y": 0.0
+          "y": 5.24
         },
         {
           "x": "Mar",
-          "y": 0.0
+          "y": 13.4
         },
         {
           "x": "Apr",
-          "y": 0.0
+          "y": 0.45
         },
         {
           "x": "May",
-          "y": 0.0
+          "y": 13.46
         },
         {
           "x": "Jun",
-          "y": 0.0
+          "y": 8.53
         },
         {
           "x": "Jul",
-          "y": 0.0
+          "y": 3.8
         },
         {
           "x": "Aug",
-          "y": 0.0
+          "y": -3.04
         },
         {
           "x": "Sep",
-          "y": 0.0
+          "y": -3.75
         },
         {
           "x": "Oct",
-          "y": 0.0
+          "y": -2.42
         },
         {
           "x": "Nov",
-          "y": 0.0
+          "y": 12.46
         },
         {
           "x": "Dec",
-          "y": 0.0
+          "y": 4.95
         }
       ]
     },
@@ -218,51 +218,51 @@
       "data": [
         {
           "x": "Jan",
-          "y": 0.0
+          "y": -9.07
         },
         {
           "x": "Feb",
-          "y": 0.0
+          "y": -8.7
         },
         {
           "x": "Mar",
-          "y": 0.0
+          "y": 7.36
         },
         {
           "x": "Apr",
-          "y": 0.0
+          "y": -15.68
         },
         {
           "x": "May",
-          "y": 0.0
+          "y": -3.7
         },
         {
           "x": "Jun",
-          "y": 0.0
+          "y": -11.08
         },
         {
           "x": "Jul",
-          "y": 0.0
+          "y": 16.4
         },
         {
           "x": "Aug",
-          "y": 0.0
+          "y": -5.64
         },
         {
           "x": "Sep",
-          "y": 0.0
+          "y": -11.35
         },
         {
           "x": "Oct",
-          "y": 0.0
+          "y": -7.6
         },
         {
           "x": "Nov",
-          "y": 0.0
+          "y": 3.16
         },
         {
           "x": "Dec",
-          "y": 0.0
+          "y": -14.2
         }
       ]
     },
@@ -291,71 +291,71 @@
         },
         {
           "x": "Jun",
-          "y": 0.0
+          "y": 8.1
         },
         {
           "x": "Jul",
-          "y": 0.0
+          "y": 3.78
         },
         {
           "x": "Aug",
-          "y": 0.0
+          "y": 6.01
         },
         {
           "x": "Sep",
-          "y": 0.0
+          "y": -5.61
         },
         {
           "x": "Oct",
-          "y": 0.0
+          "y": 13.6
         },
         {
           "x": "Nov",
-          "y": 0.0
+          "y": 4.39
         },
         {
           "x": "Dec",
-          "y": 0.0
+          "y": -1.34
         }
       ]
     }
   ],
   "yearly_stats": {
     "2026": {
-      "total_return": 0.0,
-      "best_month": 0.0,
-      "worst_month": 0.0,
-      "positive_months": 0
+      "total_return": 1.03,
+      "best_month": 17.54,
+      "worst_month": -8.27,
+      "positive_months": 2
     },
     "2025": {
-      "total_return": 0.0,
-      "best_month": 0.0,
-      "worst_month": 0.0,
-      "positive_months": 0
+      "total_return": 16.3,
+      "best_month": 14.56,
+      "worst_month": -9.85,
+      "positive_months": 7
     },
     "2024": {
-      "total_return": 0.0,
-      "best_month": 0.0,
-      "worst_month": 0.0,
-      "positive_months": 0
+      "total_return": 38.57,
+      "best_month": 11.27,
+      "worst_month": -5.39,
+      "positive_months": 8
     },
     "2023": {
-      "total_return": 0.0,
-      "best_month": 0.0,
-      "worst_month": 0.0,
-      "positive_months": 0
+      "total_return": 64.67,
+      "best_month": 17.0,
+      "worst_month": -3.75,
+      "positive_months": 9
     },
     "2022": {
-      "total_return": 0.0,
-      "best_month": 0.0,
-      "worst_month": 0.0,
-      "positive_months": 0
+      "total_return": -43.63,
+      "best_month": 16.4,
+      "worst_month": -15.68,
+      "positive_months": 3
     },
     "2021": {
-      "total_return": 0.0,
-      "best_month": 0.0,
-      "worst_month": 0.0,
-      "positive_months": 0
+      "total_return": 31.36,
+      "best_month": 13.6,
+      "worst_month": -5.61,
+      "positive_months": 5
     }
   }
 }
