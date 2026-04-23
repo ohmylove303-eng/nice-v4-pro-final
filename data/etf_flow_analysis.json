@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-22T22:46:05.895728",
+  "timestamp": "2026-04-23T22:39:17.990409",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -10,6 +10,8 @@
       "XLK",
       "XLF",
       "XLY",
+      "XLP",
+      "XLI",
       "XLB",
       "XLRE",
       "XLC",
@@ -18,13 +20,12 @@
       "SMH",
       "GLD",
       "SLV",
-      "USO",
-      "HYG"
+      "USO"
     ],
     "inflow": [
       "XLV",
-      "XLP",
       "XLU",
+      "HYG",
       "LQD"
     ],
     "outflow": [
@@ -39,31 +40,31 @@
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 75,
-      "price_change_20d": 8.88
+      "price_change_20d": 7.86
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 75,
-      "price_change_20d": 12.18
+      "price_change_20d": 10.82
     },
     {
       "ticker": "IWM",
       "name": "Russell 2000 ETF",
       "flow_score": 75,
-      "price_change_20d": 11.13
+      "price_change_20d": 9.41
     },
     {
       "ticker": "DIA",
       "name": "Dow Jones ETF",
       "flow_score": 75,
-      "price_change_20d": 7.33
+      "price_change_20d": 6.26
     },
     {
       "ticker": "XLK",
       "name": "Technology Select",
       "flow_score": 75,
-      "price_change_20d": 16.11
+      "price_change_20d": 13.95
     }
   ],
   "top_outflows": [
@@ -71,31 +72,31 @@
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 25,
-      "price_change_20d": -7.07
+      "price_change_20d": -5.93
     },
     {
       "ticker": "TLT",
       "name": "20+ Year Treasury",
       "flow_score": 40,
-      "price_change_20d": 1.25
-    },
-    {
-      "ticker": "XLI",
-      "name": "Industrial Select",
-      "flow_score": 50,
-      "price_change_20d": 4.29
+      "price_change_20d": 0.06
     },
     {
       "ticker": "XLV",
       "name": "Healthcare Select",
       "flow_score": 60,
-      "price_change_20d": 1.1
+      "price_change_20d": 0.0
     },
     {
-      "ticker": "XLP",
-      "name": "Consumer Staples",
+      "ticker": "XLU",
+      "name": "Utilities Select",
       "flow_score": 60,
-      "price_change_20d": 1.23
+      "price_change_20d": 1.86
+    },
+    {
+      "ticker": "HYG",
+      "name": "High Yield Corporate",
+      "flow_score": 60,
+      "price_change_20d": 1.69
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
