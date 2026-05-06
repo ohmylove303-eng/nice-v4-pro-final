@@ -1,13 +1,5 @@
 {
-  "timestamp": "2026-05-06T11:14:19.521508",
-  "candidates": [
-    {
-      "ticker": "AVGO",
-      "price": 427.36,
-      "from_52w_high": 0.0,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 1
+  "timestamp": "2026-05-06T22:49:26.553191",
+  "candidates": [],
+  "count": 0
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-05T22:53:12.997641",
+  "timestamp": "2026-05-06T22:46:16.341541",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -8,7 +8,6 @@
       "IWM",
       "DIA",
       "XLK",
-      "XLF",
       "XLY",
       "XLRE",
       "XLC",
@@ -18,15 +17,17 @@
       "USO"
     ],
     "inflow": [
+      "XLF",
       "XLE",
+      "XLB",
       "HYG",
       "LQD"
     ],
     "outflow": [
       "XLV",
+      "XLP",
       "XLU",
       "GLD",
-      "SLV",
       "TLT"
     ],
     "strong_outflow": []
@@ -36,63 +37,63 @@
       "ticker": "XLY",
       "name": "Consumer Discretionary",
       "flow_score": 85,
-      "price_change_20d": 9.56
-    },
-    {
-      "ticker": "XLRE",
-      "name": "Real Estate Select",
-      "flow_score": 85,
-      "price_change_20d": 5.87
+      "price_change_20d": 8.17
     },
     {
       "ticker": "XLC",
       "name": "Communication Services",
       "flow_score": 80,
-      "price_change_20d": 3.41
+      "price_change_20d": 3.11
     },
     {
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 75,
-      "price_change_20d": 9.79
+      "price_change_20d": 8.55
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 75,
-      "price_change_20d": 15.8
+      "price_change_20d": 14.8
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
+      "flow_score": 75,
+      "price_change_20d": 10.11
     }
   ],
   "top_outflows": [
     {
-      "ticker": "GLD",
-      "name": "Gold ETF",
-      "flow_score": 30,
-      "price_change_20d": -3.14
-    },
-    {
       "ticker": "XLV",
       "name": "Healthcare Select",
-      "flow_score": 40,
-      "price_change_20d": -0.87
+      "flow_score": 30,
+      "price_change_20d": -2.85
     },
     {
       "ticker": "XLU",
       "name": "Utilities Select",
-      "flow_score": 40,
-      "price_change_20d": 0.22
+      "flow_score": 30,
+      "price_change_20d": -2.29
     },
     {
-      "ticker": "SLV",
-      "name": "Silver ETF",
+      "ticker": "XLP",
+      "name": "Consumer Staples",
       "flow_score": 40,
-      "price_change_20d": -0.05
+      "price_change_20d": 1.76
+    },
+    {
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 40,
+      "price_change_20d": -0.82
     },
     {
       "ticker": "TLT",
       "name": "20+ Year Treasury",
       "flow_score": 40,
-      "price_change_20d": -1.03
+      "price_change_20d": -0.6
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
