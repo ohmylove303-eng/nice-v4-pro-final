@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-06T22:46:16.341541",
+  "timestamp": "2026-05-07T22:58:13.170581",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -18,14 +18,14 @@
     ],
     "inflow": [
       "XLF",
-      "XLE",
-      "XLB",
       "HYG",
       "LQD"
     ],
     "outflow": [
       "XLV",
       "XLP",
+      "XLI",
+      "XLB",
       "XLU",
       "GLD",
       "TLT"
@@ -37,31 +37,31 @@
       "ticker": "XLY",
       "name": "Consumer Discretionary",
       "flow_score": 85,
-      "price_change_20d": 8.17
+      "price_change_20d": 6.33
     },
     {
       "ticker": "XLC",
       "name": "Communication Services",
       "flow_score": 80,
-      "price_change_20d": 3.11
+      "price_change_20d": 2.72
     },
     {
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 75,
-      "price_change_20d": 8.55
+      "price_change_20d": 7.6
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 75,
-      "price_change_20d": 14.8
+      "price_change_20d": 13.89
     },
     {
       "ticker": "IWM",
       "name": "Russell 2000 ETF",
       "flow_score": 75,
-      "price_change_20d": 10.11
+      "price_change_20d": 7.75
     }
   ],
   "top_outflows": [
@@ -69,31 +69,31 @@
       "ticker": "XLV",
       "name": "Healthcare Select",
       "flow_score": 30,
-      "price_change_20d": -2.85
+      "price_change_20d": -3.09
     },
     {
       "ticker": "XLU",
       "name": "Utilities Select",
       "flow_score": 30,
-      "price_change_20d": -2.29
+      "price_change_20d": -4.31
     },
     {
       "ticker": "XLP",
       "name": "Consumer Staples",
       "flow_score": 40,
-      "price_change_20d": 1.76
+      "price_change_20d": 0.64
     },
     {
-      "ticker": "GLD",
-      "name": "Gold ETF",
+      "ticker": "XLI",
+      "name": "Industrial Select",
       "flow_score": 40,
-      "price_change_20d": -0.82
+      "price_change_20d": 1.05
     },
     {
-      "ticker": "TLT",
-      "name": "20+ Year Treasury",
+      "ticker": "XLB",
+      "name": "Materials Select",
       "flow_score": 40,
-      "price_change_20d": -0.6
+      "price_change_20d": -0.52
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
