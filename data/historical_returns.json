@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-10T22:48:33.864624",
+  "timestamp": "2026-05-12T23:03:28.993377",
   "heatmap_series": [
     {
       "name": "2026",
@@ -18,11 +18,11 @@
         },
         {
           "x": "Apr",
-          "y": 17.85
+          "y": 17.86
         },
         {
           "x": "May",
-          "y": 7.42
+          "y": 6.43
         },
         {
           "x": "Jun",
@@ -258,7 +258,7 @@
         },
         {
           "x": "Nov",
-          "y": 3.16
+          "y": 3.17
         },
         {
           "x": "Dec",
@@ -322,8 +322,8 @@
   ],
   "yearly_stats": {
     "2026": {
-      "total_return": 8.82,
-      "best_month": 17.85,
+      "total_return": 7.81,
+      "best_month": 17.86,
       "worst_month": -8.27,
       "positive_months": 3
     },
@@ -334,13 +334,13 @@
       "positive_months": 7
     },
     "2024": {
-      "total_return": 38.57,
+      "total_return": 38.58,
       "best_month": 11.27,
       "worst_month": -5.39,
       "positive_months": 8
     },
     "2023": {
-      "total_return": 64.67,
+      "total_return": 64.68,
       "best_month": 17.0,
       "worst_month": -3.75,
       "positive_months": 9
