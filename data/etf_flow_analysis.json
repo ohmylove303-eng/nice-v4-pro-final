@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-21T23:05:12.250702",
+  "timestamp": "2026-05-22T22:55:53.848165",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -8,6 +8,7 @@
       "IWM",
       "DIA",
       "XLK",
+      "XLV",
       "XLE",
       "SOXX",
       "SMH",
@@ -15,86 +16,86 @@
     ],
     "inflow": [
       "XLF",
-      "XLV",
+      "XLY",
       "XLP",
+      "XLU",
       "XLRE",
       "XLC",
       "SLV",
-      "HYG"
+      "HYG",
+      "LQD"
     ],
     "outflow": [
-      "XLY",
       "XLI",
       "XLB",
       "ARKK",
       "GLD",
-      "TLT",
-      "LQD"
+      "TLT"
     ],
     "strong_outflow": []
   },
   "top_inflows": [
     {
-      "ticker": "XLK",
-      "name": "Technology Select",
-      "flow_score": 85,
-      "price_change_20d": 14.6
-    },
-    {
       "ticker": "DIA",
       "name": "Dow Jones ETF",
       "flow_score": 80,
-      "price_change_20d": 2.11
+      "price_change_20d": 2.88
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 75,
-      "price_change_20d": 9.69
+      "price_change_20d": 8.08
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technology Select",
+      "flow_score": 75,
+      "price_change_20d": 12.59
     },
     {
       "ticker": "SOXX",
       "name": "Semiconductor ETF",
       "flow_score": 75,
-      "price_change_20d": 18.98
+      "price_change_20d": 16.41
     },
     {
       "ticker": "SMH",
       "name": "VanEck Semiconductor",
       "flow_score": 75,
-      "price_change_20d": 17.85
+      "price_change_20d": 13.8
     }
   ],
   "top_outflows": [
     {
-      "ticker": "XLI",
-      "name": "Industrial Select",
-      "flow_score": 30,
-      "price_change_20d": -2.03
-    },
-    {
       "ticker": "XLB",
       "name": "Materials Select",
       "flow_score": 30,
-      "price_change_20d": -3.45
+      "price_change_20d": -3.14
     },
     {
       "ticker": "GLD",
       "name": "Gold ETF",
       "flow_score": 30,
-      "price_change_20d": -3.26
+      "price_change_20d": -4.48
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrial Select",
+      "flow_score": 40,
+      "price_change_20d": -0.41
+    },
+    {
+      "ticker": "ARKK",
+      "name": "ARK Innovation",
+      "flow_score": 40,
+      "price_change_20d": -0.13
     },
     {
       "ticker": "TLT",
       "name": "20+ Year Treasury",
-      "flow_score": 30,
-      "price_change_20d": -2.33
-    },
-    {
-      "ticker": "XLY",
-      "name": "Consumer Discretionary",
       "flow_score": 40,
-      "price_change_20d": 0.82
+      "price_change_20d": -1.98
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
