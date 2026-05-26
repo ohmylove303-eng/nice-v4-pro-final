@@ -1,20 +1,13 @@
 {
-  "timestamp": "2026-05-25T22:57:58.868109",
+  "timestamp": "2026-05-26T23:07:56.857888",
   "candidates": [
     {
-      "ticker": "AVGO",
-      "price": 414.14,
-      "from_52w_high": -5.83,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "RIOT",
-      "price": 24.49,
-      "from_52w_high": -3.35,
+      "price": 26.08,
+      "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 1
 }

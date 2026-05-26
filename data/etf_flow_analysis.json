@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-25T22:57:09.556137",
+  "timestamp": "2026-05-26T23:06:54.888245",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -9,19 +9,18 @@
       "DIA",
       "XLK",
       "XLV",
-      "XLE",
+      "XLRE",
       "SOXX",
       "SMH",
-      "USO"
+      "SLV"
     ],
     "inflow": [
       "XLF",
+      "XLE",
       "XLY",
       "XLP",
       "XLU",
-      "XLRE",
       "XLC",
-      "SLV",
       "HYG",
       "LQD"
     ],
@@ -30,72 +29,73 @@
       "XLB",
       "ARKK",
       "GLD",
+      "USO",
       "TLT"
     ],
     "strong_outflow": []
   },
   "top_inflows": [
     {
-      "ticker": "DIA",
-      "name": "Dow Jones ETF",
-      "flow_score": 80,
-      "price_change_20d": 2.88
-    },
-    {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 75,
-      "price_change_20d": 8.08
+      "price_change_20d": 9.94
     },
     {
       "ticker": "XLK",
       "name": "Technology Select",
       "flow_score": 75,
-      "price_change_20d": 12.59
+      "price_change_20d": 15.3
     },
     {
       "ticker": "SOXX",
       "name": "Semiconductor ETF",
       "flow_score": 75,
-      "price_change_20d": 16.41
+      "price_change_20d": 25.18
     },
     {
       "ticker": "SMH",
       "name": "VanEck Semiconductor",
       "flow_score": 75,
-      "price_change_20d": 13.8
+      "price_change_20d": 18.94
+    },
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 70,
+      "price_change_20d": 4.95
     }
   ],
   "top_outflows": [
     {
-      "ticker": "XLB",
-      "name": "Materials Select",
-      "flow_score": 30,
-      "price_change_20d": -3.14
-    },
-    {
       "ticker": "GLD",
       "name": "Gold ETF",
       "flow_score": 30,
-      "price_change_20d": -4.48
+      "price_change_20d": -3.7
     },
     {
       "ticker": "XLI",
       "name": "Industrial Select",
       "flow_score": 40,
-      "price_change_20d": -0.41
+      "price_change_20d": 1.04
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials Select",
+      "flow_score": 40,
+      "price_change_20d": -1.53
     },
     {
       "ticker": "ARKK",
       "name": "ARK Innovation",
       "flow_score": 40,
-      "price_change_20d": -0.13
+      "price_change_20d": 0.89
     },
     {
-      "ticker": "TLT",
-      "name": "20+ Year Treasury",
+      "ticker": "USO",
+      "name": "Oil ETF",
       "flow_score": 40,
-      "price_change_20d": -1.98
+      "price_change_20d": 1.69
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
