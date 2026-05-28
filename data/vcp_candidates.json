@@ -1,13 +1,5 @@
 {
-  "timestamp": "2026-05-28T12:30:31.111526",
-  "candidates": [
-    {
-      "ticker": "RIOT",
-      "price": 26.94,
-      "from_52w_high": 0.0,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 1
+  "timestamp": "2026-05-28T23:14:57.187723",
+  "candidates": [],
+  "count": 0
 }
