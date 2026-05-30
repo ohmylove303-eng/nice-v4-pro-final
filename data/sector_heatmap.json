@@ -1,3 +1,46 @@
 {
-  "error": "No data"
+  "timestamp": "2026-05-30T22:53:06.569514",
+  "period": "5d",
+  "sectors": [
+    {
+      "ticker": "XLK",
+      "name": "Technology",
+      "color": "#4A90A4",
+      "price": 191.02,
+      "change_1d": 2.23,
+      "change_period": 5.89
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "color": "#6B8E23",
+      "price": 51.58,
+      "change_1d": 0.6,
+      "change_period": -0.69
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrials",
+      "color": "#DDA0DD",
+      "price": 173.13,
+      "change_1d": -0.39,
+      "change_period": 0.79
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities",
+      "color": "#87CEEB",
+      "price": 44.42,
+      "change_1d": -0.47,
+      "change_period": -2.05
+    },
+    {
+      "ticker": "XLC",
+      "name": "Comm. Services",
+      "color": "#9370DB",
+      "price": 115.69,
+      "change_1d": -0.84,
+      "change_period": 0.2
+    }
+  ]
 }
