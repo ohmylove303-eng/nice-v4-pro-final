@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T23:31:40.431326",
+  "timestamp": "2026-06-04T23:06:48.558812",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -7,94 +7,92 @@
       "QQQ",
       "DIA",
       "XLK",
-      "XLB",
+      "XLV",
+      "XLE",
       "SOXX",
       "SMH"
     ],
     "inflow": [
-      "XLE",
+      "IWM",
+      "XLB",
       "XLRE",
-      "SLV",
       "TLT",
       "HYG"
     ],
     "outflow": [
-      "IWM",
       "XLF",
-      "XLV",
       "XLY",
       "XLP",
       "XLI",
       "XLC",
+      "ARKK",
       "GLD",
       "LQD"
     ],
-    "strong_outflow": [
-      "XLU"
-    ]
+    "strong_outflow": []
   },
   "top_inflows": [
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 75,
-      "price_change_20d": 9.18
+      "price_change_20d": 6.44
     },
     {
       "ticker": "XLK",
       "name": "Technology Select",
       "flow_score": 75,
-      "price_change_20d": 18.47
+      "price_change_20d": 13.61
     },
     {
       "ticker": "SOXX",
       "name": "Semiconductor ETF",
       "flow_score": 75,
-      "price_change_20d": 27.54
+      "price_change_20d": 18.91
     },
     {
       "ticker": "SMH",
       "name": "VanEck Semiconductor",
       "flow_score": 75,
-      "price_change_20d": 22.04
+      "price_change_20d": 14.15
     },
     {
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 70,
-      "price_change_20d": 4.21
+      "price_change_20d": 3.17
     }
   ],
   "top_outflows": [
     {
-      "ticker": "XLU",
-      "name": "Utilities Select",
-      "flow_score": 25,
-      "price_change_20d": -5.74
+      "ticker": "XLY",
+      "name": "Consumer Discretionary",
+      "flow_score": 30,
+      "price_change_20d": -2.18
     },
     {
       "ticker": "XLP",
       "name": "Consumer Staples",
       "flow_score": 30,
-      "price_change_20d": -2.26
+      "price_change_20d": -2.61
     },
     {
       "ticker": "XLC",
       "name": "Communication Services",
       "flow_score": 30,
-      "price_change_20d": -3.07
+      "price_change_20d": -3.61
     },
     {
       "ticker": "GLD",
       "name": "Gold ETF",
       "flow_score": 30,
-      "price_change_20d": -2.49
+      "price_change_20d": -4.57
     },
     {
-      "ticker": "IWM",
-      "name": "Russell 2000 ETF",
+      "ticker": "XLF",
+      "name": "Financial Select",
       "flow_score": 40,
-      "price_change_20d": 1.81
+      "price_change_20d": 0.68
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
