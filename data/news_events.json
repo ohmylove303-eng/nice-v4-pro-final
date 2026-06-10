@@ -1,27 +1,6 @@
 {
-  "timestamp": "2026-06-10T12:26:21.126313",
-  "earnings": [
-    {
-      "ticker": "TSLA",
-      "date": "2026-07-22",
-      "days_left": 42
-    },
-    {
-      "ticker": "MSFT",
-      "date": "2026-07-29",
-      "days_left": 49
-    },
-    {
-      "ticker": "AAPL",
-      "date": "2026-07-30",
-      "days_left": 50
-    },
-    {
-      "ticker": "NVDA",
-      "date": "2026-08-26",
-      "days_left": 77
-    }
-  ],
+  "timestamp": "2026-06-10T23:24:47.453266",
+  "earnings": [],
   "news": [
     {
       "ticker": "NVDA",
@@ -49,22 +28,6 @@
     },
     {
       "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
       "title": null,
       "publisher": null,
       "link": null,
