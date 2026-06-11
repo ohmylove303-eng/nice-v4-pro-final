@@ -11,10 +11,10 @@
     "[QQQ] Price > MA50 (Mid-term Uptrend)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-06-10T12:26:23.532185",
+  "timestamp": "2026-06-11T12:51:47.969474",
   "indices": {
-    "SPY": 739.22,
-    "QQQ": 716.07,
-    "VIX": 21.86
+    "SPY": 725.43,
+    "QQQ": 693.69,
+    "VIX": 21.72
   }
 }
