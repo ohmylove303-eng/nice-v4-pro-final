@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-06-15T23:35:06.396262",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-06-16T13:33:29.895076",
+  "candidates": [
+    {
+      "ticker": "DDOG",
+      "price": 226.44,
+      "from_52w_high": -18.4,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
