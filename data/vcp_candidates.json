@@ -1,13 +1,20 @@
 {
-  "timestamp": "2026-06-16T23:29:56.100155",
+  "timestamp": "2026-06-17T12:57:14.472636",
   "candidates": [
     {
+      "ticker": "SNOW",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "DDOG",
-      "price": 231.11,
-      "from_52w_high": -16.71,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 1
+  "count": 2
 }
