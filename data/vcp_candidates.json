@@ -1,27 +1,5 @@
 {
-  "timestamp": "2026-06-19T12:50:53.737096",
-  "candidates": [
-    {
-      "ticker": "NET",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SNOW",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "NVO",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 3
+  "timestamp": "2026-06-19T22:51:19.725399",
+  "candidates": [],
+  "count": 0
 }

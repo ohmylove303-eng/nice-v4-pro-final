@@ -1,8 +1,9 @@
 {
-  "timestamp": "2026-06-18T23:33:47.188667",
+  "timestamp": "2026-06-19T22:50:02.342440",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
+      "SPY",
       "IWM",
       "DIA",
       "XLK",
@@ -15,7 +16,6 @@
       "TLT"
     ],
     "inflow": [
-      "SPY",
       "XLY",
       "XLU",
       "HYG",
