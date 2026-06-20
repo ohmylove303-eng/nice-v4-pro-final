@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-07T23:04:46.291228",
+  "timestamp": "2026-06-20T23:09:21.645282",
   "heatmap_series": [
     {
       "name": "2026",
       "data": [
         {
           "x": "Jan",
-          "y": 1.18
+          "y": 1.17
         },
         {
           "x": "Feb",
@@ -26,7 +26,7 @@
         },
         {
           "x": "Jun",
-          "y": -6.65
+          "y": -5.95
         },
         {
           "x": "Jul",
@@ -63,7 +63,7 @@
         },
         {
           "x": "Feb",
-          "y": -8.9
+          "y": -8.91
         },
         {
           "x": "Mar",
@@ -140,7 +140,7 @@
         },
         {
           "x": "Aug",
-          "y": 1.22
+          "y": 1.21
         },
         {
           "x": "Sep",
@@ -197,11 +197,11 @@
         },
         {
           "x": "Sep",
-          "y": -3.75
+          "y": -3.76
         },
         {
           "x": "Oct",
-          "y": -2.42
+          "y": -2.43
         },
         {
           "x": "Nov",
@@ -222,7 +222,7 @@
         },
         {
           "x": "Feb",
-          "y": -8.71
+          "y": -8.7
         },
         {
           "x": "Mar",
@@ -242,7 +242,7 @@
         },
         {
           "x": "Jul",
-          "y": 16.4
+          "y": 16.41
         },
         {
           "x": "Aug",
@@ -303,15 +303,15 @@
         },
         {
           "x": "Sep",
-          "y": -5.61
+          "y": -5.6
         },
         {
           "x": "Oct",
-          "y": 13.6
+          "y": 13.61
         },
         {
           "x": "Nov",
-          "y": 4.39
+          "y": 4.4
         },
         {
           "x": "Dec",
@@ -322,13 +322,13 @@
   ],
   "yearly_stats": {
     "2026": {
-      "total_return": 5.48,
+      "total_return": 6.28,
       "best_month": 17.86,
       "worst_month": -8.27,
       "positive_months": 3
     },
     "2025": {
-      "total_return": 16.29,
+      "total_return": 16.3,
       "best_month": 14.56,
       "worst_month": -9.85,
       "positive_months": 7
@@ -340,21 +340,21 @@
       "positive_months": 8
     },
     "2023": {
-      "total_return": 64.68,
+      "total_return": 64.67,
       "best_month": 17.0,
-      "worst_month": -3.75,
+      "worst_month": -3.76,
       "positive_months": 9
     },
     "2022": {
       "total_return": -43.64,
-      "best_month": 16.4,
+      "best_month": 16.41,
       "worst_month": -15.68,
       "positive_months": 3
     },
     "2021": {
-      "total_return": 17.09,
-      "best_month": 13.6,
-      "worst_month": -5.61,
+      "total_return": 17.1,
+      "best_month": 13.61,
+      "worst_month": -5.6,
       "positive_months": 3
     }
   }

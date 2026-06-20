@@ -1,4 +1,365 @@
 {
-  "timestamp": "2026-06-19T22:51:05.959056",
-  "details": {}
+  "timestamp": "2026-06-20T23:09:19.534504",
+  "details": {
+    "AAPL": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "77",
+          "insider": "ADAMS KATHERINE L",
+          "type": "Sell",
+          "value": 20643512.0
+        },
+        {
+          "date": "75",
+          "insider": "KONDO CHRISTOPHER",
+          "type": "Sell",
+          "value": 1121037.0
+        },
+        {
+          "date": "74",
+          "insider": "KONDO CHRISTOPHER",
+          "type": "Sell",
+          "value": 1958850.0
+        },
+        {
+          "date": "68",
+          "insider": "COOK TIMOTHY D",
+          "type": "Sell",
+          "value": 50276355.0
+        },
+        {
+          "date": "67",
+          "insider": "O'BRIEN DEIRDRE",
+          "type": "Sell",
+          "value": 13843382.0
+        }
+      ]
+    },
+    "NVDA": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "149",
+          "insider": "HUANG JEN-HSUN",
+          "type": "Sell",
+          "value": 28551919.0
+        },
+        {
+          "date": "148",
+          "insider": "COXE TENCH C",
+          "type": "Sell",
+          "value": 235741095.0
+        },
+        {
+          "date": "146",
+          "insider": "KRESS COLETTE M.",
+          "type": "Sell",
+          "value": 7772851.0
+        },
+        {
+          "date": "145",
+          "insider": "ROBERTSON DONALD F JR",
+          "type": "Sell",
+          "value": 524293.0
+        },
+        {
+          "date": "144",
+          "insider": "STEVENS MARK A",
+          "type": "Sell",
+          "value": 20021429.0
+        }
+      ]
+    },
+    "TSLA": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "96",
+          "insider": "DENHOLM ROBYN M",
+          "type": "Sell",
+          "value": 14597629.0
+        },
+        {
+          "date": "94",
+          "insider": "ZHU XIAOTONG",
+          "type": "Sell",
+          "value": 65867.0
+        },
+        {
+          "date": "92",
+          "insider": "TANEJA VAIBHAV",
+          "type": "Sell",
+          "value": 2000000.0
+        },
+        {
+          "date": "90",
+          "insider": "TANEJA VAIBHAV",
+          "type": "Sell",
+          "value": 1000000.0
+        },
+        {
+          "date": "88",
+          "insider": "MUSK KIMBAL J",
+          "type": "Sell",
+          "value": 15138945.0
+        }
+      ]
+    },
+    "MSFT": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "100",
+          "insider": "NADELLA SATYA",
+          "type": "Sell",
+          "value": 6009898.0
+        },
+        {
+          "date": "90",
+          "insider": "NADELLA SATYA",
+          "type": "Sell",
+          "value": 32017224.0
+        },
+        {
+          "date": "89",
+          "insider": "HOOD AMY E",
+          "type": "Sell",
+          "value": 15600794.0
+        },
+        {
+          "date": "84",
+          "insider": "SMITH BRADFORD LEE",
+          "type": "Sell",
+          "value": 16103553.0
+        },
+        {
+          "date": "82",
+          "insider": "NUMOTO TAKESHI",
+          "type": "Sell",
+          "value": 1027608.0
+        }
+      ]
+    },
+    "AMZN": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "149",
+          "insider": "ZAPOLSKY DAVID A.",
+          "type": "Sell",
+          "value": 2338661.0
+        },
+        {
+          "date": "147",
+          "insider": "REYNOLDS SHELLEY L",
+          "type": "Sell",
+          "value": 759090.0
+        },
+        {
+          "date": "146",
+          "insider": "GARMAN MATTHEW S",
+          "type": "Sell",
+          "value": 3054828.0
+        },
+        {
+          "date": "144",
+          "insider": "HERRINGTON DOUGLAS J",
+          "type": "Sell",
+          "value": 1221989.0
+        },
+        {
+          "date": "143",
+          "insider": "HERRINGTON DOUGLAS J",
+          "type": "Sell",
+          "value": 735000.0
+        }
+      ]
+    },
+    "META": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "140",
+          "insider": "OLIVAN JAVIER",
+          "type": "Sell",
+          "value": 2443599.0
+        },
+        {
+          "date": "139",
+          "insider": "BOSWORTH ANDREW",
+          "type": "Sell",
+          "value": 13018081.0
+        },
+        {
+          "date": "138",
+          "insider": "NEWSTEAD JENNIFER",
+          "type": "Sell",
+          "value": 402225.0
+        },
+        {
+          "date": "137",
+          "insider": "LI SUSAN J.",
+          "type": "Sell",
+          "value": 19395767.0
+        },
+        {
+          "date": "136",
+          "insider": "OLIVAN JAVIER",
+          "type": "Sell",
+          "value": 390392.0
+        }
+      ]
+    },
+    "GOOGL": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "23",
+          "insider": "HENNESSY JOHN L",
+          "type": "Sell",
+          "value": 278775.0
+        },
+        {
+          "date": "22",
+          "insider": "HENNESSY JOHN L",
+          "type": "Sell",
+          "value": 130421.0
+        },
+        {
+          "date": "21",
+          "insider": "HENNESSY JOHN L",
+          "type": "Sell",
+          "value": 115500.0
+        },
+        {
+          "date": "20",
+          "insider": "HENNESSY JOHN L",
+          "type": "Sell",
+          "value": 123003.0
+        },
+        {
+          "date": "19",
+          "insider": "HENNESSY JOHN L",
+          "type": "Sell",
+          "value": 115500.0
+        }
+      ]
+    },
+    "JPM": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "149",
+          "insider": "ERDOES MARY E.",
+          "type": "Sell",
+          "value": 1340216.0
+        },
+        {
+          "date": "136",
+          "insider": "FRIEDMAN STACEY R.",
+          "type": "Sell",
+          "value": 919371.0
+        },
+        {
+          "date": "135",
+          "insider": "LAKE MARIANNE",
+          "type": "Sell",
+          "value": 1178009.0
+        },
+        {
+          "date": "134",
+          "insider": "PETNO DOUGLAS B",
+          "type": "Sell",
+          "value": 971646.0
+        },
+        {
+          "date": "133",
+          "insider": "ERDOES MARY E.",
+          "type": "Sell",
+          "value": 1468971.0
+        }
+      ]
+    },
+    "GS": {
+      "buy_count": 1,
+      "sell_count": 9,
+      "transactions": [
+        {
+          "date": "72",
+          "insider": "MONTAG THOMAS K",
+          "type": "Sell",
+          "value": 5050436.0
+        },
+        {
+          "date": "71",
+          "insider": "VINIAR DAVID A",
+          "type": "Sell",
+          "value": 2512125.0
+        },
+        {
+          "date": "69",
+          "insider": "LEE BRIAN J.",
+          "type": "Sell",
+          "value": 2530070.0
+        },
+        {
+          "date": "68",
+          "insider": "SOLOMON DAVID M",
+          "type": "Sell",
+          "value": 3001740.0
+        },
+        {
+          "date": "67",
+          "insider": "FLAHERTY MARK A",
+          "type": "Buy",
+          "value": 29545.0
+        }
+      ]
+    },
+    "BAC": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "146",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 802486391.0
+        },
+        {
+          "date": "145",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 766997045.0
+        },
+        {
+          "date": "144",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 778690984.0
+        },
+        {
+          "date": "143",
+          "insider": "HANS LINDSAY D",
+          "type": "Sell",
+          "value": 402410.0
+        },
+        {
+          "date": "134",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 550658795.0
+        }
+      ]
+    }
+  }
 }
