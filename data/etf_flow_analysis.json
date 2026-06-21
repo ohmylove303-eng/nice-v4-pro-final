@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T23:05:50.276489",
+  "timestamp": "2026-06-21T23:05:43.384289",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -18,13 +18,13 @@
     "inflow": [
       "XLY",
       "XLU",
-      "XLRE",
       "HYG",
       "LQD"
     ],
     "outflow": [
       "XLV",
-      "XLP"
+      "XLP",
+      "XLRE"
     ],
     "strong_outflow": [
       "XLE",
