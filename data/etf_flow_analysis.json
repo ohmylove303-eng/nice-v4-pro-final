@@ -1,25 +1,26 @@
 {
-  "timestamp": "2026-06-23T23:06:59.422969",
+  "timestamp": "2026-06-24T23:08:02.753727",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
       "IWM",
       "DIA",
       "XLF",
+      "XLV",
+      "XLI",
       "TLT"
     ],
     "inflow": [
-      "XLV",
       "XLB",
       "XLU",
       "SOXX",
-      "SMH",
       "HYG",
       "LQD"
     ],
     "outflow": [
       "SPY",
       "QQQ",
+      "XLK",
       "XLY",
       "XLP",
       "XLRE",
@@ -35,34 +36,34 @@
   },
   "top_inflows": [
     {
+      "ticker": "TLT",
+      "name": "20+ Year Treasury",
+      "flow_score": 80,
+      "price_change_20d": 3.08
+    },
+    {
       "ticker": "IWM",
       "name": "Russell 2000 ETF",
       "flow_score": 70,
-      "price_change_20d": 3.82
+      "price_change_20d": 2.37
     },
     {
       "ticker": "DIA",
       "name": "Dow Jones ETF",
       "flow_score": 70,
-      "price_change_20d": 2.35
+      "price_change_20d": 2.91
     },
     {
       "ticker": "XLF",
       "name": "Financial Select",
       "flow_score": 70,
-      "price_change_20d": 4.1
-    },
-    {
-      "ticker": "TLT",
-      "name": "20+ Year Treasury",
-      "flow_score": 70,
-      "price_change_20d": 2.2
+      "price_change_20d": 3.97
     },
     {
       "ticker": "XLV",
       "name": "Healthcare Select",
-      "flow_score": 60,
-      "price_change_20d": 1.98
+      "flow_score": 70,
+      "price_change_20d": 3.71
     }
   ],
   "top_outflows": [
@@ -70,31 +71,31 @@
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 25,
-      "price_change_20d": -7.8
+      "price_change_20d": -6.73
     },
     {
       "ticker": "XLC",
       "name": "Communication Services",
       "flow_score": 25,
-      "price_change_20d": -6.85
+      "price_change_20d": -7.56
     },
     {
       "ticker": "GLD",
       "name": "Gold ETF",
       "flow_score": 25,
-      "price_change_20d": -8.82
+      "price_change_20d": -11.61
     },
     {
       "ticker": "SLV",
       "name": "Silver ETF",
       "flow_score": 25,
-      "price_change_20d": -18.48
+      "price_change_20d": -25.73
     },
     {
       "ticker": "USO",
       "name": "Oil ETF",
       "flow_score": 25,
-      "price_change_20d": -21.05
+      "price_change_20d": -22.42
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
