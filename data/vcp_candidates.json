@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-06-26T11:49:31.797158",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-06-26T23:05:56.177568",
+  "candidates": [
+    {
+      "ticker": "ARM",
+      "price": 334.27,
+      "from_52w_high": -23.94,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
