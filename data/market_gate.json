@@ -5,16 +5,16 @@
   "reasons": [
     "[SPY] Price > MA200 (Long-term Uptrend)",
     "[SPY] MA50 > MA200 (Golden Cross Alignment)",
-    "[SPY] Price > MA50 (Mid-term Uptrend)",
     "[QQQ] Price > MA200 (Long-term Uptrend)",
     "[QQQ] MA50 > MA200 (Golden Cross Alignment)",
     "[QQQ] Price > MA50 (Mid-term Uptrend)",
+    "[VIX] VIX is Low (18.41 < 20)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-06-26T11:49:19.123594",
+  "timestamp": "2026-06-27T11:03:11.947811",
   "indices": {
-    "SPY": 734.3,
-    "QQQ": 716.38,
-    "VIX": 20.07
+    "SPY": 728.99,
+    "QQQ": 706.52,
+    "VIX": 18.41
   }
 }
