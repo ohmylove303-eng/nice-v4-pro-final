@@ -1,100 +1,100 @@
 {
-  "timestamp": "2026-06-27T22:59:23.482666",
+  "timestamp": "2026-06-28T23:01:34.751278",
   "etf_count": 24,
   "summary": {
-    "strong_inflow": [],
-    "inflow": [
+    "strong_inflow": [
       "IWM",
       "DIA",
       "XLF",
       "XLV",
-      "XLE",
       "XLI",
-      "XLB",
       "XLU",
       "XLRE",
-      "SMH",
-      "TLT",
+      "TLT"
+    ],
+    "inflow": [
+      "XLB",
       "LQD"
     ],
     "outflow": [
       "SPY",
       "QQQ",
       "XLK",
-      "XLY",
       "XLP",
-      "XLC",
       "ARKK",
-      "SOXX",
-      "GLD",
-      "SLV",
-      "USO",
+      "SMH",
       "HYG"
     ],
-    "strong_outflow": []
+    "strong_outflow": [
+      "XLY",
+      "XLC",
+      "GLD",
+      "SLV",
+      "USO"
+    ]
   },
   "top_inflows": [
     {
+      "ticker": "XLV",
+      "name": "Healthcare Select",
+      "flow_score": 75,
+      "price_change_20d": 6.74
+    },
+    {
       "ticker": "IWM",
       "name": "Russell 2000 ETF",
-      "flow_score": 60,
-      "price_change_20d": NaN
+      "flow_score": 70,
+      "price_change_20d": 2.92
     },
     {
       "ticker": "DIA",
       "name": "Dow Jones ETF",
-      "flow_score": 60,
-      "price_change_20d": NaN
+      "flow_score": 70,
+      "price_change_20d": 2.39
     },
     {
       "ticker": "XLF",
       "name": "Financial Select",
-      "flow_score": 60,
-      "price_change_20d": NaN
+      "flow_score": 70,
+      "price_change_20d": 4.85
     },
     {
-      "ticker": "XLV",
-      "name": "Healthcare Select",
-      "flow_score": 60,
-      "price_change_20d": NaN
-    },
-    {
-      "ticker": "XLE",
-      "name": "Energy Select",
-      "flow_score": 60,
-      "price_change_20d": NaN
+      "ticker": "XLI",
+      "name": "Industrial Select",
+      "flow_score": 70,
+      "price_change_20d": 4.51
     }
   ],
   "top_outflows": [
     {
-      "ticker": "SPY",
-      "name": "S&P 500 ETF",
-      "flow_score": 40,
-      "price_change_20d": NaN
-    },
-    {
-      "ticker": "QQQ",
-      "name": "Nasdaq 100 ETF",
-      "flow_score": 40,
-      "price_change_20d": NaN
-    },
-    {
-      "ticker": "XLK",
-      "name": "Technology Select",
-      "flow_score": 40,
-      "price_change_20d": NaN
-    },
-    {
       "ticker": "XLY",
       "name": "Consumer Discretionary",
-      "flow_score": 40,
-      "price_change_20d": NaN
+      "flow_score": 25,
+      "price_change_20d": -6.11
     },
     {
-      "ticker": "XLP",
-      "name": "Consumer Staples",
-      "flow_score": 40,
-      "price_change_20d": NaN
+      "ticker": "XLC",
+      "name": "Communication Services",
+      "flow_score": 25,
+      "price_change_20d": -8.75
+    },
+    {
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 25,
+      "price_change_20d": -9.48
+    },
+    {
+      "ticker": "SLV",
+      "name": "Silver ETF",
+      "flow_score": 25,
+      "price_change_20d": -22.06
+    },
+    {
+      "ticker": "USO",
+      "name": "Oil ETF",
+      "flow_score": 25,
+      "price_change_20d": -19.35
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
