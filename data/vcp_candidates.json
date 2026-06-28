@@ -1,34 +1,13 @@
 {
-  "timestamp": "2026-06-27T23:00:57.465094",
+  "timestamp": "2026-06-28T11:14:12.998034",
   "candidates": [
     {
       "ticker": "ARM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "PANW",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DDOG",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "ZS",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 334.27,
+      "from_52w_high": -23.94,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 1
 }
