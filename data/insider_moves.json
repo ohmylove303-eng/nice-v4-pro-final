@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T23:10:28.788382",
+  "timestamp": "2026-07-02T23:08:18.000317",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -151,15 +151,15 @@
       "transactions": [
         {
           "date": "149",
-          "insider": "JASSY ANDREW R.",
+          "insider": "OLSAVSKY BRIAN T.",
           "type": "Sell",
-          "value": 4160373.0
+          "value": 2962048.0
         },
         {
           "date": "147",
-          "insider": "REYNOLDS SHELLEY L",
+          "insider": "ZAPOLSKY DAVID A.",
           "type": "Sell",
-          "value": 759090.0
+          "value": 2338661.0
         },
         {
           "date": "146",
@@ -259,33 +259,33 @@
       "transactions": [
         {
           "date": "137",
-          "insider": "FRIEDMAN STACEY R.",
-          "type": "Sell",
-          "value": 919371.0
-        },
-        {
-          "date": "136",
           "insider": "LAKE MARIANNE",
           "type": "Sell",
           "value": 1178009.0
         },
         {
-          "date": "135",
+          "date": "136",
           "insider": "PETNO DOUGLAS B",
           "type": "Sell",
           "value": 971646.0
         },
         {
-          "date": "134",
+          "date": "135",
           "insider": "ERDOES MARY E.",
           "type": "Sell",
           "value": 1468971.0
         },
         {
-          "date": "133",
-          "insider": "BEER LORI A",
+          "date": "134",
+          "insider": "FRIEDMAN STACEY R.",
           "type": "Sell",
-          "value": 554054.0
+          "value": 919371.0
+        },
+        {
+          "date": "133",
+          "insider": "DIMON JAMES",
+          "type": "Sell",
+          "value": 233776513.0
         }
       ]
     },
