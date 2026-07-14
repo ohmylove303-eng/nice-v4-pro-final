@@ -1,13 +1,48 @@
 {
-  "timestamp": "2026-07-14T10:53:00.002817",
+  "timestamp": "2026-07-14T22:59:48.012706",
   "candidates": [
     {
+      "ticker": "AMD",
+      "price": 548.13,
+      "from_52w_high": -5.64,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "AAPL",
-      "price": 317.31,
-      "from_52w_high": 0.0,
+      "price": 314.86,
+      "from_52w_high": -0.77,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "LLY",
+      "price": 1152.54,
+      "from_52w_high": -6.72,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "CAT",
+      "price": 933.34,
+      "from_52w_high": -12.35,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "DE",
+      "price": 584.4,
+      "from_52w_high": -11.3,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "URI",
+      "price": 1065.83,
+      "from_52w_high": -6.47,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 1
+  "count": 6
 }
