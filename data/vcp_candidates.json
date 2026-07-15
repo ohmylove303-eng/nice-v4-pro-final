@@ -1,48 +1,104 @@
 {
-  "timestamp": "2026-07-14T22:59:48.012706",
+  "timestamp": "2026-07-15T10:57:14.594088",
   "candidates": [
     {
-      "ticker": "AMD",
-      "price": 548.13,
-      "from_52w_high": -5.64,
+      "ticker": "TSLA",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "AAPL",
-      "price": 314.86,
-      "from_52w_high": -0.77,
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "MSFT",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "AMZN",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "GOOGL",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "MSTR",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "SMCI",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "ADBE",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "LLY",
-      "price": 1152.54,
-      "from_52w_high": -6.72,
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "NVO",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "REGN",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "CAT",
-      "price": 933.34,
-      "from_52w_high": -12.35,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "DE",
-      "price": 584.4,
-      "from_52w_high": -11.3,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "URI",
-      "price": 1065.83,
-      "from_52w_high": -6.47,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 6
+  "count": 14
 }
