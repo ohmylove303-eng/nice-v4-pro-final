@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-07-16T11:08:01.518641",
+  "timestamp": "2026-07-16T22:55:10.486417",
   "candidates": [
     {
       "ticker": "LLY",
-      "price": 1156.63,
-      "from_52w_high": -6.39,
+      "price": 1169.17,
+      "from_52w_high": -5.37,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "VRTX",
+      "price": 486.03,
+      "from_52w_high": -8.23,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "DE",
-      "price": 589.48,
-      "from_52w_high": -10.53,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "URI",
-      "price": 1047.28,
-      "from_52w_high": -8.09,
+      "price": 598.97,
+      "from_52w_high": -9.09,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
