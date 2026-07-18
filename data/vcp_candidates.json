@@ -1,17 +1,10 @@
 {
-  "timestamp": "2026-07-17T22:52:04.261347",
+  "timestamp": "2026-07-18T10:23:18.917422",
   "candidates": [
     {
       "ticker": "PANW",
       "price": 358.68,
       "from_52w_high": 0.0,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "LLY",
-      "price": 1179.11,
-      "from_52w_high": -4.57,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
@@ -30,5 +23,5 @@
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 3
 }
