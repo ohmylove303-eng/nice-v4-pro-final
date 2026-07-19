@@ -1,3 +1,94 @@
 {
-  "error": "No data"
+  "timestamp": "2026-07-19T22:50:26.042884",
+  "period": "5d",
+  "sectors": [
+    {
+      "ticker": "XLE",
+      "name": "Energy",
+      "color": "#FF6347",
+      "price": 57.68,
+      "change_1d": 1.16,
+      "change_period": 1.66
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "color": "#CD853F",
+      "price": 45.42,
+      "change_1d": -0.09,
+      "change_period": 1.61
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrials",
+      "color": "#DDA0DD",
+      "price": 179.41,
+      "change_1d": -0.41,
+      "change_period": -0.53
+    },
+    {
+      "ticker": "XLV",
+      "name": "Healthcare",
+      "color": "#FF69B4",
+      "price": 161.09,
+      "change_1d": -0.44,
+      "change_period": -0.2
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities",
+      "color": "#87CEEB",
+      "price": 45.17,
+      "change_1d": -0.66,
+      "change_period": -1.2
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials",
+      "color": "#F0E68C",
+      "price": 50.53,
+      "change_1d": -0.71,
+      "change_period": -0.1
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "color": "#98D8C8",
+      "price": 85.19,
+      "change_1d": -0.72,
+      "change_period": 0.71
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "color": "#6B8E23",
+      "price": 56.26,
+      "change_1d": -0.86,
+      "change_period": 0.34
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technology",
+      "color": "#4A90A4",
+      "price": 175.59,
+      "change_1d": -1.09,
+      "change_period": -3.14
+    },
+    {
+      "ticker": "XLY",
+      "name": "Consumer Disc.",
+      "color": "#FFD700",
+      "price": 115.44,
+      "change_1d": -1.62,
+      "change_period": -0.52
+    },
+    {
+      "ticker": "XLC",
+      "name": "Comm. Services",
+      "color": "#9370DB",
+      "price": 110.65,
+      "change_1d": -1.78,
+      "change_period": -0.84
+    }
+  ]
 }
