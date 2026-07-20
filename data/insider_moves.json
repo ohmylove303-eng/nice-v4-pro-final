@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T22:50:36.339365",
+  "timestamp": "2026-07-20T22:58:51.273907",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -294,31 +294,31 @@
       "sell_count": 9,
       "transactions": [
         {
-          "date": "68",
+          "date": "70",
           "insider": "SOLOMON DAVID M",
           "type": "Sell",
           "value": 3001740.0
         },
         {
-          "date": "67",
+          "date": "69",
           "insider": "FLAHERTY MARK A",
           "type": "Buy",
           "value": 29545.0
         },
         {
-          "date": "66",
+          "date": "68",
           "insider": "LEE BRIAN J.",
           "type": "Sell",
           "value": 2123758.0
         },
         {
-          "date": "64",
+          "date": "66",
           "insider": "ROGERS JOHN F W",
           "type": "Sell",
           "value": 3826245.0
         },
         {
-          "date": "63",
+          "date": "65",
           "insider": "COLEMAN DENIS P.",
           "type": "Sell",
           "value": 7667285.0
@@ -330,31 +330,31 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "146",
+          "date": "147",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 802486391.0
         },
         {
-          "date": "145",
+          "date": "146",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 766997045.0
         },
         {
-          "date": "144",
+          "date": "145",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 778690984.0
         },
         {
-          "date": "143",
+          "date": "144",
           "insider": "HANS LINDSAY D",
           "type": "Sell",
           "value": 402410.0
         },
         {
-          "date": "134",
+          "date": "135",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 550658795.0

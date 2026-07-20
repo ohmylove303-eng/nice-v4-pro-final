@@ -1,27 +1,20 @@
 {
-  "timestamp": "2026-07-20T11:50:54.983166",
+  "timestamp": "2026-07-20T22:59:34.703020",
   "candidates": [
     {
-      "ticker": "PANW",
-      "price": 358.68,
-      "from_52w_high": 0.0,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "VRTX",
-      "price": 485.65,
-      "from_52w_high": -8.3,
+      "price": 480.5,
+      "from_52w_high": -9.27,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "DE",
-      "price": 597.24,
-      "from_52w_high": -9.35,
+      "price": 586.0,
+      "from_52w_high": -11.06,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 3
+  "count": 2
 }
