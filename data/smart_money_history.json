@@ -15768,5 +15768,100 @@
       }
     ],
     "saved_at": "2026-07-19T10:31:51.215625"
+  },
+  "2026-07-20": {
+    "recommendations": [
+      {
+        "ticker": "TRV",
+        "name": "The Travelers Companies, Inc.",
+        "recommended_price": 368.98,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "AON",
+        "name": "Aon plc",
+        "recommended_price": 367.21,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "CSX",
+        "name": "CSX Corporation",
+        "recommended_price": 50.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "UNP",
+        "name": "Union Pacific Corporation",
+        "recommended_price": 301.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 206.86,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "CFG",
+        "name": "Citizens Financial Group, Inc.",
+        "recommended_price": 72.39,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "MCO",
+        "name": "Moody's Corporation",
+        "recommended_price": 510.86,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "FRT",
+        "name": "Federal Realty Investment Trust",
+        "recommended_price": 126.02,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "XYL",
+        "name": "Xylem Inc.",
+        "recommended_price": 122.78,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      },
+      {
+        "ticker": "PYPL",
+        "name": "PayPal Holdings, Inc.",
+        "recommended_price": 56.56,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-20"
+      }
+    ],
+    "saved_at": "2026-07-20T11:50:55.197163"
   }
 }
