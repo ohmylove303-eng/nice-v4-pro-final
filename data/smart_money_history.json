@@ -15863,5 +15863,100 @@
       }
     ],
     "saved_at": "2026-07-20T11:50:55.197163"
+  },
+  "2026-07-21": {
+    "recommendations": [
+      {
+        "ticker": "PYPL",
+        "name": "PayPal Holdings, Inc.",
+        "recommended_price": 56.82,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "EFX",
+        "name": "Equifax Inc.",
+        "recommended_price": 180.08,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 208.8,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "TRV",
+        "name": "The Travelers Companies, Inc.",
+        "recommended_price": 368.5,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "AON",
+        "name": "Aon plc",
+        "recommended_price": 362.78,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "UNP",
+        "name": "Union Pacific Corporation",
+        "recommended_price": 296.25,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "PNC",
+        "name": "The PNC Financial Services Group, Inc.",
+        "recommended_price": 250.14,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "ALL",
+        "name": "The Allstate Corporation",
+        "recommended_price": 253.73,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "SCHW",
+        "name": "The Charles Schwab Corporation",
+        "recommended_price": 102.54,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      },
+      {
+        "ticker": "RF",
+        "name": "Regions Financial Corporation",
+        "recommended_price": 31.11,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-21"
+      }
+    ],
+    "saved_at": "2026-07-21T11:12:24.138182"
   }
 }
