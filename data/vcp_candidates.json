@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-07-24T11:11:05.149690",
+  "timestamp": "2026-07-24T22:59:40.116775",
   "candidates": [
     {
       "ticker": "CRWD",
-      "price": 183.42,
-      "from_52w_high": -12.96,
+      "price": 183.28,
+      "from_52w_high": -13.03,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "PANW",
-      "price": 325.63,
-      "from_52w_high": -9.21,
+      "price": 323.79,
+      "from_52w_high": -9.73,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "DDOG",
-      "price": 244.39,
-      "from_52w_high": -11.93,
+      "ticker": "VRTX",
+      "price": 477.36,
+      "from_52w_high": -9.86,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
