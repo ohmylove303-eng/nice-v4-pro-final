@@ -16338,5 +16338,100 @@
       }
     ],
     "saved_at": "2026-07-25T10:32:13.016746"
+  },
+  "2026-07-26": {
+    "recommendations": [
+      {
+        "ticker": "CPAY",
+        "name": "Corpay, Inc.",
+        "recommended_price": 370.58,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "GPN",
+        "name": "Global Payments Inc.",
+        "recommended_price": 80.92,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "UNP",
+        "name": "Union Pacific Corporation",
+        "recommended_price": 307.32,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "GD",
+        "name": "General Dynamics Corporation",
+        "recommended_price": 386.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "UHS",
+        "name": "Universal Health Services, Inc.",
+        "recommended_price": 155.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "VLO",
+        "name": "Valero Energy Corporation",
+        "recommended_price": 302.5,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "ALLE",
+        "name": "Allegion plc",
+        "recommended_price": 153.36,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "TMO",
+        "name": "Thermo Fisher Scientific Inc.",
+        "recommended_price": 568.26,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 206.77,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      },
+      {
+        "ticker": "TDY",
+        "name": "Teledyne Technologies Incorporated",
+        "recommended_price": 655.35,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-07-26"
+      }
+    ],
+    "saved_at": "2026-07-26T10:52:58.619571"
   }
 }
