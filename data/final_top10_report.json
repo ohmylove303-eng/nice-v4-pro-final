@@ -1,6 +1,22 @@
 {
-  "timestamp": "2026-07-25T22:56:38.870348",
+  "timestamp": "2026-07-26T23:04:23.681709",
   "top_picks": [
+    {
+      "ticker": "LW",
+      "name": "Lamb Weston Holdings, Inc.",
+      "final_score": 60.5,
+      "quant_score": 75.6,
+      "ai_recommendation": "Hold",
+      "current_price": 49.58,
+      "change_pct": 0.81,
+      "ai_summary": "",
+      "sector": "Consumer Defensive",
+      "avg_vol_m": 80.4,
+      "liq_score": 70,
+      "gap_velocity": 3.11,
+      "target_upside": 1.8,
+      "rank": 1
+    },
     {
       "ticker": "CPAY",
       "name": "Corpay, Inc.",
@@ -15,7 +31,23 @@
       "liq_score": 55,
       "gap_velocity": 0.36,
       "target_upside": 6.6,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "ticker": "CSX",
+      "name": "CSX Corporation",
+      "final_score": 59.9,
+      "quant_score": 74.9,
+      "ai_recommendation": "Hold",
+      "current_price": 53.23,
+      "change_pct": 0.8,
+      "ai_summary": "",
+      "sector": "Industrials",
+      "avg_vol_m": 672.9,
+      "liq_score": 70,
+      "gap_velocity": 1.13,
+      "target_upside": -0.7,
+      "rank": 3
     },
     {
       "ticker": "GPN",
@@ -30,8 +62,8 @@
       "avg_vol_m": 307.5,
       "liq_score": 65,
       "gap_velocity": 0.52,
-      "target_upside": 16.3,
-      "rank": 2
+      "target_upside": 16.4,
+      "rank": 4
     },
     {
       "ticker": "UNP",
@@ -46,8 +78,8 @@
       "avg_vol_m": 899.4,
       "liq_score": 70,
       "gap_velocity": 1.08,
-      "target_upside": 5.4,
-      "rank": 3
+      "target_upside": 6.6,
+      "rank": 5
     },
     {
       "ticker": "GD",
@@ -63,7 +95,7 @@
       "liq_score": 70,
       "gap_velocity": 1.15,
       "target_upside": 2.3,
-      "rank": 4
+      "rank": 6
     },
     {
       "ticker": "UHS",
@@ -79,7 +111,7 @@
       "liq_score": 65,
       "gap_velocity": 1.19,
       "target_upside": 31.8,
-      "rank": 5
+      "rank": 7
     },
     {
       "ticker": "VLO",
@@ -95,7 +127,7 @@
       "liq_score": 70,
       "gap_velocity": 0.72,
       "target_upside": -4.3,
-      "rank": 6
+      "rank": 8
     },
     {
       "ticker": "ALLE",
@@ -111,23 +143,7 @@
       "liq_score": 65,
       "gap_velocity": 1.13,
       "target_upside": 10.7,
-      "rank": 7
-    },
-    {
-      "ticker": "TMO",
-      "name": "Thermo Fisher Scientific Inc.",
-      "final_score": 58.9,
-      "quant_score": 73.6,
-      "ai_recommendation": "Hold",
-      "current_price": 568.26,
-      "change_pct": -0.71,
-      "ai_summary": "",
-      "sector": "Healthcare",
-      "avg_vol_m": 1342.3,
-      "liq_score": 70,
-      "gap_velocity": 1.03,
-      "target_upside": 8.2,
-      "rank": 8
+      "rank": 9
     },
     {
       "ticker": "PSX",
@@ -143,22 +159,6 @@
       "liq_score": 70,
       "gap_velocity": 0.64,
       "target_upside": -1.3,
-      "rank": 9
-    },
-    {
-      "ticker": "TDY",
-      "name": "Teledyne Technologies Incorporated",
-      "final_score": 58.7,
-      "quant_score": 73.4,
-      "ai_recommendation": "Hold",
-      "current_price": 655.35,
-      "change_pct": 0.63,
-      "ai_summary": "",
-      "sector": "Technology",
-      "avg_vol_m": 230.7,
-      "liq_score": 65,
-      "gap_velocity": 0.67,
-      "target_upside": 14.1,
       "rank": 10
     }
   ]

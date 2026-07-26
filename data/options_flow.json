@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-25T22:56:17.348299",
+  "timestamp": "2026-07-26T23:04:02.786306",
   "summary": {
     "total_analyzed": 15,
     "bullish_count": 7,
@@ -107,7 +107,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.46,
-        "call_iv": 84.1,
+        "call_iv": 90.5,
         "call_volume": 56635,
         "put_volume": 25936,
         "total_volume": 82571
@@ -128,7 +128,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.26,
-        "call_iv": 54.0,
+        "call_iv": 65.1,
         "call_volume": 68702,
         "put_volume": 18046,
         "total_volume": 86748
@@ -149,7 +149,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.25,
-        "call_iv": 56.7,
+        "call_iv": 68.2,
         "call_volume": 67422,
         "put_volume": 16920,
         "total_volume": 84342
@@ -170,7 +170,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.54,
-        "call_iv": 77.0,
+        "call_iv": 83.1,
         "call_volume": 9255,
         "put_volume": 4964,
         "total_volume": 14219
@@ -191,7 +191,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.45,
-        "call_iv": 64.0,
+        "call_iv": 67.3,
         "call_volume": 5482,
         "put_volume": 2470,
         "total_volume": 7952
@@ -212,7 +212,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.81,
-        "call_iv": 148.9,
+        "call_iv": 181.8,
         "call_volume": 216650,
         "put_volume": 175545,
         "total_volume": 392195
@@ -233,7 +233,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.8,
-        "call_iv": 77.1,
+        "call_iv": 94.2,
         "call_volume": 65082,
         "put_volume": 51846,
         "total_volume": 116928
@@ -254,7 +254,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.34,
-        "call_iv": 63.7,
+        "call_iv": 77.8,
         "call_volume": 49660,
         "put_volume": 16694,
         "total_volume": 66354
@@ -275,7 +275,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.87,
-        "call_iv": 93.0,
+        "call_iv": 113.9,
         "call_volume": 34981,
         "put_volume": 30492,
         "total_volume": 65473
@@ -296,7 +296,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.77,
-        "call_iv": 46.9,
+        "call_iv": 56.8,
         "call_volume": 186383,
         "put_volume": 143190,
         "total_volume": 329573
@@ -317,7 +317,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.74,
-        "call_iv": 106.9,
+        "call_iv": 130.6,
         "call_volume": 327603,
         "put_volume": 241316,
         "total_volume": 568919
@@ -338,10 +338,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 1.19,
-        "call_iv": 31.9,
+        "call_iv": 38.5,
         "call_volume": 413036,
-        "put_volume": 493126,
-        "total_volume": 906162
+        "put_volume": 489519,
+        "total_volume": 902555
       },
       "expiration": "2026-07-27",
       "unusual_activity": {
@@ -359,7 +359,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.63,
-        "call_iv": 48.1,
+        "call_iv": 52.0,
         "call_volume": 10508,
         "put_volume": 6583,
         "total_volume": 17091
@@ -380,7 +380,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 1.17,
-        "call_iv": 23.6,
+        "call_iv": 28.8,
         "call_volume": 810496,
         "put_volume": 951150,
         "total_volume": 1761646
@@ -401,7 +401,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 2.73,
-        "call_iv": 56.0,
+        "call_iv": 59.5,
         "call_volume": 2470,
         "put_volume": 6744,
         "total_volume": 9214
