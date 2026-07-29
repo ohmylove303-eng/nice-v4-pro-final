@@ -1,34 +1,41 @@
 {
-  "timestamp": "2026-07-28T23:01:08.482927",
+  "timestamp": "2026-07-29T11:33:13.742983",
   "candidates": [
     {
+      "ticker": "META",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "NET",
-      "price": 264.1,
-      "from_52w_high": -6.26,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "CRWD",
-      "price": 181.8,
-      "from_52w_high": -13.73,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "PANW",
-      "price": 319.0,
-      "from_52w_high": -11.06,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "LLY",
-      "price": 1220.66,
-      "from_52w_high": -1.21,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 5
 }
