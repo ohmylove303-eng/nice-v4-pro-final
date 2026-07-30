@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-29T22:55:49.850656",
+  "timestamp": "2026-07-30T23:01:40.980619",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -9,7 +9,8 @@
       "USO"
     ],
     "inflow": [
-      "GLD"
+      "GLD",
+      "SLV"
     ],
     "outflow": [
       "SPY",
@@ -18,6 +19,7 @@
       "XLY",
       "XLB",
       "XLU",
+      "XLC",
       "TLT",
       "HYG",
       "LQD"
@@ -34,32 +36,32 @@
     {
       "ticker": "XLP",
       "name": "Consumer Staples",
-      "flow_score": 85,
-      "price_change_20d": 5.16
-    },
-    {
-      "ticker": "USO",
-      "name": "Oil ETF",
-      "flow_score": 85,
-      "price_change_20d": 21.49
-    },
-    {
-      "ticker": "XLF",
-      "name": "Financial Select",
-      "flow_score": 75,
-      "price_change_20d": 5.73
+      "flow_score": 80,
+      "price_change_20d": 2.61
     },
     {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 10.43
+      "price_change_20d": 11.65
+    },
+    {
+      "ticker": "USO",
+      "name": "Oil ETF",
+      "flow_score": 75,
+      "price_change_20d": 23.44
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financial Select",
+      "flow_score": 70,
+      "price_change_20d": 4.05
     },
     {
       "ticker": "GLD",
       "name": "Gold ETF",
       "flow_score": 60,
-      "price_change_20d": 0.73
+      "price_change_20d": 1.77
     }
   ],
   "top_outflows": [
@@ -67,31 +69,31 @@
       "ticker": "SMH",
       "name": "VanEck Semiconductor",
       "flow_score": 10,
-      "price_change_20d": -23.12
+      "price_change_20d": -13.15
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 25,
-      "price_change_20d": -10.14
+      "price_change_20d": -5.74
     },
     {
       "ticker": "XLK",
       "name": "Technology Select",
       "flow_score": 25,
-      "price_change_20d": -12.57
+      "price_change_20d": -5.33
     },
     {
       "ticker": "ARKK",
       "name": "ARK Innovation",
       "flow_score": 25,
-      "price_change_20d": -12.67
+      "price_change_20d": -10.93
     },
     {
       "ticker": "SOXX",
       "name": "Semiconductor ETF",
       "flow_score": 25,
-      "price_change_20d": -27.43
+      "price_change_20d": -15.87
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
