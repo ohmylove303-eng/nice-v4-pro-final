@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-07-31T22:58:45.560468",
+  "timestamp": "2026-08-01T22:49:35.374827",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
+      "SPY",
       "XLF",
       "XLE",
       "XLP",
       "USO"
     ],
     "inflow": [
-      "SPY",
       "GLD"
     ],
     "outflow": [
@@ -46,6 +46,12 @@
       "price_change_20d": 24.23
     },
     {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 70,
+      "price_change_20d": 0.3
+    },
+    {
       "ticker": "XLF",
       "name": "Financial Select",
       "flow_score": 70,
@@ -56,12 +62,6 @@
       "name": "Consumer Staples",
       "flow_score": 70,
       "price_change_20d": 0.07
-    },
-    {
-      "ticker": "SPY",
-      "name": "S&P 500 ETF",
-      "flow_score": 60,
-      "price_change_20d": 0.3
     }
   ],
   "top_outflows": [
