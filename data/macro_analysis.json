@@ -1,19 +1,6 @@
 {
-  "timestamp": "2026-08-04T22:57:52.276747",
-  "indicators": {
-    "OIL": {
-      "value": 75.33,
-      "change_1d": -6.24
-    },
-    "SPY": {
-      "value": 771.33,
-      "change_1d": 1.8
-    },
-    "QQQ": {
-      "value": 723.85,
-      "change_1d": 3.4
-    }
-  },
+  "timestamp": "2026-08-05T22:55:21.065071",
+  "indicators": {},
   "analysis_ko": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable.",
   "analysis_en": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable."
 }
