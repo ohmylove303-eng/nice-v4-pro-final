@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-08-07T10:07:17.040298",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-08-07T22:33:24.621521",
+  "candidates": [
+    {
+      "ticker": "DE",
+      "price": 620.83,
+      "from_52w_high": -5.77,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
