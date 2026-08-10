@@ -1,13 +1,20 @@
 {
-  "timestamp": "2026-08-10T10:21:00.995234",
+  "timestamp": "2026-08-10T22:32:19.367666",
   "candidates": [
     {
-      "ticker": "DE",
-      "price": 620.83,
-      "from_52w_high": -5.77,
+      "ticker": "AMZN",
+      "price": 278.09,
+      "from_52w_high": -2.09,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "CRWD",
+      "price": 225.16,
+      "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 1
+  "count": 2
 }

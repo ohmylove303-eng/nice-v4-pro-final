@@ -1,3 +1,30 @@
 {
-  "error": "No data"
+  "timestamp": "2026-08-10T22:31:57.825430",
+  "period": "5d",
+  "sectors": [
+    {
+      "ticker": "XLV",
+      "name": "Healthcare",
+      "color": "#FF69B4",
+      "price": 168.44,
+      "change_1d": 1.67,
+      "change_period": 3.91
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "color": "#6B8E23",
+      "price": 57.81,
+      "change_1d": 0.36,
+      "change_period": -0.12
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "color": "#98D8C8",
+      "price": 84.95,
+      "change_1d": -0.2,
+      "change_period": -0.49
+    }
+  ]
 }
