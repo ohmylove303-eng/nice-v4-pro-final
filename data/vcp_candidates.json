@@ -1,34 +1,27 @@
 {
-  "timestamp": "2026-08-14T10:05:21.227881",
+  "timestamp": "2026-08-14T22:19:39.035129",
   "candidates": [
     {
-      "ticker": "AMZN",
-      "price": 265.13,
-      "from_52w_high": -6.65,
+      "ticker": "AMD",
+      "price": 514.39,
+      "from_52w_high": -11.45,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "AVGO",
-      "price": 417.82,
-      "from_52w_high": -13.1,
+      "ticker": "AMZN",
+      "price": 262.65,
+      "from_52w_high": -7.52,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "DE",
-      "price": 612.38,
-      "from_52w_high": -7.05,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "URI",
-      "price": 1120.58,
-      "from_52w_high": -3.47,
+      "price": 608.85,
+      "from_52w_high": -7.59,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 3
 }
