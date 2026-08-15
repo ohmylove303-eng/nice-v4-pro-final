@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T22:18:32.302457",
+  "timestamp": "2026-08-15T22:15:08.208094",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -9,9 +9,9 @@
       "XLF",
       "XLV",
       "XLE",
+      "XLY",
       "XLI",
       "XLB",
-      "XLC",
       "SOXX",
       "GLD",
       "SLV"
@@ -19,8 +19,8 @@
     "inflow": [
       "QQQ",
       "XLK",
-      "XLY",
       "XLP",
+      "XLC",
       "ARKK",
       "SMH",
       "HYG"
@@ -75,7 +75,7 @@
       "ticker": "XLRE",
       "name": "Real Estate Select",
       "flow_score": 40,
-      "price_change_20d": -0.33
+      "price_change_20d": -0.42
     },
     {
       "ticker": "LQD",
