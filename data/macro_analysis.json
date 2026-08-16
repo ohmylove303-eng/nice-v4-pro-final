@@ -1,15 +1,6 @@
 {
-  "timestamp": "2026-08-15T22:16:16.227860",
-  "indicators": {
-    "GOLD": {
-      "value": 4380.4,
-      "change_1d": 0.38
-    },
-    "OIL": {
-      "value": 82.4,
-      "change_1d": 1.42
-    }
-  },
+  "timestamp": "2026-08-16T22:17:11.961388",
+  "indicators": {},
   "analysis_ko": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable.",
   "analysis_en": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable."
 }
