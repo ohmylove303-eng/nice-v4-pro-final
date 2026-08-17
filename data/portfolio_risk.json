@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-07-26T23:04:05.575103",
+  "timestamp": "2026-08-17T22:26:57.064462",
   "summary": {
-    "portfolio_volatility": 25.89,
-    "sharpe_ratio": 1.18,
-    "max_drawdown": -19.87,
-    "var_95": -2.47,
+    "portfolio_volatility": 25.9,
+    "sharpe_ratio": 1.1,
+    "max_drawdown": -20.12,
+    "var_95": -2.42,
     "risk_level": "High"
   },
   "correlation_matrix": {
@@ -22,27 +22,27 @@
           },
           {
             "x": "AMZN",
-            "y": 0.32
+            "y": 0.09
           },
           {
             "x": "GOOGL",
-            "y": 0.27
+            "y": 0.18
           },
           {
             "x": "META",
-            "y": 0.2
+            "y": 0.16
           },
           {
             "x": "MSFT",
-            "y": 0.2
+            "y": 0.11
           },
           {
             "x": "NVDA",
-            "y": 0.17
+            "y": 0.12
           },
           {
             "x": "TSLA",
-            "y": 0.24
+            "y": 0.19
           }
         ]
       },
@@ -59,19 +59,19 @@
           },
           {
             "x": "AMZN",
-            "y": 0.25
+            "y": 0.23
           },
           {
             "x": "GOOGL",
-            "y": 0.26
+            "y": 0.23
           },
           {
             "x": "META",
-            "y": 0.21
+            "y": 0.17
           },
           {
             "x": "MSFT",
-            "y": 0.12
+            "y": 0.18
           },
           {
             "x": "NVDA",
@@ -79,7 +79,7 @@
           },
           {
             "x": "TSLA",
-            "y": 0.41
+            "y": 0.42
           }
         ]
       },
@@ -88,11 +88,11 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.32
+            "y": 0.09
           },
           {
             "x": "AMD",
-            "y": 0.25
+            "y": 0.23
           },
           {
             "x": "AMZN",
@@ -100,15 +100,15 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.45
+            "y": 0.51
           },
           {
             "x": "META",
-            "y": 0.47
+            "y": 0.44
           },
           {
             "x": "MSFT",
-            "y": 0.34
+            "y": 0.38
           },
           {
             "x": "NVDA",
@@ -116,7 +116,7 @@
           },
           {
             "x": "TSLA",
-            "y": 0.38
+            "y": 0.36
           }
         ]
       },
@@ -125,15 +125,15 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.27
+            "y": 0.18
           },
           {
             "x": "AMD",
-            "y": 0.26
+            "y": 0.23
           },
           {
             "x": "AMZN",
-            "y": 0.45
+            "y": 0.51
           },
           {
             "x": "GOOGL",
@@ -141,19 +141,19 @@
           },
           {
             "x": "META",
-            "y": 0.27
+            "y": 0.32
           },
           {
             "x": "MSFT",
-            "y": 0.12
+            "y": 0.14
           },
           {
             "x": "NVDA",
-            "y": 0.28
+            "y": 0.25
           },
           {
             "x": "TSLA",
-            "y": 0.43
+            "y": 0.41
           }
         ]
       },
@@ -162,19 +162,19 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.2
+            "y": 0.16
           },
           {
             "x": "AMD",
-            "y": 0.21
+            "y": 0.17
           },
           {
             "x": "AMZN",
-            "y": 0.47
+            "y": 0.44
           },
           {
             "x": "GOOGL",
-            "y": 0.27
+            "y": 0.32
           },
           {
             "x": "META",
@@ -182,15 +182,15 @@
           },
           {
             "x": "MSFT",
-            "y": 0.32
+            "y": 0.17
           },
           {
             "x": "NVDA",
-            "y": 0.34
+            "y": 0.33
           },
           {
             "x": "TSLA",
-            "y": 0.34
+            "y": 0.37
           }
         ]
       },
@@ -199,23 +199,23 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.2
+            "y": 0.11
           },
           {
             "x": "AMD",
-            "y": 0.12
+            "y": 0.18
           },
           {
             "x": "AMZN",
-            "y": 0.34
+            "y": 0.38
           },
           {
             "x": "GOOGL",
-            "y": 0.12
+            "y": 0.14
           },
           {
             "x": "META",
-            "y": 0.32
+            "y": 0.17
           },
           {
             "x": "MSFT",
@@ -223,11 +223,11 @@
           },
           {
             "x": "NVDA",
-            "y": 0.3
+            "y": 0.27
           },
           {
             "x": "TSLA",
-            "y": 0.2
+            "y": 0.23
           }
         ]
       },
@@ -236,7 +236,7 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.17
+            "y": 0.12
           },
           {
             "x": "AMD",
@@ -248,15 +248,15 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.28
+            "y": 0.25
           },
           {
             "x": "META",
-            "y": 0.34
+            "y": 0.33
           },
           {
             "x": "MSFT",
-            "y": 0.3
+            "y": 0.27
           },
           {
             "x": "NVDA",
@@ -264,7 +264,7 @@
           },
           {
             "x": "TSLA",
-            "y": 0.41
+            "y": 0.4
           }
         ]
       },
@@ -273,31 +273,31 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.24
+            "y": 0.19
           },
           {
             "x": "AMD",
-            "y": 0.41
+            "y": 0.42
           },
           {
             "x": "AMZN",
-            "y": 0.38
+            "y": 0.36
           },
           {
             "x": "GOOGL",
-            "y": 0.43
+            "y": 0.41
           },
           {
             "x": "META",
-            "y": 0.34
+            "y": 0.37
           },
           {
             "x": "MSFT",
-            "y": 0.2
+            "y": 0.23
           },
           {
             "x": "NVDA",
-            "y": 0.41
+            "y": 0.4
           },
           {
             "x": "TSLA",
@@ -311,51 +311,51 @@
   "individual_risks": [
     {
       "ticker": "NVDA",
-      "volatility": 35.92,
+      "volatility": 36.87,
       "max_drawdown": -20.21,
-      "beta": 0.89
+      "beta": 0.9
     },
     {
       "ticker": "MSFT",
-      "volatility": 27.69,
+      "volatility": 32.34,
       "max_drawdown": -34.5,
-      "beta": 0.46
+      "beta": 0.6
     },
     {
       "ticker": "AAPL",
-      "volatility": 24.86,
+      "volatility": 25.03,
       "max_drawdown": -13.8,
-      "beta": 0.36
+      "beta": 0.28
     },
     {
       "ticker": "GOOGL",
-      "volatility": 31.47,
+      "volatility": 32.83,
       "max_drawdown": -21.05,
-      "beta": 0.66
+      "beta": 0.69
     },
     {
       "ticker": "AMZN",
-      "volatility": 31.55,
+      "volatility": 34.48,
       "max_drawdown": -21.74,
-      "beta": 0.74
+      "beta": 0.81
     },
     {
       "ticker": "TSLA",
-      "volatility": 46.41,
-      "max_drawdown": -36.1,
-      "beta": 1.23
+      "volatility": 46.47,
+      "max_drawdown": -39.1,
+      "beta": 1.27
     },
     {
       "ticker": "AMD",
-      "volatility": 69.58,
+      "volatility": 71.78,
       "max_drawdown": -27.76,
-      "beta": 2.04
+      "beta": 2.08
     },
     {
       "ticker": "META",
-      "volatility": 39.06,
-      "max_drawdown": -33.3,
-      "beta": 0.99
+      "volatility": 38.61,
+      "max_drawdown": -32.46,
+      "beta": 0.92
     }
   ]
 }
