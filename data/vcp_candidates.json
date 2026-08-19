@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-08-19T09:37:36.856339",
+  "timestamp": "2026-08-19T22:24:38.846282",
   "candidates": [
     {
       "ticker": "AAPL",
-      "price": 310.03,
-      "from_52w_high": -8.76,
+      "price": 316.83,
+      "from_52w_high": -6.76,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "AMZN",
-      "price": 259.45,
-      "from_52w_high": -8.65,
+      "price": 265.84,
+      "from_52w_high": -6.4,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
