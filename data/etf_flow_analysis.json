@@ -1,15 +1,11 @@
 {
-  "timestamp": "2026-08-19T22:21:35.905205",
+  "timestamp": "2026-08-20T22:23:59.566312",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
       "SPY",
-      "IWM",
       "DIA",
-      "XLF",
-      "XLV",
       "XLE",
-      "XLY",
       "XLP",
       "XLB",
       "ARKK",
@@ -17,86 +13,86 @@
       "SLV"
     ],
     "inflow": [
-      "XLI",
+      "IWM",
+      "XLV",
+      "XLY",
       "XLC",
       "TLT",
       "HYG",
       "LQD"
     ],
     "outflow": [
-      "QQQ",
-      "XLK",
-      "XLU",
+      "XLI",
       "XLRE",
       "SMH",
       "USO"
     ],
     "strong_outflow": [
-      "SOXX"
+      "XLU"
     ]
   },
   "top_inflows": [
     {
-      "ticker": "XLV",
-      "name": "Healthcare Select",
-      "flow_score": 75,
-      "price_change_20d": 10.19
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 85,
+      "price_change_20d": 11.77
     },
     {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 7.4
+      "price_change_20d": 7.36
     },
     {
       "ticker": "ARKK",
       "name": "ARK Innovation",
       "flow_score": 75,
-      "price_change_20d": 7.23
-    },
-    {
-      "ticker": "GLD",
-      "name": "Gold ETF",
-      "flow_score": 75,
-      "price_change_20d": 9.16
+      "price_change_20d": 12.79
     },
     {
       "ticker": "SLV",
       "name": "Silver ETF",
       "flow_score": 75,
-      "price_change_20d": 11.29
+      "price_change_20d": 18.44
+    },
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 70,
+      "price_change_20d": 3.31
     }
   ],
   "top_outflows": [
     {
-      "ticker": "SOXX",
-      "name": "Semiconductor ETF",
-      "flow_score": 25,
-      "price_change_20d": -6.45
-    },
-    {
       "ticker": "XLU",
       "name": "Utilities Select",
-      "flow_score": 30,
-      "price_change_20d": -4.16
+      "flow_score": 25,
+      "price_change_20d": -5.24
     },
     {
       "ticker": "SMH",
       "name": "VanEck Semiconductor",
       "flow_score": 30,
-      "price_change_20d": -4.43
+      "price_change_20d": -3.02
     },
     {
-      "ticker": "QQQ",
-      "name": "Nasdaq 100 ETF",
-      "flow_score": 40,
-      "price_change_20d": 1.52
+      "ticker": "USO",
+      "name": "Oil ETF",
+      "flow_score": 30,
+      "price_change_20d": -3.55
     },
     {
-      "ticker": "XLK",
-      "name": "Technology Select",
+      "ticker": "XLI",
+      "name": "Industrial Select",
       "flow_score": 40,
-      "price_change_20d": 1.87
+      "price_change_20d": 0.93
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate Select",
+      "flow_score": 40,
+      "price_change_20d": 0.29
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
