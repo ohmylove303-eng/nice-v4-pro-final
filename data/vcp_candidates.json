@@ -1,34 +1,13 @@
 {
-  "timestamp": "2026-08-21T09:42:36.912327",
+  "timestamp": "2026-08-21T22:22:47.385843",
   "candidates": [
     {
-      "ticker": "NVDA",
-      "price": 216.85,
-      "from_52w_high": -7.91,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "AAPL",
-      "price": 311.3,
-      "from_52w_high": -8.38,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "AMZN",
-      "price": 260.11,
-      "from_52w_high": -8.42,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "PANW",
-      "price": 349.56,
-      "from_52w_high": -11.73,
+      "price": 258.63,
+      "from_52w_high": -8.94,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 1
 }
