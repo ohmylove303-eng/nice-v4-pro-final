@@ -1,6 +1,13 @@
 {
-  "timestamp": "2026-08-20T22:27:01.022346",
+  "timestamp": "2026-08-21T09:42:36.912327",
   "candidates": [
+    {
+      "ticker": "NVDA",
+      "price": 216.85,
+      "from_52w_high": -7.91,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
     {
       "ticker": "AAPL",
       "price": 311.3,
@@ -23,5 +30,5 @@
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 3
+  "count": 4
 }
