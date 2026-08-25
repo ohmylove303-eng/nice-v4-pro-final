@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-08-25T09:38:54.126111",
+  "timestamp": "2026-08-25T22:26:34.461168",
   "candidates": [
     {
       "ticker": "AMZN",
-      "price": 262.07,
-      "from_52w_high": -7.73,
+      "price": 261.06,
+      "from_52w_high": -8.08,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
