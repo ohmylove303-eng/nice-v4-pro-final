@@ -1,27 +1,20 @@
 {
-  "timestamp": "2026-08-27T02:31:54.056897",
+  "timestamp": "2026-08-27T19:35:43.312609",
   "candidates": [
     {
       "ticker": "AAPL",
-      "price": 313.45,
-      "from_52w_high": -7.75,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "AMZN",
-      "price": 260.28,
-      "from_52w_high": -8.36,
+      "price": 313.6,
+      "from_52w_high": -7.71,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "VRTX",
-      "price": 547.29,
-      "from_52w_high": -1.01,
+      "price": 548.86,
+      "from_52w_high": -0.72,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 3
+  "count": 2
 }
