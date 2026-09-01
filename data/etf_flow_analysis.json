@@ -1,32 +1,31 @@
 {
-  "timestamp": "2026-08-31T00:07:34.887547",
+  "timestamp": "2026-09-01T01:01:38.593037",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
-      "DIA",
-      "XLF",
       "XLV",
       "XLE",
       "XLB",
-      "XLC",
       "ARKK",
-      "SMH",
       "GLD",
-      "SLV"
+      "SLV",
+      "USO"
     ],
     "inflow": [
-      "IWM",
-      "XLK",
-      "XLP",
-      "SOXX",
-      "USO",
-      "TLT"
+      "XLC",
+      "SOXX"
     ],
     "outflow": [
+      "SPY",
+      "IWM",
+      "DIA",
+      "XLF",
       "XLY",
+      "XLP",
       "XLI",
       "XLU",
       "XLRE",
+      "TLT",
       "HYG",
       "LQD"
     ],
@@ -34,66 +33,66 @@
   },
   "top_inflows": [
     {
-      "ticker": "GLD",
-      "name": "Gold ETF",
-      "flow_score": 85,
-      "price_change_20d": 10.05
-    },
-    {
       "ticker": "XLV",
       "name": "Healthcare Select",
       "flow_score": 75,
-      "price_change_20d": 5.3
+      "price_change_20d": 5.12
     },
     {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 5.26
-    },
-    {
-      "ticker": "XLB",
-      "name": "Materials Select",
-      "flow_score": 75,
-      "price_change_20d": 5.45
+      "price_change_20d": 8.79
     },
     {
       "ticker": "ARKK",
       "name": "ARK Innovation",
       "flow_score": 75,
-      "price_change_20d": 18.74
+      "price_change_20d": 16.36
+    },
+    {
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 75,
+      "price_change_20d": 9.88
+    },
+    {
+      "ticker": "SLV",
+      "name": "Silver ETF",
+      "flow_score": 75,
+      "price_change_20d": 14.62
     }
   ],
   "top_outflows": [
     {
+      "ticker": "XLI",
+      "name": "Industrial Select",
+      "flow_score": 30,
+      "price_change_20d": -4.38
+    },
+    {
       "ticker": "XLU",
       "name": "Utilities Select",
       "flow_score": 30,
-      "price_change_20d": -3.65
-    },
-    {
-      "ticker": "XLY",
-      "name": "Consumer Discretionary",
-      "flow_score": 40,
-      "price_change_20d": 0.96
-    },
-    {
-      "ticker": "XLI",
-      "name": "Industrial Select",
-      "flow_score": 40,
-      "price_change_20d": -1.5
+      "price_change_20d": -4.8
     },
     {
       "ticker": "XLRE",
       "name": "Real Estate Select",
-      "flow_score": 40,
-      "price_change_20d": -1.31
+      "flow_score": 30,
+      "price_change_20d": -2.37
     },
     {
-      "ticker": "HYG",
-      "name": "High Yield Corporate",
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
       "flow_score": 40,
-      "price_change_20d": 0.81
+      "price_change_20d": 1.24
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
+      "flow_score": 40,
+      "price_change_20d": -0.77
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
