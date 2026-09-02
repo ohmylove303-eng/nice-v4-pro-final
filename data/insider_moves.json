@@ -1,6 +1,42 @@
 {
-  "timestamp": "2026-09-01T23:51:02.760567",
+  "timestamp": "2026-09-02T23:52:57.868475",
   "details": {
+    "AAPL": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "71",
+          "insider": "COOK TIMOTHY D",
+          "type": "Sell",
+          "value": 50276355.0
+        },
+        {
+          "date": "70",
+          "insider": "WILLIAMS JEFFREY E",
+          "type": "Sell",
+          "value": 13550148.0
+        },
+        {
+          "date": "69",
+          "insider": "ADAMS KATHERINE L",
+          "type": "Sell",
+          "value": 13802297.0
+        },
+        {
+          "date": "68",
+          "insider": "O'BRIEN DEIRDRE",
+          "type": "Sell",
+          "value": 13843382.0
+        },
+        {
+          "date": "67",
+          "insider": "MAESTRI LUCA",
+          "type": "Sell",
+          "value": 13433769.0
+        }
+      ]
+    },
     "NVDA": {
       "buy_count": 0,
       "sell_count": 10,
@@ -258,31 +294,31 @@
       "sell_count": 8,
       "transactions": [
         {
-          "date": "70",
+          "date": "71",
           "insider": "FLAHERTY MARK A",
           "type": "Buy",
           "value": 29545.0
         },
         {
-          "date": "69",
+          "date": "70",
           "insider": "LEE BRIAN J.",
           "type": "Sell",
           "value": 2123758.0
         },
         {
-          "date": "68",
+          "date": "69",
           "insider": "ROGERS JOHN F W",
           "type": "Sell",
           "value": 3826245.0
         },
         {
-          "date": "67",
+          "date": "68",
           "insider": "FREDMAN SHEARA J.",
           "type": "Sell",
           "value": 1768073.0
         },
         {
-          "date": "66",
+          "date": "67",
           "insider": "COLEMAN DENIS P.",
           "type": "Sell",
           "value": 7667285.0
