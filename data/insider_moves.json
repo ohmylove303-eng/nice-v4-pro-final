@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-09T23:51:33.559868",
+  "timestamp": "2026-09-10T23:43:28.361572",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -7,27 +7,27 @@
       "transactions": [
         {
           "date": "72",
-          "insider": "O'BRIEN DEIRDRE",
-          "type": "Sell",
-          "value": 13843382.0
-        },
-        {
-          "date": "71",
-          "insider": "ADAMS KATHERINE L",
-          "type": "Sell",
-          "value": 13802297.0
-        },
-        {
-          "date": "70",
           "insider": "COOK TIMOTHY D",
           "type": "Sell",
           "value": 50276355.0
         },
         {
-          "date": "69",
+          "date": "71",
+          "insider": "O'BRIEN DEIRDRE",
+          "type": "Sell",
+          "value": 13843382.0
+        },
+        {
+          "date": "70",
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 13550148.0
+        },
+        {
+          "date": "69",
+          "insider": "ADAMS KATHERINE L",
+          "type": "Sell",
+          "value": 13802297.0
         },
         {
           "date": "68",
@@ -90,19 +90,19 @@
           "value": 1000000.0
         },
         {
-          "date": "88",
+          "date": "89",
           "insider": "MUSK KIMBAL J",
           "type": "Sell",
           "value": 15138945.0
         },
         {
-          "date": "87",
+          "date": "88",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 1007040.0
         },
         {
-          "date": "84",
+          "date": "85",
           "insider": "WILSON - THOMPSON KATHLEEN",
           "type": "Sell",
           "value": 34602454.0
@@ -114,34 +114,34 @@
       "sell_count": 9,
       "transactions": [
         {
-          "date": "93",
-          "insider": "HOGAN KATHLEEN T",
-          "type": "Sell",
-          "value": 7156892.0
-        },
-        {
-          "date": "92",
-          "insider": "NUMOTO TAKESHI",
-          "type": "Sell",
-          "value": 1027608.0
-        },
-        {
-          "date": "84",
+          "date": "86",
           "insider": "YOUNG CHRISTOPHER DAVID",
           "type": "Sell",
           "value": 3050340.0
         },
         {
-          "date": "82",
+          "date": "84",
+          "insider": "NUMOTO TAKESHI",
+          "type": "Sell",
+          "value": 414720.0
+        },
+        {
+          "date": "83",
           "insider": "ALTHOFF JUDSON",
           "type": "Sell",
           "value": 10425000.0
         },
         {
+          "date": "82",
+          "insider": "NUMOTO TAKESHI",
+          "type": "Sell",
+          "value": 1500662.0
+        },
+        {
           "date": "81",
           "insider": "NUMOTO TAKESHI",
           "type": "Sell",
-          "value": 414720.0
+          "value": 874634.0
         }
       ]
     },
@@ -283,9 +283,9 @@
         },
         {
           "date": "140",
-          "insider": "LEOPOLD ROBIN",
+          "insider": "BEER LORI A",
           "type": "Sell",
-          "value": 337610.0
+          "value": 554054.0
         }
       ]
     },
@@ -330,12 +330,6 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "129",
-          "insider": "BERKSHIRE HATHAWAY INC",
-          "type": "Sell",
-          "value": 228689227.0
-        },
-        {
           "date": "127",
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
@@ -358,6 +352,12 @@
           "insider": "BERKSHIRE HATHAWAY INC",
           "type": "Sell",
           "value": 337861616.0
+        },
+        {
+          "date": "123",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 383039161.0
         }
       ]
     }
