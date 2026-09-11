@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-09-10T23:43:28.361572",
+  "timestamp": "2026-09-11T23:50:20.370120",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
         {
-          "date": "72",
+          "date": "73",
           "insider": "COOK TIMOTHY D",
           "type": "Sell",
           "value": 50276355.0
         },
         {
-          "date": "71",
+          "date": "72",
           "insider": "O'BRIEN DEIRDRE",
           "type": "Sell",
           "value": 13843382.0
         },
         {
-          "date": "70",
+          "date": "71",
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 13550148.0
         },
         {
-          "date": "69",
+          "date": "70",
           "insider": "ADAMS KATHERINE L",
           "type": "Sell",
           "value": 13802297.0
         },
         {
-          "date": "68",
+          "date": "69",
           "insider": "MAESTRI LUCA",
           "type": "Sell",
           "value": 13433769.0
@@ -78,31 +78,31 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "93",
+          "date": "95",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 2000000.0
         },
         {
-          "date": "91",
+          "date": "93",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 1000000.0
         },
         {
-          "date": "89",
+          "date": "91",
           "insider": "MUSK KIMBAL J",
           "type": "Sell",
           "value": 15138945.0
         },
         {
-          "date": "88",
+          "date": "90",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 1007040.0
         },
         {
-          "date": "85",
+          "date": "87",
           "insider": "WILSON - THOMPSON KATHLEEN",
           "type": "Sell",
           "value": 34602454.0
@@ -114,31 +114,31 @@
       "sell_count": 9,
       "transactions": [
         {
-          "date": "86",
+          "date": "87",
           "insider": "YOUNG CHRISTOPHER DAVID",
           "type": "Sell",
           "value": 3050340.0
         },
         {
-          "date": "84",
+          "date": "85",
           "insider": "NUMOTO TAKESHI",
           "type": "Sell",
           "value": 414720.0
         },
         {
-          "date": "83",
+          "date": "84",
           "insider": "ALTHOFF JUDSON",
           "type": "Sell",
           "value": 10425000.0
         },
         {
-          "date": "82",
+          "date": "83",
           "insider": "NUMOTO TAKESHI",
           "type": "Sell",
           "value": 1500662.0
         },
         {
-          "date": "81",
+          "date": "82",
           "insider": "NUMOTO TAKESHI",
           "type": "Sell",
           "value": 874634.0
@@ -187,33 +187,33 @@
       "transactions": [
         {
           "date": "149",
-          "insider": "NEWSTEAD JENNIFER",
-          "type": "Sell",
-          "value": 372113.0
-        },
-        {
-          "date": "148",
           "insider": "OLIVAN JAVIER",
           "type": "Sell",
           "value": 368797.0
         },
         {
-          "date": "147",
+          "date": "148",
           "insider": "NEWSTEAD JENNIFER",
           "type": "Sell",
           "value": 367374.0
         },
         {
-          "date": "146",
+          "date": "147",
           "insider": "KIMMITT ROBERT M",
           "type": "Sell",
           "value": 333391.0
         },
         {
-          "date": "145",
+          "date": "146",
           "insider": "OLIVAN JAVIER",
           "type": "Sell",
           "value": 372912.0
+        },
+        {
+          "date": "145",
+          "insider": "NEWSTEAD JENNIFER",
+          "type": "Sell",
+          "value": 382176.0
         }
       ]
     },
@@ -258,16 +258,22 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "144",
-          "insider": "ERDOES MARY E.",
+          "date": "145",
+          "insider": "LAKE MARIANNE",
           "type": "Sell",
-          "value": 1468971.0
+          "value": 1178009.0
         },
         {
-          "date": "143",
+          "date": "144",
           "insider": "PETNO DOUGLAS B",
           "type": "Sell",
           "value": 971646.0
+        },
+        {
+          "date": "143",
+          "insider": "ERDOES MARY E.",
+          "type": "Sell",
+          "value": 1468971.0
         },
         {
           "date": "142",
@@ -277,12 +283,6 @@
         },
         {
           "date": "141",
-          "insider": "LAKE MARIANNE",
-          "type": "Sell",
-          "value": 1178009.0
-        },
-        {
-          "date": "140",
           "insider": "BEER LORI A",
           "type": "Sell",
           "value": 554054.0
