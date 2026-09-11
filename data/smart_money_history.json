@@ -20803,5 +20803,100 @@
       }
     ],
     "saved_at": "2026-09-10T13:26:12.516037"
+  },
+  "2026-09-11": {
+    "recommendations": [
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 50.02,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 258.51,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "VLO",
+        "name": "Valero Energy Corporation",
+        "recommended_price": 385.43,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "COP",
+        "name": "ConocoPhillips",
+        "recommended_price": 137.04,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "BBY",
+        "name": "Best Buy Co., Inc.",
+        "recommended_price": 88.09,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "GEN",
+        "name": "Gen Digital Inc.",
+        "recommended_price": 29.97,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "SLB",
+        "name": "SLB N.V.",
+        "recommended_price": 56.01,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "HPE",
+        "name": "Hewlett Packard Enterprise Company",
+        "recommended_price": 55.22,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "CVX",
+        "name": "Chevron Corporation",
+        "recommended_price": 212.76,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      },
+      {
+        "ticker": "MPC",
+        "name": "Marathon Petroleum Corporation",
+        "recommended_price": 392.42,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-09-11"
+      }
+    ],
+    "saved_at": "2026-09-11T13:23:58.556741"
   }
 }
