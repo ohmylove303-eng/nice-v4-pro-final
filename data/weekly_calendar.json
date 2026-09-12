@@ -1,17 +1,11 @@
 {
-  "updated": "2026-09-11T23:50:40.412786",
+  "updated": "2026-09-12T23:42:57.885069",
   "events": [
     {
-      "date": "2026-09-11",
+      "date": "2026-09-12",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
-    },
-    {
-      "event": "CPI Release",
-      "impact": "High",
-      "description": "Consumer Price Index - inflation indicator",
-      "date": "2026-09-12"
     },
     {
       "event": "Jobs Report (NFP)",
@@ -23,7 +17,13 @@
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-10-02"
+      "date": "2026-10-03"
+    },
+    {
+      "event": "CPI Release",
+      "impact": "High",
+      "description": "Consumer Price Index - inflation indicator",
+      "date": "2026-10-12"
     },
     {
       "event": "GDP Report",

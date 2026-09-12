@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-09-11T23:50:24.272261",
+  "timestamp": "2026-09-12T23:42:39.699352",
   "indicators": {
     "VIX": {
       "value": 15.84,
       "change_1d": -11.21
     },
     "DXY": {
-      "value": 99.1,
-      "change_1d": 0.01
+      "value": 99.12,
+      "change_1d": 0.03
     },
     "10Y_Yield": {
       "value": 4.97,
       "change_1d": 0.63
     },
     "GOLD": {
-      "value": 4390.0,
-      "change_1d": 0.58
+      "value": 4366.2,
+      "change_1d": 0.04
     },
     "OIL": {
-      "value": 99.99,
-      "change_1d": -2.43
+      "value": 100.05,
+      "change_1d": -2.37
     },
     "BTC": {
-      "value": 77150.03,
-      "change_1d": 0.76
+      "value": 77238.95,
+      "change_1d": 0.08
     },
     "SPY": {
       "value": 764.29,
