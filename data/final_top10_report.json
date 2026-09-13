@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-12T23:42:57.459799",
+  "timestamp": "2026-09-13T23:57:20.733765",
   "top_picks": [
     {
       "ticker": "DVN",
@@ -14,7 +14,7 @@
       "avg_vol_m": 592.2,
       "liq_score": 70,
       "gap_velocity": 0.86,
-      "target_upside": 19.2,
+      "target_upside": 19.4,
       "rank": 1
     },
     {
@@ -94,7 +94,7 @@
       "avg_vol_m": 527.6,
       "liq_score": 70,
       "gap_velocity": 0.88,
-      "target_upside": 9.2,
+      "target_upside": 9.9,
       "rank": 6
     },
     {
