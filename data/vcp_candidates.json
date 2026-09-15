@@ -1,20 +1,13 @@
 {
-  "timestamp": "2026-09-15T14:16:16.257719",
+  "timestamp": "2026-09-15T23:57:01.551272",
   "candidates": [
     {
-      "ticker": "SNOW",
-      "price": 321.07,
-      "from_52w_high": -9.93,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "VRTX",
-      "price": 512.22,
-      "from_52w_high": -8.2,
+      "price": 514.63,
+      "from_52w_high": -7.77,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 1
 }
