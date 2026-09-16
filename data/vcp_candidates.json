@@ -1,13 +1,27 @@
 {
-  "timestamp": "2026-09-15T23:57:01.551272",
+  "timestamp": "2026-09-16T14:10:38.823387",
   "candidates": [
     {
+      "ticker": "NVDA",
+      "price": 215.23,
+      "from_52w_high": -8.49,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "SNOW",
+      "price": 331.73,
+      "from_52w_high": -6.94,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "VRTX",
-      "price": 514.63,
-      "from_52w_high": -7.77,
+      "price": 513.24,
+      "from_52w_high": -8.01,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 1
+  "count": 3
 }
