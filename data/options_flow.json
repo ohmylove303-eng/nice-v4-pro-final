@@ -1,13 +1,421 @@
 {
-  "timestamp": "2026-09-17T00:06:06.964765",
+  "timestamp": "2026-09-17T23:57:16.716691",
   "summary": {
-    "total_analyzed": 0,
-    "bullish_count": 0,
-    "bearish_count": 0,
-    "unusual_count": 0
+    "total_analyzed": 15,
+    "bullish_count": 9,
+    "bearish_count": 5,
+    "unusual_count": 15
   },
-  "bullish_stocks": [],
-  "bearish_stocks": [],
-  "unusual_activity": [],
-  "options_flow": []
+  "bullish_stocks": [
+    "NVDA",
+    "TSLA",
+    "MSFT",
+    "AMZN",
+    "META",
+    "GOOGL",
+    "AMD",
+    "DIS",
+    "GS"
+  ],
+  "bearish_stocks": [
+    "SPY",
+    "QQQ",
+    "NFLX",
+    "BA",
+    "JPM"
+  ],
+  "unusual_activity": [
+    {
+      "ticker": "AAPL",
+      "unusual_calls": 6,
+      "unusual_puts": 8
+    },
+    {
+      "ticker": "NVDA",
+      "unusual_calls": 7,
+      "unusual_puts": 8
+    },
+    {
+      "ticker": "TSLA",
+      "unusual_calls": 12,
+      "unusual_puts": 11
+    },
+    {
+      "ticker": "MSFT",
+      "unusual_calls": 9,
+      "unusual_puts": 9
+    },
+    {
+      "ticker": "AMZN",
+      "unusual_calls": 8,
+      "unusual_puts": 7
+    },
+    {
+      "ticker": "META",
+      "unusual_calls": 16,
+      "unusual_puts": 17
+    },
+    {
+      "ticker": "GOOGL",
+      "unusual_calls": 8,
+      "unusual_puts": 9
+    },
+    {
+      "ticker": "SPY",
+      "unusual_calls": 7,
+      "unusual_puts": 9
+    },
+    {
+      "ticker": "QQQ",
+      "unusual_calls": 7,
+      "unusual_puts": 9
+    },
+    {
+      "ticker": "AMD",
+      "unusual_calls": 18,
+      "unusual_puts": 13
+    },
+    {
+      "ticker": "NFLX",
+      "unusual_calls": 9,
+      "unusual_puts": 17
+    },
+    {
+      "ticker": "BA",
+      "unusual_calls": 7,
+      "unusual_puts": 4
+    },
+    {
+      "ticker": "DIS",
+      "unusual_calls": 5,
+      "unusual_puts": 4
+    },
+    {
+      "ticker": "JPM",
+      "unusual_calls": 7,
+      "unusual_puts": 8
+    },
+    {
+      "ticker": "GS",
+      "unusual_calls": 23,
+      "unusual_puts": 15
+    }
+  ],
+  "options_flow": [
+    {
+      "ticker": "GS",
+      "current_price": 951.47,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 80
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.39,
+        "call_iv": 202.3,
+        "call_volume": 20285,
+        "put_volume": 7886,
+        "total_volume": 28171
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 23,
+        "unusual_puts": 15,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "current_price": 366.2,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.66,
+        "call_iv": 291.5,
+        "call_volume": 985180,
+        "put_volume": 646555,
+        "total_volume": 1631735
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 12,
+        "unusual_puts": 11,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "current_price": 497.75,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.35,
+        "call_iv": 149.1,
+        "call_volume": 97863,
+        "put_volume": 34365,
+        "total_volume": 132228
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 9,
+        "unusual_puts": 9,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "current_price": 251.19,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.57,
+        "call_iv": 159.5,
+        "call_volume": 231217,
+        "put_volume": 132812,
+        "total_volume": 364029
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 8,
+        "unusual_puts": 7,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "AMD",
+      "current_price": 545.09,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.6,
+        "call_iv": 397.7,
+        "call_volume": 259117,
+        "put_volume": 156424,
+        "total_volume": 415541
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 18,
+        "unusual_puts": 13,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "DIS",
+      "current_price": 105.35,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.63,
+        "call_iv": 138.1,
+        "call_volume": 6572,
+        "put_volume": 4146,
+        "total_volume": 10718
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 5,
+        "unusual_puts": 4,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "current_price": 347.33,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 60
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.32,
+        "call_iv": 365.4,
+        "call_volume": 168529,
+        "put_volume": 53941,
+        "total_volume": 222470
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 8,
+        "unusual_puts": 9,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "current_price": 219.34,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 50
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.62,
+        "call_iv": 301.5,
+        "call_volume": 684762,
+        "put_volume": 424438,
+        "total_volume": 1109200
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 7,
+        "unusual_puts": 8,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "META",
+      "current_price": 682.31,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 50
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.57,
+        "call_iv": 239.3,
+        "call_volume": 215623,
+        "put_volume": 123760,
+        "total_volume": 339383
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 16,
+        "unusual_puts": 17,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "current_price": 337.0,
+      "signal": {
+        "sentiment": "Neutral",
+        "sentiment_score": 40
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.74,
+        "call_iv": 263.6,
+        "call_volume": 523403,
+        "put_volume": 385601,
+        "total_volume": 909004
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 6,
+        "unusual_puts": 8,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "BA",
+      "current_price": 197.0,
+      "signal": {
+        "sentiment": "Bearish",
+        "sentiment_score": 40
+      },
+      "metrics": {
+        "pc_volume_ratio": 1.86,
+        "call_iv": 215.8,
+        "call_volume": 30553,
+        "put_volume": 56688,
+        "total_volume": 87241
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 7,
+        "unusual_puts": 4,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "SPY",
+      "current_price": 762.6,
+      "signal": {
+        "sentiment": "Bearish",
+        "sentiment_score": 30
+      },
+      "metrics": {
+        "pc_volume_ratio": 1.05,
+        "call_iv": 24.9,
+        "call_volume": 3740378,
+        "put_volume": 3930140,
+        "total_volume": 7670518
+      },
+      "expiration": "2026-09-17",
+      "unusual_activity": {
+        "unusual_calls": 7,
+        "unusual_puts": 9,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "QQQ",
+      "current_price": 716.92,
+      "signal": {
+        "sentiment": "Bearish",
+        "sentiment_score": 30
+      },
+      "metrics": {
+        "pc_volume_ratio": 1.31,
+        "call_iv": 11.8,
+        "call_volume": 1997977,
+        "put_volume": 2608704,
+        "total_volume": 4606681
+      },
+      "expiration": "2026-09-17",
+      "unusual_activity": {
+        "unusual_calls": 7,
+        "unusual_puts": 9,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "JPM",
+      "current_price": 349.31,
+      "signal": {
+        "sentiment": "Bearish",
+        "sentiment_score": 30
+      },
+      "metrics": {
+        "pc_volume_ratio": 1.04,
+        "call_iv": 207.3,
+        "call_volume": 10676,
+        "put_volume": 11057,
+        "total_volume": 21733
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 7,
+        "unusual_puts": 8,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "NFLX",
+      "current_price": 75.31,
+      "signal": {
+        "sentiment": "Bearish",
+        "sentiment_score": 20
+      },
+      "metrics": {
+        "pc_volume_ratio": 1.66,
+        "call_iv": 888.8,
+        "call_volume": 63973,
+        "put_volume": 105980,
+        "total_volume": 169953
+      },
+      "expiration": "2026-09-18",
+      "unusual_activity": {
+        "unusual_calls": 9,
+        "unusual_puts": 17,
+        "has_unusual": true
+      }
+    }
+  ]
 }
