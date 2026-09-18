@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-17T23:57:30.920618",
+  "updated": "2026-09-18T23:51:40.811672",
   "events": [
     {
-      "date": "2026-09-17",
+      "date": "2026-09-18",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
@@ -17,7 +17,7 @@
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-10-08"
+      "date": "2026-10-09"
     },
     {
       "event": "CPI Release",
