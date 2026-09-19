@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T23:50:56.895103",
+  "timestamp": "2026-09-19T23:52:39.263832",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -13,7 +13,6 @@
       "SMH"
     ],
     "outflow": [
-      "SPY",
       "IWM",
       "DIA",
       "XLF",
@@ -92,10 +91,10 @@
       "price_change_20d": -4.31
     },
     {
-      "ticker": "DIA",
-      "name": "Dow Jones ETF",
+      "ticker": "XLV",
+      "name": "Healthcare Select",
       "flow_score": 30,
-      "price_change_20d": -2.12
+      "price_change_20d": -2.32
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
