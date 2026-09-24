@@ -1,6 +1,11 @@
 {
-  "timestamp": "2026-09-23T00:01:44.462656",
-  "indicators": {},
+  "timestamp": "2026-09-24T00:13:18.348691",
+  "indicators": {
+    "10Y_Yield": {
+      "value": 5.11,
+      "change_1d": 3.04
+    }
+  },
   "analysis_ko": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable.",
   "analysis_en": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable."
 }
