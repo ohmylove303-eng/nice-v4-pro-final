@@ -1,20 +1,34 @@
 {
-  "timestamp": "2026-09-25T00:16:24.192326",
+  "timestamp": "2026-09-25T14:31:58.698638",
   "candidates": [
     {
-      "ticker": "PLTR",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "NVDA",
+      "price": 223.45,
+      "from_52w_high": -5.0,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "AAPL",
+      "price": 336.43,
+      "from_52w_high": -0.99,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SNOW",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 340.67,
+      "from_52w_high": -4.43,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "VRTX",
+      "price": 520.85,
+      "from_52w_high": -6.65,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 4
 }
