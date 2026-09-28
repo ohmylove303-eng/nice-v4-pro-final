@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-27T00:11:01.778515",
+  "timestamp": "2026-09-28T00:15:40.603848",
   "summary": {
     "total_analyzed": 15,
     "bullish_count": 11,
@@ -42,38 +42,38 @@
     },
     {
       "ticker": "MSFT",
-      "unusual_calls": 5,
-      "unusual_puts": 5
+      "unusual_calls": 6,
+      "unusual_puts": 6
     },
     {
       "ticker": "AMZN",
-      "unusual_calls": 3,
+      "unusual_calls": 4,
       "unusual_puts": 4
     },
     {
       "ticker": "META",
-      "unusual_calls": 9,
+      "unusual_calls": 10,
       "unusual_puts": 12
     },
     {
       "ticker": "GOOGL",
-      "unusual_calls": 3,
+      "unusual_calls": 4,
       "unusual_puts": 4
     },
     {
       "ticker": "SPY",
       "unusual_calls": 14,
-      "unusual_puts": 10
+      "unusual_puts": 11
     },
     {
       "ticker": "QQQ",
-      "unusual_calls": 11,
+      "unusual_calls": 12,
       "unusual_puts": 14
     },
     {
       "ticker": "AMD",
       "unusual_calls": 11,
-      "unusual_puts": 10
+      "unusual_puts": 12
     },
     {
       "ticker": "NFLX",
@@ -111,7 +111,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.46,
-        "call_iv": 49.8,
+        "call_iv": 54.3,
         "call_volume": 2717,
         "put_volume": 1250,
         "total_volume": 3967
@@ -132,10 +132,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.47,
-        "call_iv": 62.2,
-        "call_volume": 289675,
-        "put_volume": 135529,
-        "total_volume": 425204
+        "call_iv": 105.9,
+        "call_volume": 290381,
+        "put_volume": 135530,
+        "total_volume": 425911
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
@@ -152,16 +152,58 @@
         "sentiment_score": 70
       },
       "metrics": {
-        "pc_volume_ratio": 0.32,
-        "call_iv": 51.1,
-        "call_volume": 117848,
-        "put_volume": 38069,
-        "total_volume": 155917
+        "pc_volume_ratio": 0.4,
+        "call_iv": 73.8,
+        "call_volume": 118497,
+        "put_volume": 47131,
+        "total_volume": 165628
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
-        "unusual_calls": 5,
-        "unusual_puts": 5,
+        "unusual_calls": 6,
+        "unusual_puts": 6,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "current_price": 249.67,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.45,
+        "call_iv": 97.6,
+        "call_volume": 102372,
+        "put_volume": 46255,
+        "total_volume": 148627
+      },
+      "expiration": "2026-09-28",
+      "unusual_activity": {
+        "unusual_calls": 4,
+        "unusual_puts": 4,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "current_price": 343.92,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.29,
+        "call_iv": 71.6,
+        "call_volume": 41922,
+        "put_volume": 12136,
+        "total_volume": 54058
+      },
+      "expiration": "2026-09-28",
+      "unusual_activity": {
+        "unusual_calls": 4,
+        "unusual_puts": 4,
         "has_unusual": true
       }
     },
@@ -174,78 +216,15 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.55,
-        "call_iv": 72.2,
-        "call_volume": 118465,
-        "put_volume": 65221,
-        "total_volume": 183686
+        "call_iv": 100.7,
+        "call_volume": 118468,
+        "put_volume": 65224,
+        "total_volume": 183692
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
         "unusual_calls": 4,
         "unusual_puts": 4,
-        "has_unusual": true
-      }
-    },
-    {
-      "ticker": "AMZN",
-      "current_price": 249.67,
-      "signal": {
-        "sentiment": "Bullish",
-        "sentiment_score": 60
-      },
-      "metrics": {
-        "pc_volume_ratio": 0.45,
-        "call_iv": 55.1,
-        "call_volume": 101519,
-        "put_volume": 46027,
-        "total_volume": 147546
-      },
-      "expiration": "2026-09-28",
-      "unusual_activity": {
-        "unusual_calls": 3,
-        "unusual_puts": 4,
-        "has_unusual": true
-      }
-    },
-    {
-      "ticker": "GOOGL",
-      "current_price": 343.92,
-      "signal": {
-        "sentiment": "Bullish",
-        "sentiment_score": 60
-      },
-      "metrics": {
-        "pc_volume_ratio": 0.29,
-        "call_iv": 51.3,
-        "call_volume": 41679,
-        "put_volume": 12136,
-        "total_volume": 53815
-      },
-      "expiration": "2026-09-28",
-      "unusual_activity": {
-        "unusual_calls": 3,
-        "unusual_puts": 4,
-        "has_unusual": true
-      }
-    },
-    {
-      "ticker": "AMD",
-      "current_price": 630.63,
-      "signal": {
-        "sentiment": "Neutral",
-        "sentiment_score": 60
-      },
-      "metrics": {
-        "pc_volume_ratio": 0.87,
-        "call_iv": 93.0,
-        "call_volume": 36367,
-        "put_volume": 31687,
-        "total_volume": 68054
-      },
-      "expiration": "2026-09-28",
-      "unusual_activity": {
-        "unusual_calls": 11,
-        "unusual_puts": 10,
         "has_unusual": true
       }
     },
@@ -258,10 +237,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.42,
-        "call_iv": 81.9,
-        "call_volume": 40805,
-        "put_volume": 16951,
-        "total_volume": 57756
+        "call_iv": 89.7,
+        "call_volume": 40807,
+        "put_volume": 16967,
+        "total_volume": 57774
       },
       "expiration": "2026-10-02",
       "unusual_activity": {
@@ -279,10 +258,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.47,
-        "call_iv": 82.1,
+        "call_iv": 87.1,
         "call_volume": 14060,
-        "put_volume": 6578,
-        "total_volume": 20638
+        "put_volume": 6584,
+        "total_volume": 20644
       },
       "expiration": "2026-10-02",
       "unusual_activity": {
@@ -300,10 +279,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.4,
-        "call_iv": 49.1,
+        "call_iv": 53.5,
         "call_volume": 10707,
-        "put_volume": 4278,
-        "total_volume": 14985
+        "put_volume": 4299,
+        "total_volume": 15006
       },
       "expiration": "2026-10-02",
       "unusual_activity": {
@@ -321,10 +300,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.52,
-        "call_iv": 77.9,
-        "call_volume": 227950,
+        "call_iv": 123.6,
+        "call_volume": 227952,
         "put_volume": 117740,
-        "total_volume": 345690
+        "total_volume": 345692
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
@@ -342,14 +321,14 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.66,
-        "call_iv": 83.5,
-        "call_volume": 101568,
-        "put_volume": 67011,
-        "total_volume": 168579
+        "call_iv": 120.4,
+        "call_volume": 101588,
+        "put_volume": 67036,
+        "total_volume": 168624
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
-        "unusual_calls": 9,
+        "unusual_calls": 10,
         "unusual_puts": 12,
         "has_unusual": true
       }
@@ -363,15 +342,36 @@
       },
       "metrics": {
         "pc_volume_ratio": 1.02,
-        "call_iv": 24.6,
-        "call_volume": 659130,
-        "put_volume": 669995,
-        "total_volume": 1329125
+        "call_iv": 39.7,
+        "call_volume": 659673,
+        "put_volume": 670666,
+        "total_volume": 1330339
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
         "unusual_calls": 14,
-        "unusual_puts": 10,
+        "unusual_puts": 11,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "AMD",
+      "current_price": 630.63,
+      "signal": {
+        "sentiment": "Neutral",
+        "sentiment_score": 40
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.87,
+        "call_iv": 133.6,
+        "call_volume": 36738,
+        "put_volume": 31819,
+        "total_volume": 68557
+      },
+      "expiration": "2026-09-28",
+      "unusual_activity": {
+        "unusual_calls": 11,
+        "unusual_puts": 12,
         "has_unusual": true
       }
     },
@@ -384,14 +384,14 @@
       },
       "metrics": {
         "pc_volume_ratio": 1.1,
-        "call_iv": 34.1,
-        "call_volume": 476376,
-        "put_volume": 524288,
-        "total_volume": 1000664
+        "call_iv": 46.5,
+        "call_volume": 477648,
+        "put_volume": 524368,
+        "total_volume": 1002016
       },
       "expiration": "2026-09-28",
       "unusual_activity": {
-        "unusual_calls": 11,
+        "unusual_calls": 12,
         "unusual_puts": 14,
         "has_unusual": true
       }
@@ -404,11 +404,11 @@
         "sentiment_score": 30
       },
       "metrics": {
-        "pc_volume_ratio": 1.33,
-        "call_iv": 70.8,
-        "call_volume": 3398,
-        "put_volume": 4503,
-        "total_volume": 7901
+        "pc_volume_ratio": 1.31,
+        "call_iv": 75.3,
+        "call_volume": 3480,
+        "put_volume": 4542,
+        "total_volume": 8022
       },
       "expiration": "2026-10-02",
       "unusual_activity": {
