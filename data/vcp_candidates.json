@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-09-28T00:16:11.566496",
+  "timestamp": "2026-09-28T17:29:41.102983",
   "candidates": [
     {
-      "ticker": "NVDA",
-      "price": 225.07,
-      "from_52w_high": -4.31,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "AAPL",
-      "price": 341.07,
-      "from_52w_high": 0.0,
+      "price": 340.01,
+      "from_52w_high": -0.31,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SNOW",
-      "price": 335.94,
-      "from_52w_high": -5.76,
+      "price": 329.43,
+      "from_52w_high": -7.59,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "DDOG",
+      "price": 272.32,
+      "from_52w_high": -5.49,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
