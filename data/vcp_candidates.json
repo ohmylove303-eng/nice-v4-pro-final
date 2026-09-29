@@ -1,20 +1,55 @@
 {
-  "timestamp": "2026-09-29T01:30:45.984495",
+  "timestamp": "2026-09-29T15:29:21.196409",
   "candidates": [
     {
-      "ticker": "AAPL",
-      "price": 338.4,
-      "from_52w_high": -0.78,
+      "ticker": "NVDA",
+      "price": 229.96,
+      "from_52w_high": -2.23,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "AMD",
+      "price": 613.9,
+      "from_52w_high": -2.65,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "NET",
+      "price": 351.67,
+      "from_52w_high": -1.99,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SNOW",
-      "price": 328.12,
-      "from_52w_high": -7.95,
+      "price": 327.02,
+      "from_52w_high": -8.26,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "DDOG",
+      "price": 266.69,
+      "from_52w_high": -7.45,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "RIOT",
+      "price": 21.7,
+      "from_52w_high": -24.36,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "VRTX",
+      "price": 523.16,
+      "from_52w_high": -6.24,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 7
 }

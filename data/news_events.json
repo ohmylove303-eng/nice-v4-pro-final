@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-29T01:30:23.312465",
+  "timestamp": "2026-09-29T15:29:08.511529",
   "earnings": [
     {
       "ticker": "TSLA",
@@ -22,70 +22,5 @@
       "days_left": 49
     }
   ],
-  "news": [
-    {
-      "ticker": "NVDA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "NVDA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "TSLA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "TSLA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    }
-  ]
+  "news": []
 }
