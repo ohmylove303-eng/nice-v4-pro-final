@@ -1,27 +1,20 @@
 {
-  "timestamp": "2026-09-28T17:29:41.102983",
+  "timestamp": "2026-09-29T01:30:45.984495",
   "candidates": [
     {
       "ticker": "AAPL",
-      "price": 340.01,
-      "from_52w_high": -0.31,
+      "price": 338.4,
+      "from_52w_high": -0.78,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SNOW",
-      "price": 329.43,
-      "from_52w_high": -7.59,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DDOG",
-      "price": 272.32,
-      "from_52w_high": -5.49,
+      "price": 328.12,
+      "from_52w_high": -7.95,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 3
+  "count": 2
 }

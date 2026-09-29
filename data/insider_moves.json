@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-28T00:15:42.199619",
+  "timestamp": "2026-09-29T01:30:17.692184",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -322,6 +322,42 @@
           "insider": "ROGERS JOHN F W",
           "type": "Sell",
           "value": 2996975.0
+        }
+      ]
+    },
+    "BAC": {
+      "buy_count": 0,
+      "sell_count": 10,
+      "transactions": [
+        {
+          "date": "125",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 337861616.0
+        },
+        {
+          "date": "124",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 383039161.0
+        },
+        {
+          "date": "123",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 382403036.0
+        },
+        {
+          "date": "122",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 369928036.0
+        },
+        {
+          "date": "64",
+          "insider": "DEMARE JAMES P.",
+          "type": "Sell",
+          "value": 6761733.0
         }
       ]
     }
