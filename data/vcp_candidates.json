@@ -1,55 +1,83 @@
 {
-  "timestamp": "2026-09-29T15:29:21.196409",
+  "timestamp": "2026-09-30T00:59:08.517189",
   "candidates": [
     {
-      "ticker": "NVDA",
-      "price": 229.96,
-      "from_52w_high": -2.23,
+      "ticker": "AAPL",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "AMD",
-      "price": 613.9,
-      "from_52w_high": -2.65,
+      "ticker": "PLTR",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "NET",
-      "price": 351.67,
-      "from_52w_high": -1.99,
+      "ticker": "COIN",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "SNOW",
-      "price": 327.02,
-      "from_52w_high": -8.26,
+      "ticker": "MSTR",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "DDOG",
-      "price": 266.69,
-      "from_52w_high": -7.45,
+      "ticker": "SMCI",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "RIOT",
-      "price": 21.7,
-      "from_52w_high": -24.36,
+      "ticker": "ADBE",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "UBER",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "MARA",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "CLSK",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "VRTX",
-      "price": 523.16,
-      "from_52w_high": -6.24,
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "ISRG",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 7
+  "count": 11
 }
