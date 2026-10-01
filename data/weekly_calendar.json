@@ -1,17 +1,11 @@
 {
-  "updated": "2026-09-30T00:59:01.634963",
+  "updated": "2026-10-01T01:01:13.376851",
   "events": [
     {
-      "date": "2026-09-30",
+      "date": "2026-10-01",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
-    },
-    {
-      "event": "Jobs Report (NFP)",
-      "impact": "High",
-      "description": "Non-farm payrolls data - key employment indicator",
-      "date": "2026-10-02"
     },
     {
       "event": "CPI Release",
@@ -23,13 +17,19 @@
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-10-21"
+      "date": "2026-10-22"
+    },
+    {
+      "event": "Jobs Report (NFP)",
+      "impact": "High",
+      "description": "Non-farm payrolls data - key employment indicator",
+      "date": "2026-11-06"
     },
     {
       "event": "GDP Report",
       "impact": "Medium",
       "description": "Quarterly GDP growth",
-      "date": "2026-10-28"
+      "date": "2027-01-28"
     }
   ]
 }
