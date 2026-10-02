@@ -1,91 +1,26 @@
 {
-  "timestamp": "2026-10-01T16:04:47.446014",
+  "timestamp": "2026-10-02T01:21:07.031557",
   "earnings": [
     {
       "ticker": "TSLA",
       "date": "2026-10-21",
-      "days_left": 20
+      "days_left": 19
     },
     {
       "ticker": "MSFT",
       "date": "2026-10-28",
-      "days_left": 27
+      "days_left": 26
     },
     {
       "ticker": "AAPL",
       "date": "2026-10-29",
-      "days_left": 28
+      "days_left": 27
     },
     {
       "ticker": "NVDA",
       "date": "2026-11-17",
-      "days_left": 47
+      "days_left": 46
     }
   ],
-  "news": [
-    {
-      "ticker": "NVDA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "NVDA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "AAPL",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "MSFT",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "TSLA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    },
-    {
-      "ticker": "TSLA",
-      "title": null,
-      "publisher": null,
-      "link": null,
-      "time": "1970-01-01 00:00",
-      "timestamp": 0
-    }
-  ]
+  "news": []
 }

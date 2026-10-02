@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-29T01:30:18.716880",
+  "timestamp": "2026-10-02T01:21:02.657138",
   "summary": {
-    "portfolio_volatility": 26.97,
-    "sharpe_ratio": 1.35,
-    "max_drawdown": -20.57,
+    "portfolio_volatility": 27.0,
+    "sharpe_ratio": 1.33,
+    "max_drawdown": -20.61,
     "var_95": -2.44,
     "risk_level": "High"
   },
@@ -30,11 +30,11 @@
           },
           {
             "x": "META",
-            "y": 0.15
+            "y": 0.14
           },
           {
             "x": "MSFT",
-            "y": 0.13
+            "y": 0.14
           },
           {
             "x": "NVDA",
@@ -79,7 +79,7 @@
           },
           {
             "x": "TSLA",
-            "y": 0.44
+            "y": 0.45
           }
         ]
       },
@@ -108,15 +108,15 @@
           },
           {
             "x": "MSFT",
-            "y": 0.38
+            "y": 0.39
           },
           {
             "x": "NVDA",
-            "y": 0.26
+            "y": 0.27
           },
           {
             "x": "TSLA",
-            "y": 0.35
+            "y": 0.36
           }
         ]
       },
@@ -141,11 +141,11 @@
           },
           {
             "x": "META",
-            "y": 0.3
+            "y": 0.29
           },
           {
             "x": "MSFT",
-            "y": 0.15
+            "y": 0.16
           },
           {
             "x": "NVDA",
@@ -162,7 +162,7 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.15
+            "y": 0.14
           },
           {
             "x": "AMD",
@@ -174,7 +174,7 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.3
+            "y": 0.29
           },
           {
             "x": "META",
@@ -190,7 +190,7 @@
           },
           {
             "x": "TSLA",
-            "y": 0.34
+            "y": 0.35
           }
         ]
       },
@@ -199,7 +199,7 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.13
+            "y": 0.14
           },
           {
             "x": "AMD",
@@ -207,11 +207,11 @@
           },
           {
             "x": "AMZN",
-            "y": 0.38
+            "y": 0.39
           },
           {
             "x": "GOOGL",
-            "y": 0.15
+            "y": 0.16
           },
           {
             "x": "META",
@@ -244,7 +244,7 @@
           },
           {
             "x": "AMZN",
-            "y": 0.26
+            "y": 0.27
           },
           {
             "x": "GOOGL",
@@ -277,11 +277,11 @@
           },
           {
             "x": "AMD",
-            "y": 0.44
+            "y": 0.45
           },
           {
             "x": "AMZN",
-            "y": 0.35
+            "y": 0.36
           },
           {
             "x": "GOOGL",
@@ -289,7 +289,7 @@
           },
           {
             "x": "META",
-            "y": 0.34
+            "y": 0.35
           },
           {
             "x": "MSFT",
@@ -311,19 +311,19 @@
   "individual_risks": [
     {
       "ticker": "NVDA",
-      "volatility": 37.84,
+      "volatility": 37.76,
       "max_drawdown": -20.21,
-      "beta": 0.85
+      "beta": 0.84
     },
     {
       "ticker": "MSFT",
-      "volatility": 32.82,
+      "volatility": 32.81,
       "max_drawdown": -34.5,
       "beta": 0.55
     },
     {
       "ticker": "AAPL",
-      "volatility": 24.53,
+      "volatility": 24.7,
       "max_drawdown": -13.8,
       "beta": 0.24
     },
@@ -335,25 +335,25 @@
     },
     {
       "ticker": "AMZN",
-      "volatility": 34.48,
+      "volatility": 34.46,
       "max_drawdown": -21.74,
       "beta": 0.73
     },
     {
       "ticker": "TSLA",
-      "volatility": 46.11,
+      "volatility": 45.73,
       "max_drawdown": -39.1,
-      "beta": 1.19
+      "beta": 1.18
     },
     {
       "ticker": "AMD",
-      "volatility": 73.12,
+      "volatility": 73.07,
       "max_drawdown": -27.76,
       "beta": 2.08
     },
     {
       "ticker": "META",
-      "volatility": 41.89,
+      "volatility": 41.95,
       "max_drawdown": -29.94,
       "beta": 1.0
     }

@@ -1,12 +1,11 @@
 {
-  "timestamp": "2026-10-01T01:00:33.334925",
+  "timestamp": "2026-10-02T01:19:19.346945",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [],
     "inflow": [
       "QQQ",
       "XLK",
-      "ARKK",
       "SOXX",
       "SMH",
       "USO"
@@ -25,6 +24,7 @@
       "XLU",
       "XLRE",
       "XLC",
+      "ARKK",
       "GLD",
       "SLV",
       "TLT",
@@ -47,12 +47,6 @@
       "price_change_20d": NaN
     },
     {
-      "ticker": "ARKK",
-      "name": "ARK Innovation",
-      "flow_score": 60,
-      "price_change_20d": NaN
-    },
-    {
       "ticker": "SOXX",
       "name": "Semiconductor ETF",
       "flow_score": 60,
@@ -61,6 +55,12 @@
     {
       "ticker": "SMH",
       "name": "VanEck Semiconductor",
+      "flow_score": 60,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "USO",
+      "name": "Oil ETF",
       "flow_score": 60,
       "price_change_20d": NaN
     }
