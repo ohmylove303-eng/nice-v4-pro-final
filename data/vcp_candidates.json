@@ -1,97 +1,41 @@
 {
-  "timestamp": "2026-10-02T01:21:36.656401",
+  "timestamp": "2026-10-02T15:31:37.724985",
   "candidates": [
     {
       "ticker": "AMD",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "PLTR",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "COIN",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "MSTR",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SMCI",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 634.0,
+      "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "NET",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 351.12,
+      "from_52w_high": -2.14,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "CRWD",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 269.22,
+      "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "TTD",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "PANW",
+      "price": 402.83,
+      "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "SHOP",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "MARA",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "RIOT",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "CLSK",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "VRTX",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "DDOG",
+      "price": 279.48,
+      "from_52w_high": -3.01,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 13
+  "count": 5
 }
