@@ -1,104 +1,41 @@
 {
-  "timestamp": "2026-10-08T01:33:53.369786",
+  "timestamp": "2026-10-08T16:15:33.454515",
   "candidates": [
     {
+      "ticker": "AMD",
+      "price": 631.18,
+      "from_52w_high": -2.81,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "AAPL",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "MSFT",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "META",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "PLTR",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SMCI",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "ARM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "ORCL",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 338.82,
+      "from_52w_high": -0.66,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "NET",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 344.68,
+      "from_52w_high": -4.12,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "CRWD",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 265.3,
+      "from_52w_high": -4.86,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "PANW",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SNOW",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DDOG",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "TTD",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "MARA",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 402.59,
+      "from_52w_high": -4.12,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 14
+  "count": 5
 }
