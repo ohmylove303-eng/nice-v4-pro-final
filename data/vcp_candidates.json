@@ -1,41 +1,5 @@
 {
-  "timestamp": "2026-10-09T01:43:34.651629",
-  "candidates": [
-    {
-      "ticker": "AAPL",
-      "price": 340.42,
-      "from_52w_high": -0.19,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "NET",
-      "price": 341.89,
-      "from_52w_high": -4.9,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "CRWD",
-      "price": 263.01,
-      "from_52w_high": -5.68,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "PANW",
-      "price": 398.5,
-      "from_52w_high": -5.1,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DDOG",
-      "price": 273.8,
-      "from_52w_high": -4.98,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 5
+  "timestamp": "2026-10-09T15:57:00.256188",
+  "candidates": [],
+  "count": 0
 }
