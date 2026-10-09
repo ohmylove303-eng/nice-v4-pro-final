@@ -1,38 +1,38 @@
 {
-  "timestamp": "2026-10-08T16:15:33.454515",
+  "timestamp": "2026-10-09T01:43:34.651629",
   "candidates": [
     {
-      "ticker": "AMD",
-      "price": 631.18,
-      "from_52w_high": -2.81,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "AAPL",
-      "price": 338.82,
-      "from_52w_high": -0.66,
+      "price": 340.42,
+      "from_52w_high": -0.19,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "NET",
-      "price": 344.68,
-      "from_52w_high": -4.12,
+      "price": 341.89,
+      "from_52w_high": -4.9,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "CRWD",
-      "price": 265.3,
-      "from_52w_high": -4.86,
+      "price": 263.01,
+      "from_52w_high": -5.68,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "PANW",
-      "price": 402.59,
-      "from_52w_high": -4.12,
+      "price": 398.5,
+      "from_52w_high": -5.1,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "DDOG",
+      "price": 273.8,
+      "from_52w_high": -4.98,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
