@@ -1,32 +1,32 @@
 {
-  "timestamp": "2026-10-14T00:51:59.765648",
+  "timestamp": "2026-10-15T00:17:34.932190",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [],
     "inflow": [
-      "SPY",
       "QQQ",
       "DIA",
       "XLK",
       "XLE",
       "XLY",
-      "XLP",
       "XLI",
       "XLU",
-      "ARKK",
-      "SOXX",
-      "SMH",
-      "GLD"
+      "XLC",
+      "USO"
     ],
     "outflow": [
+      "SPY",
       "IWM",
       "XLF",
       "XLV",
+      "XLP",
       "XLB",
       "XLRE",
-      "XLC",
+      "ARKK",
+      "SOXX",
+      "SMH",
+      "GLD",
       "SLV",
-      "USO",
       "TLT",
       "HYG",
       "LQD"
@@ -34,12 +34,6 @@
     "strong_outflow": []
   },
   "top_inflows": [
-    {
-      "ticker": "SPY",
-      "name": "S&P 500 ETF",
-      "flow_score": 60,
-      "price_change_20d": NaN
-    },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
@@ -63,9 +57,21 @@
       "name": "Energy Select",
       "flow_score": 60,
       "price_change_20d": NaN
+    },
+    {
+      "ticker": "XLY",
+      "name": "Consumer Discretionary",
+      "flow_score": 60,
+      "price_change_20d": NaN
     }
   ],
   "top_outflows": [
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 40,
+      "price_change_20d": NaN
+    },
     {
       "ticker": "IWM",
       "name": "Russell 2000 ETF",
@@ -85,14 +91,8 @@
       "price_change_20d": NaN
     },
     {
-      "ticker": "XLB",
-      "name": "Materials Select",
-      "flow_score": 40,
-      "price_change_20d": NaN
-    },
-    {
-      "ticker": "XLRE",
-      "name": "Real Estate Select",
+      "ticker": "XLP",
+      "name": "Consumer Staples",
       "flow_score": 40,
       "price_change_20d": NaN
     }
