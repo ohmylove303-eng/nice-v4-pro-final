@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-21T00:20:47.195049",
+  "timestamp": "2026-10-22T00:25:09.868092",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [],
@@ -9,6 +9,7 @@
       "XLE",
       "XLY",
       "XLP",
+      "XLI",
       "XLB",
       "XLU",
       "XLC",
@@ -20,7 +21,6 @@
       "IWM",
       "XLK",
       "XLV",
-      "XLI",
       "XLRE",
       "ARKK",
       "SOXX",
