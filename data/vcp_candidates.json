@@ -1,27 +1,5 @@
 {
-  "timestamp": "2026-10-23T00:22:23.960922",
-  "candidates": [
-    {
-      "ticker": "CRM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "AFRM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DE",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 3
+  "timestamp": "2026-10-23T14:11:45.801692",
+  "candidates": [],
+  "count": 0
 }
