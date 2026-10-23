@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-22T00:25:09.868092",
+  "timestamp": "2026-10-23T00:21:10.378031",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [],
@@ -13,7 +13,8 @@
       "XLB",
       "XLU",
       "XLC",
-      "USO"
+      "USO",
+      "TLT"
     ],
     "outflow": [
       "SPY",
@@ -27,7 +28,6 @@
       "SMH",
       "GLD",
       "SLV",
-      "TLT",
       "HYG",
       "LQD"
     ],
