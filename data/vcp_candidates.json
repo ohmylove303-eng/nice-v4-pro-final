@@ -1,5 +1,20 @@
 {
-  "timestamp": "2026-10-23T14:11:45.801692",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-10-24T00:20:04.788742",
+  "candidates": [
+    {
+      "ticker": "AFRM",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "DE",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 2
 }
