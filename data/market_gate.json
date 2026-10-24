@@ -10,10 +10,10 @@
     "[VIX] VIX is Low (19.45 < 20)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-10-24T00:19:50.856021",
+  "timestamp": "2026-10-24T13:11:05.120347",
   "indices": {
-    "SPY": 763.96,
-    "QQQ": 704.47,
+    "SPY": 759.97,
+    "QQQ": 704.4,
     "VIX": 19.45
   }
 }
