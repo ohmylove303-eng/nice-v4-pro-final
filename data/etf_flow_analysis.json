@@ -1,8 +1,11 @@
 {
-  "timestamp": "2026-10-25T23:46:57.360257",
+  "timestamp": "2026-10-27T01:04:37.512161",
   "etf_count": 24,
   "summary": {
-    "strong_inflow": [
+    "strong_inflow": [],
+    "inflow": [
+      "DIA",
+      "XLF",
       "XLE",
       "XLY",
       "XLP",
@@ -10,92 +13,88 @@
       "XLU",
       "XLRE",
       "USO",
-      "TLT"
-    ],
-    "inflow": [
-      "DIA",
-      "XLF",
-      "XLV"
+      "TLT",
+      "HYG"
     ],
     "outflow": [
       "SPY",
-      "IWM",
-      "HYG",
-      "LQD"
-    ],
-    "strong_outflow": [
       "QQQ",
+      "IWM",
       "XLK",
+      "XLV",
+      "XLI",
       "XLC",
       "ARKK",
       "SOXX",
       "SMH",
       "GLD",
-      "SLV"
-    ]
+      "SLV",
+      "LQD"
+    ],
+    "strong_outflow": []
   },
   "top_inflows": [
     {
-      "ticker": "XLP",
-      "name": "Consumer Staples",
-      "flow_score": 85,
-      "price_change_20d": 7.56
+      "ticker": "DIA",
+      "name": "Dow Jones ETF",
+      "flow_score": 60,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financial Select",
+      "flow_score": 60,
+      "price_change_20d": NaN
     },
     {
       "ticker": "XLE",
       "name": "Energy Select",
-      "flow_score": 75,
-      "price_change_20d": 11.75
-    },
-    {
-      "ticker": "XLU",
-      "name": "Utilities Select",
-      "flow_score": 75,
-      "price_change_20d": 7.72
-    },
-    {
-      "ticker": "USO",
-      "name": "Oil ETF",
-      "flow_score": 75,
-      "price_change_20d": 14.29
+      "flow_score": 60,
+      "price_change_20d": NaN
     },
     {
       "ticker": "XLY",
       "name": "Consumer Discretionary",
-      "flow_score": 70,
-      "price_change_20d": 2.3
+      "flow_score": 60,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "flow_score": 60,
+      "price_change_20d": NaN
     }
   ],
   "top_outflows": [
     {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 40,
+      "price_change_20d": NaN
+    },
+    {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
-      "flow_score": 25,
-      "price_change_20d": -5.39
+      "flow_score": 40,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
+      "flow_score": 40,
+      "price_change_20d": NaN
     },
     {
       "ticker": "XLK",
       "name": "Technology Select",
-      "flow_score": 25,
-      "price_change_20d": -6.64
+      "flow_score": 40,
+      "price_change_20d": NaN
     },
     {
-      "ticker": "XLC",
-      "name": "Communication Services",
-      "flow_score": 25,
-      "price_change_20d": -6.6
-    },
-    {
-      "ticker": "ARKK",
-      "name": "ARK Innovation",
-      "flow_score": 25,
-      "price_change_20d": -9.67
-    },
-    {
-      "ticker": "SOXX",
-      "name": "Semiconductor ETF",
-      "flow_score": 25,
-      "price_change_20d": -16.5
+      "ticker": "XLV",
+      "name": "Healthcare Select",
+      "flow_score": 40,
+      "price_change_20d": NaN
     }
   ],
   "ai_analysis": "API Key not configured. Set GOOGLE_API_KEY in .env file."
