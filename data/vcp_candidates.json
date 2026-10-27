@@ -1,34 +1,20 @@
 {
-  "timestamp": "2026-10-27T01:05:58.569568",
+  "timestamp": "2026-10-27T15:15:33.123330",
   "candidates": [
     {
       "ticker": "SNOW",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 340.2,
+      "from_52w_high": -7.78,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SHOP",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "AFRM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DE",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 166.24,
+      "from_52w_high": -7.24,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 2
 }
