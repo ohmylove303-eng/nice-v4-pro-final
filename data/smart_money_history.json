@@ -25268,5 +25268,100 @@
       }
     ],
     "saved_at": "2026-10-27T15:15:33.293163"
+  },
+  "2026-10-28": {
+    "recommendations": [
+      {
+        "ticker": "DOV",
+        "name": "Dover Corporation",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "UNP",
+        "name": "Union Pacific Corporation",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "HON",
+        "name": "Honeywell International Inc.",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "TSCO",
+        "name": "Tractor Supply Company",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "LMT",
+        "name": "Lockheed Martin Corporation",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "KEY",
+        "name": "KeyCorp",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "CSX",
+        "name": "CSX Corporation",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "MMM",
+        "name": "3M Company",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "AMT",
+        "name": "American Tower Corporation",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      },
+      {
+        "ticker": "SBAC",
+        "name": "SBA Communications Corporation",
+        "recommended_price": NaN,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-28"
+      }
+    ],
+    "saved_at": "2026-10-28T15:51:56.580270"
   }
 }

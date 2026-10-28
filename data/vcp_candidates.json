@@ -1,41 +1,27 @@
 {
-  "timestamp": "2026-10-28T00:56:25.398255",
+  "timestamp": "2026-10-28T15:51:56.404632",
   "candidates": [
     {
+      "ticker": "PLTR",
+      "price": 194.21,
+      "from_52w_high": -7.1,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "SNOW",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 340.79,
+      "from_52w_high": -7.62,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SHOP",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "AFRM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "NVO",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DE",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 165.71,
+      "from_52w_high": -7.54,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 5
+  "count": 3
 }
