@@ -1,39 +1,51 @@
 {
-  "timestamp": "2026-10-27T01:04:37.512161",
+  "timestamp": "2026-10-28T00:55:15.361904",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [],
     "inflow": [
+      "SPY",
+      "IWM",
       "DIA",
       "XLF",
       "XLE",
       "XLY",
       "XLP",
+      "XLI",
       "XLB",
       "XLU",
       "XLRE",
       "USO",
       "TLT",
-      "HYG"
+      "HYG",
+      "LQD"
     ],
     "outflow": [
-      "SPY",
       "QQQ",
-      "IWM",
       "XLK",
       "XLV",
-      "XLI",
       "XLC",
       "ARKK",
       "SOXX",
       "SMH",
       "GLD",
-      "SLV",
-      "LQD"
+      "SLV"
     ],
     "strong_outflow": []
   },
   "top_inflows": [
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 60,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
+      "flow_score": 60,
+      "price_change_20d": NaN
+    },
     {
       "ticker": "DIA",
       "name": "Dow Jones ETF",
@@ -51,36 +63,12 @@
       "name": "Energy Select",
       "flow_score": 60,
       "price_change_20d": NaN
-    },
-    {
-      "ticker": "XLY",
-      "name": "Consumer Discretionary",
-      "flow_score": 60,
-      "price_change_20d": NaN
-    },
-    {
-      "ticker": "XLP",
-      "name": "Consumer Staples",
-      "flow_score": 60,
-      "price_change_20d": NaN
     }
   ],
   "top_outflows": [
     {
-      "ticker": "SPY",
-      "name": "S&P 500 ETF",
-      "flow_score": 40,
-      "price_change_20d": NaN
-    },
-    {
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
-      "flow_score": 40,
-      "price_change_20d": NaN
-    },
-    {
-      "ticker": "IWM",
-      "name": "Russell 2000 ETF",
       "flow_score": 40,
       "price_change_20d": NaN
     },
@@ -93,6 +81,18 @@
     {
       "ticker": "XLV",
       "name": "Healthcare Select",
+      "flow_score": 40,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "XLC",
+      "name": "Communication Services",
+      "flow_score": 40,
+      "price_change_20d": NaN
+    },
+    {
+      "ticker": "ARKK",
+      "name": "ARK Innovation",
       "flow_score": 40,
       "price_change_20d": NaN
     }

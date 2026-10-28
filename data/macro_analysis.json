@@ -1,23 +1,6 @@
 {
-  "timestamp": "2026-10-27T01:05:41.164544",
-  "indicators": {
-    "GOLD": {
-      "value": 4023.8,
-      "change_1d": 0.4
-    },
-    "BTC": {
-      "value": 80106.01,
-      "change_1d": 0.1
-    },
-    "SPY": {
-      "value": 759.97,
-      "change_1d": -0.52
-    },
-    "QQQ": {
-      "value": 704.4,
-      "change_1d": -0.01
-    }
-  },
+  "timestamp": "2026-10-28T00:56:10.660126",
+  "indicators": {},
   "analysis_ko": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable.",
   "analysis_en": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable."
 }
