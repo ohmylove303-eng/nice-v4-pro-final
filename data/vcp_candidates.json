@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-10-28T15:51:56.404632",
+  "timestamp": "2026-10-29T01:34:19.156717",
   "candidates": [
     {
       "ticker": "PLTR",
-      "price": 194.21,
-      "from_52w_high": -7.1,
+      "price": 196.81,
+      "from_52w_high": -5.86,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SNOW",
-      "price": 340.79,
-      "from_52w_high": -7.62,
+      "price": 339.91,
+      "from_52w_high": -7.86,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SHOP",
-      "price": 165.71,
-      "from_52w_high": -7.54,
+      "price": 168.22,
+      "from_52w_high": -6.14,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }

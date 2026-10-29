@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-28T00:55:15.361904",
+  "timestamp": "2026-10-29T01:29:17.659513",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [],
@@ -15,6 +15,7 @@
       "XLB",
       "XLU",
       "XLRE",
+      "ARKK",
       "USO",
       "TLT",
       "HYG",
@@ -25,7 +26,6 @@
       "XLK",
       "XLV",
       "XLC",
-      "ARKK",
       "SOXX",
       "SMH",
       "GLD",
@@ -91,8 +91,8 @@
       "price_change_20d": NaN
     },
     {
-      "ticker": "ARKK",
-      "name": "ARK Innovation",
+      "ticker": "SOXX",
+      "name": "Semiconductor ETF",
       "flow_score": 40,
       "price_change_20d": NaN
     }
