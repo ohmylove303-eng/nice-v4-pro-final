@@ -25363,5 +25363,100 @@
       }
     ],
     "saved_at": "2026-10-28T15:51:56.580270"
+  },
+  "2026-10-29": {
+    "recommendations": [
+      {
+        "ticker": "WM",
+        "name": "Waste Management, Inc.",
+        "recommended_price": 225.15,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "MKC",
+        "name": "McCormick & Company, Incorporated",
+        "recommended_price": 46.06,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "LMT",
+        "name": "Lockheed Martin Corporation",
+        "recommended_price": 629.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "FIS",
+        "name": "Fidelity National Information Services, Inc.",
+        "recommended_price": 36.48,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "TYL",
+        "name": "Tyler Technologies, Inc.",
+        "recommended_price": 360.9,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "PCG",
+        "name": "PG&E Corporation",
+        "recommended_price": 13.15,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "VICI",
+        "name": "VICI Properties Inc.",
+        "recommended_price": 23.52,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "COF",
+        "name": "Capital One Financial Corporation",
+        "recommended_price": 204.88,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "HSY",
+        "name": "The Hershey Company",
+        "recommended_price": 163.77,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      },
+      {
+        "ticker": "VLTO",
+        "name": "Veralto Corporation",
+        "recommended_price": 102.8,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-29"
+      }
+    ],
+    "saved_at": "2026-10-29T16:00:05.621271"
   }
 }
