@@ -1,27 +1,20 @@
 {
-  "timestamp": "2026-10-29T16:00:05.393580",
+  "timestamp": "2026-10-30T01:36:08.612736",
   "candidates": [
     {
-      "ticker": "AMD",
-      "price": 574.88,
-      "from_52w_high": -11.48,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "PLTR",
-      "price": 195.43,
-      "from_52w_high": -6.51,
+      "price": 196.42,
+      "from_52w_high": -6.04,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SHOP",
-      "price": 166.92,
-      "from_52w_high": -6.86,
+      "price": 166.89,
+      "from_52w_high": -6.88,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 3
+  "count": 2
 }
