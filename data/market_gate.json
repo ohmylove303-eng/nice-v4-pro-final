@@ -1,7 +1,7 @@
 {
-  "gate": "RED",
-  "score": 35,
-  "action": "Cash is King / Short / Hedging",
+  "gate": "YELLOW",
+  "score": 42,
+  "action": "Cautious / Quality Only / No Leverage",
   "reasons": [
     "[SPY] Price > MA200 (Long-term Uptrend)",
     "[SPY] MA50 > MA200 (Golden Cross Alignment)",
@@ -9,10 +9,10 @@
     "[QQQ] MA50 > MA200 (Golden Cross Alignment)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-11-08T15:53:23.550966",
+  "timestamp": "2026-11-09T19:34:47.645660",
   "indices": {
-    "SPY": 735.29,
-    "QQQ": 656.1,
-    "VIX": 25.64
+    "SPY": 752.27,
+    "QQQ": 677.39,
+    "VIX": 20.24
   }
 }
