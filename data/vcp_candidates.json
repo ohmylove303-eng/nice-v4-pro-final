@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-11-16T19:21:05.277641",
+  "timestamp": "2026-11-17T18:15:39.602686",
   "candidates": [
     {
       "ticker": "AAPL",
-      "price": 351.77,
-      "from_52w_high": -1.26,
+      "price": 350.43,
+      "from_52w_high": -1.64,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
