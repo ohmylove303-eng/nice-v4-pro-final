@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-11-18T17:54:08.040741",
+  "timestamp": "2026-11-19T18:02:47.413966",
   "candidates": [
     {
-      "ticker": "URI",
-      "price": 1081.05,
-      "from_52w_high": -9.66,
+      "ticker": "PYPL",
+      "price": 56.94,
+      "from_52w_high": -8.67,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
